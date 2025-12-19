@@ -96,9 +96,8 @@ export function HomePage() {
                   </Button>
                   <Button
                     size="lg"
-                    variant="outline"
                     onClick={handleStartQuiz}
-                    className="border-white/30 text-white hover:bg-white/10"
+                    className="bg-white text-[#002654] hover:bg-white/90"
                   >
                     Nouveau quiz
                   </Button>
