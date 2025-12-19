@@ -1,0 +1,814 @@
+[
+  {
+    "id": "pv001",
+    "question": "Quelle est la devise de la République française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Liberté, Égalité, Fraternité", "isCorrect": true },
+      { "label": "Travail, Famille, Patrie", "isCorrect": false },
+      { "label": "Unité, Force, Progrès", "isCorrect": false },
+      { "label": "Honneur, Patrie, Valeur", "isCorrect": false }
+    ],
+    "explanation": "La devise de la République française est « Liberté, Égalité, Fraternité ». Elle apparaît dans l'article 2 de la Constitution de 1958.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv002",
+    "question": "Quel est le principe fondamental qui garantit que l'État ne favorise aucune religion ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La laïcité", "isCorrect": true },
+      { "label": "La fraternité", "isCorrect": false },
+      { "label": "L'égalité", "isCorrect": false },
+      { "label": "La liberté", "isCorrect": false }
+    ],
+    "explanation": "La laïcité, inscrite dans la Constitution, assure la séparation des Églises et de l'État. Elle garantit la liberté de conscience et le libre exercice des cultes.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv003",
+    "question": "Quelle loi a établi la séparation des Églises et de l'État ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La loi du 9 décembre 1905", "isCorrect": true },
+      { "label": "La loi du 14 juillet 1789", "isCorrect": false },
+      { "label": "La loi du 4 octobre 1958", "isCorrect": false },
+      { "label": "La loi du 26 août 1789", "isCorrect": false }
+    ],
+    "explanation": "La loi du 9 décembre 1905 concernant la séparation des Églises et de l'État est le fondement juridique de la laïcité en France.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pv004",
+    "question": "Quels sont les symboles de la République française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le drapeau tricolore, la Marseillaise, Marianne", "isCorrect": true },
+      { "label": "Le coq gaulois, le béret, la baguette", "isCorrect": false },
+      { "label": "La tour Eiffel, le TGV, le vin", "isCorrect": false },
+      { "label": "Le football, la mode, la gastronomie", "isCorrect": false }
+    ],
+    "explanation": "Les symboles officiels de la République sont le drapeau tricolore bleu-blanc-rouge, l'hymne national La Marseillaise, et Marianne, figure allégorique de la République.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv005",
+    "question": "Quelle est la signification du terme 'République indivisible' ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le territoire et le peuple français forment un tout uni", "isCorrect": true },
+      { "label": "La France ne peut pas être divisée en régions", "isCorrect": false },
+      { "label": "Le Président ne peut pas être destitué", "isCorrect": false },
+      { "label": "Les lois sont les mêmes pour tous les pays", "isCorrect": false }
+    ],
+    "explanation": "L'indivisibilité de la République signifie que la France forme un tout uni : même Constitution, mêmes lois, et égalité de tous les citoyens devant la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pv006",
+    "question": "Que garantit la liberté d'expression en France ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le droit d'exprimer ses opinions dans le respect de la loi", "isCorrect": true },
+      { "label": "Le droit de tout dire sans aucune limite", "isCorrect": false },
+      { "label": "Le droit de ne parler que français", "isCorrect": false },
+      { "label": "Le droit de critiquer uniquement le gouvernement", "isCorrect": false }
+    ],
+    "explanation": "La liberté d'expression permet d'exprimer librement ses opinions, mais elle est encadrée par la loi qui interdit notamment les propos racistes, l'incitation à la haine ou la diffamation.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv007",
+    "question": "Quel est le sens du mot 'Fraternité' dans la devise républicaine ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La solidarité entre les citoyens français", "isCorrect": true },
+      { "label": "Le lien entre frères biologiques uniquement", "isCorrect": false },
+      { "label": "L'amitié entre la France et ses colonies", "isCorrect": false },
+      { "label": "Le respect des traditions familiales", "isCorrect": false }
+    ],
+    "explanation": "La fraternité exprime l'idée de solidarité entre tous les citoyens, considérés comme membres d'une même communauté nationale.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv008",
+    "question": "Qu'est-ce que l'égalité devant la loi signifie ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Tous les citoyens ont les mêmes droits et devoirs", "isCorrect": true },
+      { "label": "Tous les citoyens gagnent le même salaire", "isCorrect": false },
+      { "label": "Tous les citoyens votent pour le même parti", "isCorrect": false },
+      { "label": "Tous les citoyens ont la même religion", "isCorrect": false }
+    ],
+    "explanation": "L'égalité devant la loi signifie que les mêmes règles s'appliquent à tous, sans distinction d'origine, de race, ou de religion. C'est un principe fondamental de la République.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv009",
+    "question": "Qu'est-ce qu'une démocratie ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Un régime où le pouvoir appartient au peuple", "isCorrect": true },
+      { "label": "Un régime où le roi détient tous les pouvoirs", "isCorrect": false },
+      { "label": "Un régime où l'armée gouverne", "isCorrect": false },
+      { "label": "Un régime où les riches dirigent", "isCorrect": false }
+    ],
+    "explanation": "La démocratie est un régime politique dans lequel le peuple détient le pouvoir, soit directement, soit par l'intermédiaire de représentants élus.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv010",
+    "question": "Quel principe garantit que chacun peut pratiquer sa religion librement en France ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La liberté de conscience", "isCorrect": true },
+      { "label": "L'athéisme obligatoire", "isCorrect": false },
+      { "label": "Le christianisme d'État", "isCorrect": false },
+      { "label": "L'interdit religieux", "isCorrect": false }
+    ],
+    "explanation": "La liberté de conscience permet à chacun de croire ou de ne pas croire, de pratiquer ou non une religion. Elle est protégée par la Constitution.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv011",
+    "question": "Que signifie le caractère 'social' de la République française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L'État garantit la protection sociale et la solidarité", "isCorrect": true },
+      { "label": "Les Français doivent tous être amis", "isCorrect": false },
+      { "label": "Les réseaux sociaux sont gérés par l'État", "isCorrect": false },
+      { "label": "Seuls les riches ont des droits sociaux", "isCorrect": false }
+    ],
+    "explanation": "Le caractère social de la République signifie que l'État assure la protection sociale de tous : santé, retraite, chômage, aide aux plus démunis.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pv012",
+    "question": "Quel est le fondement de la souveraineté nationale en France ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le peuple français par le vote", "isCorrect": true },
+      { "label": "Le Président de la République seul", "isCorrect": false },
+      { "label": "Les institutions européennes", "isCorrect": false },
+      { "label": "Les partis politiques", "isCorrect": false }
+    ],
+    "explanation": "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum (article 3 de la Constitution).",
+    "difficulty": "medium"
+  },
+  {
+    "id": "inst001",
+    "question": "Qui est le chef de l'État en France ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Président de la République", "isCorrect": true },
+      { "label": "Le Premier ministre", "isCorrect": false },
+      { "label": "Le président de l'Assemblée nationale", "isCorrect": false },
+      { "label": "Le président du Sénat", "isCorrect": false }
+    ],
+    "explanation": "Le Président de la République est le chef de l'État. Il est élu au suffrage universel direct pour un mandat de 5 ans.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst002",
+    "question": "Quelle est la durée du mandat présidentiel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "5 ans", "isCorrect": true },
+      { "label": "4 ans", "isCorrect": false },
+      { "label": "7 ans", "isCorrect": false },
+      { "label": "6 ans", "isCorrect": false }
+    ],
+    "explanation": "Depuis le référendum de 2000, le mandat présidentiel est de 5 ans (quinquennat). Auparavant, il était de 7 ans (septennat).",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst003",
+    "question": "Quelles sont les deux chambres du Parlement français ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "L'Assemblée nationale et le Sénat", "isCorrect": true },
+      { "label": "Le Conseil d'État et la Cour des comptes", "isCorrect": false },
+      { "label": "Le Conseil constitutionnel et le Conseil économique", "isCorrect": false },
+      { "label": "La Chambre des représentants et le Congrès", "isCorrect": false }
+    ],
+    "explanation": "Le Parlement est bicaméral : il comprend l'Assemblée nationale (577 députés) et le Sénat (348 sénateurs).",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst004",
+    "question": "Qui nomme le Premier ministre ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Président de la République", "isCorrect": true },
+      { "label": "L'Assemblée nationale", "isCorrect": false },
+      { "label": "Le Sénat", "isCorrect": false },
+      { "label": "Le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "explanation": "Le Président de la République nomme le Premier ministre. Celui-ci forme ensuite le gouvernement.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst005",
+    "question": "Quel est le rôle du Conseil constitutionnel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Vérifier la conformité des lois à la Constitution", "isCorrect": true },
+      { "label": "Rédiger les lois", "isCorrect": false },
+      { "label": "Élire le Président", "isCorrect": false },
+      { "label": "Gérer les finances publiques", "isCorrect": false }
+    ],
+    "explanation": "Le Conseil constitutionnel vérifie que les lois votées par le Parlement sont conformes à la Constitution. Il peut censurer tout ou partie d'une loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "inst006",
+    "question": "Comment sont élus les députés de l'Assemblée nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Au suffrage universel direct par les citoyens", "isCorrect": true },
+      { "label": "Par les maires des communes", "isCorrect": false },
+      { "label": "Par le Président de la République", "isCorrect": false },
+      { "label": "Par les sénateurs", "isCorrect": false }
+    ],
+    "explanation": "Les députés sont élus directement par les citoyens au suffrage universel direct, pour un mandat de 5 ans.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst007",
+    "question": "Qui est le chef du gouvernement en France ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Premier ministre", "isCorrect": true },
+      { "label": "Le Président de la République", "isCorrect": false },
+      { "label": "Le ministre de l'Intérieur", "isCorrect": false },
+      { "label": "Le président de l'Assemblée nationale", "isCorrect": false }
+    ],
+    "explanation": "Le Premier ministre est le chef du gouvernement. Il dirige l'action du gouvernement et coordonne le travail des ministres.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst008",
+    "question": "Quelle institution vote les lois en France ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Parlement (Assemblée nationale et Sénat)", "isCorrect": true },
+      { "label": "Le Président de la République", "isCorrect": false },
+      { "label": "Le Conseil constitutionnel", "isCorrect": false },
+      { "label": "Le Conseil d'État", "isCorrect": false }
+    ],
+    "explanation": "Le Parlement, composé de l'Assemblée nationale et du Sénat, vote les lois. C'est sa fonction principale dans la Ve République.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd001",
+    "question": "À partir de quel âge peut-on voter en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "18 ans", "isCorrect": true },
+      { "label": "16 ans", "isCorrect": false },
+      { "label": "21 ans", "isCorrect": false },
+      { "label": "25 ans", "isCorrect": false }
+    ],
+    "explanation": "En France, le droit de vote est accordé à 18 ans, âge de la majorité civile. C'est un droit mais aussi un devoir civique.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd002",
+    "question": "L'école est-elle obligatoire en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, de 3 à 16 ans", "isCorrect": true },
+      { "label": "Non, c'est facultatif", "isCorrect": false },
+      { "label": "Oui, de 6 à 12 ans seulement", "isCorrect": false },
+      { "label": "Oui, de 5 à 18 ans", "isCorrect": false }
+    ],
+    "explanation": "L'instruction est obligatoire pour tous les enfants de 3 à 16 ans, qu'ils soient français ou étrangers résidant en France.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd003",
+    "question": "Quel est le devoir fiscal de tout citoyen en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Payer des impôts selon ses revenus", "isCorrect": true },
+      { "label": "Donner de l'argent aux partis politiques", "isCorrect": false },
+      { "label": "Financer uniquement l'armée", "isCorrect": false },
+      { "label": "Payer uniquement la TVA", "isCorrect": false }
+    ],
+    "explanation": "Chaque citoyen doit contribuer aux dépenses publiques selon ses moyens. C'est le principe de l'impôt, fondement du financement des services publics.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd004",
+    "question": "Qu'est-ce que le droit d'asile ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La protection accordée aux personnes persécutées dans leur pays", "isCorrect": true },
+      { "label": "Le droit de créer un parti politique", "isCorrect": false },
+      { "label": "Le droit de manifester", "isCorrect": false },
+      { "label": "Le droit de changer de nationalité", "isCorrect": false }
+    ],
+    "explanation": "Le droit d'asile permet à toute personne persécutée dans son pays d'obtenir une protection en France. C'est un droit constitutionnel.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd005",
+    "question": "Qu'est-ce que la présomption d'innocence ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Toute personne est considérée innocente jusqu'à preuve du contraire", "isCorrect": true },
+      { "label": "Les enfants ne peuvent pas être jugés", "isCorrect": false },
+      { "label": "Les personnes âgées sont toujours innocentes", "isCorrect": false },
+      { "label": "La police ne peut arrêter personne", "isCorrect": false }
+    ],
+    "explanation": "La présomption d'innocence est un principe fondamental : toute personne accusée d'un crime ou délit est présumée innocente tant que sa culpabilité n'a pas été établie.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd006",
+    "question": "Quel est le droit syndical en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de créer ou d'adhérer à un syndicat", "isCorrect": true },
+      { "label": "L'obligation d'adhérer à un syndicat", "isCorrect": false },
+      { "label": "Le droit de créer une entreprise", "isCorrect": false },
+      { "label": "Le droit de ne jamais travailler", "isCorrect": false }
+    ],
+    "explanation": "La liberté syndicale garantit à chacun le droit de créer un syndicat ou d'y adhérer pour défendre ses intérêts professionnels.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd007",
+    "question": "Qu'est-ce que le droit de grève ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de cesser le travail pour revendiquer", "isCorrect": true },
+      { "label": "Le droit de ne jamais travailler", "isCorrect": false },
+      { "label": "Le droit de détruire son lieu de travail", "isCorrect": false },
+      { "label": "Le droit de changer d'employeur", "isCorrect": false }
+    ],
+    "explanation": "Le droit de grève est un droit constitutionnel qui permet aux salariés de cesser le travail pour défendre leurs revendications professionnelles.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd008",
+    "question": "Qu'est-ce que la Déclaration des droits de l'homme et du citoyen ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un texte fondateur de 1789 proclamant les droits fondamentaux", "isCorrect": true },
+      { "label": "Un document créé par l'Union européenne", "isCorrect": false },
+      { "label": "Une loi votée en 1958", "isCorrect": false },
+      { "label": "Un traité international de 2000", "isCorrect": false }
+    ],
+    "explanation": "Adoptée le 26 août 1789, la Déclaration des droits de l'homme et du citoyen proclame les droits naturels et imprescriptibles de l'homme. Elle fait partie du bloc de constitutionnalité.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd009",
+    "question": "Qu'est-ce que la liberté de la presse ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de publier et diffuser librement des informations", "isCorrect": true },
+      { "label": "L'obligation pour les journaux d'être gratuits", "isCorrect": false },
+      { "label": "Le droit exclusif de l'État de publier", "isCorrect": false },
+      { "label": "L'interdiction de critiquer le gouvernement", "isCorrect": false }
+    ],
+    "explanation": "La liberté de la presse, établie par la loi de 1881, garantit le droit de publier et diffuser librement des informations, dans le respect de la loi.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd010",
+    "question": "Qu'est-ce que le droit de propriété ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de posséder des biens et d'en disposer librement", "isCorrect": true },
+      { "label": "Le droit de prendre les biens des autres", "isCorrect": false },
+      { "label": "L'obligation de tout donner à l'État", "isCorrect": false },
+      { "label": "Le droit de construire n'importe où", "isCorrect": false }
+    ],
+    "explanation": "Le droit de propriété est un droit fondamental reconnu par la Déclaration de 1789. Il permet de posséder, utiliser et disposer de ses biens.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd011",
+    "question": "Quelle est la durée légale du travail hebdomadaire en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "35 heures", "isCorrect": true },
+      { "label": "40 heures", "isCorrect": false },
+      { "label": "48 heures", "isCorrect": false },
+      { "label": "30 heures", "isCorrect": false }
+    ],
+    "explanation": "La durée légale du travail est fixée à 35 heures par semaine depuis les lois Aubry de 1998-2000.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd012",
+    "question": "Qu'est-ce que le SMIC ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le salaire minimum légal en France", "isCorrect": true },
+      { "label": "Une aide sociale pour les chômeurs", "isCorrect": false },
+      { "label": "Un impôt sur les sociétés", "isCorrect": false },
+      { "label": "Une assurance maladie", "isCorrect": false }
+    ],
+    "explanation": "Le SMIC (Salaire Minimum Interprofessionnel de Croissance) est le salaire horaire minimum légal que tout employeur doit verser à ses salariés.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc001",
+    "question": "Quand a eu lieu la Révolution française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1789", "isCorrect": true },
+      { "label": "1689", "isCorrect": false },
+      { "label": "1889", "isCorrect": false },
+      { "label": "1799", "isCorrect": false }
+    ],
+    "explanation": "La Révolution française a débuté en 1789, avec la prise de la Bastille le 14 juillet. Elle marque la fin de la monarchie absolue.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc002",
+    "question": "Que commémore le 14 juillet ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La prise de la Bastille et la Fête de la Fédération", "isCorrect": true },
+      { "label": "La fin de la Seconde Guerre mondiale", "isCorrect": false },
+      { "label": "L'élection du premier Président", "isCorrect": false },
+      { "label": "La naissance de Napoléon", "isCorrect": false }
+    ],
+    "explanation": "Le 14 juillet célèbre la prise de la Bastille (1789) et la Fête de la Fédération (1790). C'est la fête nationale française depuis 1880.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc003",
+    "question": "Qu'est-ce que La Marseillaise ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L'hymne national français", "isCorrect": true },
+      { "label": "Une danse traditionnelle", "isCorrect": false },
+      { "label": "Un plat provençal", "isCorrect": false },
+      { "label": "Un monument parisien", "isCorrect": false }
+    ],
+    "explanation": "La Marseillaise est l'hymne national français. Composée par Rouget de Lisle en 1792, elle est devenue hymne national en 1879.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc004",
+    "question": "Combien de régions compte la France métropolitaine ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "13 régions", "isCorrect": true },
+      { "label": "22 régions", "isCorrect": false },
+      { "label": "18 régions", "isCorrect": false },
+      { "label": "10 régions", "isCorrect": false }
+    ],
+    "explanation": "Depuis la réforme territoriale de 2015, la France métropolitaine compte 13 régions. Avec les territoires d'outre-mer, on compte 18 régions au total.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgc005",
+    "question": "Quelle est la capitale de la France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Paris", "isCorrect": true },
+      { "label": "Lyon", "isCorrect": false },
+      { "label": "Marseille", "isCorrect": false },
+      { "label": "Bordeaux", "isCorrect": false }
+    ],
+    "explanation": "Paris est la capitale de la France. C'est aussi la ville la plus peuplée du pays et le siège des principales institutions.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc006",
+    "question": "Qui a été le premier Président de la Ve République ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Charles de Gaulle", "isCorrect": true },
+      { "label": "François Mitterrand", "isCorrect": false },
+      { "label": "Georges Pompidou", "isCorrect": false },
+      { "label": "Valéry Giscard d'Estaing", "isCorrect": false }
+    ],
+    "explanation": "Charles de Gaulle a été le premier Président de la Ve République, élu en 1958. Il est le fondateur de ce régime constitutionnel.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc007",
+    "question": "Que s'est-il passé le 11 novembre 1918 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L'armistice de la Première Guerre mondiale", "isCorrect": true },
+      { "label": "Le début de la Révolution française", "isCorrect": false },
+      { "label": "La libération de Paris", "isCorrect": false },
+      { "label": "La création de l'Union européenne", "isCorrect": false }
+    ],
+    "explanation": "Le 11 novembre 1918 marque la signature de l'armistice mettant fin à la Première Guerre mondiale. C'est un jour férié en France.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc008",
+    "question": "Que commémore le 8 mai ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La victoire de 1945 et la fin de la Seconde Guerre mondiale en Europe", "isCorrect": true },
+      { "label": "La fête du travail", "isCorrect": false },
+      { "label": "La Révolution de 1789", "isCorrect": false },
+      { "label": "L'abolition de l'esclavage", "isCorrect": false }
+    ],
+    "explanation": "Le 8 mai 1945 marque la capitulation de l'Allemagne nazie et la fin de la Seconde Guerre mondiale en Europe. C'est un jour férié.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc009",
+    "question": "Qu'est-ce que la francophonie ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L'ensemble des pays et personnes parlant français", "isCorrect": true },
+      { "label": "Les anciens territoires français uniquement", "isCorrect": false },
+      { "label": "Une région de France", "isCorrect": false },
+      { "label": "Un parti politique français", "isCorrect": false }
+    ],
+    "explanation": "La francophonie désigne l'ensemble des pays et communautés qui parlent français. L'Organisation internationale de la Francophonie compte plus de 80 pays membres.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc010",
+    "question": "Quel événement historique a eu lieu le 26 août 1789 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L'adoption de la Déclaration des droits de l'homme", "isCorrect": true },
+      { "label": "La prise de la Bastille", "isCorrect": false },
+      { "label": "L'exécution de Louis XVI", "isCorrect": false },
+      { "label": "Le sacre de Napoléon", "isCorrect": false }
+    ],
+    "explanation": "Le 26 août 1789, l'Assemblée nationale constituante adopte la Déclaration des droits de l'homme et du citoyen, texte fondateur des libertés.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "vf001",
+    "question": "Quel numéro appeler en cas d'urgence médicale ?",
+    "type": "situational",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "15 (SAMU)", "isCorrect": true },
+      { "label": "17 (Police)", "isCorrect": false },
+      { "label": "18 (Pompiers)", "isCorrect": false },
+      { "label": "112 (Urgences européennes)", "isCorrect": false }
+    ],
+    "explanation": "Le 15 est le numéro du SAMU (Service d'Aide Médicale Urgente). Le 17 pour la police, le 18 pour les pompiers, et le 112 est le numéro d'urgence européen.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vf002",
+    "question": "Qu'est-ce que la carte Vitale ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "La carte d'assurance maladie", "isCorrect": true },
+      { "label": "Une carte de transport", "isCorrect": false },
+      { "label": "Une carte bancaire", "isCorrect": false },
+      { "label": "Un permis de conduire", "isCorrect": false }
+    ],
+    "explanation": "La carte Vitale est la carte d'assurance maladie. Elle permet la prise en charge des frais de santé par la Sécurité sociale.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vf003",
+    "question": "Où doit-on déclarer une naissance ?",
+    "type": "situational",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À la mairie du lieu de naissance", "isCorrect": true },
+      { "label": "À la préfecture", "isCorrect": false },
+      { "label": "À l'hôpital uniquement", "isCorrect": false },
+      { "label": "Au commissariat de police", "isCorrect": false }
+    ],
+    "explanation": "La déclaration de naissance doit être faite à la mairie du lieu de naissance dans les 5 jours suivant l'accouchement.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vf004",
+    "question": "Qu'est-ce que Pôle emploi (France Travail) ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le service public de l'emploi pour les demandeurs d'emploi", "isCorrect": true },
+      { "label": "Une banque pour les entreprises", "isCorrect": false },
+      { "label": "Un ministère du gouvernement", "isCorrect": false },
+      { "label": "Une école de formation", "isCorrect": false }
+    ],
+    "explanation": "Pôle emploi (devenu France Travail) est le service public de l'emploi. Il accompagne les demandeurs d'emploi et verse les allocations chômage.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vf005",
+    "question": "Quel document est nécessaire pour travailler légalement en France quand on est étranger non-européen ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Un titre de séjour autorisant à travailler", "isCorrect": true },
+      { "label": "Uniquement un passeport", "isCorrect": false },
+      { "label": "Une simple attestation d'hébergement", "isCorrect": false },
+      { "label": "Aucun document particulier", "isCorrect": false }
+    ],
+    "explanation": "Les étrangers non-européens doivent posséder un titre de séjour les autorisant à travailler (visa long séjour, carte de séjour, etc.).",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vf006",
+    "question": "À qui s'adresser pour obtenir un passeport ?",
+    "type": "situational",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À la mairie", "isCorrect": true },
+      { "label": "À la préfecture de police uniquement", "isCorrect": false },
+      { "label": "À l'ambassade de France", "isCorrect": false },
+      { "label": "À la poste", "isCorrect": false }
+    ],
+    "explanation": "Les demandes de passeport se font en mairie, dans les mairies équipées de stations d'enregistrement biométrique.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv013",
+    "question": "Quel document fondamental définit l'organisation de l'État français ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La Constitution", "isCorrect": true },
+      { "label": "Le Code civil", "isCorrect": false },
+      { "label": "Le Code pénal", "isCorrect": false },
+      { "label": "Le règlement intérieur de l'Assemblée", "isCorrect": false }
+    ],
+    "explanation": "La Constitution de la Ve République, adoptée en 1958, est la loi fondamentale qui définit l'organisation et le fonctionnement de l'État français.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv014",
+    "question": "Que signifie le suffrage universel ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le droit de vote accordé à tous les citoyens majeurs", "isCorrect": true },
+      { "label": "Le vote réservé aux hommes", "isCorrect": false },
+      { "label": "Le vote réservé aux propriétaires", "isCorrect": false },
+      { "label": "Le vote par Internet", "isCorrect": false }
+    ],
+    "explanation": "Le suffrage universel signifie que tous les citoyens majeurs ont le droit de vote, sans distinction de sexe, de richesse ou d'éducation.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst009",
+    "question": "Quelle est la durée du mandat d'un député ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "5 ans", "isCorrect": true },
+      { "label": "6 ans", "isCorrect": false },
+      { "label": "4 ans", "isCorrect": false },
+      { "label": "7 ans", "isCorrect": false }
+    ],
+    "explanation": "Les députés sont élus pour un mandat de 5 ans, sauf dissolution de l'Assemblée nationale par le Président de la République.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inst010",
+    "question": "Qui peut dissoudre l'Assemblée nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Président de la République", "isCorrect": true },
+      { "label": "Le Premier ministre", "isCorrect": false },
+      { "label": "Le Sénat", "isCorrect": false },
+      { "label": "Le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "explanation": "Seul le Président de la République peut dissoudre l'Assemblée nationale, après consultation du Premier ministre et des présidents des assemblées.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd013",
+    "question": "Qu'est-ce que le droit à un procès équitable ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit d'être jugé de manière juste et impartiale", "isCorrect": true },
+      { "label": "Le droit de ne jamais être jugé", "isCorrect": false },
+      { "label": "Le droit de choisir son juge", "isCorrect": false },
+      { "label": "Le droit de se faire justice soi-même", "isCorrect": false }
+    ],
+    "explanation": "Le droit à un procès équitable garantit que toute personne sera jugée de manière juste, impartiale, dans un délai raisonnable, avec la possibilité de se défendre.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd014",
+    "question": "Qu'est-ce que le droit de manifester ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de se rassembler pacifiquement pour exprimer une opinion", "isCorrect": true },
+      { "label": "Le droit de bloquer les routes sans préavis", "isCorrect": false },
+      { "label": "Le droit de détruire des biens publics", "isCorrect": false },
+      { "label": "Le droit d'empêcher les autres de travailler", "isCorrect": false }
+    ],
+    "explanation": "Le droit de manifester permet de se rassembler pacifiquement pour exprimer des revendications. Les manifestations doivent être déclarées en préfecture.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgc011",
+    "question": "Quand les femmes ont-elles obtenu le droit de vote en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1944", "isCorrect": true },
+      { "label": "1789", "isCorrect": false },
+      { "label": "1914", "isCorrect": false },
+      { "label": "1968", "isCorrect": false }
+    ],
+    "explanation": "Les femmes ont obtenu le droit de vote le 21 avril 1944 par ordonnance du Gouvernement provisoire. Elles ont voté pour la première fois en 1945.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgc012",
+    "question": "Qu'est-ce que l'Union européenne ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une organisation politique et économique de pays européens", "isCorrect": true },
+      { "label": "Un pays unique regroupant toute l'Europe", "isCorrect": false },
+      { "label": "Une alliance militaire", "isCorrect": false },
+      { "label": "Une organisation sportive", "isCorrect": false }
+    ],
+    "explanation": "L'Union européenne est une organisation politique et économique regroupant 27 pays membres. La France est l'un des pays fondateurs.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vf007",
+    "question": "Quel numéro appeler en cas d'incendie ?",
+    "type": "situational",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "18 (Pompiers)", "isCorrect": true },
+      { "label": "15 (SAMU)", "isCorrect": false },
+      { "label": "17 (Police)", "isCorrect": false },
+      { "label": "114 (Urgences par SMS)", "isCorrect": false }
+    ],
+    "explanation": "Le 18 est le numéro des pompiers. Ils interviennent pour les incendies mais aussi pour les accidents et les secours à personne.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vf008",
+    "question": "Qu'est-ce que le RSA ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le Revenu de Solidarité Active, une aide pour les personnes sans ressources", "isCorrect": true },
+      { "label": "Un type de compte bancaire", "isCorrect": false },
+      { "label": "Une assurance automobile", "isCorrect": false },
+      { "label": "Un diplôme professionnel", "isCorrect": false }
+    ],
+    "explanation": "Le RSA (Revenu de Solidarité Active) est une aide financière destinée aux personnes sans ressources ou avec de faibles revenus.",
+    "difficulty": "medium"
+  }
+]

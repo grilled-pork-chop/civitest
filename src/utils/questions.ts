@@ -1,0 +1,176 @@
+import type { Question, TopicId, ShuffledQuestion } from '@/types';
+import { TOPICS } from '@/types';
+
+/**
+ * Fisher-Yates shuffle algorithm
+ */
+export function shuffle<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+/**
+ * Shuffle choices for a question and track the mapping
+ */
+export function shuffleChoices(question: Question): ShuffledQuestion {
+  const indices = question.choices.map((_, i) => i);
+  const shuffledIndices = shuffle(indices);
+
+  const shuffledChoices = shuffledIndices.map((i) => question.choices[i]);
+  const originalToShuffledMap = indices.map((originalIndex) =>
+    shuffledIndices.indexOf(originalIndex)
+  );
+
+  return {
+    ...question,
+    shuffledChoices,
+    originalToShuffledMap,
+  };
+}
+
+/**
+ * Select questions with weighted distribution by topic
+ */
+export function selectQuestions(
+  allQuestions: Question[],
+  totalCount: number,
+  usedQuestionSets: string[][] = []
+): Question[] {
+  const questionsByTopic = new Map<TopicId, Question[]>();
+
+  for (const topic of TOPICS) {
+    questionsByTopic.set(
+      topic.id,
+      allQuestions.filter((q) => q.topic === topic.id)
+    );
+  }
+
+  const recentlyUsedIds = new Set(usedQuestionSets.slice(-3).flat());
+
+  const selectedQuestions: Question[] = [];
+
+  for (const topic of TOPICS) {
+    const topicQuestions = questionsByTopic.get(topic.id) || [];
+
+    const freshQuestions = topicQuestions.filter(
+      (q) => !recentlyUsedIds.has(q.id)
+    );
+    const usedQuestions = topicQuestions.filter((q) =>
+      recentlyUsedIds.has(q.id)
+    );
+
+    const shuffledFresh = shuffle(freshQuestions);
+    const shuffledUsed = shuffle(usedQuestions);
+
+    const targetCount = topic.targetCount;
+    const availableQuestions = [...shuffledFresh, ...shuffledUsed];
+    const selected = availableQuestions.slice(0, targetCount);
+
+    selectedQuestions.push(...selected);
+  }
+
+  return shuffle(selectedQuestions);
+}
+
+/**
+ * Generate a unique quiz ID
+ */
+export function generateQuizId(): string {
+  return `quiz_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+}
+
+/**
+ * Format time in MM:SS
+ */
+export function formatTime(seconds: number): string {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+
+/**
+ * Format time in minutes and seconds (verbose)
+ */
+export function formatTimeVerbose(seconds: number): string {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  if (mins === 0) {
+    return `${secs} seconde${secs !== 1 ? 's' : ''}`;
+  }
+  if (secs === 0) {
+    return `${mins} minute${mins !== 1 ? 's' : ''}`;
+  }
+  return `${mins} min ${secs} sec`;
+}
+
+/**
+ * Calculate percentage
+ */
+export function calculatePercentage(value: number, total: number): number {
+  if (total === 0) return 0;
+  return Math.round((value / total) * 100);
+}
+
+/**
+ * Get color for score percentage
+ */
+export function getScoreColor(percentage: number): string {
+  if (percentage >= 80) return 'text-green-600';
+  if (percentage >= 60) return 'text-yellow-600';
+  return 'text-red-600';
+}
+
+/**
+ * Get background color for score percentage
+ */
+export function getScoreBgColor(percentage: number): string {
+  if (percentage >= 80) return 'bg-green-100';
+  if (percentage >= 60) return 'bg-yellow-100';
+  return 'bg-red-100';
+}
+
+/**
+ * Get topic color by ID
+ */
+export function getTopicColor(topicId: TopicId): string {
+  const topic = TOPICS.find((t) => t.id === topicId);
+  return topic?.color || '#6B7280';
+}
+
+/**
+ * Get topic name by ID
+ */
+export function getTopicName(topicId: TopicId, short = false): string {
+  const topic = TOPICS.find((t) => t.id === topicId);
+  return short ? topic?.nameShort || topicId : topic?.name || topicId;
+}
+
+/**
+ * Format date in French locale
+ */
+export function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+}
+
+/**
+ * Format date short
+ */
+export function formatDateShort(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('fr-FR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  });
+}
