@@ -152,7 +152,7 @@ export function StatsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-slate-50 to-white">
+    <div className="h-full bg-linear-to-b from-slate-50 to-white">
       {/* Header */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-6">
@@ -199,7 +199,7 @@ export function StatsPage() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-5">
         {/* Stats overview */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <StatCard

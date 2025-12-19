@@ -22,6 +22,8 @@ import { formatDateShort } from '@/utils/questions';
 import { TOPICS } from '@/types';
 import { cn } from '@/lib/utils';
 
+import { Footer } from '@/components/layout/Footer';
+
 export function HomePage() {
   const navigate = useNavigate();
   const { data: questions, isLoading, error } = useQuestions();
@@ -70,6 +72,7 @@ export function HomePage() {
   const hasActiveQuiz = currentQuiz && !currentQuiz.isCompleted;
 
   return (
+    <>
     <div>
       {/* Hero Section */}
       <section className="hero-section">
@@ -337,6 +340,8 @@ export function HomePage() {
         </div>
       </div>
     </div>
+      <Footer></Footer>
+    </>     
   );
 }
 
