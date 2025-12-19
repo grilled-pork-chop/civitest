@@ -13,7 +13,7 @@ export const queryClient = new QueryClient({
 });
 
 async function fetchQuestions(): Promise<Question[]> {
-  const response = await fetch('/questions.json');
+  const response = await fetch('questions.json');
 
   if (!response.ok) {
     throw new Error(`Failed to fetch questions: ${response.statusText}`);
