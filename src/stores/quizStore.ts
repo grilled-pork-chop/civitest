@@ -42,7 +42,6 @@ export const quizActions = {
     const history = getQuizHistory();
     const selectedQuestions = selectQuestions(
       allQuestions,
-      QUIZ_CONFIG.totalQuestions,
       history.usedQuestionSets
     );
 

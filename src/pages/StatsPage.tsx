@@ -351,7 +351,10 @@ export function StatsPage() {
                           border: '1px solid #E2E8F0',
                           borderRadius: '8px',
                         }}
-                        formatter={(value: number) => [`${value}%`, 'Score moyen']}
+                        formatter={(value) => [
+                          `${value ?? 0}%`,
+                          'Score moyen',
+                        ]}
                       />
                       <Bar dataKey="score" radius={[0, 4, 4, 0]}>
                         {topicPerformanceData.map((entry, index) => (

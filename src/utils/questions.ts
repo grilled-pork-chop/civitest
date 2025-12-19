@@ -37,7 +37,6 @@ export function shuffleChoices(question: Question): ShuffledQuestion {
  */
 export function selectQuestions(
   allQuestions: Question[],
-  totalCount: number,
   usedQuestionSets: string[][] = []
 ): Question[] {
   const questionsByTopic = new Map<TopicId, Question[]>();
