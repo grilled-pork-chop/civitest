@@ -166,7 +166,7 @@ export function QuestionCard({
 
       {/* Keyboard hint */}
       {!isReviewMode && !disabled && (
-        <p className="mt-4 text-xs text-muted-foreground text-center">
+        <p className="hidden sm:block mt-4 text-xs text-muted-foreground text-center">
           Utilisez les touches{" "}
           <kbd className="px-1 py-0.5 bg-muted rounded text-xs">1-4</kbd> pour
           sélectionner une réponse

@@ -192,10 +192,10 @@ export function HomePage() {
                   {recentResults.map((result) => (
                     <Card
                       key={result.id}
-                      className="hover:shadow-md transition-shadow cursor-pointer"
+                      className="overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
                       onClick={() => navigate({ to: '/stats' })}
                     >
-                      <CardContent className="p-4">
+                      <CardContent className="p-3 sm:p-5">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
                             <div
@@ -341,34 +341,41 @@ export function HomePage() {
 }
 
 interface StatCardProps {
+  icon: React.ReactNode;
   label: string;
   value: string;
-  icon: React.ReactNode;
   color: 'blue' | 'green' | 'yellow' | 'purple' | 'red';
 }
 
-function StatCard({ label, value, icon, color }: StatCardProps) {
-  const colorClasses = {
-    blue: 'bg-blue-50 text-blue-600',
-    green: 'bg-green-50 text-green-600',
-    yellow: 'bg-yellow-50 text-yellow-600',
-    purple: 'bg-purple-50 text-purple-600',
-    red: 'bg-red-50 text-red-600',
-  };
-
+function StatCard({ icon, label, value, color }: StatCardProps) {
   return (
-    <Card>
-      <CardContent className="p-4">
-        <div className={cn('inline-flex p-2 rounded-lg mb-2', colorClasses[color])}>
-          {icon}
+    <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
+      <CardContent className="p-3 sm:p-5">
+        <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-4">
+          {/* Slightly larger padding and rounded-lg for a modern look */}
+          <div className={cn('p-2 rounded-lg flex items-center justify-center', {
+            'bg-blue-50 text-blue-600': color === 'blue',
+            'bg-green-50 text-green-600': color === 'green',
+            'bg-yellow-50 text-yellow-600': color === 'yellow',
+            'bg-purple-50 text-purple-600': color === 'purple',
+            'bg-red-50 text-red-600': color === 'red',
+          })}>
+            {icon}
+          </div>
+
+          <div className="space-y-0.5">
+            <p className="text-xl sm:text-3xl font-bold tracking-tight leading-none">
+              {value}
+            </p>
+            <p className="text-[10px] sm:text-xs text-muted-foreground uppercase font-semibold tracking-wide">
+              {label}
+            </p>
+          </div>
         </div>
-        <p className="text-2xl font-bold">{value}</p>
-        <p className="text-sm text-muted-foreground">{label}</p>
       </CardContent>
     </Card>
   );
 }
-
 interface InfoItemProps {
   icon: React.ReactNode;
   text: string;

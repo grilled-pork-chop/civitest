@@ -6,7 +6,6 @@ import {
   ChevronRight,
   Home,
   RotateCcw,
-  Filter,
   CheckCircle,
   XCircle,
   List,
@@ -121,17 +120,17 @@ export function ReviewPage() {
     <div className="min-h-screen bg-linear-to-b from-slate-50 to-white">
       {/* Header */}
       <div className="bg-white border-b">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+        <div className="container mx-auto px-4 py-3 sm:py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <h1 className="text-2xl font-bold">Révision des réponses</h1>
-              <p className="text-muted-foreground text-sm">
+              <h1 className="text-lg sm:text-2xl font-bold">Révision</h1>
+              <p className="text-muted-foreground text-xs sm:text-sm">
                 {correctCount}/{currentQuiz.questions.length} bonnes réponses (
                 {Math.round((correctCount / currentQuiz.questions.length) * 100)}%)
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="outline" onClick={() => navigate({ to: '/' })}>
+              <Button variant="outline" size="sm" onClick={() => navigate({ to: '/' })} className="flex-1 sm:flex-none">
                 <Home className="mr-2 h-4 w-4" />
                 Accueil
               </Button>
@@ -145,16 +144,14 @@ export function ReviewPage() {
       </div>
 
       {/* Main content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-4 sm:py-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Question area */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 order-2 lg:order-1">
             {/* Filters */}
-            <div className="mb-6 flex flex-wrap gap-4">
-              {/* Correctness filter */}
-              <div className="flex items-center gap-2">
-                <Filter className="h-4 w-4 text-muted-foreground" />
-                <div className="flex rounded-lg border overflow-hidden">
+            <div className="mb-4 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide">
+              <div className="flex items-center gap-2 min-w-max">
+                <div className="flex rounded-lg border overflow-hidden bg-white">
                   <FilterButton
                     active={filter === 'all'}
                     onClick={() => setFilter('all')}
@@ -178,6 +175,7 @@ export function ReviewPage() {
                     <XCircle className="h-4 w-4 mr-1 text-red-600" />
                     Incorrectes ({incorrectCount})
                   </FilterButton>
+                  
                 </div>
               </div>
             </div>

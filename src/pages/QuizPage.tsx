@@ -168,8 +168,8 @@ export function QuizPage() {
       </div>
 
       {/* Main content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-4 sm:py-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Question area */}
           <div className="lg:col-span-3">
             <QuestionCard
@@ -192,7 +192,7 @@ export function QuizPage() {
                 Précédent
               </Button>
 
-              <span className="text-sm text-muted-foreground">
+              <span className="hidden sm:inline text-sm text-muted-foreground">
                 Utilisez <kbd className="px-1.5 py-0.5 bg-muted rounded text-xs">←</kbd>{' '}
                 <kbd className="px-1.5 py-0.5 bg-muted rounded text-xs">→</kbd> pour naviguer
               </span>
