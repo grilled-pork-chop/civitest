@@ -204,7 +204,7 @@
     "choices": [
       { "label": "Est librement accessible", "isCorrect": true },
       { "label": "Est réservée aux couples mariés", "isCorrect": false },
-      { "label": "Nécessite l'accord des parents majeurs", "isCorrect": false },
+      { "label": "Nécessite l'accord des parents", "isCorrect": false },
       { "label": "Est interdite aux mineurs", "isCorrect": false }
     ],
     "difficulty": "medium",
