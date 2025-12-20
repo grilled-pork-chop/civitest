@@ -19,7 +19,12 @@ async function fetchQuestions(): Promise<Question[]> {
     'sip_questions.json',
     'dd_questions.json',
     'hgc_questions.json',
-    'vsf_questions.json'
+    'vsf_questions.json',
+    'pv_x_questions.json',
+    'sip_x_questions.json',
+    'dd_x_questions.json',
+    'hgc_x_questions.json',
+    'vsf_x_questions.json'
   ];
 
   try {

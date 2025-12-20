@@ -21,8 +21,8 @@
     "choices": [
       { "label": "Effectuer des aménagements non permanents", "isCorrect": true },
       { "label": "Abattre un mur porteur", "isCorrect": false },
-      { "label": "Changer les fenêtres", "isCorrect": false },
-      { "label": "Modifier la destination du logement", "isCorrect": false }
+      { "label": "Changer les serrures", "isCorrect": false },
+      { "label": "Sous-louer le logement", "isCorrect": false }
     ],
     "difficulty": "medium",
     "explanation": "Les aménagements réversibles sont autorisés."
@@ -75,7 +75,7 @@
     "type": "knowledge",
     "topic": "vivre_france",
     "choices": [
-      { "label": "À chaque naissance", "isCorrect": true },
+      { "label": "À la naissance", "isCorrect": true },
       { "label": "Uniquement pour le premier enfant", "isCorrect": false },
       { "label": "Seulement en cas de nationalité française", "isCorrect": false },
       { "label": "Avant l'accouchement", "isCorrect": false }
@@ -618,10 +618,10 @@
     "type": "knowledge",
     "topic": "vivre_france",
     "choices": [
-      { "label": "28 jours", "isCorrect": true },
-      { "label": "14 jours", "isCorrect": false },
-      { "label": "21 jours", "isCorrect": false },
-      { "label": "35 jours", "isCorrect": false }
+      { "label": "25 jours pour la naissance d'un enfant et 32 jours en cas de naissance multiple", "isCorrect": true },
+      { "label": "15 jours pour la naissance d'un enfant et 30 jours en cas de naissance multiple", "isCorrect": false },
+      { "label": "21 jours pour la naissance d'un enfant et 40 jours en cas de naissance multiple", "isCorrect": false },
+      { "label": "30 jours pour la naissance d'un enfant et 40 jours en cas de naissance multiple", "isCorrect": false }
     ],
     "difficulty": "hard",
     "explanation": "Réforme récente."

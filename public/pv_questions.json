@@ -388,7 +388,7 @@
     "type": "knowledge",
     "topic": "principes_valeurs",
     "choices": [
-      { "label": "L’État ne reconnaît ni ne finance aucun culte", "isCorrect": true },
+      { "label": "L’État est neutre vis à vis à des religions", "isCorrect": true },
       { "label": "L’État contrôle les religions", "isCorrect": false },
       { "label": "L’État impose une religion", "isCorrect": false },
       { "label": "L’État subventionne les cultes", "isCorrect": false }
@@ -433,7 +433,7 @@
     "choices": [
       { "label": "Aucun symbole religieux ostensible", "isCorrect": true },
       { "label": "Tous les symboles", "isCorrect": false },
-      { "label": "Uniquement discrets", "isCorrect": false },
+      { "label": "Certains symboles", "isCorrect": false },
       { "label": "Selon l’établissement", "isCorrect": false }
     ],
     "explanation": "La loi interdit les signes ostensibles.",

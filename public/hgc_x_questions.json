@@ -1,0 +1,262 @@
+[
+  {
+    "id": "hgcx001",
+    "question": "Quel était le surnom de Louis XIV ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le Roi-Soleil", "isCorrect": true },
+      { "label": "Le Roi-Citoyen", "isCorrect": false },
+      { "label": "Le Roi des Français", "isCorrect": false },
+      { "label": "Le Roi Très Chrétien", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx002",
+    "question": "Quel régime politique a été mis en place pendant la Révolution française en 1792 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La République", "isCorrect": true },
+      { "label": "Une monarchie constitutionnelle", "isCorrect": false },
+      { "label": "Un empire", "isCorrect": false },
+      { "label": "Une dictature militaire", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx003",
+    "question": "Quelle peine a été supprimée en France en 1981 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La peine de mort", "isCorrect": true },
+      { "label": "La prison à perpétuité", "isCorrect": false },
+      { "label": "Les travaux forcés", "isCorrect": false },
+      { "label": "La peine de bannissement", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx004",
+    "question": "Quel continent a été le plus concerné par la décolonisation française après la Seconde Guerre mondiale ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L'Afrique", "isCorrect": true },
+      { "label": "L'Asie", "isCorrect": false },
+      { "label": "L'Amérique du Sud", "isCorrect": false },
+      { "label": "L'Océanie", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx005",
+    "question": "Quelle ville française est un port maritime ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Marseille", "isCorrect": true },
+      { "label": "Lyon", "isCorrect": false },
+      { "label": "Clermont-Ferrand", "isCorrect": false },
+      { "label": "Dijon", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx006",
+    "question": "Quel pays a une frontière avec la France métropolitaine au nord-est ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L'Allemagne", "isCorrect": true },
+      { "label": "L'Espagne", "isCorrect": false },
+      { "label": "L'Italie", "isCorrect": false },
+      { "label": "Le Royaume-Uni", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx007",
+    "question": "Où se trouvent les principales activités économiques en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Principalement dans les grandes aires urbaines", "isCorrect": true },
+      { "label": "Uniquement dans les zones rurales", "isCorrect": false },
+      { "label": "Exclusivement sur le littoral", "isCorrect": false },
+      { "label": "Principalement dans les DOM", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx008",
+    "question": "Parmi ces pays, lequel attire le plus de visiteurs chaque année ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La France", "isCorrect": true },
+      { "label": "L'Espagne", "isCorrect": false },
+      { "label": "Les États-Unis", "isCorrect": false },
+      { "label": "L'Italie", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx009",
+    "question": "Où habitent la majorité des Français ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Dans les zones urbaines et périurbaines", "isCorrect": true },
+      { "label": "Dans les zones rurales isolées", "isCorrect": false },
+      { "label": "Principalement dans les montagnes", "isCorrect": false },
+      { "label": "Exclusivement sur le littoral", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx010",
+    "question": "Quelle région française est la plus peuplée ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Île-de-France", "isCorrect": true },
+      { "label": "Auvergne-Rhône-Alpes", "isCorrect": false },
+      { "label": "Nouvelle-Aquitaine", "isCorrect": false },
+      { "label": "Provence-Alpes-Côte d’Azur", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx011",
+    "question": "Lequel de ces départements est l’un des plus touristiques de France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Paris", "isCorrect": true },
+      { "label": "Creuse", "isCorrect": false },
+      { "label": "Haute-Marne", "isCorrect": false },
+      { "label": "Nièvre", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx012",
+    "question": "Combien de personnes parlent français dans le monde ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Environ 300 millions", "isCorrect": true },
+      { "label": "Environ 80 millions", "isCorrect": false },
+      { "label": "Environ 1 milliard", "isCorrect": false },
+      { "label": "Moins de 50 millions", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx013",
+    "question": "Quel est le classement de la langue française parmi les langues les plus parlées dans le monde ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Parmi les 5 langues les plus parlées", "isCorrect": true },
+      { "label": "Première langue mondiale", "isCorrect": false },
+      { "label": "Au-delà de la 15e place", "isCorrect": false },
+      { "label": "Uniquement parlée en Europe", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx014",
+    "question": "Quelle cathédrale célèbre a été en partie détruite par un incendie en 2019 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Notre-Dame de Paris", "isCorrect": true },
+      { "label": "La cathédrale de Reims", "isCorrect": false },
+      { "label": "La basilique du Sacré-Cœur", "isCorrect": false },
+      { "label": "La cathédrale de Chartres", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx015",
+    "question": "En quelle année a été créée la Communauté Économique Européenne (CEE) ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1957", "isCorrect": true },
+      { "label": "1945", "isCorrect": false },
+      { "label": "1962", "isCorrect": false },
+      { "label": "1992", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx016",
+    "question": "Où se situe la Corse ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Dans la mer Méditerranée", "isCorrect": true },
+      { "label": "Dans l'océan Atlantique", "isCorrect": false },
+      { "label": "Dans la Manche", "isCorrect": false },
+      { "label": "Dans la mer du Nord", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx017",
+    "question": "Qui était Joséphine Baker ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une artiste et résistante engagée pour les droits humains", "isCorrect": true },
+      { "label": "Une reine de France", "isCorrect": false },
+      { "label": "Une femme politique", "isCorrect": false },
+      { "label": "Une écrivaine du XIXe siècle", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx018",
+    "question": "Qui était une chanteuse française célèbre ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Édith Piaf", "isCorrect": true },
+      { "label": "Simone Veil", "isCorrect": false },
+      { "label": "George Sand", "isCorrect": false },
+      { "label": "Colette", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx019",
+    "question": "Qu'est-ce que le Louvre ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un musée national situé à Paris", "isCorrect": true },
+      { "label": "Un château royal en province", "isCorrect": false },
+      { "label": "Un théâtre national", "isCorrect": false },
+      { "label": "Un monument religieux", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx020",
+    "question": "Qui était Jean de La Fontaine ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un écrivain célèbre pour ses fables", "isCorrect": true },
+      { "label": "Un peintre impressionniste", "isCorrect": false },
+      { "label": "Un homme politique révolutionnaire", "isCorrect": false },
+      { "label": "Un scientifique du XXe siècle", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  }
+]

@@ -75,12 +75,12 @@
     "type": "knowledge",
     "topic": "institutions",
     "choices": [
-      { "label": "Être majeur et inscrit sur les listes électorales", "isCorrect": true },
-      { "label": "Être contribuable", "isCorrect": false },
-      { "label": "Être élu local", "isCorrect": false },
+      { "label": "Être majeur, inscrit sur les listes électorales et avoir la nationalité française", "isCorrect": true },
+      { "label": "Être majeur, inscrit sur les listes électorales et avoir la nationalité d'un pays membre de l'UE", "isCorrect": false },
+      { "label": "Uniquement pour les grands électeurs", "isCorrect": false },
       { "label": "Avoir un emploi", "isCorrect": false }
     ],
-    "explanation": "La majorité et l’inscription sont obligatoires.",
+    "explanation": "Les 3 conditions (majeur, inscrit sur les listes electorales et être français) sont obligatoires.",
     "difficulty": "easy"
   },
   {
@@ -89,7 +89,7 @@
     "type": "knowledge",
     "topic": "institutions",
     "choices": [
-      { "label": "Être majeur et avoir le droit de vote", "isCorrect": true },
+      { "label": "Être majeur et disposé de ses droits civiques", "isCorrect": true },
       { "label": "Être propriétaire dans la commune", "isCorrect": false },
       { "label": "Être né dans la commune", "isCorrect": false },
       { "label": "Être fonctionnaire", "isCorrect": false }
@@ -290,7 +290,7 @@
       { "label": "6 ans", "isCorrect": true },
       { "label": "5 ans", "isCorrect": false },
       { "label": "9 ans", "isCorrect": false },
-      { "label": "4 ans", "isCorrect": false }
+      { "label": "3 ans", "isCorrect": false }
     ],
     "explanation": "Le mandat des sénateurs est renouvelé par moitié tous les 3 ans.",
     "difficulty": "medium"
@@ -372,7 +372,7 @@
     "type": "knowledge",
     "topic": "institutions",
     "choices": [
-      { "label": "Par élection par les conseillers municipaux", "isCorrect": true },
+      { "label": "Par les conseillers municipaux", "isCorrect": true },
       { "label": "Par élection directe des citoyens", "isCorrect": false },
       { "label": "Par nomination préfectorale", "isCorrect": false },
       { "label": "Par le Président de la République", "isCorrect": false }
@@ -684,12 +684,12 @@
     "type": "knowledge",
     "topic": "institutions",
     "choices": [
-      { "label": "Le traité de Rome", "isCorrect": true },
+      { "label": "Le traité de Maastricht", "isCorrect": true },
       { "label": "Le traité de Versailles", "isCorrect": false },
       { "label": "Le traité de Schengen", "isCorrect": false },
       { "label": "Le traité de Nice", "isCorrect": false }
     ],
-    "explanation": "Le traité de Rome fonde la CEE.",
+    "explanation": "Le traité de Maastricht fonde l'UE.",
     "difficulty": "hard"
   },
   {
@@ -776,5 +776,19 @@
     ],
     "explanation": "Les sessions plénières ont lieu à Strasbourg.",
     "difficulty": "medium"
+  },
+  {
+    "id": "sipcus001",
+    "question": "Quelle condition est nécessaire pour voter aux élections municipales ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Être majeur, inscrit sur les listes électorales et avoir la nationalité française", "isCorrect": false },
+      { "label": "Être majeur, inscrit sur les listes électorales et avoir la nationalité d'un pays membre de l'UE", "isCorrect": true },
+      { "label": "Uniquement pour les grands électeurs", "isCorrect": false },
+      { "label": "Avoir un emploi", "isCorrect": false }
+    ],
+    "explanation": "La majorité et l’inscription sont obligatoires.",
+    "difficulty": "easy"
   }
 ]

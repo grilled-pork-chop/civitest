@@ -1,0 +1,240 @@
+[
+  {
+    "id": "instx001",
+    "question": "Le président de la République a commis un crime. Quelle proposition est correcte ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Il peut être jugé selon des procédures prévues par la Constitution", "isCorrect": true },
+      { "label": "Il ne peut jamais être jugé", "isCorrect": false },
+      { "label": "Il est automatiquement destitué", "isCorrect": false },
+      { "label": "Il est jugé par le gouvernement", "isCorrect": false }
+    ],
+    "explanation": "Le président bénéficie d’un régime de responsabilité spécifique encadré constitutionnellement.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx002",
+    "question": "La loi est l'expression de :",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La volonté générale", "isCorrect": true },
+      { "label": "La volonté du gouvernement", "isCorrect": false },
+      { "label": "La majorité politique", "isCorrect": false },
+      { "label": "L’opinion publique", "isCorrect": false }
+    ],
+    "explanation": "Principe issu de la Déclaration des Droits de l’Homme et du Citoyen.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx003",
+    "question": "Une personne peut-elle voter à la place d'une autre ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Oui, uniquement par procuration officielle", "isCorrect": true },
+      { "label": "Oui, avec une autorisation orale", "isCorrect": false },
+      { "label": "Oui, au sein de la famille", "isCorrect": false },
+      { "label": "Non, jamais", "isCorrect": false }
+    ],
+    "explanation": "Le vote par procuration est strictement encadré.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx004",
+    "question": "À la fin de son mandat, le président de la République peut-il rester au pouvoir ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Non, sauf s’il est réélu", "isCorrect": true },
+      { "label": "Oui, jusqu’à nomination d’un successeur", "isCorrect": false },
+      { "label": "Oui, en cas de crise politique", "isCorrect": false },
+      { "label": "Oui, par décision personnelle", "isCorrect": false }
+    ],
+    "explanation": "La durée du mandat présidentiel est constitutionnelle.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx005",
+    "question": "Pourquoi séparer les trois pouvoirs dans une démocratie ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Pour éviter la concentration du pouvoir", "isCorrect": true },
+      { "label": "Pour accélérer les décisions politiques", "isCorrect": false },
+      { "label": "Pour renforcer le pouvoir exécutif", "isCorrect": false },
+      { "label": "Pour limiter le rôle du Parlement", "isCorrect": false }
+    ],
+    "explanation": "Principe fondamental de l’État de droit.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx006",
+    "question": "Que se passe-t-il si un ministre ne respecte pas la loi ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Il peut être poursuivi en justice", "isCorrect": true },
+      { "label": "Il est automatiquement démis de ses fonctions", "isCorrect": false },
+      { "label": "Il est jugé uniquement par le Président", "isCorrect": false },
+      { "label": "Il bénéficie d’une immunité totale", "isCorrect": false }
+    ],
+    "explanation": "Les ministres sont responsables pénalement.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx007",
+    "question": "Combien de députés composent l’Assemblée nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "577", "isCorrect": true },
+      { "label": "348", "isCorrect": false },
+      { "label": "600", "isCorrect": false },
+      { "label": "404", "isCorrect": false }
+    ],
+    "explanation": "Nombre fixé par la Constitution.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx008",
+    "question": "Le président de la République détient-il tous les pouvoirs ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Non, ses pouvoirs sont encadrés par la Constitution", "isCorrect": true },
+      { "label": "Oui, il est chef de tous les pouvoirs", "isCorrect": false },
+      { "label": "Oui, en période normale", "isCorrect": false },
+      { "label": "Oui, s’il est réélu", "isCorrect": false }
+    ],
+    "explanation": "La séparation des pouvoirs s’applique.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx009",
+    "question": "Qui est le préfet ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le représentant de l’État dans un département ou une région", "isCorrect": true },
+      { "label": "Un élu local", "isCorrect": false },
+      { "label": "Le chef du conseil départemental", "isCorrect": false },
+      { "label": "Un magistrat", "isCorrect": false }
+    ],
+    "explanation": "Il est nommé par l’État.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx010",
+    "question": "Qu'est-ce que l'Hôtel de Matignon ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La résidence officielle du Premier ministre", "isCorrect": true },
+      { "label": "Le siège du Sénat", "isCorrect": false },
+      { "label": "La résidence présidentielle", "isCorrect": false },
+      { "label": "Le ministère de l’Intérieur", "isCorrect": false }
+    ],
+    "explanation": "Centre de l’action gouvernementale.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx011",
+    "question": "Combien de communes existe-t-il environ en France ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Environ 35 000", "isCorrect": true },
+      { "label": "Environ 10 000", "isCorrect": false },
+      { "label": "Environ 50 000", "isCorrect": false },
+      { "label": "Environ 20 000", "isCorrect": false }
+    ],
+    "explanation": "La France compte un grand nombre de communes.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx012",
+    "question": "Quel État n'est pas membre de l'Union européenne ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La Suisse", "isCorrect": true },
+      { "label": "L’Espagne", "isCorrect": false },
+      { "label": "L’Italie", "isCorrect": false },
+      { "label": "Le Portugal", "isCorrect": false }
+    ],
+    "explanation": "La Suisse n’appartient pas à l’UE.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx013",
+    "question": "À quelle fréquence ont lieu les élections européennes ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Tous les 5 ans", "isCorrect": true },
+      { "label": "Tous les 4 ans", "isCorrect": false },
+      { "label": "Tous les 6 ans", "isCorrect": false },
+      { "label": "Tous les 7 ans", "isCorrect": false }
+    ],
+    "explanation": "Durée du mandat du Parlement européen.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx014",
+    "question": "L'autorité judiciaire est exercée par :",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Les magistrats", "isCorrect": true },
+      { "label": "Le gouvernement", "isCorrect": false },
+      { "label": "Le Parlement", "isCorrect": false },
+      { "label": "Le Président", "isCorrect": false }
+    ],
+    "explanation": "Elle est indépendante.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx015",
+    "question": "Que signifie « suffrage universel » ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le droit de vote accordé à tous les citoyens majeurs", "isCorrect": true },
+      { "label": "Le vote réservé aux contribuables", "isCorrect": false },
+      { "label": "Le vote des élus uniquement", "isCorrect": false },
+      { "label": "Le vote sans condition d’âge", "isCorrect": false }
+    ],
+    "explanation": "Principe fondamental démocratique.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx016",
+    "question": "Concernant les partis politiques, quelle proposition est correcte ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Ils concourent à l’expression du suffrage", "isCorrect": true },
+      { "label": "Ils exercent le pouvoir exécutif", "isCorrect": false },
+      { "label": "Ils rendent la justice", "isCorrect": false },
+      { "label": "Ils sont obligatoires pour se présenter", "isCorrect": false }
+    ],
+    "explanation": "Principe constitutionnel.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx017",
+    "question": "Qui réside au palais de l'Élysée ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le président de la République", "isCorrect": true },
+      { "label": "Le Premier ministre", "isCorrect": false },
+      { "label": "Le président du Sénat", "isCorrect": false },
+      { "label": "Le ministre de l’Intérieur", "isCorrect": false }
+    ],
+    "explanation": "Résidence officielle présidentielle.",
+    "difficulty": "easy"
+  }
+]

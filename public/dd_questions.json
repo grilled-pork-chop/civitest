@@ -55,20 +55,20 @@
     "explanation": "La liberté est encadrée par la loi.",
     "difficulty": "medium"
   },
-  {
-    "id": "dd005",
-    "question": "Que proclame l’article 1er de la Constitution française ?",
-    "type": "knowledge",
-    "topic": "droits_devoirs",
-    "choices": [
-      { "label": "L’égalité devant la loi sans distinction d’origine, de religion ou de race", "isCorrect": true },
-      { "label": "La suprématie du Président", "isCorrect": false },
-      { "label": "La priorité du travail", "isCorrect": false },
-      { "label": "La séparation stricte des citoyens", "isCorrect": false }
-    ],
-    "explanation": "Il affirme les principes fondamentaux de la République.",
-    "difficulty": "medium"
-  },
+{
+  "id": "dd005",
+  "question": "Que dit l’article 1er de la Constitution française ?",
+  "type": "knowledge",
+  "topic": "droits_devoirs",
+  "choices": [
+    { "label": "La France est une république indivisible, laïque, démocratique et sociale", "isCorrect": true },
+    { "label": "La France garantit l’égalité devant la loi sans distinction d’origine, de race ou de religion", "isCorrect": false },
+    { "label": "La souveraineté nationale appartient exclusivement au Président de la République", "isCorrect": false },
+    { "label": "La République reconnaît une religion officielle", "isCorrect": false }
+  ],
+  "explanation": "L’article 1er de la Constitution définit la nature de la République française : indivisible, laïque, démocratique et sociale. Les autres principes sont abordés dans d’autres articles.",
+  "difficulty": "medium"
+},
   {
     "id": "dd006",
     "question": "Que garantit la liberté de la presse ?",

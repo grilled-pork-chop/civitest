@@ -473,7 +473,7 @@
 
   {
     "id": "hgc033",
-    "question": "À quelle date Paris a-t-elle été libérée en 1944 ?",
+    "question": "À quelle date Paris a-t-elle été libérée ?",
     "type": "knowledge",
     "topic": "histoire_geographie_culture",
     "choices": [
@@ -488,7 +488,7 @@
 
   {
     "id": "hgc034",
-    "question": "Quel port français était central dans la traite négrière ?",
+    "question": "Quel port français était central dans la traite négrière au XVIIIe siècle ?",
     "type": "knowledge",
     "topic": "histoire_geographie_culture",
     "choices": [
@@ -777,7 +777,7 @@
     "type": "knowledge",
     "topic": "histoire_geographie_culture",
     "choices": [
-      { "label": "Une philosophe et écrivaine", "isCorrect": true },
+      { "label": "Une écrivaine", "isCorrect": true },
       { "label": "Une résistante", "isCorrect": false },
       { "label": "Une peintre", "isCorrect": false },
       { "label": "Une scientifique", "isCorrect": false }
@@ -792,7 +792,7 @@
     "type": "knowledge",
     "topic": "histoire_geographie_culture",
     "choices": [
-      { "label": "Un écrivain et philosophe", "isCorrect": true },
+      { "label": "Un écrivain", "isCorrect": true },
       { "label": "Un homme politique", "isCorrect": false },
       { "label": "Un peintre", "isCorrect": false },
       { "label": "Un scientifique", "isCorrect": false }
@@ -867,7 +867,7 @@
     "type": "knowledge",
     "topic": "histoire_geographie_culture",
     "choices": [
-      { "label": "Un peintre impressionniste", "isCorrect": true },
+      { "label": "Un peintre", "isCorrect": true },
       { "label": "Un écrivain", "isCorrect": false },
       { "label": "Un musicien", "isCorrect": false },
       { "label": "Un sculpteur", "isCorrect": false }
@@ -1077,10 +1077,10 @@
     "type": "knowledge",
     "topic": "histoire_geographie_culture",
     "choices": [
-      { "label": "Environ 68 millions d’habitants", "isCorrect": true },
-      { "label": "50 millions", "isCorrect": false },
-      { "label": "75 millions", "isCorrect": false },
-      { "label": "90 millions", "isCorrect": false }
+      { "label": "Environ 68 millions", "isCorrect": true },
+      { "label": "Environ 57 millions", "isCorrect": false },
+      { "label": "Environ 74 millions", "isCorrect": false },
+      { "label": "Environ 81 millions", "isCorrect": false }
     ],
     "difficulty": "hard",
     "explanation": "Donnée démographique récente."
@@ -1197,7 +1197,7 @@
     "type": "knowledge",
     "topic": "histoire_geographie_culture",
     "choices": [
-      { "label": "Mayotte", "isCorrect": true },
+      { "label": "La Mayotte", "isCorrect": true },
       { "label": "La Réunion", "isCorrect": false },
       { "label": "La Guyane", "isCorrect": false },
       { "label": "La Martinique", "isCorrect": false }

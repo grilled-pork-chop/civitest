@@ -1,0 +1,86 @@
+[
+  {
+    "id": "pvx001",
+    "question": "Parmi les propositions suivantes, laquelle constitue une participation citoyenne ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Voter lors d’une élection", "isCorrect": true },
+      { "label": "Respecter les lois", "isCorrect": false },
+      { "label": "Payer ses impôts", "isCorrect": false },
+      { "label": "Bénéficier des services publics", "isCorrect": false }
+    ],
+    "explanation": "La participation citoyenne implique une action active dans la vie démocratique.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pvx002",
+    "question": "Sur quel site internet peut-on retrouver le symbole de la République française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Sur les sites officiels de l’État français", "isCorrect": true },
+      { "label": "Uniquement sur les sites des partis politiques", "isCorrect": false },
+      { "label": "Sur les réseaux sociaux privés", "isCorrect": false },
+      { "label": "Seulement dans les manuels scolaires", "isCorrect": false }
+    ],
+    "explanation": "Le symbole de la République est utilisé par les institutions publiques.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvx003",
+    "question": "En tant que parent, peut-on refuser que son enfant participe aux cours de sport à l'école car ils sont mixtes ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, l’enseignement scolaire est obligatoire et la mixité est un principe républicain", "isCorrect": true },
+      { "label": "Oui, si cela va à l’encontre de convictions personnelles", "isCorrect": false },
+      { "label": "Oui, avec l’accord du directeur de l’école", "isCorrect": false },
+      { "label": "Oui, uniquement pour les cours de sport", "isCorrect": false }
+    ],
+    "explanation": "La mixité à l’école est un principe fondamental de l’éducation publique.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvx004",
+    "question": "La répudiation de sa femme est :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Interdite par la loi française", "isCorrect": true },
+      { "label": "Autorisée dans le cadre religieux", "isCorrect": false },
+      { "label": "Possible avec l’accord des deux époux", "isCorrect": false },
+      { "label": "Reconnaissable sous certaines conditions", "isCorrect": false }
+    ],
+    "explanation": "Le droit français garantit l’égalité entre les époux.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvx005",
+    "question": "Que fait l’État pour lutter contre les discriminations ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Il adopte des lois et sanctionne les comportements discriminatoires", "isCorrect": true },
+      { "label": "Il recommande uniquement des bonnes pratiques", "isCorrect": false },
+      { "label": "Il laisse les entreprises s’auto-réguler", "isCorrect": false },
+      { "label": "Il agit seulement en cas de plainte collective", "isCorrect": false }
+    ],
+    "explanation": "La lutte contre les discriminations est une mission régalienne.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvx006",
+    "question": "Qu'est-ce qui est traditionnellement organisé sur les Champs-Élysées le 14 juillet ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Un défilé militaire", "isCorrect": true },
+      { "label": "Une cérémonie religieuse nationale", "isCorrect": false },
+      { "label": "Une manifestation politique", "isCorrect": false },
+      { "label": "Un festival culturel privé", "isCorrect": false }
+    ],
+    "explanation": "Le défilé militaire est une tradition républicaine.",
+    "difficulty": "easy"
+  }
+]

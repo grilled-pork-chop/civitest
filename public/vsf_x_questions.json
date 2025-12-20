@@ -1,0 +1,288 @@
+[
+  {
+    "id": "vsfx001",
+    "question": "Quelle est l'une des conditions pour passer l'examen du permis de conduire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Avoir l'âge minimum requis et être inscrit à l'examen", "isCorrect": true },
+      { "label": "Être propriétaire d’un véhicule", "isCorrect": false },
+      { "label": "Être titulaire du baccalauréat", "isCorrect": false },
+      { "label": "Être salarié", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx002",
+    "question": "Un bail locatif est valide s'il est :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Écrit et signé par le locataire et le propriétaire", "isCorrect": true },
+      { "label": "Oralement accepté", "isCorrect": false },
+      { "label": "Validé par la mairie", "isCorrect": false },
+      { "label": "Déclaré aux impôts", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx003",
+    "question": "Où peut-on déposer un lave-vaisselle cassé ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À la déchetterie", "isCorrect": true },
+      { "label": "Sur le trottoir", "isCorrect": false },
+      { "label": "Dans les ordures ménagères", "isCorrect": false },
+      { "label": "Dans un espace public", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx004",
+    "question": "Concernant l'accès aux soins, quelle proposition est correcte ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Toute personne peut accéder aux soins médicaux", "isCorrect": true },
+      { "label": "Seuls les salariés peuvent se soigner", "isCorrect": false },
+      { "label": "Les soins sont réservés aux nationaux", "isCorrect": false },
+      { "label": "Les soins sont toujours payants sans remboursement", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx005",
+    "question": "Lorsqu'un employeur veut qu'un salarié travaille plus longtemps que la durée prévue dans le contrat de travail :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Cela doit respecter le droit du travail et être rémunéré", "isCorrect": true },
+      { "label": "Il peut l’imposer librement", "isCorrect": false },
+      { "label": "Cela n’a jamais de limite", "isCorrect": false },
+      { "label": "Cela remplace les congés", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "vsfx006",
+    "question": "Quelle est la mission de France Travail ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Accompagner les personnes vers l'emploi", "isCorrect": true },
+      { "label": "Fixer les salaires", "isCorrect": false },
+      { "label": "Contrôler les entreprises", "isCorrect": false },
+      { "label": "Voter les lois sociales", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx007",
+    "question": "Quelles sont les conditions pour toucher les allocations chômage ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Avoir travaillé et être inscrit comme demandeur d'emploi", "isCorrect": true },
+      { "label": "Être étudiant", "isCorrect": false },
+      { "label": "Ne jamais avoir travaillé", "isCorrect": false },
+      { "label": "Être retraité", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "vsfx008",
+    "question": "Qu'est-ce que l'école maternelle ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Une école accueillant les enfants avant l'école élémentaire", "isCorrect": true },
+      { "label": "Une école obligatoire dès la naissance", "isCorrect": false },
+      { "label": "Une école réservée aux adolescents", "isCorrect": false },
+      { "label": "Une formation professionnelle", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx009",
+    "question": "Comment s'appelle le diplôme passé par les élèves à la fin du collège ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le diplôme national du brevet", "isCorrect": true },
+      { "label": "Le baccalauréat", "isCorrect": false },
+      { "label": "Le CAP", "isCorrect": false },
+      { "label": "Le BEP", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx010",
+    "question": "Qui peut manger à la cantine scolaire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Tous les élèves inscrits à l'école", "isCorrect": true },
+      { "label": "Uniquement les élèves français", "isCorrect": false },
+      { "label": "Uniquement les élèves dont les parents travaillent", "isCorrect": false },
+      { "label": "Seulement les élèves boursiers", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx011",
+    "question": "À l'école, il est interdit aux parents de :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Perturber le fonctionnement de l’établissement", "isCorrect": true },
+      { "label": "Participer aux réunions", "isCorrect": false },
+      { "label": "Échanger avec les enseignants", "isCorrect": false },
+      { "label": "Être représentants de parents d’élèves", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx012",
+    "question": "Quand ont lieu les vacances scolaires de Noël ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À la fin du mois de décembre", "isCorrect": true },
+      { "label": "Au début de novembre", "isCorrect": false },
+      { "label": "Au mois de février", "isCorrect": false },
+      { "label": "En été", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx013",
+    "question": "Quel numéro d'urgence permet d'appeler les pompiers ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "18", "isCorrect": true },
+      { "label": "15", "isCorrect": false },
+      { "label": "17", "isCorrect": false },
+      { "label": "112 uniquement", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx014",
+    "question": "Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Être assuré", "isCorrect": true },
+      { "label": "Acheter un véhicule neuf", "isCorrect": false },
+      { "label": "Informer la mairie", "isCorrect": false },
+      { "label": "Demander une autorisation préfectorale", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx015",
+    "question": "À partir de quel âge un mineur peut-il travailler ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "16 ans", "isCorrect": true },
+      { "label": "14 ans sans condition", "isCorrect": false },
+      { "label": "12 ans", "isCorrect": false },
+      { "label": "18 ans uniquement", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "vsfx016",
+    "question": "Qu’est-ce qu’un numéro d’urgence ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Un numéro gratuit pour joindre les secours rapidement", "isCorrect": true },
+      { "label": "Un numéro payant réservé aux professionnels", "isCorrect": false },
+      { "label": "Un numéro administratif", "isCorrect": false },
+      { "label": "Un numéro international uniquement", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx017",
+    "question": "En cas de problème de santé non urgent, à qui faut-il s’adresser en premier ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Au médecin traitant", "isCorrect": true },
+      { "label": "Aux urgences", "isCorrect": false },
+      { "label": "À la police", "isCorrect": false },
+      { "label": "À la mairie", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx018",
+    "question": "Quel est le rôle du médecin traitant ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Assurer le suivi médical et orienter vers des spécialistes", "isCorrect": true },
+      { "label": "Intervenir uniquement en urgence", "isCorrect": false },
+      { "label": "Décider des remboursements", "isCorrect": false },
+      { "label": "Contrôler les arrêts de travail", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "vsfx019",
+    "question": "Quel est l’objectif des vaccinations obligatoires ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Protéger la population contre des maladies graves", "isCorrect": true },
+      { "label": "Empêcher les déplacements", "isCorrect": false },
+      { "label": "Limiter l’accès aux soins", "isCorrect": false },
+      { "label": "Remplacer les traitements médicaux", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx020",
+    "question": "Dans quelles situations doit-on se rendre aux urgences de l'hôpital ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "En cas de situation grave ou vitale", "isCorrect": true },
+      { "label": "Pour toute consultation médicale", "isCorrect": false },
+      { "label": "Pour renouveler une ordonnance", "isCorrect": false },
+      { "label": "Pour un contrôle administratif", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "vsfx021",
+    "question": "Quel diplôme obtient-on à la fin du lycée ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le baccalauréat", "isCorrect": true },
+      { "label": "Le brevet", "isCorrect": false },
+      { "label": "Le CAP", "isCorrect": false },
+      { "label": "La licence", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsfx022",
+    "question": "Pour qui l'école est-elle obligatoire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Pour tous les enfants de 3 à 16 ans", "isCorrect": true },
+      { "label": "Uniquement pour les citoyens français", "isCorrect": false },
+      { "label": "Seulement jusqu’à 12 ans", "isCorrect": false },
+      { "label": "Uniquement pour les garçons", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  }
+]
