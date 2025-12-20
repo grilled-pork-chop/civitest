@@ -80,13 +80,13 @@ export function QuestionCard({
       </div>
 
       {/* Question text */}
-      <h2 className="text-xl font-semibold text-foreground mb-6 leading-relaxed">
+      <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6 leading-relaxed">
         {question.question}
       </h2>
 
       {/* Choices */}
       <div
-        className="space-y-3"
+        className="space-y-2 sm:space-y-3"
         role="radiogroup"
         aria-label="Réponses possibles"
       >

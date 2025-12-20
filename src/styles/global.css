@@ -230,14 +230,15 @@
   }
 
   .question-card {
-    @apply bg-card border border-border rounded-lg p-6 shadow-sm;
+    @apply bg-card border border-border rounded-lg p-4 sm:p-6 shadow-sm;
     animation: fade-in 0.3s ease-out;
   }
 
   .choice-button {
-    @apply w-full text-left p-4 rounded-lg border-2 transition-all duration-200;
+    @apply w-full text-left p-3 sm:p-4 rounded-lg border-2 transition-all duration-200;
     @apply hover:border-primary/50 hover:bg-primary/5;
     @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    min-height: 48px;
   }
 
   .choice-button[data-state='selected'] {

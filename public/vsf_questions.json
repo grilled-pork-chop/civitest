@@ -1,0 +1,644 @@
+[
+  {
+    "id": "vsf001",
+    "question": "Où faut-il déclarer la naissance d'un enfant ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À la mairie du lieu de naissance", "isCorrect": true },
+      { "label": "À la mairie du domicile des parents", "isCorrect": false },
+      { "label": "À la préfecture", "isCorrect": false },
+      { "label": "À l'hôpital uniquement", "isCorrect": false }
+    ],
+    "explanation": "La déclaration se fait à l’état civil du lieu de naissance.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "vsf002",
+    "question": "Quelle action un locataire peut-il réaliser sans l'accord du propriétaire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Effectuer des aménagements non permanents", "isCorrect": true },
+      { "label": "Abattre un mur porteur", "isCorrect": false },
+      { "label": "Changer les fenêtres", "isCorrect": false },
+      { "label": "Modifier la destination du logement", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Les aménagements réversibles sont autorisés."
+  },
+  {
+    "id": "vsf003",
+    "question": "Quel mariage est reconnu légalement en France ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le mariage civil célébré à la mairie", "isCorrect": true },
+      { "label": "Le mariage religieux uniquement", "isCorrect": false },
+      { "label": "Le mariage coutumier", "isCorrect": false },
+      { "label": "Le mariage célébré à l’étranger sans transcription", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Seul le mariage civil a une valeur légale."
+  },
+  {
+    "id": "vsf004",
+    "question": "Le stationnement sur une place réservée aux personnes handicapées :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Est interdit sans carte spécifique", "isCorrect": true },
+      { "label": "Est autorisé pour quelques minutes", "isCorrect": false },
+      { "label": "Dépend de la commune", "isCorrect": false },
+      { "label": "Est toléré hors horaires de bureau", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "C’est une infraction sanctionnée."
+  },
+  {
+    "id": "vsf005",
+    "question": "Si une machine à laver est cassée dans un logement loué, il est possible de :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Informer le propriétaire si la panne ne vient pas d'un mauvais usage", "isCorrect": true },
+      { "label": "La remplacer sans prévenir", "isCorrect": false },
+      { "label": "Refuser de payer le loyer", "isCorrect": false },
+      { "label": "Exiger un remboursement immédiat", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Les réparations dépendent de l’origine de la panne."
+  },
+  {
+    "id": "vsf006",
+    "question": "Dans quel cas faut-il déclarer son enfant à l'état civil ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À chaque naissance", "isCorrect": true },
+      { "label": "Uniquement pour le premier enfant", "isCorrect": false },
+      { "label": "Seulement en cas de nationalité française", "isCorrect": false },
+      { "label": "Avant l'accouchement", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Toute naissance doit être déclarée."
+  },
+  {
+    "id": "vsf007",
+    "question": "Quand faut-il déclarer un enfant à l'état civil ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Dans les 5 jours suivant la naissance", "isCorrect": true },
+      { "label": "Dans les 15 jours", "isCorrect": false },
+      { "label": "Avant la sortie de maternité", "isCorrect": false },
+      { "label": "Dans le mois", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Délai légal strict."
+  },
+  {
+    "id": "vsf008",
+    "question": "Quel numéro permet d'appeler la police ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "17", "isCorrect": true },
+      { "label": "18", "isCorrect": false },
+      { "label": "15", "isCorrect": false },
+      { "label": "112", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Numéro d'urgence police."
+  },
+  {
+    "id": "vsf009",
+    "question": "Quel numéro permet d'appeler le SAMU ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "15", "isCorrect": true },
+      { "label": "18", "isCorrect": false },
+      { "label": "17", "isCorrect": false },
+      { "label": "114", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Urgences médicales."
+  },
+  {
+    "id": "vsf010",
+    "question": "Auprès de quelle institution inscrit-on un enfant à l'école publique ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "La mairie", "isCorrect": true },
+      { "label": "Le rectorat", "isCorrect": false },
+      { "label": "La préfecture", "isCorrect": false },
+      { "label": "Le ministère", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "La mairie gère l'inscription scolaire."
+  },
+  {
+    "id": "vsf011",
+    "question": "En cas de divorce, qui exerce l'autorité parentale ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Les deux parents sauf décision contraire du juge", "isCorrect": true },
+      { "label": "Le parent qui a la garde", "isCorrect": false },
+      { "label": "Le père automatiquement", "isCorrect": false },
+      { "label": "La mère automatiquement", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "L'autorité parentale conjointe est la règle."
+  },
+  {
+    "id": "vsf012",
+    "question": "Quelle aide permet d'avoir un avocat en cas de faibles ressources ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "L’aide juridictionnelle", "isCorrect": true },
+      { "label": "La protection juridique", "isCorrect": false },
+      { "label": "L’assurance privée", "isCorrect": false },
+      { "label": "Le médiateur", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Aide financée par l'État."
+  },
+  {
+    "id": "vsf013",
+    "question": "Qui peut demander le divorce ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Un ou les deux époux", "isCorrect": true },
+      { "label": "La famille", "isCorrect": false },
+      { "label": "Le maire", "isCorrect": false },
+      { "label": "Le procureur uniquement", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Le divorce est une démarche personnelle."
+  },
+  {
+    "id": "vsf014",
+    "question": "À quel organisme demander le remboursement des soins ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "L’Assurance maladie", "isCorrect": true },
+      { "label": "La mutuelle", "isCorrect": false },
+      { "label": "La mairie", "isCorrect": false },
+      { "label": "L’hôpital", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "La Sécurité sociale rembourse en premier."
+  },
+
+  {
+    "id": "vsf015",
+    "question": "La contraception en France :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Est librement accessible", "isCorrect": true },
+      { "label": "Est réservée aux couples mariés", "isCorrect": false },
+      { "label": "Nécessite l'accord des parents majeurs", "isCorrect": false },
+      { "label": "Est interdite aux mineurs", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Droit reconnu."
+  },
+  {
+    "id": "vsf016",
+    "question": "Qu’est-ce que le principe de confidentialité médicale ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le secret des informations de santé", "isCorrect": true },
+      { "label": "Le droit de tout savoir", "isCorrect": false },
+      { "label": "La transparence administrative", "isCorrect": false },
+      { "label": "Une obligation facultative", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Protégé par la loi."
+  },
+  {
+    "id": "vsf017",
+    "question": "À quoi sert la carte Vitale ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À faciliter le remboursement des soins", "isCorrect": true },
+      { "label": "À prouver son identité", "isCorrect": false },
+      { "label": "À payer les soins", "isCorrect": false },
+      { "label": "À accéder aux urgences", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Elle contient les droits sociaux."
+  },
+
+  {
+    "id": "vsf018",
+    "question": "À quoi sert une mutuelle santé ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "À compléter les remboursements de l’Assurance maladie", "isCorrect": true },
+      { "label": "À remplacer la Sécurité sociale", "isCorrect": false },
+      { "label": "À financer les hôpitaux", "isCorrect": false },
+      { "label": "À payer les médecins", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Complémentaire santé."
+  },
+  {
+    "id": "vsf019",
+    "question": "Qu’est-ce que le tiers payant ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "L'absence d'avance des frais médicaux", "isCorrect": true },
+      { "label": "Un remboursement différé", "isCorrect": false },
+      { "label": "Un paiement en trois fois", "isCorrect": false },
+      { "label": "Une aide exceptionnelle", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Pratique encadrée."
+  },
+  {
+    "id": "vsf020",
+    "question": "L'inscription à l'Assurance maladie est :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Obligatoire", "isCorrect": true },
+      { "label": "Facultative", "isCorrect": false },
+      { "label": "Réservée aux salariés", "isCorrect": false },
+      { "label": "Limitée dans le temps", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Protection sociale universelle."
+  },
+
+  {
+    "id": "vsf021",
+    "question": "L'avortement est-il possible en France ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Oui, dans un cadre légal", "isCorrect": true },
+      { "label": "Uniquement pour raisons médicales", "isCorrect": false },
+      { "label": "Uniquement avant 6 semaines", "isCorrect": false },
+      { "label": "Non", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Droit reconnu par la loi."
+  },
+
+  {
+    "id": "vsf022",
+    "question": "Travailler sans être déclaré est :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Illégal", "isCorrect": true },
+      { "label": "Toléré temporairement", "isCorrect": false },
+      { "label": "Autorisé à temps partiel", "isCorrect": false },
+      { "label": "Une simple faute administrative", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Travail dissimulé."
+  },
+
+  {
+    "id": "vsf023",
+    "question": "Qu’est-ce que le SMIC ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le salaire minimum légal", "isCorrect": true },
+      { "label": "Un salaire moyen", "isCorrect": false },
+      { "label": "Un plafond salarial", "isCorrect": false },
+      { "label": "Un revenu social", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Salaire minimum interprofessionnel."
+  },
+
+  {
+    "id": "vsf024",
+    "question": "Quelle est la première démarche pour chercher un emploi ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "S'inscrire auprès de France Travail", "isCorrect": true },
+      { "label": "Créer une entreprise", "isCorrect": false },
+      { "label": "Contacter un syndicat", "isCorrect": false },
+      { "label": "Saisir le conseil de prud'hommes", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "France Travail accompagne les demandeurs."
+  },
+
+  {
+    "id": "vsf025",
+    "question": "Quelle est la durée légale du travail hebdomadaire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "35 heures", "isCorrect": true },
+      { "label": "39 heures", "isCorrect": false },
+      { "label": "40 heures", "isCorrect": false },
+      { "label": "32 heures", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Durée légale en France."
+  },
+
+  {
+    "id": "vsf026",
+    "question": "Qui peut demander un congé parental d’éducation ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le père ou la mère", "isCorrect": true },
+      { "label": "La mère uniquement", "isCorrect": false },
+      { "label": "Les fonctionnaires uniquement", "isCorrect": false },
+      { "label": "Les couples mariés seulement", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Droit ouvert aux deux parents."
+  },
+
+  {
+    "id": "vsf027",
+    "question": "Une personne étrangère en situation régulière peut créer son entreprise :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Oui, sous certaines conditions", "isCorrect": true },
+      { "label": "Non, jamais", "isCorrect": false },
+      { "label": "Uniquement après naturalisation", "isCorrect": false },
+      { "label": "Seulement en association", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Selon le titre de séjour."
+  },
+
+  {
+    "id": "vsf028",
+    "question": "Une femme peut-elle créer son entreprise ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Oui, avec les mêmes droits qu’un homme", "isCorrect": true },
+      { "label": "Seulement avec autorisation", "isCorrect": false },
+      { "label": "Uniquement célibataire", "isCorrect": false },
+      { "label": "Non", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Principe d’égalité."
+  },
+
+  {
+    "id": "vsf029",
+    "question": "Quels textes encadrent le droit du travail ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Le Code du travail et les conventions collectives", "isCorrect": true },
+      { "label": "La Constitution uniquement", "isCorrect": false },
+      { "label": "Les règlements internes", "isCorrect": false },
+      { "label": "Les accords verbaux", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Sources juridiques du travail."
+  },
+
+  {
+    "id": "vsf030",
+    "question": "Quelles affaires traite le conseil de prud'hommes ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Les conflits entre salariés et employeurs", "isCorrect": true },
+      { "label": "Les affaires pénales", "isCorrect": false },
+      { "label": "Les divorces", "isCorrect": false },
+      { "label": "Les litiges fiscaux", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Juridiction spécialisée."
+  },
+
+  {
+    "id": "vsf031",
+    "question": "Qui a le droit de se syndiquer ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Tout salarié", "isCorrect": true },
+      { "label": "Uniquement les fonctionnaires", "isCorrect": false },
+      { "label": "Les salariés en CDI seulement", "isCorrect": false },
+      { "label": "Les citoyens uniquement", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Liberté syndicale."
+  },
+
+  {
+    "id": "vsf032",
+    "question": "Peut-on licencier une femme en raison de sa grossesse ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Non, c’est interdit", "isCorrect": true },
+      { "label": "Oui, sans justification", "isCorrect": false },
+      { "label": "Oui, pendant le congé maternité", "isCorrect": false },
+      { "label": "Oui, si l'employeur le souhaite", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Protection légale renforcée."
+  },
+
+  {
+    "id": "vsf033",
+    "question": "L'instruction des enfants est obligatoire de :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "3 à 16 ans", "isCorrect": true },
+      { "label": "6 à 18 ans", "isCorrect": false },
+      { "label": "3 à 18 ans", "isCorrect": false },
+      { "label": "6 à 16 ans", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Depuis la loi de 2019."
+  },
+
+  {
+    "id": "vsf034",
+    "question": "Quelle sanction maximale pour non-respect de l'instruction obligatoire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Une peine d'amende et d'emprisonnement", "isCorrect": true },
+      { "label": "Un rappel à la loi uniquement", "isCorrect": false },
+      { "label": "Une sanction administrative", "isCorrect": false },
+      { "label": "Aucune", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Sanctions pénales possibles."
+  },
+
+  {
+    "id": "vsf035",
+    "question": "Quelle est la définition de l'autorité parentale ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Un ensemble de droits et devoirs dans l’intérêt de l’enfant", "isCorrect": true },
+      { "label": "Un droit de décision absolu", "isCorrect": false },
+      { "label": "Une autorité financière", "isCorrect": false },
+      { "label": "Une obligation scolaire uniquement", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Toujours exercée dans l’intérêt de l’enfant."
+  },
+
+  {
+    "id": "vsf036",
+    "question": "Quel motif d'absence scolaire est accepté ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Une maladie de l’enfant", "isCorrect": true },
+      { "label": "Des vacances prolongées", "isCorrect": false },
+      { "label": "Un refus des parents", "isCorrect": false },
+      { "label": "Un événement personnel non justifié", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Les absences doivent être justifiées."
+  },
+
+  {
+    "id": "vsf037",
+    "question": "Jusqu'à quel âge l'école est-elle obligatoire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "16 ans", "isCorrect": true },
+      { "label": "18 ans", "isCorrect": false },
+      { "label": "15 ans", "isCorrect": false },
+      { "label": "14 ans", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Instruction obligatoire."
+  },
+
+  {
+    "id": "vsf038",
+    "question": "À quel âge commence l'instruction obligatoire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "3 ans", "isCorrect": true },
+      { "label": "6 ans", "isCorrect": false },
+      { "label": "2 ans", "isCorrect": false },
+      { "label": "4 ans", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Réforme récente."
+  },
+
+  {
+    "id": "vsf039",
+    "question": "Comment s’appellent les établissements après l'école élémentaire ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Les collèges", "isCorrect": true },
+      { "label": "Les lycées", "isCorrect": false },
+      { "label": "Les universités", "isCorrect": false },
+      { "label": "Les académies", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Organisation scolaire."
+  },
+
+  {
+    "id": "vsf040",
+    "question": "En tant que parent d'élève, il est possible de :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Participer aux conseils d'école", "isCorrect": true },
+      { "label": "Modifier les programmes", "isCorrect": false },
+      { "label": "Choisir les enseignants", "isCorrect": false },
+      { "label": "Décider des sanctions", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Participation à la vie scolaire."
+  },
+
+  {
+    "id": "vsf041",
+    "question": "Quelle instruction est prévue pour les enfants non francophones ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Un accompagnement spécifique en français", "isCorrect": true },
+      { "label": "Une scolarisation différée", "isCorrect": false },
+      { "label": "Une école séparée obligatoire", "isCorrect": false },
+      { "label": "Aucune mesure", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Dispositifs d'accueil adaptés."
+  },
+
+  {
+    "id": "vsf042",
+    "question": "Concernant les enfants en situation de handicap à l'école :",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Ils peuvent être scolarisés en milieu ordinaire", "isCorrect": true },
+      { "label": "Ils doivent être orientés en établissement spécialisé", "isCorrect": false },
+      { "label": "Ils ne sont pas soumis à l'instruction obligatoire", "isCorrect": false },
+      { "label": "Ils sont exclus de l'école publique", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Principe d'inclusion."
+  },
+
+  {
+    "id": "vsf043",
+    "question": "Depuis le 1er juillet 2021, quelle est la durée du congé paternité ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "28 jours", "isCorrect": true },
+      { "label": "14 jours", "isCorrect": false },
+      { "label": "21 jours", "isCorrect": false },
+      { "label": "35 jours", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Réforme récente."
+  },
+
+  {
+    "id": "vsf044",
+    "question": "Est-il possible de punir physiquement ses enfants ?",
+    "type": "knowledge",
+    "topic": "vivre_france",
+    "choices": [
+      { "label": "Non, c’est interdit par la loi", "isCorrect": true },
+      { "label": "Oui, de manière modérée", "isCorrect": false },
+      { "label": "Oui, jusqu'à un certain âge", "isCorrect": false },
+      { "label": "Cela dépend du contexte", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Les violences éducatives sont interdites."
+  }
+]

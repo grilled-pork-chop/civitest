@@ -12,6 +12,7 @@ import {
   CheckCircle,
   XCircle,
   Play,
+  Eye,
 } from 'lucide-react';
 import {
   LineChart,
@@ -101,6 +102,11 @@ export function StatsPage() {
       }
     };
     reader.readAsText(file);
+  };
+
+  const handleReviewQuiz = (quizId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigate({ to: '/review/$quizId', params: { quizId } });
   };
 
   const trendData = results.slice(0, 20).reverse().map((r, i) => ({
@@ -409,56 +415,71 @@ export function StatsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  {results.map((result) => (
-                    <div
-                      key={result.id}
-                      className="flex items-center justify-between p-4 rounded-lg border hover:bg-secondary/50 transition-colors cursor-pointer"
-                      onClick={() => setSelectedResult(result)}
-                    >
-                      <div className="flex items-center gap-4">
-                        <div
-                          className={cn(
-                            'w-10 h-10 rounded-full flex items-center justify-center',
-                            result.passed
-                              ? 'bg-green-100 text-green-600'
-                              : 'bg-red-100 text-red-600'
-                          )}
-                        >
-                          {result.passed ? (
-                            <CheckCircle className="h-5 w-5" />
-                          ) : (
-                            <XCircle className="h-5 w-5" />
-                          )}
+                  {results.map((result) => {
+                    const hasReviewData = !!(result.questions && result.answers);
+                    
+                    return (
+                      <div
+                        key={result.id}
+                        className="flex items-center justify-between p-4 rounded-lg border hover:bg-secondary/50 transition-colors cursor-pointer"
+                        onClick={() => setSelectedResult(result)}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div
+                            className={cn(
+                              'w-10 h-10 rounded-full flex items-center justify-center',
+                              result.passed
+                                ? 'bg-green-100 text-green-600'
+                                : 'bg-red-100 text-red-600'
+                            )}
+                          >
+                            {result.passed ? (
+                              <CheckCircle className="h-5 w-5" />
+                            ) : (
+                              <XCircle className="h-5 w-5" />
+                            )}
+                          </div>
+                          <div>
+                            <p className="font-medium">
+                              {result.score}/{result.totalQuestions} (
+                              {result.percentage}%)
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                              {formatDate(result.date)}
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-medium">
-                            {result.score}/{result.totalQuestions} (
-                            {result.percentage}%)
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {formatDate(result.date)}
-                          </p>
+                        <div className="flex items-center gap-2 sm:gap-4">
+                          <div className="text-right hidden sm:block">
+                            <p className="text-sm text-muted-foreground">
+                              Temps: {formatTimeVerbose(result.timeTaken)}
+                            </p>
+                          </div>
+                          <div
+                            className={cn(
+                              'px-3 py-1 rounded-full text-sm font-medium hidden sm:block',
+                              result.passed
+                                ? 'bg-green-100 text-green-700'
+                                : 'bg-red-100 text-red-700'
+                            )}
+                          >
+                            {result.passed ? 'Réussi' : 'Échoué'}
+                          </div>
+                          {hasReviewData && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={(e) => handleReviewQuiz(result.id, e)}
+                              className="shrink-0"
+                            >
+                              <Eye className="h-4 w-4 sm:mr-2" />
+                              <span className="hidden sm:inline">Revoir</span>
+                            </Button>
+                          )}
                         </div>
                       </div>
-                      <div className="flex items-center gap-4">
-                        <div className="text-right">
-                          <p className="text-sm text-muted-foreground">
-                            Temps: {formatTimeVerbose(result.timeTaken)}
-                          </p>
-                        </div>
-                        <div
-                          className={cn(
-                            'px-3 py-1 rounded-full text-sm font-medium',
-                            result.passed
-                              ? 'bg-green-100 text-green-700'
-                              : 'bg-red-100 text-red-700'
-                          )}
-                        >
-                          {result.passed ? 'Réussi' : 'Échoué'}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
@@ -557,7 +578,19 @@ export function StatsPage() {
               </div>
             </div>
           )}
-          <DialogFooter>
+          <DialogFooter className="flex-col sm:flex-row gap-2">
+            {selectedResult?.questions && selectedResult?.answers && (
+              <Button 
+                variant="outline" 
+                onClick={() => {
+                  setSelectedResult(null);
+                  navigate({ to: '/review/$quizId', params: { quizId: selectedResult.id } });
+                }}
+              >
+                <Eye className="mr-2 h-4 w-4" />
+                Revoir les questions
+              </Button>
+            )}
             <Button onClick={() => setSelectedResult(null)}>Fermer</Button>
           </DialogFooter>
         </DialogContent>

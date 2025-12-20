@@ -263,6 +263,8 @@ export const quizActions = {
       passed,
       timeTaken,
       topicPerformance,
+      questions: quiz.questions,
+      answers: quiz.answers,
     };
 
     const updatedHistory = addQuizResult(result);
@@ -308,6 +310,37 @@ export const quizActions = {
       ...state,
       isLoading,
     }));
+  },
+
+  /**
+   * Load a past quiz result for review
+   */
+  loadQuizForReview: (quizId: string): boolean => {
+    const history = getQuizHistory();
+    const result = history.results.find((r) => r.id === quizId);
+    
+    if (!result || !result.questions || !result.answers) {
+      return false;
+    }
+
+    const reviewSession: QuizSession = {
+      id: result.id,
+      startedAt: result.date,
+      completedAt: result.date,
+      questions: result.questions,
+      answers: result.answers,
+      currentQuestionIndex: 0,
+      timeRemaining: 0,
+      isCompleted: true,
+      isPaused: false,
+    };
+
+    appStore.setState((state) => ({
+      ...state,
+      currentQuiz: reviewSession,
+    }));
+
+    return true;
   },
 };
 

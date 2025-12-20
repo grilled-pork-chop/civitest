@@ -42,7 +42,7 @@ export function QuizProgress({
 
       {/* Question grid */}
       <div
-        className="grid grid-cols-10 gap-1.5 mt-4"
+        className="grid grid-cols-8 sm:grid-cols-10 gap-1 sm:gap-1.5 mt-4"
         role="navigation"
         aria-label="Navigation des questions"
       >
@@ -89,7 +89,7 @@ export function QuizProgress({
       </div>
 
       {/* Legend */}
-      <div className="flex justify-center gap-4 mt-3 text-xs text-muted-foreground">
+      <div className="hidden sm:flex justify-center gap-4 mt-3 text-xs text-muted-foreground">
         <div className="flex items-center gap-1.5">
           <div className="w-3 h-3 rounded bg-secondary" />
           <span>Non répondue</span>

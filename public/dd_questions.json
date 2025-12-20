@@ -1,0 +1,542 @@
+[
+  {
+    "id": "dd001",
+    "question": "À quoi sert le droit de grève ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "À défendre des revendications professionnelles collectives", "isCorrect": true },
+      { "label": "À contester toute décision politique", "isCorrect": false },
+      { "label": "À refuser toute obligation légale", "isCorrect": false },
+      { "label": "À interrompre un service public sans limite", "isCorrect": false }
+    ],
+    "explanation": "Le droit de grève vise la défense d’intérêts professionnels.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd002",
+    "question": "Au nom de quoi l'État peut-il restreindre certains droits ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "De l’ordre public et de l’intérêt général", "isCorrect": true },
+      { "label": "De la volonté politique du gouvernement", "isCorrect": false },
+      { "label": "Des convictions morales majoritaires", "isCorrect": false },
+      { "label": "De la sécurité économique uniquement", "isCorrect": false }
+    ],
+    "explanation": "Les restrictions doivent être nécessaires, proportionnées et légales.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dd003",
+    "question": "Quelle citation figure dans la Déclaration des Droits de l’Homme et du Citoyen de 1789 ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Les hommes naissent et demeurent libres et égaux en droits", "isCorrect": true },
+      { "label": "La liberté consiste à obéir à la loi divine", "isCorrect": false },
+      { "label": "Le travail est un devoir sacré", "isCorrect": false },
+      { "label": "La Nation prime sur l’individu", "isCorrect": false }
+    ],
+    "explanation": "C’est l’article 1er de la DDHC.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd004",
+    "question": "Que signifie l’article 4 de la DDHC sur la liberté ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté s’arrête là où commence celle d’autrui", "isCorrect": true },
+      { "label": "La liberté est absolue", "isCorrect": false },
+      { "label": "La liberté dépend de la morale", "isCorrect": false },
+      { "label": "La liberté est accordée par l’État", "isCorrect": false }
+    ],
+    "explanation": "La liberté est encadrée par la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd005",
+    "question": "Que proclame l’article 1er de la Constitution française ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "L’égalité devant la loi sans distinction d’origine, de religion ou de race", "isCorrect": true },
+      { "label": "La suprématie du Président", "isCorrect": false },
+      { "label": "La priorité du travail", "isCorrect": false },
+      { "label": "La séparation stricte des citoyens", "isCorrect": false }
+    ],
+    "explanation": "Il affirme les principes fondamentaux de la République.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd006",
+    "question": "Que garantit la liberté de la presse ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La possibilité d’informer et d’être informé", "isCorrect": true },
+      { "label": "La diffusion sans contrôle de toute information", "isCorrect": false },
+      { "label": "La protection contre toute poursuite", "isCorrect": false },
+      { "label": "Le secret absolu des sources en toute circonstance", "isCorrect": false }
+    ],
+    "explanation": "Elle est encadrée par la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd007",
+    "question": "Que permet la liberté de circulation ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Se déplacer librement sur le territoire", "isCorrect": true },
+      { "label": "S’installer sans formalités dans tout pays", "isCorrect": false },
+      { "label": "Échapper aux contrôles d’identité", "isCorrect": false },
+      { "label": "Refuser toute obligation administrative", "isCorrect": false }
+    ],
+    "explanation": "Elle peut être limitée pour des raisons légales.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dd008",
+    "question": "Que signifie être citoyen d’un État ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Avoir des droits civiques et des devoirs", "isCorrect": true },
+      { "label": "Être né sur le territoire", "isCorrect": false },
+      { "label": "Payer des impôts uniquement", "isCorrect": false },
+      { "label": "Être électeur automatiquement", "isCorrect": false }
+    ],
+    "explanation": "La citoyenneté implique participation et responsabilité.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd009",
+    "question": "Que sont les droits fondamentaux ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Des droits essentiels garantis à toute personne", "isCorrect": true },
+      { "label": "Des droits réservés aux citoyens", "isCorrect": false },
+      { "label": "Des privilèges sociaux", "isCorrect": false },
+      { "label": "Des droits conditionnels à l’emploi", "isCorrect": false }
+    ],
+    "explanation": "Ils s’appliquent à tous.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dd010",
+    "question": "Quel droit protège contre une arrestation arbitraire ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit à la sûreté", "isCorrect": true },
+      { "label": "La liberté de conscience", "isCorrect": false },
+      { "label": "La liberté syndicale", "isCorrect": false },
+      { "label": "Le droit de propriété", "isCorrect": false }
+    ],
+    "explanation": "La sûreté est un droit fondamental.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "dd011",
+    "question": "Quel est le texte fondateur des droits et devoirs du citoyen ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La Déclaration des Droits de l’Homme et du Citoyen de 1789", "isCorrect": true },
+      { "label": "La Constitution de 1958 uniquement", "isCorrect": false },
+      { "label": "Le Code civil", "isCorrect": false },
+      { "label": "La Charte de l’environnement", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Elle fonde le droit français moderne."
+  },
+  {
+    "id": "dd012",
+    "question": "Quel texte affirme l’égalité en droits à la naissance ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La Déclaration de 1789", "isCorrect": true },
+      { "label": "Le Code pénal", "isCorrect": false },
+      { "label": "La Constitution européenne", "isCorrect": false },
+      { "label": "La Convention de Genève", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "C’est l’article 1er de la DDHC."
+  },
+  {
+    "id": "dd013",
+    "question": "Quelle situation constitue une atteinte à la dignité humaine ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Les traitements inhumains ou dégradants", "isCorrect": true },
+      { "label": "Une sanction judiciaire", "isCorrect": false },
+      { "label": "Une contrainte légale", "isCorrect": false },
+      { "label": "Une amende administrative", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "La dignité est inviolable."
+  },
+  {
+    "id": "dd014",
+    "question": "Qu’est-ce que la liberté d’expression ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté d’exprimer ses opinions dans le respect de la loi", "isCorrect": true },
+      { "label": "La liberté de tout dire sans limite", "isCorrect": false },
+      { "label": "La liberté réservée aux médias", "isCorrect": false },
+      { "label": "La liberté politique uniquement", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Elle connaît des limites légales."
+  },
+
+  {
+    "id": "dd015",
+    "question": "Après une interpellation par la police, il est possible de :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Prévenir un proche et consulter un avocat", "isCorrect": true },
+      { "label": "Refuser toute identité", "isCorrect": false },
+      { "label": "Quitter les lieux librement", "isCorrect": false },
+      { "label": "Filmer systématiquement les forces de l’ordre", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Ce sont des droits garantis."
+  },
+  {
+    "id": "dd016",
+    "question": "Tous les citoyens français ont-ils une religion ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, la liberté de conscience est garantie", "isCorrect": true },
+      { "label": "Oui, une religion culturelle", "isCorrect": false },
+      { "label": "Oui, la religion majoritaire", "isCorrect": false },
+      { "label": "Oui, par tradition", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "La France est un État laïque."
+  },
+  {
+    "id": "dd017",
+    "question": "Quel est l’âge de la majorité numérique en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "15 ans", "isCorrect": true },
+      { "label": "13 ans", "isCorrect": false },
+      { "label": "16 ans", "isCorrect": false },
+      { "label": "18 ans", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Fixée par la loi RGPD."
+  },
+
+  {
+    "id": "dd018",
+    "question": "Dans quel endroit est-il autorisé de fumer ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Dans un espace privé non collectif", "isCorrect": true },
+      { "label": "Dans un lieu public fermé", "isCorrect": false },
+      { "label": "Dans un établissement scolaire", "isCorrect": false },
+      { "label": "Dans un transport public", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "La loi protège les non-fumeurs."
+  },
+
+  {
+    "id": "dd019",
+    "question": "En France, conduire une moto sans permis est :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un délit", "isCorrect": true },
+      { "label": "Une contravention", "isCorrect": false },
+      { "label": "Une infraction administrative", "isCorrect": false },
+      { "label": "Autorisé sous conditions", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "C’est puni pénalement."
+  },
+
+  {
+    "id": "dd020",
+    "question": "En quoi consiste le devoir de solidarité ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Contribuer à la cohésion sociale et aider les plus vulnérables", "isCorrect": true },
+      { "label": "Faire du bénévolat obligatoire", "isCorrect": false },
+      { "label": "Donner à des associations", "isCorrect": false },
+      { "label": "Remplacer l’État", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Principe fondamental républicain."
+  },
+
+  {
+    "id": "dd021",
+    "question": "Est-il légal d’être marié à plusieurs personnes en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, la polygamie est interdite", "isCorrect": true },
+      { "label": "Oui, sous conditions religieuses", "isCorrect": false },
+      { "label": "Oui, pour les étrangers", "isCorrect": false },
+      { "label": "Oui, avec autorisation judiciaire", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Le mariage est monogame."
+  },
+
+  {
+    "id": "dd022",
+    "question": "La déclaration des impôts est-elle obligatoire chaque année ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, même en l’absence de revenus", "isCorrect": true },
+      { "label": "Seulement pour les salariés", "isCorrect": false },
+      { "label": "Seulement au-dessus d’un seuil", "isCorrect": false },
+      { "label": "Non", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "C’est une obligation fiscale."
+  },
+
+  {
+    "id": "dd023",
+    "question": "Le port de secours à une personne en danger est-il obligatoire ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, sous peine de sanction pénale", "isCorrect": true },
+      { "label": "Non, c’est facultatif", "isCorrect": false },
+      { "label": "Seulement pour les professionnels", "isCorrect": false },
+      { "label": "Uniquement en cas de contrat", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "La non-assistance est un délit."
+  },
+
+  {
+    "id": "dd024",
+    "question": "Être juré d’assises est :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un devoir civique", "isCorrect": true },
+      { "label": "Un engagement volontaire", "isCorrect": false },
+      { "label": "Un métier temporaire", "isCorrect": false },
+      { "label": "Une fonction politique", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "C’est une participation à la justice."
+  },
+
+  {
+    "id": "dd025",
+    "question": "La vente d’alcool est interdite aux mineurs de moins de :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "18 ans", "isCorrect": true },
+      { "label": "16 ans", "isCorrect": false },
+      { "label": "21 ans", "isCorrect": false },
+      { "label": "15 ans", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Protection des mineurs."
+  },
+
+  {
+    "id": "dd026",
+    "question": "Le non-respect du code de la route est :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Une infraction sanctionnée par la loi", "isCorrect": true },
+      { "label": "Une simple faute morale", "isCorrect": false },
+      { "label": "Toléré sans accident", "isCorrect": false },
+      { "label": "Une infraction civile uniquement", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Il protège la sécurité de tous."
+  },
+
+  {
+    "id": "dd027",
+    "question": "Quel délit peut entraîner la privation des droits civiques ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La fraude électorale", "isCorrect": true },
+      { "label": "Un retard de paiement", "isCorrect": false },
+      { "label": "Une infraction routière légère", "isCorrect": false },
+      { "label": "Une dette fiscale", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Décidé par un juge."
+  },
+
+  {
+    "id": "dd028",
+    "question": "Pour obtenir une carte d’identité, il faut :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Prouver son identité et sa nationalité", "isCorrect": true },
+      { "label": "Être majeur uniquement", "isCorrect": false },
+      { "label": "Avoir un emploi", "isCorrect": false },
+      { "label": "Payer une taxe obligatoire", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "C’est un document administratif."
+  },
+
+  {
+    "id": "dd029",
+    "question": "Pour quel motif peut-on limiter la liberté d’expression ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Pour lutter contre la haine et la diffamation", "isCorrect": true },
+      { "label": "Pour préserver l’opinion majoritaire", "isCorrect": false },
+      { "label": "Pour éviter les critiques", "isCorrect": false },
+      { "label": "Pour des raisons religieuses", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Les limites sont prévues par la loi."
+  },
+
+  {
+    "id": "dd030",
+    "question": "Que doit faire un citoyen appelé comme juré d’assises ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Se présenter sauf motif légitime", "isCorrect": true },
+      { "label": "Refuser librement", "isCorrect": false },
+      { "label": "Payer une amende", "isCorrect": false },
+      { "label": "S’inscrire volontairement", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "C’est une obligation civique."
+  },
+
+  {
+    "id": "dd031",
+    "question": "Quel est l’âge de la majorité civile en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "18 ans", "isCorrect": true },
+      { "label": "21 ans", "isCorrect": false },
+      { "label": "16 ans", "isCorrect": false },
+      { "label": "15 ans", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "À partir de 18 ans."
+  },
+
+  {
+    "id": "dd032",
+    "question": "Quel est un devoir fondamental du citoyen français ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Respecter la loi", "isCorrect": true },
+      { "label": "Voter obligatoirement", "isCorrect": false },
+      { "label": "Être membre d’un parti", "isCorrect": false },
+      { "label": "Faire du bénévolat", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "La loi s’impose à tous."
+  },
+
+  {
+    "id": "dd033",
+    "question": "Quelle est l’infraction la plus grave ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un crime", "isCorrect": true },
+      { "label": "Un délit", "isCorrect": false },
+      { "label": "Une contravention", "isCorrect": false },
+      { "label": "Une faute civile", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Classification pénale."
+  },
+
+  {
+    "id": "dd034",
+    "question": "Qu’est-ce que la citoyenneté numérique ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "L’exercice responsable des droits et devoirs en ligne", "isCorrect": true },
+      { "label": "L’identité numérique officielle", "isCorrect": false },
+      { "label": "La protection contre Internet", "isCorrect": false },
+      { "label": "Le droit à l’anonymat total", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Elle implique responsabilité et respect."
+  },
+
+  {
+    "id": "dd035",
+    "question": "Qu’est-ce que le devoir de mémoire ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Se souvenir des événements historiques majeurs", "isCorrect": true },
+      { "label": "Commémorer uniquement les victoires", "isCorrect": false },
+      { "label": "Transmettre une version officielle", "isCorrect": false },
+      { "label": "Oublier les périodes sombres", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Il participe à la cohésion nationale."
+  },
+
+  {
+    "id": "dd036",
+    "question": "Qui peut être juré d’assises en France ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un citoyen français majeur inscrit sur les listes électorales", "isCorrect": true },
+      { "label": "Tout résident", "isCorrect": false },
+      { "label": "Uniquement les fonctionnaires", "isCorrect": false },
+      { "label": "Les professionnels du droit", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Conditions légales strictes."
+  },
+
+  {
+    "id": "dd037",
+    "question": "Une personne privée de ses droits civiques pendant 5 ans :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Ne peut pas voter ni être candidate", "isCorrect": true },
+      { "label": "Perd sa nationalité", "isCorrect": false },
+      { "label": "Est emprisonnée automatiquement", "isCorrect": false },
+      { "label": "Ne peut plus travailler", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "La privation concerne les droits politiques."
+  }
+]

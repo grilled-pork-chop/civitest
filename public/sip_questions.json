@@ -1,0 +1,780 @@
+[
+  {
+    "id": "sip001",
+    "question": "Comment est désigné le Premier ministre ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Il est nommé par le Président de la République", "isCorrect": true },
+      { "label": "Il est élu au suffrage universel direct", "isCorrect": false },
+      { "label": "Il est désigné par l’Assemblée nationale", "isCorrect": false },
+      { "label": "Il est nommé par le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "explanation": "Le Premier ministre est nommé par le Président de la République.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip002",
+    "question": "Qui peut se présenter aux élections présidentielles ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Un citoyen français remplissant les conditions légales", "isCorrect": true },
+      { "label": "Tout résident majeur en France", "isCorrect": false },
+      { "label": "Tout élu local", "isCorrect": false },
+      { "label": "Tout citoyen de l’Union européenne", "isCorrect": false }
+    ],
+    "explanation": "Il faut être français, majeur et remplir les conditions prévues par la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip003",
+    "question": "À qui appartient la souveraineté nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Au peuple", "isCorrect": true },
+      { "label": "Au Président de la République", "isCorrect": false },
+      { "label": "Au Parlement", "isCorrect": false },
+      { "label": "Au Gouvernement", "isCorrect": false }
+    ],
+    "explanation": "La souveraineté nationale appartient au peuple.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip004",
+    "question": "Qui est élu lors des élections municipales ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Les conseillers municipaux", "isCorrect": true },
+      { "label": "Le maire directement", "isCorrect": false },
+      { "label": "Le préfet", "isCorrect": false },
+      { "label": "Les députés", "isCorrect": false }
+    ],
+    "explanation": "Les conseillers municipaux élisent ensuite le maire.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip005",
+    "question": "L'inscription sur les listes électorales est :",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Nécessaire pour pouvoir voter", "isCorrect": true },
+      { "label": "Automatique pour tous les résidents", "isCorrect": false },
+      { "label": "Facultative", "isCorrect": false },
+      { "label": "Réservée aux fonctionnaires", "isCorrect": false }
+    ],
+    "explanation": "Il faut être inscrit pour voter.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip006",
+    "question": "Quelle condition est nécessaire pour voter aux élections présidentielles ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Être majeur et inscrit sur les listes électorales", "isCorrect": true },
+      { "label": "Être contribuable", "isCorrect": false },
+      { "label": "Être élu local", "isCorrect": false },
+      { "label": "Avoir un emploi", "isCorrect": false }
+    ],
+    "explanation": "La majorité et l’inscription sont obligatoires.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip007",
+    "question": "Quelle condition faut-il remplir pour être candidat aux élections municipales ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Être majeur et avoir le droit de vote", "isCorrect": true },
+      { "label": "Être propriétaire dans la commune", "isCorrect": false },
+      { "label": "Être né dans la commune", "isCorrect": false },
+      { "label": "Être fonctionnaire", "isCorrect": false }
+    ],
+    "explanation": "Il faut remplir les conditions d’éligibilité prévues par la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip008",
+    "question": "Parmi ces autorités, laquelle est élue ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le député", "isCorrect": true },
+      { "label": "Le préfet", "isCorrect": false },
+      { "label": "Le Premier ministre", "isCorrect": false },
+      { "label": "Le procureur", "isCorrect": false }
+    ],
+    "explanation": "Les députés sont élus au suffrage universel.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip009",
+    "question": "Quelles sont les fonctions du maire ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Diriger la commune et appliquer les décisions du conseil municipal", "isCorrect": true },
+      { "label": "Voter les lois nationales", "isCorrect": false },
+      { "label": "Représenter la France à l’étranger", "isCorrect": false },
+      { "label": "Contrôler la Constitution", "isCorrect": false }
+    ],
+    "explanation": "Le maire est l’exécutif de la commune.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "sip010",
+    "question": "À quel âge peut-on devenir électeur ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "18 ans", "isCorrect": true },
+      { "label": "16 ans", "isCorrect": false },
+      { "label": "21 ans", "isCorrect": false },
+      { "label": "25 ans", "isCorrect": false }
+    ],
+    "explanation": "La majorité électorale est fixée à 18 ans.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip011",
+    "question": "En France, est-il obligatoire de voter ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Non", "isCorrect": true },
+      { "label": "Oui, sous peine d’amende", "isCorrect": false },
+      { "label": "Oui, sauf aux municipales", "isCorrect": false },
+      { "label": "Oui, uniquement aux présidentielles", "isCorrect": false }
+    ],
+    "explanation": "Le vote est un droit, pas une obligation.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip012",
+    "question": "A-t-on le droit de ne pas respecter une loi ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Non, la loi s’impose à tous", "isCorrect": true },
+      { "label": "Oui, selon ses convictions", "isCorrect": false },
+      { "label": "Oui, si la loi est injuste", "isCorrect": false },
+      { "label": "Uniquement pour les élus", "isCorrect": false }
+    ],
+    "explanation": "Nul n’est au-dessus de la loi.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip013",
+    "question": "Comment sont désignés les députés ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Par élection au suffrage universel direct", "isCorrect": true },
+      { "label": "Par nomination présidentielle", "isCorrect": false },
+      { "label": "Par tirage au sort", "isCorrect": false },
+      { "label": "Par le Sénat", "isCorrect": false }
+    ],
+    "explanation": "Les députés sont élus par les citoyens.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip014",
+    "question": "Qui vote les lois ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Parlement", "isCorrect": true },
+      { "label": "Le Président de la République", "isCorrect": false },
+      { "label": "Le Gouvernement", "isCorrect": false },
+      { "label": "Le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "explanation": "Le Parlement est composé de l’Assemblée nationale et du Sénat.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip015",
+    "question": "Quels sont les trois pouvoirs issus de la séparation des pouvoirs ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Exécutif, législatif et judiciaire", "isCorrect": true },
+      { "label": "Politique, administratif et financier", "isCorrect": false },
+      { "label": "Présidentiel, ministériel et local", "isCorrect": false },
+      { "label": "National, régional et communal", "isCorrect": false }
+    ],
+    "explanation": "Principe fondamental de l’État de droit.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "sip016",
+    "question": "Qu'est-ce que l'État de droit ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Un État où la loi s’impose à tous, y compris aux gouvernants", "isCorrect": true },
+      { "label": "Un État gouverné par le Président seul", "isCorrect": false },
+      { "label": "Un État sans Constitution", "isCorrect": false },
+      { "label": "Un État où la loi est facultative", "isCorrect": false }
+    ],
+    "explanation": "Les pouvoirs publics sont soumis au droit.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip017",
+    "question": "Quelles sont les durées du mandat du conseil municipal et du maire ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "6 ans pour le conseil municipal et le maire", "isCorrect": true },
+      { "label": "5 ans pour le conseil municipal et 6 ans pour le maire", "isCorrect": false },
+      { "label": "6 ans pour le conseil municipal et 5 ans pour le maire", "isCorrect": false },
+      { "label": "4 ans pour les deux", "isCorrect": false }
+    ],
+    "explanation": "Le conseil municipal est élu pour 6 ans et élit le maire pour la même durée.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip018",
+    "question": "Qui est élu lors des élections législatives ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Les députés", "isCorrect": true },
+      { "label": "Les sénateurs", "isCorrect": false },
+      { "label": "Les ministres", "isCorrect": false },
+      { "label": "Les conseillers régionaux", "isCorrect": false }
+    ],
+    "explanation": "Les élections législatives permettent d’élire les députés.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip019",
+    "question": "Quelle est la durée du mandat du Président de la République française ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "5 ans", "isCorrect": true },
+      { "label": "7 ans", "isCorrect": false },
+      { "label": "6 ans", "isCorrect": false },
+      { "label": "4 ans", "isCorrect": false }
+    ],
+    "explanation": "Le quinquennat est en vigueur depuis 2000.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip020",
+    "question": "Quelle est la durée du mandat des députés ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "5 ans", "isCorrect": true },
+      { "label": "6 ans", "isCorrect": false },
+      { "label": "4 ans", "isCorrect": false },
+      { "label": "9 ans", "isCorrect": false }
+    ],
+    "explanation": "Les députés sont élus pour 5 ans.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip021",
+    "question": "Quelle est la durée du mandat des sénateurs ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "6 ans", "isCorrect": true },
+      { "label": "5 ans", "isCorrect": false },
+      { "label": "9 ans", "isCorrect": false },
+      { "label": "4 ans", "isCorrect": false }
+    ],
+    "explanation": "Le mandat des sénateurs est renouvelé par moitié tous les 3 ans.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip022",
+    "question": "Qui dirige l'action du gouvernement ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Premier ministre", "isCorrect": true },
+      { "label": "Le Président de la République", "isCorrect": false },
+      { "label": "L’Assemblée nationale", "isCorrect": false },
+      { "label": "Le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "explanation": "C’est une attribution constitutionnelle du Premier ministre.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip023",
+    "question": "En France, est-il possible d’adhérer à un parti politique ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Oui, librement", "isCorrect": true },
+      { "label": "Non, c’est réservé aux élus", "isCorrect": false },
+      { "label": "Oui, uniquement avec autorisation", "isCorrect": false },
+      { "label": "Non, c’est interdit", "isCorrect": false }
+    ],
+    "explanation": "La liberté politique est garantie.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip024",
+    "question": "Qui sanctionne l’auteur d’un vol ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La justice", "isCorrect": true },
+      { "label": "La police", "isCorrect": false },
+      { "label": "Le préfet", "isCorrect": false },
+      { "label": "Le maire", "isCorrect": false }
+    ],
+    "explanation": "La sanction relève de l’autorité judiciaire.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip025",
+    "question": "Qui gère les collèges publics ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le département", "isCorrect": true },
+      { "label": "La région", "isCorrect": false },
+      { "label": "La commune", "isCorrect": false },
+      { "label": "L’État uniquement", "isCorrect": false }
+    ],
+    "explanation": "Les collèges relèvent des départements.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip026",
+    "question": "Qui gère les écoles primaires et maternelles publiques ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La commune", "isCorrect": true },
+      { "label": "Le département", "isCorrect": false },
+      { "label": "La région", "isCorrect": false },
+      { "label": "L’Union européenne", "isCorrect": false }
+    ],
+    "explanation": "Les communes sont responsables des écoles.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "sip027",
+    "question": "Comment sont désignés les maires ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Par élection par les conseillers municipaux", "isCorrect": true },
+      { "label": "Par élection directe des citoyens", "isCorrect": false },
+      { "label": "Par nomination préfectorale", "isCorrect": false },
+      { "label": "Par le Président de la République", "isCorrect": false }
+    ],
+    "explanation": "Le maire est élu par le conseil municipal.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip028",
+    "question": "Quelle collectivité territoriale est responsable des transports régionaux ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La région", "isCorrect": true },
+      { "label": "Le département", "isCorrect": false },
+      { "label": "La commune", "isCorrect": false },
+      { "label": "L’État", "isCorrect": false }
+    ],
+    "explanation": "Les régions gèrent notamment les TER.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip029",
+    "question": "Quelle est une voie possible pour modifier la Constitution ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Par référendum ou par le Parlement réuni en Congrès", "isCorrect": true },
+      { "label": "Par décision du Président seul", "isCorrect": false },
+      { "label": "Par vote du Conseil constitutionnel", "isCorrect": false },
+      { "label": "Par décret ministériel", "isCorrect": false }
+    ],
+    "explanation": "L’article 89 de la Constitution le prévoit.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip030",
+    "question": "Qui assure l’intérim du Président de la République en cas de décès ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Président du Sénat", "isCorrect": true },
+      { "label": "Le Premier ministre", "isCorrect": false },
+      { "label": "Le Président de l’Assemblée nationale", "isCorrect": false },
+      { "label": "Le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "explanation": "Prévu par la Constitution.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip031",
+    "question": "Quel est le rôle du Conseil constitutionnel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Vérifier la conformité des lois à la Constitution", "isCorrect": true },
+      { "label": "Proposer des lois", "isCorrect": false },
+      { "label": "Diriger le gouvernement", "isCorrect": false },
+      { "label": "Juger les infractions pénales", "isCorrect": false }
+    ],
+    "explanation": "Il est le gardien de la Constitution.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "sip032",
+    "question": "Quelle condition est obligatoire pour se présenter à l’élection présidentielle ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Obtenir 500 parrainages d’élus", "isCorrect": true },
+      { "label": "Être député ou sénateur", "isCorrect": false },
+      { "label": "Être chef de parti", "isCorrect": false },
+      { "label": "Être ancien ministre", "isCorrect": false }
+    ],
+    "explanation": "Les parrainages sont obligatoires.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip033",
+    "question": "Combien y a-t-il de départements en France (métropole et outre-mer) ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "101", "isCorrect": true },
+      { "label": "96", "isCorrect": false },
+      { "label": "100", "isCorrect": false },
+      { "label": "104", "isCorrect": false }
+    ],
+    "explanation": "La France compte 101 départements.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip034",
+    "question": "Comment est organisé le découpage administratif de la France ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Communes, départements, régions", "isCorrect": true },
+      { "label": "Communes, cantons, États", "isCorrect": false },
+      { "label": "Régions, provinces, communes", "isCorrect": false },
+      { "label": "Départements, provinces, régions", "isCorrect": false }
+    ],
+    "explanation": "Trois niveaux principaux.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip035",
+    "question": "Qui représente l’État dans un département ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le préfet", "isCorrect": true },
+      { "label": "Le président du conseil départemental", "isCorrect": false },
+      { "label": "Le maire", "isCorrect": false },
+      { "label": "Le procureur", "isCorrect": false }
+    ],
+    "explanation": "Le préfet est le représentant de l’État.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip036",
+    "question": "Quel est le rôle du Président de la République ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Garant des institutions et de la Constitution", "isCorrect": true },
+      { "label": "Voter les lois", "isCorrect": false },
+      { "label": "Diriger l’Assemblée nationale", "isCorrect": false },
+      { "label": "Contrôler les collectivités locales", "isCorrect": false }
+    ],
+    "explanation": "Il veille au fonctionnement régulier des pouvoirs publics.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "sip037",
+    "question": "Quel est le rôle du Premier ministre ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Diriger l’action du gouvernement", "isCorrect": true },
+      { "label": "Représenter la France à l’étranger", "isCorrect": false },
+      { "label": "Vérifier la constitutionnalité des lois", "isCorrect": false },
+      { "label": "Être chef des armées", "isCorrect": false }
+    ],
+    "explanation": "Il conduit la politique de la Nation.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip038",
+    "question": "Quel est le rôle du Défenseur des droits ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Défendre les droits des usagers face aux administrations", "isCorrect": true },
+      { "label": "Rendre la justice pénale", "isCorrect": false },
+      { "label": "Voter les lois", "isCorrect": false },
+      { "label": "Diriger les collectivités territoriales", "isCorrect": false }
+    ],
+    "explanation": "Autorité indépendante.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "sip039",
+    "question": "En quelle année la citoyenneté européenne a-t-elle été créée ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "1992", "isCorrect": true },
+      { "label": "1957", "isCorrect": false },
+      { "label": "2002", "isCorrect": false },
+      { "label": "1986", "isCorrect": false }
+    ],
+    "explanation": "Créée par le traité de Maastricht.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip040",
+    "question": "Quel est le dernier État à avoir intégré l’Union européenne en 2013 ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La Croatie", "isCorrect": true },
+      { "label": "La Roumanie", "isCorrect": false },
+      { "label": "La Bulgarie", "isCorrect": false },
+      { "label": "La Slovénie", "isCorrect": false }
+    ],
+    "explanation": "La Croatie a rejoint l’UE en 2013.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip041",
+    "question": "Qui a composé l’hymne de l’Union européenne ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Ludwig van Beethoven", "isCorrect": true },
+      { "label": "Wolfgang Amadeus Mozart", "isCorrect": false },
+      { "label": "Johann Sebastian Bach", "isCorrect": false },
+      { "label": "Joseph Haydn", "isCorrect": false }
+    ],
+    "explanation": "Il s’agit de l’Ode à la joie.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip042",
+    "question": "Quand est célébrée la Journée de l’Europe ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le 9 mai", "isCorrect": true },
+      { "label": "Le 25 mars", "isCorrect": false },
+      { "label": "Le 1er janvier", "isCorrect": false },
+      { "label": "Le 12 décembre", "isCorrect": false }
+    ],
+    "explanation": "Date de la déclaration Schuman.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip043",
+    "question": "Où est le siège de la Banque centrale européenne ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Francfort", "isCorrect": true },
+      { "label": "Bruxelles", "isCorrect": false },
+      { "label": "Strasbourg", "isCorrect": false },
+      { "label": "Luxembourg", "isCorrect": false }
+    ],
+    "explanation": "La BCE est basée à Francfort.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip044",
+    "question": "Où est le siège de la Commission européenne ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Bruxelles", "isCorrect": true },
+      { "label": "Strasbourg", "isCorrect": false },
+      { "label": "Luxembourg", "isCorrect": false },
+      { "label": "Francfort", "isCorrect": false }
+    ],
+    "explanation": "La Commission siège principalement à Bruxelles.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "sip045",
+    "question": "Qui siège au Parlement européen ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Les députés européens élus", "isCorrect": true },
+      { "label": "Les chefs d’État", "isCorrect": false },
+      { "label": "Les commissaires européens", "isCorrect": false },
+      { "label": "Les ministres nationaux", "isCorrect": false }
+    ],
+    "explanation": "Ils sont élus au suffrage universel.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip046",
+    "question": "Les citoyens de l’Union européenne peuvent-ils voter aux élections locales dans un autre pays de l’Union ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Oui, aux élections municipales et européennes", "isCorrect": true },
+      { "label": "Non, jamais", "isCorrect": false },
+      { "label": "Oui, à toutes les élections", "isCorrect": false },
+      { "label": "Uniquement aux législatives", "isCorrect": false }
+    ],
+    "explanation": "Droit lié à la citoyenneté européenne.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip047",
+    "question": "Combien d’États font partie de l’Union européenne au 1er janvier 2025 ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "27", "isCorrect": true },
+      { "label": "28", "isCorrect": false },
+      { "label": "26", "isCorrect": false },
+      { "label": "25", "isCorrect": false }
+    ],
+    "explanation": "Le Royaume-Uni a quitté l’UE.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip048",
+    "question": "En quelle année le traité de Maastricht a-t-il été signé ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "1992", "isCorrect": true },
+      { "label": "1957", "isCorrect": false },
+      { "label": "2007", "isCorrect": false },
+      { "label": "1986", "isCorrect": false }
+    ],
+    "explanation": "Il marque la naissance de l’Union européenne.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip049",
+    "question": "Quel traité concerne la construction de l’Union européenne ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le traité de Rome", "isCorrect": true },
+      { "label": "Le traité de Versailles", "isCorrect": false },
+      { "label": "Le traité de Schengen", "isCorrect": false },
+      { "label": "Le traité de Nice", "isCorrect": false }
+    ],
+    "explanation": "Le traité de Rome fonde la CEE.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip050",
+    "question": "Quel État a quitté l’Union européenne en 2020 ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le Royaume-Uni", "isCorrect": true },
+      { "label": "La Suisse", "isCorrect": false },
+      { "label": "La Norvège", "isCorrect": false },
+      { "label": "L’Islande", "isCorrect": false }
+    ],
+    "explanation": "Il s’agit du Brexit.",
+    "difficulty": "easy"
+  },
+
+  {
+    "id": "sip051",
+    "question": "Quelle est la devise de l’Union européenne ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Unie dans la diversité", "isCorrect": true },
+      { "label": "Liberté, égalité, fraternité", "isCorrect": false },
+      { "label": "Paix et prospérité", "isCorrect": false },
+      { "label": "Solidarité européenne", "isCorrect": false }
+    ],
+    "explanation": "Devise officielle de l’UE.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip052",
+    "question": "Quel est l’hymne de l’Union européenne ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "L’Ode à la joie", "isCorrect": true },
+      { "label": "La Marseillaise", "isCorrect": false },
+      { "label": "L’Hymne à la liberté", "isCorrect": false },
+      { "label": "Le Chant des Européens", "isCorrect": false }
+    ],
+    "explanation": "Extrait de la 9e symphonie de Beethoven.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sip053",
+    "question": "De quoi est composé le drapeau européen ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "12 étoiles dorées sur fond bleu", "isCorrect": true },
+      { "label": "Une étoile par État membre", "isCorrect": false },
+      { "label": "Un cercle de drapeaux nationaux", "isCorrect": false },
+      { "label": "Des bandes bleues et jaunes", "isCorrect": false }
+    ],
+    "explanation": "Les étoiles symbolisent l’unité, pas le nombre d’États.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "sip054",
+    "question": "Qui élit les députés européens ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Les citoyens de l’Union européenne", "isCorrect": true },
+      { "label": "Les gouvernements nationaux", "isCorrect": false },
+      { "label": "La Commission européenne", "isCorrect": false },
+      { "label": "Le Conseil européen", "isCorrect": false }
+    ],
+    "explanation": "Ils sont élus au suffrage universel direct.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "sip055",
+    "question": "Où est le siège du Parlement européen ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Strasbourg", "isCorrect": true },
+      { "label": "Bruxelles", "isCorrect": false },
+      { "label": "Luxembourg", "isCorrect": false },
+      { "label": "Francfort", "isCorrect": false }
+    ],
+    "explanation": "Les sessions plénières ont lieu à Strasbourg.",
+    "difficulty": "medium"
+  }
+]

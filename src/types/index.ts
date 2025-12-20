@@ -103,6 +103,8 @@ export interface QuizResult {
   passed: boolean;
   timeTaken: number;
   topicPerformance: TopicPerformance[];
+  questions?: Question[];
+  answers?: QuizAnswer[];
 }
 
 export interface TopicPerformance {

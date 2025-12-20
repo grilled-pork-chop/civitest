@@ -12,20 +12,37 @@ export const queryClient = new QueryClient({
   },
 });
 
+
 async function fetchQuestions(): Promise<Question[]> {
-  const response = await fetch('questions.json');
+  const files = [
+    'pv_questions.json',
+    'sip_questions.json',
+    'dd_questions.json',
+    'hgc_questions.json',
+    'vsf_questions.json'
+  ];
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch questions: ${response.statusText}`);
+  try {
+    const fetchPromises = files.map(file => 
+      fetch(file).then(res => {
+        if (!res.ok) throw new Error(`Failed to fetch ${file}`);
+        return res.json();
+      })
+    );
+
+    const results = await Promise.all(fetchPromises);
+
+    const allQuestions = results.flat();
+
+    if (!Array.isArray(allQuestions)) {
+      throw new Error('Invalid questions data: expected an array');
+    }
+
+    return allQuestions as Question[];
+  } catch (error) {
+    console.error("Error loading questions:", error);
+    throw error;
   }
-
-  const data = await response.json();
-
-  if (!Array.isArray(data)) {
-    throw new Error('Invalid questions data: expected an array');
-  }
-
-  return data as Question[];
 }
 
 export function useQuestions() {

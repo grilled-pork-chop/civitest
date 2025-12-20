@@ -24,6 +24,12 @@ export const reviewRoute = createRoute({
   component: ReviewPage,
 });
 
+export const reviewByIdRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/review/$quizId',
+  component: ReviewPage,
+});
+
 export const statsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/stats',
@@ -34,5 +40,6 @@ export const routeTree = rootRoute.addChildren([
   indexRoute,
   quizRoute,
   reviewRoute,
+  reviewByIdRoute,
   statsRoute,
 ]);

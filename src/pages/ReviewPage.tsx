@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from '@tanstack/react-router';
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from '@tanstack/react-router';
 import { useStore } from '@tanstack/react-store';
 import {
   ChevronLeft,
@@ -9,6 +9,7 @@ import {
   CheckCircle,
   XCircle,
   List,
+  AlertCircle,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,18 +27,31 @@ type FilterType = 'all' | 'correct' | 'incorrect';
 
 export function ReviewPage() {
   const navigate = useNavigate();
+  const params = useParams({ strict: false });
+  const quizId = (params as { quizId?: string }).quizId;
+  
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const { data: questions } = useQuestions();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filter, setFilter] = useState<FilterType>('all');
   const [topicFilter, setTopicFilter] = useState<TopicId | 'all'>('all');
+  const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
-    if (!currentQuiz || !currentQuiz.isCompleted) {
+    if (quizId) {
+      const loaded = quizActions.loadQuizForReview(quizId);
+      if (!loaded) {
+        setLoadError(true);
+      }
+    }
+  }, [quizId]);
+
+  useEffect(() => {
+    if (!quizId && (!currentQuiz || !currentQuiz.isCompleted)) {
       navigate({ to: '/' });
     }
-  }, [currentQuiz, navigate]);
+  }, [currentQuiz, navigate, quizId]);
 
   const filteredIndices = currentQuiz
     ? currentQuiz.answers
@@ -86,6 +100,28 @@ export function ReviewPage() {
       navigate({ to: '/quiz' });
     }
   };
+
+  if (loadError) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto px-4">
+          <AlertCircle className="h-16 w-16 text-muted-foreground/50 mx-auto mb-4" />
+          <h2 className="text-xl font-bold mb-2">Quiz non disponible</h2>
+          <p className="text-muted-foreground mb-6">
+            Ce quiz n'est plus disponible pour révision. Les anciens quiz sans données complètes ne peuvent pas être révisés.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button variant="outline" onClick={() => navigate({ to: '/stats' })}>
+              Voir les statistiques
+            </Button>
+            <Button onClick={() => navigate({ to: '/' })}>
+              Retour à l'accueil
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!currentQuiz || !currentQuiz.isCompleted || !currentQuestion || !currentAnswer) {
     return (

@@ -1,0 +1,1238 @@
+[
+  {
+    "id": "hgc001",
+    "question": "Parmi ces textes, lequel a été adopté sous Napoléon Ier ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le Code civil", "isCorrect": true },
+      { "label": "La Déclaration des droits de l’Homme", "isCorrect": false },
+      { "label": "La Constitution de 1958", "isCorrect": false },
+      { "label": "La loi de 1905", "isCorrect": false }
+    ],
+    "explanation": "Le Code civil est promulgué en 1804.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgc002",
+    "question": "Qui a été président de la Ve République ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Charles de Gaulle", "isCorrect": true },
+      { "label": "Napoléon Bonaparte", "isCorrect": false },
+      { "label": "Jules Ferry", "isCorrect": false },
+      { "label": "Louis XIV", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Il est le premier président de la Ve République."
+  },
+  {
+    "id": "hgc003",
+    "question": "Quel est l'objectif des lois scolaires de la IIIe République ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Rendre l’école gratuite, laïque et obligatoire", "isCorrect": true },
+      { "label": "Former uniquement les élites", "isCorrect": false },
+      { "label": "Renforcer l’enseignement religieux", "isCorrect": false },
+      { "label": "Supprimer l’école privée", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Ces lois sont portées par Jules Ferry."
+  },
+  {
+    "id": "hgc004",
+    "question": "Que signifie la date du 14 juillet pour les Français ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La prise de la Bastille en 1789", "isCorrect": true },
+      { "label": "La proclamation de la République", "isCorrect": false },
+      { "label": "La fin de la Seconde Guerre mondiale", "isCorrect": false },
+      { "label": "La signature de la Constitution", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "C’est la fête nationale."
+  },
+  {
+    "id": "hgc005",
+    "question": "Pourquoi l’année 1958 est-elle importante pour la France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Naissance de la Ve République", "isCorrect": true },
+      { "label": "Fin de la monarchie", "isCorrect": false },
+      { "label": "Création de l’Union européenne", "isCorrect": false },
+      { "label": "Abolition de la peine de mort", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "La Constitution de la Ve République est adoptée."
+  },
+
+  {
+    "id": "hgc006",
+    "question": "Quel pays est un pays fondateur de l’Union européenne ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La France", "isCorrect": true },
+      { "label": "L’Espagne", "isCorrect": false },
+      { "label": "La Croatie", "isCorrect": false },
+      { "label": "La Suède", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "La France fait partie des six pays fondateurs."
+  },
+  {
+    "id": "hgc007",
+    "question": "Simone Veil est une figure importante de l’histoire française. Elle a notamment :",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Fait adopter la loi dépénalisant l’avortement", "isCorrect": true },
+      { "label": "Fondé la Sécurité sociale", "isCorrect": false },
+      { "label": "Rédigé le Code civil", "isCorrect": false },
+      { "label": "Dirigé la Résistance", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "La loi Veil est votée en 1975."
+  },
+  {
+    "id": "hgc008",
+    "question": "Dans quelle région se situent des plages du Débarquement ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Normandie", "isCorrect": true },
+      { "label": "La Bretagne", "isCorrect": false },
+      { "label": "Les Hauts-de-France", "isCorrect": false },
+      { "label": "La Provence", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Le Débarquement a lieu le 6 juin 1944."
+  },
+
+  {
+    "id": "hgc009",
+    "question": "Dans quelle ville les rois de France étaient-ils couronnés ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Reims", "isCorrect": true },
+      { "label": "Paris", "isCorrect": false },
+      { "label": "Versailles", "isCorrect": false },
+      { "label": "Orléans", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Les sacres avaient lieu à la cathédrale de Reims."
+  },
+  {
+    "id": "hgc010",
+    "question": "Quel roi a été guillotiné pendant la Révolution française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Louis XVI", "isCorrect": true },
+      { "label": "Louis XIV", "isCorrect": false },
+      { "label": "Napoléon Ier", "isCorrect": false },
+      { "label": "Charles X", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Il est exécuté en 1793."
+  },
+
+  {
+    "id": "hgc011",
+    "question": "En quelle année a débuté la Révolution française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1789", "isCorrect": true },
+      { "label": "1792", "isCorrect": false },
+      { "label": "1776", "isCorrect": false },
+      { "label": "1804", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "1789 marque la prise de la Bastille."
+  },
+  {
+    "id": "hgc012",
+    "question": "En quelle année Napoléon Ier est-il devenu empereur ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1804", "isCorrect": true },
+      { "label": "1799", "isCorrect": false },
+      { "label": "1815", "isCorrect": false },
+      { "label": "1789", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Il est sacré empereur à Notre-Dame."
+  },
+
+  {
+    "id": "hgc013",
+    "question": "Quel personnage est lié à la République française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Marianne", "isCorrect": true },
+      { "label": "Jeanne d’Arc", "isCorrect": false },
+      { "label": "Louis XIV", "isCorrect": false },
+      { "label": "Napoléon III", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Marianne symbolise la République."
+  },
+
+  {
+    "id": "hgc014",
+    "question": "De quand date l’appel du général de Gaulle à la Résistance ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "18 juin 1940", "isCorrect": true },
+      { "label": "8 mai 1945", "isCorrect": false },
+      { "label": "6 juin 1944", "isCorrect": false },
+      { "label": "11 novembre 1918", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Discours prononcé depuis Londres."
+  },
+
+  {
+    "id": "hgc015",
+    "question": "Qu’est-ce que la Shoah ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L’extermination des Juifs par les nazis", "isCorrect": true },
+      { "label": "Une bataille de la Seconde Guerre mondiale", "isCorrect": false },
+      { "label": "Une résistance armée", "isCorrect": false },
+      { "label": "Un traité international", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "C’est un génocide."
+  },
+
+  {
+    "id": "hgc016",
+    "question": "Quel pays a été une colonie française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L’Algérie", "isCorrect": true },
+      { "label": "L’Italie", "isCorrect": false },
+      { "label": "L’Allemagne", "isCorrect": false },
+      { "label": "La Suède", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "L’Algérie a été colonie française jusqu’en 1962."
+  },
+
+  {
+    "id": "hgc017",
+    "question": "Qui a rendu l’école gratuite, laïque et obligatoire ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Jules Ferry", "isCorrect": true },
+      { "label": "Napoléon Ier", "isCorrect": false },
+      { "label": "Charles de Gaulle", "isCorrect": false },
+      { "label": "Victor Hugo", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Lois scolaires de la IIIe République."
+  },
+
+  {
+    "id": "hgc018",
+    "question": "Depuis quand le président est-il élu au suffrage universel direct ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1962", "isCorrect": true },
+      { "label": "1958", "isCorrect": false },
+      { "label": "1946", "isCorrect": false },
+      { "label": "1981", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Réforme voulue par de Gaulle."
+  },
+
+  {
+    "id": "hgc019",
+    "question": "En quelle année l’Union européenne a-t-elle été fondée ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1992", "isCorrect": true },
+      { "label": "1951", "isCorrect": false },
+      { "label": "1957", "isCorrect": false },
+      { "label": "2002", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Traité de Maastricht."
+  },
+
+  {
+    "id": "hgc020",
+    "question": "Quand a eu lieu la Seconde Guerre mondiale ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1939–1945", "isCorrect": true },
+      { "label": "1914–1918", "isCorrect": false },
+      { "label": "1940–1944", "isCorrect": false },
+      { "label": "1936–1939", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Conflit mondial majeur."
+  },
+
+  {
+    "id": "hgc021",
+    "question": "Quand a eu lieu la Première Guerre mondiale ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1914–1918", "isCorrect": true },
+      { "label": "1939–1945", "isCorrect": false },
+      { "label": "1905–1910", "isCorrect": false },
+      { "label": "1920–1925", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Elle s’achève par l’armistice du 11 novembre 1918."
+  },
+
+  {
+    "id": "hgc022",
+    "question": "Sous quel président la peine de mort a-t-elle été abolie ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "François Mitterrand", "isCorrect": true },
+      { "label": "Charles de Gaulle", "isCorrect": false },
+      { "label": "Jacques Chirac", "isCorrect": false },
+      { "label": "Valéry Giscard d’Estaing", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Abolition en 1981."
+  },
+
+  {
+    "id": "hgc023",
+    "question": "Que célèbre-t-on le 8 mai ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La victoire des Alliés en 1945", "isCorrect": true },
+      { "label": "La prise de la Bastille", "isCorrect": false },
+      { "label": "L’armistice de 1918", "isCorrect": false },
+      { "label": "La création de l’UE", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Fin de la Seconde Guerre mondiale en Europe."
+  },
+
+  {
+    "id": "hgc024",
+    "question": "Quelle est la première étape de la construction européenne en 1951 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La CECA", "isCorrect": true },
+      { "label": "L’Union européenne", "isCorrect": false },
+      { "label": "Le traité de Lisbonne", "isCorrect": false },
+      { "label": "L’euro", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Communauté européenne du charbon et de l’acier."
+  },
+
+  {
+    "id": "hgc025",
+    "question": "Qui était une figure de la Résistance française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Jean Moulin", "isCorrect": true },
+      { "label": "Philippe Pétain", "isCorrect": false },
+      { "label": "Napoléon III", "isCorrect": false },
+      { "label": "Louis XVI", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Il coordonne la Résistance intérieure."
+  },
+
+  {
+    "id": "hgc026",
+    "question": "À quoi correspond le 11 novembre ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L’armistice de 1918", "isCorrect": true },
+      { "label": "La fin de la Seconde Guerre mondiale", "isCorrect": false },
+      { "label": "La proclamation de la République", "isCorrect": false },
+      { "label": "La Libération de Paris", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Fin de la Première Guerre mondiale."
+  },
+
+  {
+    "id": "hgc027",
+    "question": "Depuis quand l’esclavage est-il aboli définitivement en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1848", "isCorrect": true },
+      { "label": "1789", "isCorrect": false },
+      { "label": "1815", "isCorrect": false },
+      { "label": "1905", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Abolition sous la IIe République."
+  },
+
+  {
+    "id": "hgc028",
+    "question": "Qui a aboli l’esclavage en France en 1848 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Victor Schoelcher", "isCorrect": true },
+      { "label": "Jules Ferry", "isCorrect": false },
+      { "label": "Robespierre", "isCorrect": false },
+      { "label": "Napoléon Ier", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Il est à l’origine du décret d’abolition."
+  },
+
+  {
+    "id": "hgc029",
+    "question": "Depuis quelle année l’école publique est-elle gratuite ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1881", "isCorrect": true },
+      { "label": "1905", "isCorrect": false },
+      { "label": "1789", "isCorrect": false },
+      { "label": "1945", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Loi Ferry de 1881."
+  },
+
+  {
+    "id": "hgc030",
+    "question": "En 1944, qu’est-ce qui a changé pour les femmes en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Elles obtiennent le droit de vote", "isCorrect": true },
+      { "label": "Elles deviennent éligibles", "isCorrect": false },
+      { "label": "Elles accèdent à l’université", "isCorrect": false },
+      { "label": "Elles peuvent travailler librement", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Le droit de vote est accordé en 1944."
+  },
+
+  {
+    "id": "hgc031",
+    "question": "Quelle organisation internationale est créée en 1945 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L’Organisation des Nations unies", "isCorrect": true },
+      { "label": "L’Union européenne", "isCorrect": false },
+      { "label": "L’OTAN", "isCorrect": false },
+      { "label": "Le Conseil de l’Europe", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Créée après la Seconde Guerre mondiale."
+  },
+
+  {
+    "id": "hgc032",
+    "question": "En quelle année l’euro devient-il la monnaie officielle en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "2002", "isCorrect": true },
+      { "label": "1999", "isCorrect": false },
+      { "label": "2000", "isCorrect": false },
+      { "label": "1992", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Mise en circulation des pièces et billets."
+  },
+
+  {
+    "id": "hgc033",
+    "question": "À quelle date Paris a-t-elle été libérée en 1944 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "25 août 1944", "isCorrect": true },
+      { "label": "6 juin 1944", "isCorrect": false },
+      { "label": "8 mai 1945", "isCorrect": false },
+      { "label": "18 juin 1940", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Libération de la capitale."
+  },
+
+  {
+    "id": "hgc034",
+    "question": "Quel port français était central dans la traite négrière ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Nantes", "isCorrect": true },
+      { "label": "Marseille", "isCorrect": false },
+      { "label": "Bordeaux", "isCorrect": false },
+      { "label": "Le Havre", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Nantes est le principal port négrier."
+  },
+
+  {
+    "id": "hgc035",
+    "question": "Quel philosophe des Lumières a dénoncé l’esclavage ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Montesquieu", "isCorrect": true },
+      { "label": "Rousseau", "isCorrect": false },
+      { "label": "Descartes", "isCorrect": false },
+      { "label": "Pascal", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Il critique l’esclavage dans L’Esprit des lois."
+  },
+
+  {
+    "id": "hgc036",
+    "question": "Quelle œuvre a été écrite par Victor Hugo ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Les Misérables", "isCorrect": true },
+      { "label": "Madame Bovary", "isCorrect": false },
+      { "label": "L’Étranger", "isCorrect": false },
+      { "label": "Candide", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Publié en 1862."
+  },
+
+  {
+    "id": "hgc037",
+    "question": "Quel peintre est français ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Claude Monet", "isCorrect": true },
+      { "label": "Pablo Picasso", "isCorrect": false },
+      { "label": "Salvador Dalí", "isCorrect": false },
+      { "label": "Vincent Van Gogh", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Monet est un peintre impressionniste français."
+  },
+
+  {
+    "id": "hgc038",
+    "question": "Quel plat est une spécialité française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le bœuf bourguignon", "isCorrect": true },
+      { "label": "La paella", "isCorrect": false },
+      { "label": "Les sushis", "isCorrect": false },
+      { "label": "Le couscous", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Plat traditionnel français."
+  },
+
+  {
+    "id": "hgc039",
+    "question": "Qui était Marie Curie ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une scientifique et double prix Nobel", "isCorrect": true },
+      { "label": "Une résistante", "isCorrect": false },
+      { "label": "Une écrivaine", "isCorrect": false },
+      { "label": "Une femme politique", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Prix Nobel de physique et de chimie."
+  },
+
+  {
+    "id": "hgc040",
+    "question": "Qui a peint « La Liberté guidant le peuple » ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Eugène Delacroix", "isCorrect": true },
+      { "label": "Claude Monet", "isCorrect": false },
+      { "label": "Gustave Courbet", "isCorrect": false },
+      { "label": "Paul Cézanne", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Tableau emblématique de 1830."
+  },
+
+  {
+    "id": "hgc041",
+    "question": "Dans quel musée parisien est exposée la Joconde ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le musée du Louvre", "isCorrect": true },
+      { "label": "Le musée d’Orsay", "isCorrect": false },
+      { "label": "Le Centre Pompidou", "isCorrect": false },
+      { "label": "Le musée Rodin", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Œuvre de Léonard de Vinci."
+  },
+
+  {
+    "id": "hgc042",
+    "question": "Quel château près de Paris symbolise le pouvoir de Louis XIV ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le château de Versailles", "isCorrect": true },
+      { "label": "Le château de Fontainebleau", "isCorrect": false },
+      { "label": "Le Louvre", "isCorrect": false },
+      { "label": "Chambord", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Résidence du roi Soleil."
+  },
+
+  {
+    "id": "hgc043",
+    "question": "Où peut-on voir des peintures préhistoriques en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Dans la grotte de Lascaux", "isCorrect": true },
+      { "label": "À Versailles", "isCorrect": false },
+      { "label": "À Carnac", "isCorrect": false },
+      { "label": "À Fontainebleau", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Peintures datant du Paléolithique."
+  },
+
+  {
+    "id": "hgc044",
+    "question": "Quel peintre a réalisé les Nymphéas ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Claude Monet", "isCorrect": true },
+      { "label": "Auguste Renoir", "isCorrect": false },
+      { "label": "Edgar Degas", "isCorrect": false },
+      { "label": "Paul Gauguin", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Série impressionniste célèbre."
+  },
+
+  {
+    "id": "hgc045",
+    "question": "Quand peut-on visiter gratuitement de nombreux musées en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Lors des Journées européennes du patrimoine", "isCorrect": true },
+      { "label": "Le 14 juillet uniquement", "isCorrect": false },
+      { "label": "Tous les dimanches", "isCorrect": false },
+      { "label": "Le 1er janvier", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Événement culturel annuel."
+  },
+
+  {
+    "id": "hgc046",
+    "question": "Que symbolise le 1er mai ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La fête du Travail", "isCorrect": true },
+      { "label": "La fête nationale", "isCorrect": false },
+      { "label": "La Libération", "isCorrect": false },
+      { "label": "La République", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Journée internationale des travailleurs."
+  },
+
+  {
+    "id": "hgc047",
+    "question": "Qui était Rouget de Lisle ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le compositeur de la Marseillaise", "isCorrect": true },
+      { "label": "Un philosophe des Lumières", "isCorrect": false },
+      { "label": "Un peintre impressionniste", "isCorrect": false },
+      { "label": "Un résistant", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Auteur de l’hymne national."
+  },
+
+  {
+    "id": "hgc048",
+    "question": "À quelle occasion la tour Eiffel a-t-elle été construite ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L’Exposition universelle de 1889", "isCorrect": true },
+      { "label": "La Révolution française", "isCorrect": false },
+      { "label": "La Libération de Paris", "isCorrect": false },
+      { "label": "Les Jeux olympiques", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Elle célèbre le centenaire de 1789."
+  },
+
+  {
+    "id": "hgc049",
+    "question": "Quelle chaîne de montagnes se situe entre la France et l’Italie ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Les Alpes", "isCorrect": true },
+      { "label": "Les Pyrénées", "isCorrect": false },
+      { "label": "Le Jura", "isCorrect": false },
+      { "label": "Le Massif central", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Frontière naturelle."
+  },
+
+  {
+    "id": "hgc050",
+    "question": "Qui était Molière ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un dramaturge et comédien", "isCorrect": true },
+      { "label": "Un peintre", "isCorrect": false },
+      { "label": "Un philosophe", "isCorrect": false },
+      { "label": "Un homme politique", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Auteur de comédies classiques."
+  },
+
+  {
+    "id": "hgc051",
+    "question": "Qui était Charles Baudelaire ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un poète", "isCorrect": true },
+      { "label": "Un peintre", "isCorrect": false },
+      { "label": "Un musicien", "isCorrect": false },
+      { "label": "Un homme politique", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Auteur des Fleurs du mal."
+  },
+
+  {
+    "id": "hgc052",
+    "question": "Qui était George Sand ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une écrivaine", "isCorrect": true },
+      { "label": "Une reine", "isCorrect": false },
+      { "label": "Une peintre", "isCorrect": false },
+      { "label": "Une scientifique", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Figure littéraire du XIXe siècle."
+  },
+
+  {
+    "id": "hgc053",
+    "question": "Qui était Simone de Beauvoir ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une philosophe et écrivaine", "isCorrect": true },
+      { "label": "Une résistante", "isCorrect": false },
+      { "label": "Une peintre", "isCorrect": false },
+      { "label": "Une scientifique", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Figure du féminisme."
+  },
+
+  {
+    "id": "hgc054",
+    "question": "Qui était Albert Camus ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un écrivain et philosophe", "isCorrect": true },
+      { "label": "Un homme politique", "isCorrect": false },
+      { "label": "Un peintre", "isCorrect": false },
+      { "label": "Un scientifique", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Prix Nobel de littérature."
+  },
+
+  {
+    "id": "hgc055",
+    "question": "Qui était Marguerite Yourcenar ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une écrivaine", "isCorrect": true },
+      { "label": "Une peintre", "isCorrect": false },
+      { "label": "Une résistante", "isCorrect": false },
+      { "label": "Une scientifique", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Première femme à l’Académie française."
+  },
+
+  {
+    "id": "hgc056",
+    "question": "Qui était Paul Cézanne ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un peintre", "isCorrect": true },
+      { "label": "Un écrivain", "isCorrect": false },
+      { "label": "Un sculpteur", "isCorrect": false },
+      { "label": "Un musicien", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Peintre post-impressionniste."
+  },
+
+  {
+    "id": "hgc057",
+    "question": "Qui était Auguste Rodin ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un sculpteur", "isCorrect": true },
+      { "label": "Un peintre", "isCorrect": false },
+      { "label": "Un écrivain", "isCorrect": false },
+      { "label": "Un architecte", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Auteur du Penseur."
+  },
+
+  {
+    "id": "hgc058",
+    "question": "Qui était un célèbre compositeur français ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Claude Debussy", "isCorrect": true },
+      { "label": "Mozart", "isCorrect": false },
+      { "label": "Beethoven", "isCorrect": false },
+      { "label": "Bach", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Compositeur impressionniste."
+  },
+
+  {
+    "id": "hgc059",
+    "question": "Qui était Auguste Renoir ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un peintre impressionniste", "isCorrect": true },
+      { "label": "Un écrivain", "isCorrect": false },
+      { "label": "Un musicien", "isCorrect": false },
+      { "label": "Un sculpteur", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Figure de l’impressionnisme."
+  },
+
+  {
+    "id": "hgc060",
+    "question": "Quel musée est situé à Paris ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le musée d’Orsay", "isCorrect": true },
+      { "label": "Le Prado", "isCorrect": false },
+      { "label": "Le British Museum", "isCorrect": false },
+      { "label": "Le MoMA", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Ancienne gare transformée en musée."
+  },
+
+  {
+    "id": "hgc061",
+    "question": "Quel monument historique se trouve sur une île en Normandie ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le Mont-Saint-Michel", "isCorrect": true },
+      { "label": "La citadelle de Carcassonne", "isCorrect": false },
+      { "label": "Le château de Chambord", "isCorrect": false },
+      { "label": "Le Pont du Gard", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Site classé au patrimoine mondial."
+  },
+
+  {
+    "id": "hgc062",
+    "question": "Quelle ville française est une grande métropole ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Lyon", "isCorrect": true },
+      { "label": "Annecy", "isCorrect": false },
+      { "label": "Albi", "isCorrect": false },
+      { "label": "Chartres", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Deuxième aire urbaine."
+  },
+
+  {
+    "id": "hgc063",
+    "question": "Quelle île fait partie des Antilles françaises ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Martinique", "isCorrect": true },
+      { "label": "La Réunion", "isCorrect": false },
+      { "label": "Mayotte", "isCorrect": false },
+      { "label": "La Corse", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Située dans la mer des Caraïbes."
+  },
+
+  {
+    "id": "hgc064",
+    "question": "Quelle île est française ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Corse", "isCorrect": true },
+      { "label": "La Sardaigne", "isCorrect": false },
+      { "label": "La Sicile", "isCorrect": false },
+      { "label": "Malte", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Île de Méditerranée."
+  },
+
+  {
+    "id": "hgc065",
+    "question": "Quelle est la plus haute montagne de France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le mont Blanc", "isCorrect": true },
+      { "label": "Le mont Ventoux", "isCorrect": false },
+      { "label": "Le pic du Midi", "isCorrect": false },
+      { "label": "La Meije", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Point culminant des Alpes."
+  },
+
+  {
+    "id": "hgc066",
+    "question": "Quelle île française se situe dans l’océan Indien ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Réunion", "isCorrect": true },
+      { "label": "La Guadeloupe", "isCorrect": false },
+      { "label": "La Martinique", "isCorrect": false },
+      { "label": "Saint-Pierre-et-Miquelon", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Département d’outre-mer."
+  },
+
+  {
+    "id": "hgc067",
+    "question": "Quel département français a une frontière avec le Brésil ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Guyane", "isCorrect": true },
+      { "label": "La Martinique", "isCorrect": false },
+      { "label": "La Réunion", "isCorrect": false },
+      { "label": "Mayotte", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Département d’Amérique du Sud."
+  },
+
+  {
+    "id": "hgc068",
+    "question": "De quelle ville française décolle la fusée Ariane ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Kourou", "isCorrect": true },
+      { "label": "Toulouse", "isCorrect": false },
+      { "label": "Paris", "isCorrect": false },
+      { "label": "Bordeaux", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Centre spatial guyanais."
+  },
+
+  {
+    "id": "hgc069",
+    "question": "Quelle mer ou océan borde la France métropolitaine ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "L’océan Atlantique", "isCorrect": true },
+      { "label": "La mer Noire", "isCorrect": false },
+      { "label": "La mer Rouge", "isCorrect": false },
+      { "label": "L’océan Indien", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "À l’ouest du territoire."
+  },
+
+  {
+    "id": "hgc070",
+    "question": "Quelle mer se situe entre la France et l’Angleterre ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Manche", "isCorrect": true },
+      { "label": "La mer du Nord", "isCorrect": false },
+      { "label": "La Méditerranée", "isCorrect": false },
+      { "label": "La Baltique", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Bras de l’Atlantique."
+  },
+
+  {
+    "id": "hgc071",
+    "question": "Quelle île est un département d’outre-mer ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Guadeloupe", "isCorrect": true },
+      { "label": "La Corse", "isCorrect": false },
+      { "label": "La Sardaigne", "isCorrect": false },
+      { "label": "Madère", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "DOM situé aux Antilles."
+  },
+
+  {
+    "id": "hgc072",
+    "question": "Qu’est-ce que la France d’outre-mer ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Des territoires français situés hors de l’Europe", "isCorrect": true },
+      { "label": "Des colonies", "isCorrect": false },
+      { "label": "Des États indépendants", "isCorrect": false },
+      { "label": "Des régions européennes", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Ils font partie intégrante de la République."
+  },
+
+  {
+    "id": "hgc073",
+    "question": "Quelle est la population approximative de la France en 2025 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Environ 68 millions d’habitants", "isCorrect": true },
+      { "label": "50 millions", "isCorrect": false },
+      { "label": "75 millions", "isCorrect": false },
+      { "label": "90 millions", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Donnée démographique récente."
+  },
+
+  {
+    "id": "hgc074",
+    "question": "Quel est le principal port maritime de France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Marseille", "isCorrect": true },
+      { "label": "Nantes", "isCorrect": false },
+      { "label": "Le Havre", "isCorrect": false },
+      { "label": "Bordeaux", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Port de Marseille-Fos."
+  },
+
+  {
+    "id": "hgc075",
+    "question": "Combien y a-t-il de régions en France métropolitaine ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "13", "isCorrect": true },
+      { "label": "12", "isCorrect": false },
+      { "label": "18", "isCorrect": false },
+      { "label": "22", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Depuis la réforme territoriale de 2016."
+  },
+
+  {
+    "id": "hgc076",
+    "question": "Quelle chaîne de montagnes sépare la France et l’Espagne ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Les Pyrénées", "isCorrect": true },
+      { "label": "Les Alpes", "isCorrect": false },
+      { "label": "Le Jura", "isCorrect": false },
+      { "label": "Les Vosges", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Frontière naturelle sud."
+  },
+
+  {
+    "id": "hgc077",
+    "question": "Quelle île française se situe au sud-est de l’Afrique ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Réunion", "isCorrect": true },
+      { "label": "La Martinique", "isCorrect": false },
+      { "label": "La Guadeloupe", "isCorrect": false },
+      { "label": "Saint-Martin", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Île de l’océan Indien."
+  },
+
+  {
+    "id": "hgc078",
+    "question": "Quel est le chef-lieu de la région Auvergne-Rhône-Alpes ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Lyon", "isCorrect": true },
+      { "label": "Clermont-Ferrand", "isCorrect": false },
+      { "label": "Grenoble", "isCorrect": false },
+      { "label": "Saint-Étienne", "isCorrect": false }
+    ],
+    "difficulty": "medium",
+    "explanation": "Lyon est la capitale régionale."
+  },
+
+  {
+    "id": "hgc079",
+    "question": "Quel est le chef-lieu de la région Bretagne ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Rennes", "isCorrect": true },
+      { "label": "Brest", "isCorrect": false },
+      { "label": "Quimper", "isCorrect": false },
+      { "label": "Saint-Malo", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Rennes est la capitale régionale."
+  },
+
+  {
+    "id": "hgc080",
+    "question": "Quel est le chef-lieu de la région Provence-Alpes-Côte d’Azur ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Marseille", "isCorrect": true },
+      { "label": "Nice", "isCorrect": false },
+      { "label": "Toulon", "isCorrect": false },
+      { "label": "Avignon", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Marseille est capitale régionale."
+  },
+
+  {
+    "id": "hgc081",
+    "question": "Quel est le 101e département français depuis 2011 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Mayotte", "isCorrect": true },
+      { "label": "La Réunion", "isCorrect": false },
+      { "label": "La Guyane", "isCorrect": false },
+      { "label": "La Martinique", "isCorrect": false }
+    ],
+    "difficulty": "hard",
+    "explanation": "Mayotte devient département en 2011."
+  },
+
+  {
+    "id": "hgc082",
+    "question": "Quelle région est réputée pour ses stations de ski ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Auvergne-Rhône-Alpes", "isCorrect": true },
+      { "label": "Bretagne", "isCorrect": false },
+      { "label": "Normandie", "isCorrect": false },
+      { "label": "Île-de-France", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Présence des Alpes."
+  },
+
+  {
+    "id": "hgc083",
+    "question": "Quel fleuve traverse Paris ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Seine", "isCorrect": true },
+      { "label": "La Loire", "isCorrect": false },
+      { "label": "Le Rhône", "isCorrect": false },
+      { "label": "La Garonne", "isCorrect": false }
+    ],
+    "difficulty": "easy",
+    "explanation": "Fleuve emblématique de la capitale."
+  }
+]

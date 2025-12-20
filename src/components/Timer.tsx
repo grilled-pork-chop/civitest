@@ -45,7 +45,7 @@ export function Timer({ timeRemaining, totalTime, className }: TimerProps) {
 
       <div className="flex flex-col">
         <span
-          className={cn('text-lg font-mono font-semibold tabular-nums', {
+          className={cn('text-base sm:text-lg font-mono font-semibold tabular-nums', {
             'text-foreground': !isWarning,
             'text-yellow-700': isWarning && !isCritical,
             'text-red-700': isCritical,
@@ -53,7 +53,7 @@ export function Timer({ timeRemaining, totalTime, className }: TimerProps) {
         >
           {formatTime(timeRemaining)}
         </span>
-        <span className="text-xs text-muted-foreground">restant</span>
+        <span className="hidden sm:block text-xs text-muted-foreground">restant</span>
       </div>
 
       <div className="hidden sm:block w-24 h-2 bg-secondary rounded-full overflow-hidden">

@@ -1,0 +1,541 @@
+[
+  {
+    "id": "pv001",
+    "question": "Complétez les paroles de la Marseillaise : « Allons enfants de la patrie… »",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le jour de gloire est arrivé", "isCorrect": true },
+      { "label": "Le temps de la victoire est arrivé", "isCorrect": false },
+      { "label": "L’heure de la liberté est arrivée", "isCorrect": false },
+      { "label": "Le chant de la paix est arrivé", "isCorrect": false }
+    ],
+    "explanation": "Il s’agit du premier vers officiel de l’hymne national français.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pv002",
+    "question": "Dans le cadre d'un entretien d'embauche, que peut-on demander au candidat ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Ses compétences et son expérience professionnelle", "isCorrect": true },
+      { "label": "Sa religion", "isCorrect": false },
+      { "label": "Ses opinions politiques", "isCorrect": false },
+      { "label": "Son orientation sexuelle", "isCorrect": false }
+    ],
+    "explanation": "Les questions doivent être directement liées à l’emploi proposé.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv003",
+    "question": "Déclarer ses revenus aux services fiscaux est :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Une obligation légale", "isCorrect": true },
+      { "label": "Une démarche facultative", "isCorrect": false },
+      { "label": "Une option réservée aux salariés", "isCorrect": false },
+      { "label": "Un droit sans conséquence juridique", "isCorrect": false }
+    ],
+    "explanation": "La déclaration des revenus est obligatoire en France.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv004",
+    "question": "En France, les impôts permettent de financer les dépenses publiques. Quelle proposition est correcte ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Les écoles, les hôpitaux et les services publics", "isCorrect": true },
+      { "label": "Uniquement les salaires des fonctionnaires", "isCorrect": false },
+      { "label": "Uniquement la défense nationale", "isCorrect": false },
+      { "label": "Exclusivement les collectivités locales", "isCorrect": false }
+    ],
+    "explanation": "Les impôts financent l’ensemble des politiques publiques.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv005",
+    "question": "La liberté d'association est :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le droit de créer ou rejoindre une association librement", "isCorrect": true },
+      { "label": "Soumise à une autorisation préalable de l’État", "isCorrect": false },
+      { "label": "Réservée aux citoyens français", "isCorrect": false },
+      { "label": "Limitée aux associations politiques", "isCorrect": false }
+    ],
+    "explanation": "La liberté d’association est garantie par la loi de 1901.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv006",
+    "question": "La liberté d'expression sur les réseaux sociaux en France est :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Encadrée par la loi", "isCorrect": true },
+      { "label": "Totale et sans limite", "isCorrect": false },
+      { "label": "Interdite par principe", "isCorrect": false },
+      { "label": "Réservée aux journalistes", "isCorrect": false }
+    ],
+    "explanation": "La liberté d’expression connaît des limites légales.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv007",
+    "question": "Lequel de ces prénoms évoque un symbole de la République ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Marianne", "isCorrect": true },
+      { "label": "Jeanne", "isCorrect": false },
+      { "label": "Charlotte", "isCorrect": false },
+      { "label": "Louise", "isCorrect": false }
+    ],
+    "explanation": "Marianne est la figure symbolique de la République.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv008",
+    "question": "Lequel de ces symboles représente la République française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Marianne", "isCorrect": true },
+      { "label": "La Tour Eiffel", "isCorrect": false },
+      { "label": "Le Mont-Blanc", "isCorrect": false },
+      { "label": "Le coq gaulois seul", "isCorrect": false }
+    ],
+    "explanation": "Marianne incarne la République et ses valeurs.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv009",
+    "question": "Où peut-on voir la devise de la République ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Sur les bâtiments publics", "isCorrect": true },
+      { "label": "Uniquement sur les billets de banque", "isCorrect": false },
+      { "label": "Seulement à l’Assemblée nationale", "isCorrect": false },
+      { "label": "Uniquement dans les écoles", "isCorrect": false }
+    ],
+    "explanation": "La devise est affichée sur de nombreux édifices publics.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv010",
+    "question": "Lesquels sont des symboles officiels de la République française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le drapeau tricolore, Marianne et la devise", "isCorrect": true },
+      { "label": "La Tour Eiffel et le drapeau", "isCorrect": false },
+      { "label": "Le coq et la Marseillaise uniquement", "isCorrect": false },
+      { "label": "Le drapeau et le Mont-Blanc", "isCorrect": false }
+    ],
+    "explanation": "Ils sont reconnus officiellement par les institutions.",
+    "difficulty": "easy"
+  },
+
+  {
+    "id": "pv011",
+    "question": "Peut-on brûler publiquement un drapeau français ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, c’est une infraction pénale", "isCorrect": true },
+      { "label": "Oui, au nom de la liberté d’expression", "isCorrect": false },
+      { "label": "Oui, uniquement lors d’une manifestation", "isCorrect": false },
+      { "label": "Oui, si le drapeau est personnel", "isCorrect": false }
+    ],
+    "explanation": "L’outrage aux symboles de la République est puni par la loi.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv012",
+    "question": "Quand la Sécurité sociale a-t-elle été établie en France ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "1945", "isCorrect": true },
+      { "label": "1936", "isCorrect": false },
+      { "label": "1958", "isCorrect": false },
+      { "label": "1968", "isCorrect": false }
+    ],
+    "explanation": "Elle est créée à la Libération.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pv013",
+    "question": "Que commémore la fête nationale ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La prise de la Bastille en 1789", "isCorrect": true },
+      { "label": "La proclamation de la République", "isCorrect": false },
+      { "label": "La Déclaration des droits de l’Homme", "isCorrect": false },
+      { "label": "La fin de la monarchie", "isCorrect": false }
+    ],
+    "explanation": "Le 14 juillet symbolise la Révolution française.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv014",
+    "question": "Que porte Marianne sur la tête ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Un bonnet phrygien", "isCorrect": true },
+      { "label": "Une couronne", "isCorrect": false },
+      { "label": "Un béret", "isCorrect": false },
+      { "label": "Un casque", "isCorrect": false }
+    ],
+    "explanation": "Le bonnet phrygien symbolise la liberté.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pv015",
+    "question": "Que signifie le mot « fraternité » dans la devise française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La solidarité entre les citoyens", "isCorrect": true },
+      { "label": "L’égalité économique", "isCorrect": false },
+      { "label": "Une obligation religieuse", "isCorrect": false },
+      { "label": "L’unité politique", "isCorrect": false }
+    ],
+    "explanation": "La fraternité repose sur l’entraide et la cohésion sociale.",
+    "difficulty": "easy"
+  },
+
+  {
+    "id": "pv016",
+    "question": "Quel symbole de la République peut-on voir sur les maillots de l'équipe de France de football ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le coq", "isCorrect": true },
+      { "label": "Marianne", "isCorrect": false },
+      { "label": "Le drapeau tricolore complet", "isCorrect": false },
+      { "label": "La devise", "isCorrect": false }
+    ],
+    "explanation": "Le coq est un symbole national.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pv017",
+    "question": "Quelle est la devise de la République française ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Liberté, Égalité, Fraternité", "isCorrect": true },
+      { "label": "Unité, Justice, Solidarité", "isCorrect": false },
+      { "label": "Travail, Famille, Patrie", "isCorrect": false },
+      { "label": "Paix, Ordre, Progrès", "isCorrect": false }
+    ],
+    "explanation": "Elle figure dans la Constitution.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv018",
+    "question": "Qu'est-ce que la liberté d'association ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le droit de créer ou rejoindre une association", "isCorrect": true },
+      { "label": "Le droit d’imposer une association", "isCorrect": false },
+      { "label": "Une liberté réservée aux Français", "isCorrect": false },
+      { "label": "Un droit soumis à autorisation préalable", "isCorrect": false }
+    ],
+    "explanation": "Elle est garantie par la loi de 1901.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pv019",
+    "question": "Qu'est-ce qu'une liberté ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Un droit reconnu et encadré par la loi", "isCorrect": true },
+      { "label": "Un droit sans aucune limite", "isCorrect": false },
+      { "label": "Une autorisation exceptionnelle", "isCorrect": false },
+      { "label": "Une faveur accordée par l’État", "isCorrect": false }
+    ],
+    "explanation": "Les libertés sont garanties mais réglementées.",
+    "difficulty": "easy"
+  },
+
+  {
+    "id": "pv020",
+    "question": "Selon la Constitution, la France est une république…",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Indivisible, laïque, démocratique et sociale", "isCorrect": true },
+      { "label": "Fédérale et sociale", "isCorrect": false },
+      { "label": "Confessionnelle et démocratique", "isCorrect": false },
+      { "label": "Décentralisée et parlementaire", "isCorrect": false }
+    ],
+    "explanation": "Définition constitutionnelle officielle.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pv021",
+    "question": "Sur quel document peut-on voir Marianne ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Sur des timbres ou des pièces de monnaie", "isCorrect": true },
+      { "label": "Sur le passeport uniquement", "isCorrect": false },
+      { "label": "Sur la carte Vitale", "isCorrect": false },
+      { "label": "Sur le permis de conduire", "isCorrect": false }
+    ],
+    "explanation": "Marianne figure sur plusieurs supports officiels.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pv022",
+    "question": "L’égalité signifie :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’égalité de tous devant la loi", "isCorrect": true },
+      { "label": "L’égalité des situations sociales", "isCorrect": false },
+      { "label": "L’égalité des revenus", "isCorrect": false },
+      { "label": "L’égalité des opinions", "isCorrect": false }
+    ],
+    "explanation": "La loi s’applique à tous de la même manière.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv023",
+    "question": "Une personne peut-elle changer librement de religion en France ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui", "isCorrect": true },
+      { "label": "Non", "isCorrect": false },
+      { "label": "Seulement avec autorisation", "isCorrect": false },
+      { "label": "Uniquement à la majorité", "isCorrect": false }
+    ],
+    "explanation": "La liberté de conscience est garantie.",
+    "difficulty": "easy"
+  },
+
+  {
+    "id": "pv024",
+    "question": "Selon le principe de laïcité, que signifie la neutralité de l'État ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Il ne favorise ni ne combat aucune religion", "isCorrect": true },
+      { "label": "Il interdit toute religion", "isCorrect": false },
+      { "label": "Il soutient les religions majoritaires", "isCorrect": false },
+      { "label": "Il impose une morale religieuse", "isCorrect": false }
+    ],
+    "explanation": "L’État garantit la liberté de conscience.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv025",
+    "question": "Que peut faire un usager du service public dans une mairie ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Être accueilli sans discrimination", "isCorrect": true },
+      { "label": "Imposer ses convictions religieuses", "isCorrect": false },
+      { "label": "Refuser les règles communes", "isCorrect": false },
+      { "label": "Exiger un traitement préférentiel", "isCorrect": false }
+    ],
+    "explanation": "Le service public est neutre et égalitaire.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv026",
+    "question": "En France, il est possible pour l'État de financer :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’entretien des bâtiments religieux historiques", "isCorrect": true },
+      { "label": "Les activités religieuses", "isCorrect": false },
+      { "label": "Le culte", "isCorrect": false },
+      { "label": "La formation religieuse", "isCorrect": false }
+    ],
+    "explanation": "Exception liée au patrimoine.",
+    "difficulty": "easy"
+  },
+
+  {
+    "id": "pv027",
+    "question": "En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "1905", "isCorrect": true },
+      { "label": "1881", "isCorrect": false },
+      { "label": "1914", "isCorrect": false },
+      { "label": "1946", "isCorrect": false }
+    ],
+    "explanation": "Loi fondatrice de la laïcité.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pv028",
+    "question": "Que dit la loi de 1905 ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’État ne reconnaît ni ne finance aucun culte", "isCorrect": true },
+      { "label": "L’État contrôle les religions", "isCorrect": false },
+      { "label": "L’État impose une religion", "isCorrect": false },
+      { "label": "L’État subventionne les cultes", "isCorrect": false }
+    ],
+    "explanation": "Principe fondamental de la laïcité.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv029",
+    "question": "Que garantit le principe de laïcité ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La liberté de conscience", "isCorrect": true },
+      { "label": "La supériorité d’une religion", "isCorrect": false },
+      { "label": "L’interdiction de croire", "isCorrect": false },
+      { "label": "La neutralité des citoyens", "isCorrect": false }
+    ],
+    "explanation": "La laïcité protège les croyances.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv030",
+    "question": "Quel jour célèbre-t-on officiellement la laïcité en France ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le 9 décembre", "isCorrect": true },
+      { "label": "Le 14 juillet", "isCorrect": false },
+      { "label": "Le 11 novembre", "isCorrect": false },
+      { "label": "Le 1er mai", "isCorrect": false }
+    ],
+    "explanation": "Date de la loi de 1905.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "pv031",
+    "question": "Quel symbole religieux peut être porté dans une école publique ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Aucun symbole religieux ostensible", "isCorrect": true },
+      { "label": "Tous les symboles", "isCorrect": false },
+      { "label": "Uniquement discrets", "isCorrect": false },
+      { "label": "Selon l’établissement", "isCorrect": false }
+    ],
+    "explanation": "La loi interdit les signes ostensibles.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv032",
+    "question": "Quel terme désigne précisément la haine envers les Juifs ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’antisémitisme", "isCorrect": true },
+      { "label": "Le racisme", "isCorrect": false },
+      { "label": "La xénophobie", "isCorrect": false },
+      { "label": "L’intolérance", "isCorrect": false }
+    ],
+    "explanation": "Terme spécifique et reconnu juridiquement.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pv033",
+    "question": "Quel texte est considéré comme fondateur de la laïcité ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La loi de 1905", "isCorrect": true },
+      { "label": "La Constitution de 1958", "isCorrect": false },
+      { "label": "La DDHC de 1789", "isCorrect": false },
+      { "label": "Le Code civil", "isCorrect": false }
+    ],
+    "explanation": "Il s’agit du texte de référence.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "pv034",
+    "question": "Quelle institution française doit rester neutre religieusement ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Les services publics", "isCorrect": true },
+      { "label": "Les citoyens", "isCorrect": false },
+      { "label": "Les associations privées", "isCorrect": false },
+      { "label": "Les entreprises", "isCorrect": false }
+    ],
+    "explanation": "Principe fondamental du service public.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv035",
+    "question": "Qu'est-ce que la laïcité ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La séparation de l’État et des religions", "isCorrect": true },
+      { "label": "L’interdiction de la religion", "isCorrect": false },
+      { "label": "Une religion d’État", "isCorrect": false },
+      { "label": "Une opinion politique", "isCorrect": false }
+    ],
+    "explanation": "Principe constitutionnel français.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pv036",
+    "question": "À l’école, la charte de la laïcité permet de :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Rappeler les règles de la laïcité", "isCorrect": true },
+      { "label": "Autoriser les signes religieux", "isCorrect": false },
+      { "label": "Favoriser une religion", "isCorrect": false },
+      { "label": "Remplacer le règlement intérieur", "isCorrect": false }
+    ],
+    "explanation": "Elle explique les principes républicains.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv037",
+    "question": "Qui doit respecter la neutralité religieuse dans les services publics ?",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Les agents du service public", "isCorrect": true },
+      { "label": "Les usagers", "isCorrect": false },
+      { "label": "Les élus uniquement", "isCorrect": false },
+      { "label": "Les associations", "isCorrect": false }
+    ],
+    "explanation": "Les agents incarnent la neutralité de l’État.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pv038",
+    "question": "Une personne qui ne croit en aucun dieu est :",
+    "type": "knowledge",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Athée", "isCorrect": true },
+      { "label": "Agnostique", "isCorrect": false },
+      { "label": "Laïque", "isCorrect": false },
+      { "label": "Antireligieuse", "isCorrect": false }
+    ],
+    "explanation": "L’athéisme est l’absence de croyance en un dieu.",
+    "difficulty": "medium"
+  }
+]
