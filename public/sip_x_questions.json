@@ -141,20 +141,6 @@
   },
   {
     "id": "instx011",
-    "question": "Combien de communes existe-t-il environ en France ?",
-    "type": "knowledge",
-    "topic": "institutions",
-    "choices": [
-      { "label": "Environ 35 000", "isCorrect": true },
-      { "label": "Environ 10 000", "isCorrect": false },
-      { "label": "Environ 50 000", "isCorrect": false },
-      { "label": "Environ 20 000", "isCorrect": false }
-    ],
-    "explanation": "La France compte un grand nombre de communes.",
-    "difficulty": "hard"
-  },
-  {
-    "id": "instx012",
     "question": "Quel État n'est pas membre de l'Union européenne ?",
     "type": "knowledge",
     "topic": "institutions",
@@ -168,7 +154,7 @@
     "difficulty": "medium"
   },
   {
-    "id": "instx013",
+    "id": "instx012",
     "question": "À quelle fréquence ont lieu les élections européennes ?",
     "type": "knowledge",
     "topic": "institutions",
@@ -182,7 +168,7 @@
     "difficulty": "easy"
   },
   {
-    "id": "instx014",
+    "id": "instx013",
     "question": "L'autorité judiciaire est exercée par :",
     "type": "knowledge",
     "topic": "institutions",
@@ -196,7 +182,7 @@
     "difficulty": "medium"
   },
   {
-    "id": "instx015",
+    "id": "instx014",
     "question": "Que signifie « suffrage universel » ?",
     "type": "knowledge",
     "topic": "institutions",
@@ -210,7 +196,7 @@
     "difficulty": "easy"
   },
   {
-    "id": "instx016",
+    "id": "instx015",
     "question": "Concernant les partis politiques, quelle proposition est correcte ?",
     "type": "knowledge",
     "topic": "institutions",
@@ -224,7 +210,7 @@
     "difficulty": "medium"
   },
   {
-    "id": "instx017",
+    "id": "instx016",
     "question": "Qui réside au palais de l'Élysée ?",
     "type": "knowledge",
     "topic": "institutions",
@@ -235,6 +221,110 @@
       { "label": "Le ministre de l’Intérieur", "isCorrect": false }
     ],
     "explanation": "Résidence officielle présidentielle.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx017",
+    "question": "Combien y a-t-il de sénateurs en France ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "348", "isCorrect": true },
+      { "label": "577", "isCorrect": false },
+      { "label": "300", "isCorrect": false },
+      { "label": "404", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx018",
+    "question": "Qu’est-ce que l’hôtel de ville ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Le bâtiment où siège le maire et le conseil municipal", "isCorrect": true },
+      { "label": "La résidence du préfet", "isCorrect": false },
+      { "label": "Le siège du conseil régional", "isCorrect": false },
+      { "label": "Un tribunal administratif", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx019",
+    "question": "Qui est le président de l’Assemblée nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Yaël Braun-Pivet", "isCorrect": true },
+      { "label": "Gérard Larcher", "isCorrect": false },
+      { "label": "Le Premier ministre", "isCorrect": false },
+      { "label": "Le président de la République", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx020",
+    "question": "Où se trouve le siège de l’Assemblée nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Au Palais Bourbon à Paris", "isCorrect": true },
+      { "label": "Au Palais de l’Élysée", "isCorrect": false },
+      { "label": "À l’Hôtel Matignon", "isCorrect": false },
+      { "label": "Au Sénat", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx021",
+    "question": "Qui est le président actuel du Sénat ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Gérard Larcher", "isCorrect": true },
+      { "label": "Yaël Braun-Pivet", "isCorrect": false },
+      { "label": "Édouard Philippe", "isCorrect": false },
+      { "label": "Le président de la République", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx022",
+    "question": "Savez-vous ce qu’est la cohabitation politique ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Une situation où le président et le gouvernement sont de bords politiques différents", "isCorrect": true },
+      { "label": "Un accord entre partis politiques", "isCorrect": false },
+      { "label": "Un régime sans président", "isCorrect": false },
+      { "label": "Une alliance électorale locale", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx023",
+    "question": "C’est quoi une motion de censure ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Un vote des députés pouvant renverser le gouvernement", "isCorrect": true },
+      { "label": "Une loi proposée par le Sénat", "isCorrect": false },
+      { "label": "Une décision du président", "isCorrect": false },
+      { "label": "Un référendum national", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx024",
+    "question": "C’est quoi un référendum ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Une consultation directe des citoyens par vote", "isCorrect": true },
+      { "label": "Une élection présidentielle", "isCorrect": false },
+      { "label": "Un vote réservé aux parlementaires", "isCorrect": false },
+      { "label": "Une décision judiciaire", "isCorrect": false }
+    ],
     "difficulty": "easy"
   }
 ]

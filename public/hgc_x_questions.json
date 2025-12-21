@@ -258,5 +258,462 @@
       { "label": "Un scientifique du XXe siècle", "isCorrect": false }
     ],
     "difficulty": "medium"
+  },
+  {
+    "id": "hgcx021",
+    "question": "Combien de communes existe-t-il environ en France ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Environ 35 000", "isCorrect": true },
+      { "label": "Environ 10 000", "isCorrect": false },
+      { "label": "Environ 50 000", "isCorrect": false },
+      { "label": "Environ 20 000", "isCorrect": false }
+    ],
+    "explanation": "La France compte un grand nombre de communes.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx023",
+    "question": "À partir de quand l'élection présidentielle est-elle issue du suffrage universel direct ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1965", "isCorrect": true },
+      { "label": "1958", "isCorrect": false },
+      { "label": "1946", "isCorrect": false },
+      { "label": "1974", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx024",
+    "question": "Que représentent les couleurs du drapeau français ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Nation, la Révolution et la République", "isCorrect": true },
+      { "label": "La monarchie, l'Église et l'armée", "isCorrect": false },
+      { "label": "Les régions françaises", "isCorrect": false },
+      { "label": "Les saisons", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx025",
+    "question": "Quand date la loi sur le mariage pour tous ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "2013", "isCorrect": true },
+      { "label": "2010", "isCorrect": false },
+      { "label": "2015", "isCorrect": false },
+      { "label": "2008", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx026",
+    "question": "Qui a permis l'adoption de la loi sur le mariage pour tous ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le Parlement", "isCorrect": true },
+      { "label": "Le Conseil constitutionnel seul", "isCorrect": false },
+      { "label": "Le Président par décret", "isCorrect": false },
+      { "label": "Un référendum", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx027",
+    "question": "Sous quel président la loi sur le mariage pour tous a-t-elle été adoptée ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "François Hollande", "isCorrect": true },
+      { "label": "Nicolas Sarkozy", "isCorrect": false },
+      { "label": "Emmanuel Macron", "isCorrect": false },
+      { "label": "Jacques Chirac", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx028",
+    "question": "Quand date la loi sur l'IVG ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "1975", "isCorrect": true },
+      { "label": "1968", "isCorrect": false },
+      { "label": "1981", "isCorrect": false },
+      { "label": "1995", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx029",
+    "question": "Sous quel président la loi Veil a-t-elle été adoptée ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Valéry Giscard d’Estaing", "isCorrect": true },
+      { "label": "Georges Pompidou", "isCorrect": false },
+      { "label": "François Mitterrand", "isCorrect": false },
+      { "label": "Charles de Gaulle", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx030",
+    "question": "Qui a permis l'adoption de l'abolition de la peine de mort ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Le Parlement", "isCorrect": true },
+      { "label": "Le Président seul", "isCorrect": false },
+      { "label": "Un référendum", "isCorrect": false },
+      { "label": "Le Conseil d'État", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx031",
+    "question": "Sous quel président la loi sur l'abolition de la peine de mort a-t-elle été adoptée ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "François Mitterrand", "isCorrect": true },
+      { "label": "Valéry Giscard d’Estaing", "isCorrect": false },
+      { "label": "Jacques Chirac", "isCorrect": false },
+      { "label": "Charles de Gaulle", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx032",
+    "question": "Qui est Samuel Paty ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un enseignant assassiné pour avoir exercé la liberté d'expression", "isCorrect": true },
+      { "label": "Un homme politique", "isCorrect": false },
+      { "label": "Un journaliste", "isCorrect": false },
+      { "label": "Un écrivain du XIXe siècle", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx033",
+    "question": "Quand ont eu lieu les attaques du Bataclan ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "13 novembre 2015", "isCorrect": true },
+      { "label": "7 janvier 2015", "isCorrect": false },
+      { "label": "14 juillet 2016", "isCorrect": false },
+      { "label": "11 septembre 2001", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx034",
+    "question": "Qui est Jeanne d’Arc ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une héroïne de la guerre de Cent Ans", "isCorrect": true },
+      { "label": "Une reine de France", "isCorrect": false },
+      { "label": "Une philosophe des Lumières", "isCorrect": false },
+      { "label": "Une résistante de 1940", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx035",
+    "question": "Qui est Henri IV ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un roi de France ayant mis fin aux guerres de religion", "isCorrect": true },
+      { "label": "Un empereur", "isCorrect": false },
+      { "label": "Un président", "isCorrect": false },
+      { "label": "Un révolutionnaire", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx036",
+    "question": "Pourquoi Louis XIV est-il le plus connu ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Pour son long règne et le renforcement de la monarchie absolue", "isCorrect": true },
+      { "label": "Pour avoir aboli la monarchie", "isCorrect": false },
+      { "label": "Pour avoir créé la République", "isCorrect": false },
+      { "label": "Pour la décolonisation", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx037",
+    "question": "Qui est Charles de Gaulle ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un chef de la Résistance et président de la République", "isCorrect": true },
+      { "label": "Un roi", "isCorrect": false },
+      { "label": "Un écrivain", "isCorrect": false },
+      { "label": "Un scientifique", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx038",
+    "question": "Qui est Émile Zola ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un écrivain engagé notamment dans l'affaire Dreyfus", "isCorrect": true },
+      { "label": "Un peintre impressionniste", "isCorrect": false },
+      { "label": "Un homme politique", "isCorrect": false },
+      { "label": "Un musicien", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx039",
+    "question": "Qui est Denis Diderot ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un philosophe des Lumières", "isCorrect": true },
+      { "label": "Un roi", "isCorrect": false },
+      { "label": "Un général", "isCorrect": false },
+      { "label": "Un peintre", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx040",
+    "question": "Qui est Brigitte Bardot ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une actrice française célèbre", "isCorrect": true },
+      { "label": "Une femme politique", "isCorrect": false },
+      { "label": "Une résistante", "isCorrect": false },
+      { "label": "Une philosophe", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx041",
+    "question": "Qu’est-ce que la guerre de Cent Ans ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un conflit entre la France et l’Angleterre du XIVe au XVe siècle", "isCorrect": true },
+      { "label": "Une guerre mondiale", "isCorrect": false },
+      { "label": "Une révolution", "isCorrect": false },
+      { "label": "Une guerre coloniale", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx042",
+    "question": "Que signifie la fleur de lys ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un symbole de la monarchie française", "isCorrect": true },
+      { "label": "Un symbole religieux universel", "isCorrect": false },
+      { "label": "Un emblème républicain", "isCorrect": false },
+      { "label": "Un symbole régional moderne", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx043",
+    "question": "Qu’est-ce que l’OTAN ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une alliance militaire internationale", "isCorrect": true },
+      { "label": "Une organisation économique", "isCorrect": false },
+      { "label": "Une institution européenne", "isCorrect": false },
+      { "label": "Une organisation humanitaire", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx044",
+    "question": "Quel fleuve est le plus long de France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La Loire", "isCorrect": true },
+      { "label": "La Seine", "isCorrect": false },
+      { "label": "Le Rhône", "isCorrect": false },
+      { "label": "La Garonne", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx045",
+    "question": "Qui est à l’origine du château de Versailles ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Louis XIV", "isCorrect": true },
+      { "label": "Louis XVI", "isCorrect": false },
+      { "label": "Napoléon Ier", "isCorrect": false },
+      { "label": "François Ier", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx046",
+    "question": "Qui sont les alliés durant la Première Guerre mondiale ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La France, le Royaume-Uni et la Russie", "isCorrect": true },
+      { "label": "L'Allemagne et l'Italie", "isCorrect": false },
+      { "label": "Les États-Unis seuls", "isCorrect": false },
+      { "label": "La France et l'Allemagne", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx047",
+    "question": "Qui sont les alliés durant la Seconde Guerre mondiale ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La France, le Royaume-Uni, les États-Unis et l’URSS", "isCorrect": true },
+      { "label": "L'Allemagne et le Japon", "isCorrect": false },
+      { "label": "L'Italie et l'Allemagne", "isCorrect": false },
+      { "label": "La France et l'Italie", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx048",
+    "question": "Quel est le monument principal en France ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "La tour Eiffel", "isCorrect": true },
+      { "label": "Le Mont-Saint-Michel", "isCorrect": false },
+      { "label": "Le Louvre", "isCorrect": false },
+      { "label": "Notre-Dame de Paris", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "hgcx049",
+    "question": "Qu’est-ce que la loi de 2004 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une loi interdisant les signes religieux ostensibles à l’école publique", "isCorrect": true },
+      { "label": "Une loi sur le mariage", "isCorrect": false },
+      { "label": "Une loi sur le droit de vote", "isCorrect": false },
+      { "label": "Une loi économique", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx050",
+    "question": "Le Panthéon, c’est quoi ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un monument honorant les grandes figures de la Nation", "isCorrect": true },
+      { "label": "Un musée d’art moderne", "isCorrect": false },
+      { "label": "Un palais présidentiel", "isCorrect": false },
+      { "label": "Une cathédrale", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx051",
+    "question": "Que s’est-il passé en mai 1968 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Des mouvements sociaux et étudiants majeurs", "isCorrect": true },
+      { "label": "Une guerre mondiale", "isCorrect": false },
+      { "label": "Un coup d’État militaire", "isCorrect": false },
+      { "label": "La fondation de l’UE", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx052",
+    "question": "Quelle est la position de la France dans le monde ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Une puissance diplomatique et militaire", "isCorrect": true },
+      { "label": "Un État neutre sans influence", "isCorrect": false },
+      { "label": "Un pays isolé", "isCorrect": false },
+      { "label": "Une puissance régionale uniquement", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx053",
+    "question": "Qu’est-ce que le CAC 40 ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "Un indice boursier français", "isCorrect": true },
+      { "label": "Une organisation politique", "isCorrect": false },
+      { "label": "Un parti politique", "isCorrect": false },
+      { "label": "Un traité européen", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "hgcx054",
+    "question": "À quoi fait référence l'événement Charlie Hebdo ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      { "label": "À un attentat terroriste visant la liberté d’expression", "isCorrect": true },
+      { "label": "À une réforme scolaire", "isCorrect": false },
+      { "label": "À une manifestation étudiante", "isCorrect": false },
+      { "label": "À une loi sur la presse", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "hgcx055",
+    "question": "C’est quoi le siècle des Lumières ?",
+    "type": "knowledge",
+    "topic": "histoire_geographie_culture",
+    "choices": [
+      {
+        "label": "Un mouvement intellectuel du XVIIIe siècle fondé sur la raison, la liberté et le progrès",
+        "isCorrect": true
+      },
+      {
+        "label": "Une période religieuse marquée par le retour au pouvoir de l’Église",
+        "isCorrect": false
+      },
+      {
+        "label": "Une révolution industrielle du XIXe siècle",
+        "isCorrect": false
+      },
+      {
+        "label": "Un courant artistique exclusivement français du Moyen Âge",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Le siècle des Lumières désigne un mouvement intellectuel européen du XVIIIe siècle qui promeut la raison, la science, la liberté de pensée et la critique de l’absolutisme et des dogmes religieux. Il a fortement influencé la Révolution française.",
+    "difficulty": "medium"
   }
 ]
+
