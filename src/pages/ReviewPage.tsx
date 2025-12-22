@@ -54,6 +54,12 @@ export function ReviewPage() {
     }
   }, [currentQuiz, navigate, quizId]);
 
+  useEffect(() => {
+    if (filteredIndices.length > 0) {
+      setCurrentIndex(filteredIndices[0]);
+    }
+  }, [filter, topicFilter, typeFilter]);
+
   const filteredIndices = currentQuiz
     ? currentQuiz.answers
       .map((answer, index) => ({ answer, index }))
