@@ -326,5 +326,187 @@
       { "label": "Une décision judiciaire", "isCorrect": false }
     ],
     "difficulty": "easy"
+  },
+  {
+    "id": "instx025",
+    "question": "Quel est le rôle du président de l’Assemblée nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Diriger les débats parlementaires et représenter l’Assemblée nationale", "isCorrect": true },
+      { "label": "Diriger le gouvernement", "isCorrect": false },
+      { "label": "Proposer les lois", "isCorrect": false },
+      { "label": "Contrôler le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx026",
+    "question": "Comment est élu le président de l’Assemblée nationale ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Par les députés parmi leurs membres", "isCorrect": true },
+      { "label": "Par le président de la République", "isCorrect": false },
+      { "label": "Par le Sénat", "isCorrect": false },
+      { "label": "Par suffrage universel direct", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx027",
+    "question": "Quelle est la durée du mandat du président de l’Assemblée nationale ? Est-il renouvelable ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "La durée de la législature, renouvelable", "isCorrect": true },
+      { "label": "5 ans non renouvelable", "isCorrect": false },
+      { "label": "6 ans renouvelable une fois", "isCorrect": false },
+      { "label": "9 ans non renouvelable", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx028",
+    "question": "Où se trouve le siège du Sénat ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Au Palais du Luxembourg à Paris", "isCorrect": true },
+      { "label": "Au Palais Bourbon", "isCorrect": false },
+      { "label": "À l’Hôtel de Matignon", "isCorrect": false },
+      { "label": "Au Palais de l’Élysée", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx029",
+    "question": "Comment sont élus les membres du Sénat ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Par un collège de grands électeurs", "isCorrect": true },
+      { "label": "Par suffrage universel direct", "isCorrect": false },
+      { "label": "Par le président de la République", "isCorrect": false },
+      { "label": "Par le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx030",
+    "question": "Quel est le rôle du président du Sénat ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Présider le Sénat et assurer l’intérim du président de la République si nécessaire", "isCorrect": true },
+      { "label": "Diriger l’Assemblée nationale", "isCorrect": false },
+      { "label": "Nommer les ministres", "isCorrect": false },
+      { "label": "Contrôler le gouvernement", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx031",
+    "question": "Comment est élu le président du Sénat ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Par les sénateurs parmi leurs membres", "isCorrect": true },
+      { "label": "Par le président de la République", "isCorrect": false },
+      { "label": "Par suffrage universel direct", "isCorrect": false },
+      { "label": "Par le Conseil constitutionnel", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "instx032",
+    "question": "Quelle est la durée du mandat du président du Sénat ? Est-il renouvelable ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "3 ans, renouvelable", "isCorrect": true },
+      { "label": "6 ans non renouvelable", "isCorrect": false },
+      { "label": "5 ans renouvelable une fois", "isCorrect": false },
+      { "label": "9 ans non renouvelable", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx033",
+    "question": "Comment sont désignés les membres du Conseil constitutionnel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Nommés par le président de la République et les présidents des deux assemblées", "isCorrect": true },
+      { "label": "Élus par les citoyens", "isCorrect": false },
+      { "label": "Élus par les magistrats", "isCorrect": false },
+      { "label": "Nommés par le Premier ministre seul", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx034",
+    "question": "Quelle est la durée du mandat des membres du Conseil constitutionnel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "9 ans non renouvelable", "isCorrect": true },
+      { "label": "6 ans renouvelable", "isCorrect": false },
+      { "label": "5 ans renouvelable", "isCorrect": false },
+      { "label": "3 ans renouvelable", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx035",
+    "question": "Quel est le rôle du président du Conseil constitutionnel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Diriger les travaux du Conseil et trancher en cas de partage des voix", "isCorrect": true },
+      { "label": "Proposer des lois", "isCorrect": false },
+      { "label": "Contrôler le gouvernement", "isCorrect": false },
+      { "label": "Nommer les juges judiciaires", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx036",
+    "question": "Comment est désigné le président du Conseil constitutionnel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Par le président de la République", "isCorrect": true },
+      { "label": "Par les membres du Conseil", "isCorrect": false },
+      { "label": "Par le Sénat", "isCorrect": false },
+      { "label": "Par l’Assemblée nationale", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "instx037",
+    "question": "Quelle est la durée du mandat du président du Conseil constitutionnel ? Est-il renouvelable ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "9 ans, non renouvelable", "isCorrect": true },
+      { "label": "6 ans renouvelable", "isCorrect": false },
+      { "label": "3 ans renouvelable", "isCorrect": false },
+      { "label": "5 ans renouvelable une fois", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "instx038",
+    "question": "Qui est le président actuel du Conseil constitutionnel ?",
+    "type": "knowledge",
+    "topic": "institutions",
+    "choices": [
+      { "label": "Laurent Fabius", "isCorrect": true },
+      { "label": "Gérard Larcher", "isCorrect": false },
+      { "label": "Yaël Braun-Pivet", "isCorrect": false },
+      { "label": "Éric Dupond-Moretti", "isCorrect": false }
+    ],
+    "difficulty": "medium"
   }
 ]
