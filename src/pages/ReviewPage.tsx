@@ -340,6 +340,7 @@ export function ReviewPage() {
                     onClick={() => {
                       setFilter('all');
                       setTopicFilter('all');
+                      setTypeFilter('all');
                     }}
                   >
                     Réinitialiser les filtres
