@@ -19,9 +19,9 @@ import { QuizProgress } from '@/components/QuizProgress';
 import { appStore, quizActions } from '@/stores/quizStore';
 import { useQuestions } from '@/lib/queries';
 import { useKeyboardNavigation } from '@/hooks';
-import { getTopicName, getTopicColor } from '@/utils/questions';
+import { getTopicName, getTopicColor, getQuestionTypeColor } from '@/utils/questions';
 import { cn } from '@/lib/utils';
-import type { TopicId } from '@/types';
+import type { QuestionType, TopicId } from '@/types';
 
 type FilterType = 'all' | 'correct' | 'incorrect';
 
@@ -29,13 +29,14 @@ export function ReviewPage() {
   const navigate = useNavigate();
   const params = useParams({ strict: false });
   const quizId = (params as { quizId?: string }).quizId;
-  
+
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const { data: questions } = useQuestions();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filter, setFilter] = useState<FilterType>('all');
   const [topicFilter, setTopicFilter] = useState<TopicId | 'all'>('all');
+  const [typeFilter, setTypeFilter] = useState<QuestionType | 'all'>('all');
   const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
@@ -63,6 +64,7 @@ export function ReviewPage() {
         if (filter === 'incorrect' && answer.isCorrect) return false;
 
         if (topicFilter !== 'all' && question.topic !== topicFilter) return false;
+        if (typeFilter !== 'all' && question.type !== typeFilter) return false;
 
         return true;
       })
@@ -211,11 +213,44 @@ export function ReviewPage() {
                     <XCircle className="h-4 w-4 mr-1 text-red-600" />
                     Incorrectes ({incorrectCount})
                   </FilterButton>
-                  
+
                 </div>
               </div>
             </div>
-
+            <div className="mb-4 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide">
+              <div className="flex items-center gap-2 min-w-max">
+                <div className="flex rounded-lg border overflow-hidden bg-white">
+                  <FilterButton
+                    active={typeFilter === 'all'}
+                    onClick={() => setTypeFilter('all')}
+                  >
+                    Tous types
+                  </FilterButton>
+                  <FilterButton
+                    active={typeFilter === 'knowledge'}
+                    onClick={() => setTypeFilter('knowledge')}
+                    className="border-l"
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full mr-1.5"
+                      style={{ backgroundColor: getQuestionTypeColor('knowledge') }}
+                    />
+                    Connaissance
+                  </FilterButton>
+                  <FilterButton
+                    active={typeFilter === 'situational'}
+                    onClick={() => setTypeFilter('situational')}
+                    className="border-l"
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full mr-1.5"
+                      style={{ backgroundColor: getQuestionTypeColor('situational') }}
+                    />
+                    Situation
+                  </FilterButton>
+                </div>
+              </div>
+            </div>
             {/* Topic filter */}
             <div className="mb-6">
               <Tabs

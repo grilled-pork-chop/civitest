@@ -1,5 +1,5 @@
-import type { Question, TopicId, ShuffledQuestion } from '@/types';
-import { TOPICS } from '@/types';
+import type { Question, TopicId, ShuffledQuestion, QuestionType } from '@/types';
+import { QUESTION_TYPES, SITUATIONAL_TOPIC_CONFIG, TOPICS } from '@/types';
 
 /**
  * Fisher-Yates shuffle algorithm
@@ -32,8 +32,10 @@ export function shuffleChoices(question: Question): ShuffledQuestion {
   };
 }
 
+
 /**
  * Select questions with weighted distribution by topic
+ * Ensures required number of situational questions for specific topics
  */
 export function selectQuestions(
   allQuestions: Question[],
@@ -54,22 +56,68 @@ export function selectQuestions(
 
   for (const topic of TOPICS) {
     const topicQuestions = questionsByTopic.get(topic.id) || [];
-
-    const freshQuestions = topicQuestions.filter(
-      (q) => !recentlyUsedIds.has(q.id)
-    );
-    const usedQuestions = topicQuestions.filter((q) =>
-      recentlyUsedIds.has(q.id)
-    );
-
-    const shuffledFresh = shuffle(freshQuestions);
-    const shuffledUsed = shuffle(usedQuestions);
-
     const targetCount = topic.targetCount;
-    const availableQuestions = [...shuffledFresh, ...shuffledUsed];
-    const selected = availableQuestions.slice(0, targetCount);
+    const situationalRequired = SITUATIONAL_TOPIC_CONFIG[topic.id] || 0;
 
-    selectedQuestions.push(...selected);
+    if (situationalRequired > 0) {
+      // Split by question type
+      const situationalQuestions = topicQuestions.filter(
+        (q) => q.type === 'situational'
+      );
+      const knowledgeQuestions = topicQuestions.filter(
+        (q) => q.type === 'knowledge'
+      );
+
+      // Prioritize fresh questions for each type
+      const freshSituational = situationalQuestions.filter(
+        (q) => !recentlyUsedIds.has(q.id)
+      );
+      const usedSituational = situationalQuestions.filter((q) =>
+        recentlyUsedIds.has(q.id)
+      );
+      const freshKnowledge = knowledgeQuestions.filter(
+        (q) => !recentlyUsedIds.has(q.id)
+      );
+      const usedKnowledge = knowledgeQuestions.filter((q) =>
+        recentlyUsedIds.has(q.id)
+      );
+
+      // Select situational questions
+      const availableSituational = [
+        ...shuffle(freshSituational),
+        ...shuffle(usedSituational),
+      ];
+      const selectedSituational = availableSituational.slice(
+        0,
+        situationalRequired
+      );
+
+      // Select knowledge questions for remaining slots
+      const knowledgeCount = targetCount - selectedSituational.length;
+      const availableKnowledge = [
+        ...shuffle(freshKnowledge),
+        ...shuffle(usedKnowledge),
+      ];
+      const selectedKnowledge = availableKnowledge.slice(0, knowledgeCount);
+
+      selectedQuestions.push(...selectedSituational, ...selectedKnowledge);
+    } else {
+      // Original logic for other topics
+      const freshQuestions = topicQuestions.filter(
+        (q) => !recentlyUsedIds.has(q.id)
+      );
+      const usedQuestions = topicQuestions.filter((q) =>
+        recentlyUsedIds.has(q.id)
+      );
+
+      const availableQuestions = [
+        ...shuffle(freshQuestions),
+        ...shuffle(usedQuestions),
+      ];
+      const selected = availableQuestions.slice(0, targetCount);
+
+      selectedQuestions.push(...selected);
+    }
   }
 
   return shuffle(selectedQuestions);
@@ -146,6 +194,22 @@ export function getTopicColor(topicId: TopicId): string {
 export function getTopicName(topicId: TopicId, short = false): string {
   const topic = TOPICS.find((t) => t.id === topicId);
   return short ? topic?.nameShort || topicId : topic?.name || topicId;
+}
+
+/**
+ * Get question type color by type
+ */
+export function getQuestionTypeColor(type: QuestionType): string {
+  const questionType = QUESTION_TYPES.find((t) => t.id === type);
+  return questionType?.color || '#6B7280';
+}
+
+/**
+ * Get question type name
+ */
+export function getQuestionTypeName(type: QuestionType, short = false): string {
+  const questionType = QUESTION_TYPES.find((t) => t.id === type);
+  return short ? questionType?.nameShort || type : questionType?.name || type;
 }
 
 /**

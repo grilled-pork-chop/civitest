@@ -47,12 +47,12 @@ import {
   exportQuizHistory,
   importQuizHistory,
 } from '@/utils/localStorage';
-import { formatDate, formatTimeVerbose, getTopicName, getTopicColor } from '@/utils/questions';
+import { formatDate, formatTimeVerbose, getTopicName, getTopicColor, getQuestionTypeColor, getQuestionTypeName } from '@/utils/questions';
 import { quizActions } from '@/stores/quizStore';
 import { useQuestions } from '@/lib/queries';
 import { cn } from '@/lib/utils';
 import { TOPICS, QUIZ_CONFIG } from '@/types';
-import type { QuizResult } from '@/types';
+import type { QuestionType, QuizResult } from '@/types';
 
 export function StatsPage() {
   const navigate = useNavigate();
@@ -130,6 +130,33 @@ export function StatsPage() {
       name: topic.nameShort,
       score: avgScore,
       color: topic.color,
+    };
+  });
+
+  const typePerformanceData = (['knowledge', 'situational'] as QuestionType[]).map((type) => {
+    const typeResults = results
+      .filter((r) => r.questions && r.answers)
+      .flatMap((r) => {
+        const typeQuestions = r.questions!
+          .map((q, i) => ({ question: q, answer: r.answers![i] }))
+          .filter(({ question }) => question.type === type);
+
+        if (typeQuestions.length === 0) return [];
+
+        const correct = typeQuestions.filter(({ answer }) => answer.isCorrect).length;
+        return [{ correct, total: typeQuestions.length }];
+      });
+
+    const avgScore = typeResults.length > 0
+      ? Math.round(
+        typeResults.reduce((sum, r) => sum + (r.correct / r.total) * 100, 0) / typeResults.length
+      )
+      : 0;
+
+    return {
+      name: getQuestionTypeName(type),
+      score: avgScore,
+      color: getQuestionTypeColor(type),
     };
   });
 
@@ -329,82 +356,118 @@ export function StatsPage() {
 
           {/* Topics tab */}
           <TabsContent value="topics">
-            <Card>
-              <CardHeader>
-                <CardTitle>Performance par thème</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-100">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={topicPerformanceData} layout="vertical">
-                      <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />
-                      <XAxis
-                        type="number"
-                        domain={[0, 100]}
-                        tick={{ fontSize: 12 }}
-                        stroke="#94A3B8"
-                      />
-                      <YAxis
-                        type="category"
-                        dataKey="name"
-                        tick={{ fontSize: 12 }}
-                        stroke="#94A3B8"
-                        width={120}
-                      />
-                      <Tooltip
-                        contentStyle={{
-                          backgroundColor: 'white',
-                          border: '1px solid #E2E8F0',
-                          borderRadius: '8px',
-                        }}
-                        formatter={(value) => [
-                          `${value ?? 0}%`,
-                          'Score moyen',
-                        ]}
-                      />
-                      <Bar dataKey="score" radius={[0, 4, 4, 0]}>
-                        {topicPerformanceData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                      </Bar>
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-
-                {/* Topic breakdown */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-                  {topicPerformanceData.map((topic) => (
-                    <div
-                      key={topic.name}
-                      className="p-4 rounded-lg border bg-card"
-                    >
-                      <div className="flex items-center gap-2 mb-2">
-                        <div
-                          className="w-3 h-3 rounded-full"
-                          style={{ backgroundColor: topic.color }}
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Performance par thème</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="h-100">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={topicPerformanceData} layout="vertical">
+                        <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />
+                        <XAxis
+                          type="number"
+                          domain={[0, 100]}
+                          tick={{ fontSize: 12 }}
+                          stroke="#94A3B8"
                         />
-                        <span className="font-medium text-sm">{topic.name}</span>
+                        <YAxis
+                          type="category"
+                          dataKey="name"
+                          tick={{ fontSize: 12 }}
+                          stroke="#94A3B8"
+                          width={120}
+                        />
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: 'white',
+                            border: '1px solid #E2E8F0',
+                            borderRadius: '8px',
+                          }}
+                          formatter={(value) => [
+                            `${value ?? 0}%`,
+                            'Score moyen',
+                          ]}
+                        />
+                        <Bar dataKey="score" radius={[0, 4, 4, 0]}>
+                          {topicPerformanceData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.color} />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+
+                  {/* Topic breakdown */}
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                    {topicPerformanceData.map((topic) => (
+                      <div
+                        key={topic.name}
+                        className="p-4 rounded-lg border bg-card"
+                      >
+                        <div className="flex items-center gap-2 mb-2">
+                          <div
+                            className="w-3 h-3 rounded-full"
+                            style={{ backgroundColor: topic.color }}
+                          />
+                          <span className="font-medium text-sm">{topic.name}</span>
+                        </div>
+                        <div className="flex items-end justify-between">
+                          <span
+                            className={cn('text-2xl font-bold', {
+                              'text-green-600': topic.score >= 80,
+                              'text-yellow-600':
+                                topic.score >= 60 && topic.score < 80,
+                              'text-red-600': topic.score < 60,
+                            })}
+                          >
+                            {topic.score}%
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            {topic.score >= 80 ? 'Excellent' : topic.score >= 60 ? 'À améliorer' : 'Réviser'}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-end justify-between">
-                        <span
-                          className={cn('text-2xl font-bold', {
-                            'text-green-600': topic.score >= 80,
-                            'text-yellow-600':
-                              topic.score >= 60 && topic.score < 80,
-                            'text-red-600': topic.score < 60,
-                          })}
-                        >
-                          {topic.score}%
-                        </span>
-                        <span className="text-xs text-muted-foreground">
-                          {topic.score >= 80 ? 'Excellent' : topic.score >= 60 ? 'À améliorer' : 'Réviser'}
-                        </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Performance par type de question</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {typePerformanceData.map((type) => (
+                      <div key={type.name} className="p-4 rounded-lg border bg-card">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div
+                            className="w-3 h-3 rounded-full"
+                            style={{ backgroundColor: type.color }}
+                          />
+                          <span className="font-medium text-sm">{type.name}</span>
+                        </div>
+                        <div className="flex items-end justify-between">
+                          <span
+                            className={cn('text-2xl font-bold', {
+                              'text-green-600': type.score >= 80,
+                              'text-yellow-600': type.score >= 60 && type.score < 80,
+                              'text-red-600': type.score < 60,
+                            })}
+                          >
+                            {type.score}%
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            {type.score >= 80 ? 'Excellent' : type.score >= 60 ? 'À améliorer' : 'Réviser'}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </TabsContent>
 
           {/* History tab */}
@@ -417,7 +480,7 @@ export function StatsPage() {
                 <div className="space-y-3">
                   {results.map((result) => {
                     const hasReviewData = !!(result.questions && result.answers);
-                    
+
                     return (
                       <div
                         key={result.id}
@@ -580,8 +643,8 @@ export function StatsPage() {
           )}
           <DialogFooter className="flex-col sm:flex-row gap-2">
             {selectedResult?.questions && selectedResult?.answers && (
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => {
                   setSelectedResult(null);
                   navigate({ to: '/review/$quizId', params: { quizId: selectedResult.id } });
@@ -621,7 +684,7 @@ function StatCard({ icon, label, value, color }: StatCardProps) {
           })}>
             {icon}
           </div>
-          
+
           <div className="space-y-0.5">
             <p className="text-xl sm:text-3xl font-bold tracking-tight leading-none">
               {value}

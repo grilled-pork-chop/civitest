@@ -32,6 +32,16 @@ export interface TopicConfig {
   color: string;
 }
 
+/**
+ * Question type configuration
+ */
+export interface QuestionTypeConfig {
+  id: QuestionType;
+  name: string;
+  nameShort: string;
+  color: string;
+}
+
 export const TOPICS: TopicConfig[] = [
   {
     id: 'principes_valeurs',
@@ -74,6 +84,32 @@ export const TOPIC_MAP: Record<TopicId, TopicConfig> = TOPICS.reduce(
   (acc, topic) => ({ ...acc, [topic.id]: topic }),
   {} as Record<TopicId, TopicConfig>
 );
+
+/**
+ * Topics that require situational questions
+ */
+export const SITUATIONAL_TOPIC_CONFIG: Partial<Record<TopicId, number>> = {
+  principes_valeurs: 6,
+  droits_devoirs: 6,
+};
+
+/**
+ * Question type configuration
+ */
+export const QUESTION_TYPES: QuestionTypeConfig[] = [
+  {
+    id: 'knowledge',
+    name: 'Connaissance',
+    nameShort: 'Connaissance',
+    color: '#6366F1', // Indigo
+  },
+  {
+    id: 'situational',
+    name: 'Mise en situation',
+    nameShort: 'Situation',
+    color: '#F59E0B', // Amber
+  },
+];
 
 export interface QuizAnswer {
   questionId: string;

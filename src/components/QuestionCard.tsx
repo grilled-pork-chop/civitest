@@ -1,6 +1,6 @@
 import { Check, X, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getTopicName, getTopicColor } from "@/utils/questions";
+import { getTopicName, getTopicColor, getQuestionTypeName, getQuestionTypeColor } from "@/utils/questions";
 import type { Question, ShuffledQuestion } from "@/types";
 
 interface QuestionCardProps {
@@ -30,6 +30,7 @@ export function QuestionCard({
       : question.choices;
 
   const topicColor = getTopicColor(question.topic);
+  const questionTypeColor = getQuestionTypeColor(question.type);
 
   const getChoiceState = (index: number) => {
     if (!isReviewMode) {
@@ -52,33 +53,42 @@ export function QuestionCard({
       aria-label={`Question ${questionNumber} sur ${totalQuestions}`}
     >
       {/* Header */}
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col gap-2 mb-4">
+        {/* Première ligne : numéro + difficulté */}
+        <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-muted-foreground">
             Question {questionNumber}/{totalQuestions}
           </span>
+          {question.difficulty && (
+            <span
+              className={cn("text-xs px-2 py-1 rounded-full", {
+                "bg-green-100 text-green-700": question.difficulty === "easy",
+                "bg-yellow-100 text-yellow-700": question.difficulty === "medium",
+                "bg-red-100 text-red-700": question.difficulty === "hard",
+              })}
+            >
+              {question.difficulty === "easy" && "Facile"}
+              {question.difficulty === "medium" && "Moyen"}
+              {question.difficulty === "hard" && "Difficile"}
+            </span>
+          )}
+        </div>
+        {/* Deuxième ligne : badges */}
+        <div className="flex items-center gap-2">
           <span
-            className="topic-badge text-white"
+            className="topic-badge text-white text-xs"
             style={{ backgroundColor: topicColor }}
           >
             {getTopicName(question.topic, true)}
           </span>
-        </div>
-        {question.difficulty && (
           <span
-            className={cn("text-xs px-2 py-1 rounded-full", {
-              "bg-green-100 text-green-700": question.difficulty === "easy",
-              "bg-yellow-100 text-yellow-700": question.difficulty === "medium",
-              "bg-red-100 text-red-700": question.difficulty === "hard",
-            })}
+            className="topic-badge text-white text-xs"
+            style={{ backgroundColor: questionTypeColor }}
           >
-            {question.difficulty === "easy" && "Facile"}
-            {question.difficulty === "medium" && "Moyen"}
-            {question.difficulty === "hard" && "Difficile"}
+            {getQuestionTypeName(question.type, true)}
           </span>
-        )}
+        </div>
       </div>
-
       {/* Question text */}
       <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6 leading-relaxed">
         {question.question}

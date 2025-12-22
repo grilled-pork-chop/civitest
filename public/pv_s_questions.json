@@ -1,0 +1,570 @@
+[
+  {
+    "id": "pvs001",
+    "question": "Vous travaillez dans un service public et un usager vous demande de le servir en priorité car il partage votre religion. Que devez-vous faire ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Refuser et traiter tous les usagers de manière égale", "isCorrect": true },
+      { "label": "Accepter par solidarité religieuse", "isCorrect": false },
+      { "label": "Le servir uniquement s’il insiste", "isCorrect": false },
+      { "label": "Demander l’avis d’un responsable religieux", "isCorrect": false }
+    ],
+    "explanation": "La laïcité impose la neutralité du service public.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs002",
+    "question": "Un employeur refuse d’embaucher une personne uniquement à cause de son origine. Quelle est la position de la République ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "C’est une discrimination interdite par la loi", "isCorrect": true },
+      { "label": "C’est un choix personnel légal", "isCorrect": false },
+      { "label": "C’est autorisé dans le privé", "isCorrect": false },
+      { "label": "C’est acceptable si l’entreprise est petite", "isCorrect": false }
+    ],
+    "explanation": "La loi interdit toute discrimination fondée sur l’origine.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs003",
+    "question": "Un agent public affiche ses opinions politiques sur son bureau pendant le travail. Est-ce conforme aux valeurs républicaines ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, l’agent public doit rester neutre", "isCorrect": true },
+      { "label": "Oui, au nom de la liberté d’opinion", "isCorrect": false },
+      { "label": "Oui, s’il ne parle pas aux usagers", "isCorrect": false },
+      { "label": "Oui, pendant les heures creuses", "isCorrect": false }
+    ],
+    "explanation": "Les agents publics ont un devoir de neutralité.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs004",
+    "question": "Dans la rue, une personne est insultée en raison de sa religion. Quelle valeur républicaine est atteinte ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La fraternité et le respect d’autrui", "isCorrect": true },
+      { "label": "La neutralité de l’État", "isCorrect": false },
+      { "label": "La liberté administrative", "isCorrect": false },
+      { "label": "La séparation des pouvoirs", "isCorrect": false }
+    ],
+    "explanation": "La fraternité repose sur le respect et la tolérance.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs005",
+    "question": "Un citoyen refuse d’appliquer une loi qu’il juge injuste et agit seul. Que dit la République ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La loi doit être respectée, la contestation passe par des voies légales", "isCorrect": true },
+      { "label": "La loi devient facultative", "isCorrect": false },
+      { "label": "La désobéissance est toujours autorisée", "isCorrect": false },
+      { "label": "Seuls les citoyens doivent obéir", "isCorrect": false }
+    ],
+    "explanation": "L’État de droit repose sur le respect des lois.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "pvs006",
+    "question": "À l’école publique, un élève refuse un cours pour des raisons religieuses. Quelle est la règle ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le programme scolaire est obligatoire pour tous", "isCorrect": true },
+      { "label": "L’élève choisit les cours", "isCorrect": false },
+      { "label": "L’école adapte les contenus", "isCorrect": false },
+      { "label": "La religion prime sur l’école", "isCorrect": false }
+    ],
+    "explanation": "L’école publique est laïque et transmet un savoir commun.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs007",
+    "question": "Un citoyen critique le gouvernement dans la presse. Peut-il être puni ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, c’est la liberté d’expression", "isCorrect": true },
+      { "label": "Oui, toute critique est interdite", "isCorrect": false },
+      { "label": "Oui, sauf pour les journalistes", "isCorrect": false },
+      { "label": "Oui, si le gouvernement n’est pas d’accord", "isCorrect": false }
+    ],
+    "explanation": "La liberté d’expression est garantie par la République.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs008",
+    "question": "Un maire finance une activité religieuse avec de l’argent public. Est-ce autorisé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, l’État ne finance pas les cultes", "isCorrect": true },
+      { "label": "Oui, s’il s’agit de la religion majoritaire", "isCorrect": false },
+      { "label": "Oui, avec l’accord des habitants", "isCorrect": false },
+      { "label": "Oui, temporairement", "isCorrect": false }
+    ],
+    "explanation": "La laïcité impose la neutralité financière de l’État.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs009",
+    "question": "Une personne refuse de serrer la main d’une fonctionnaire parce que c’est une femme. Pourquoi est-ce un problème ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Cela remet en cause l’égalité femmes-hommes", "isCorrect": true },
+      { "label": "C’est une préférence personnelle", "isCorrect": false },
+      { "label": "C’est toujours autorisé", "isCorrect": false },
+      { "label": "Cela relève de la vie privée", "isCorrect": false }
+    ],
+    "explanation": "L’égalité entre les femmes et les hommes est une valeur fondamentale.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs010",
+    "question": "Un citoyen empêche un autre de voter en le menaçant. Que représente cet acte ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Une atteinte grave à la démocratie", "isCorrect": true },
+      { "label": "Une opinion politique", "isCorrect": false },
+      { "label": "Un acte sans conséquence", "isCorrect": false },
+      { "label": "Un droit civique", "isCorrect": false }
+    ],
+    "explanation": "Le droit de vote est fondamental.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "pvs011",
+    "question": "Un citoyen respecte les lois mais refuse toute solidarité avec les personnes en difficulté. Quelle valeur est affaiblie ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La fraternité", "isCorrect": true },
+      { "label": "La liberté", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La neutralité", "isCorrect": false }
+    ],
+    "explanation": "La fraternité implique entraide et solidarité.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs012",
+    "question": "Un citoyen respecte une loi même s’il n’est pas d’accord. Quel principe applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le respect de l’État de droit", "isCorrect": true },
+      { "label": "La soumission aveugle", "isCorrect": false },
+      { "label": "La neutralité religieuse", "isCorrect": false },
+      { "label": "La fraternité uniquement", "isCorrect": false }
+    ],
+    "explanation": "Dans un État de droit, les lois s’imposent à tous.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "pvs013",
+    "question": "Un responsable refuse un service public à une personne étrangère en situation régulière. Que dit la République ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "C’est contraire au principe d’égalité", "isCorrect": true },
+      { "label": "C’est autorisé pour les étrangers", "isCorrect": false },
+      { "label": "C’est un choix personnel", "isCorrect": false },
+      { "label": "C’est une règle locale", "isCorrect": false }
+    ],
+    "explanation": "Le service public doit traiter tous les usagers de manière égale.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs014",
+    "question": "Un citoyen insulte le drapeau français en public. Pourquoi est-ce sanctionnable ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Car les symboles de la République doivent être respectés", "isCorrect": true },
+      { "label": "Car toute critique est interdite", "isCorrect": false },
+      { "label": "Car le drapeau remplace la loi", "isCorrect": false },
+      { "label": "Car c’est une obligation religieuse", "isCorrect": false }
+    ],
+    "explanation": "Les symboles représentent l’unité nationale.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs015",
+    "question": "Un citoyen aide une personne en difficulté sans distinction d’origine. Quelle valeur applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La fraternité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "La fraternité repose sur la solidarité.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "pvs016",
+    "question": "Un citoyen refuse l’égalité entre les femmes et les hommes pour des raisons culturelles. Que dit la République ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’égalité femmes-hommes est non négociable", "isCorrect": true },
+      { "label": "La culture prime sur la loi", "isCorrect": false },
+      { "label": "C’est une opinion protégée", "isCorrect": false },
+      { "label": "C’est toléré en privé", "isCorrect": false }
+    ],
+    "explanation": "L’égalité femmes-hommes est un principe fondamental.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs017",
+    "question": "Un citoyen veut imposer ses croyances religieuses à ses voisins. Est-ce conforme aux valeurs républicaines ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, la liberté inclut le respect d’autrui", "isCorrect": true },
+      { "label": "Oui, au nom de la liberté religieuse", "isCorrect": false },
+      { "label": "Oui, si la majorité est d’accord", "isCorrect": false },
+      { "label": "Oui, dans l’espace public", "isCorrect": false }
+    ],
+    "explanation": "La liberté s’arrête là où commence celle des autres.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs018",
+    "question": "Un citoyen refuse de payer ses impôts car il n’est pas d’accord avec le gouvernement. Que dit la République ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Les impôts sont obligatoires", "isCorrect": true },
+      { "label": "Le paiement est facultatif", "isCorrect": false },
+      { "label": "C’est autorisé en démocratie", "isCorrect": false },
+      { "label": "C’est un droit civique", "isCorrect": false }
+    ],
+    "explanation": "Les impôts financent les services publics.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs019",
+    "question": "Un citoyen respecte les lois et participe aux élections. Quel comportement adopte-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Un comportement citoyen", "isCorrect": true },
+      { "label": "Une obligation administrative", "isCorrect": false },
+      { "label": "Une neutralité politique", "isCorrect": false },
+      { "label": "Une soumission", "isCorrect": false }
+    ],
+    "explanation": "La citoyenneté implique participation et respect des lois.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs020",
+    "question": "Un groupe empêche une manifestation pacifique autorisée. Quel principe est violé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La liberté de manifestation", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "La liberté de manifester est un droit fondamental.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "pvs021",
+    "question": "Un citoyen refuse de respecter une décision de justice. Que remet-il en cause ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’autorité de la justice", "isCorrect": true },
+      { "label": "La liberté d’opinion", "isCorrect": false },
+      { "label": "La fraternité", "isCorrect": false },
+      { "label": "La neutralité religieuse", "isCorrect": false }
+    ],
+    "explanation": "Les décisions de justice doivent être respectées.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs022",
+    "question": "Un citoyen aide une association humanitaire sans distinction d’origine. Quelle valeur incarne-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La fraternité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’autorité", "isCorrect": false }
+    ],
+    "explanation": "La fraternité favorise l’entraide.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs023",
+    "question": "Un responsable politique favorise uniquement sa région. Quel principe est menacé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’indivisibilité de la République", "isCorrect": true },
+      { "label": "La fraternité", "isCorrect": false },
+      { "label": "La liberté d’expression", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false }
+    ],
+    "explanation": "La République est une et indivisible.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs024",
+    "question": "Un citoyen veut pratiquer sa religion librement sans troubler l’ordre public. Est-ce autorisé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, c’est une liberté fondamentale", "isCorrect": true },
+      { "label": "Non, la religion est interdite", "isCorrect": false },
+      { "label": "Seulement en privé", "isCorrect": false },
+      { "label": "Avec une autorisation spéciale", "isCorrect": false }
+    ],
+    "explanation": "La liberté religieuse est garantie par la République.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs025",
+    "question": "Un citoyen refuse de respecter les règles communes dans l’espace public. Quel principe est remis en cause ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le vivre-ensemble", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La liberté religieuse", "isCorrect": false },
+      { "label": "La fraternité uniquement", "isCorrect": false }
+    ],
+    "explanation": "Le respect des règles communes permet la vie collective.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "pvs026",
+    "question": "Un citoyen tient des propos haineux contre un groupe de personnes. Pourquoi est-ce interdit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Car la liberté d’expression a des limites légales", "isCorrect": true },
+      { "label": "Car toute opinion est interdite", "isCorrect": false },
+      { "label": "Car seules les critiques politiques sont autorisées", "isCorrect": false },
+      { "label": "Car l’État décide des opinions", "isCorrect": false }
+    ],
+    "explanation": "La loi interdit les propos haineux.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs027",
+    "question": "Un citoyen refuse d’aider une personne blessée en danger. Quelle valeur est absente ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La fraternité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "La fraternité implique l’entraide.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs028",
+    "question": "Un citoyen conteste une loi en saisissant les tribunaux. Quel principe applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le recours aux voies légales", "isCorrect": true },
+      { "label": "La désobéissance civile", "isCorrect": false },
+      { "label": "La neutralité religieuse", "isCorrect": false },
+      { "label": "La fraternité", "isCorrect": false }
+    ],
+    "explanation": "La contestation passe par des moyens légaux.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs029",
+    "question": "Un citoyen respecte des personnes de toutes origines. Quelle valeur applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’égalité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’autorité", "isCorrect": false }
+    ],
+    "explanation": "L’égalité interdit toute discrimination.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs030",
+    "question": "Un citoyen impose le silence à un autre lors d’un débat politique pacifique. Quel droit est menacé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La liberté d’expression", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La fraternité", "isCorrect": false }
+    ],
+    "explanation": "Le débat libre est essentiel en démocratie.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "pvs031",
+    "question": "Un citoyen respecte les symboles nationaux même s’il ne partage pas toutes les décisions politiques. Pourquoi ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Ils représentent la République et l’unité nationale", "isCorrect": true },
+      { "label": "Ils remplacent les lois", "isCorrect": false },
+      { "label": "Ils sont religieux", "isCorrect": false },
+      { "label": "Ils sont facultatifs", "isCorrect": false }
+    ],
+    "explanation": "Les symboles incarnent les valeurs communes.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs032",
+    "question": "Un citoyen veut vivre selon ses règles sans tenir compte des autres. Quel principe est ignoré ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le respect des règles communes", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La fraternité uniquement", "isCorrect": false }
+    ],
+    "explanation": "La vie collective repose sur des règles communes.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs033",
+    "question": "Un citoyen respecte les décisions de justice même si elles ne lui plaisent pas. Quel principe applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’autorité de la justice", "isCorrect": true },
+      { "label": "La soumission aveugle", "isCorrect": false },
+      { "label": "La neutralité religieuse", "isCorrect": false },
+      { "label": "La fraternité", "isCorrect": false }
+    ],
+    "explanation": "Les décisions judiciaires s’imposent à tous.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs034",
+    "question": "Un citoyen refuse toute discrimination dans son comportement quotidien. Quelle valeur applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L’égalité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La fraternité uniquement", "isCorrect": false }
+    ],
+    "explanation": "L’égalité interdit les discriminations.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs035",
+    "question": "Un citoyen aide une personne en danger sans se poser de questions. Quelle valeur incarne-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La fraternité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "La fraternité implique l’aide à autrui.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "pvs036",
+    "question": "Un citoyen impose ses opinions politiques par la violence. Quel principe est violé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le débat démocratique", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La fraternité uniquement", "isCorrect": false }
+    ],
+    "explanation": "La démocratie repose sur le dialogue et le vote.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs037",
+    "question": "Un citoyen respecte les règles communes même dans l’espace public. Quelle valeur applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le respect du vivre-ensemble", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La fraternité uniquement", "isCorrect": false }
+    ],
+    "explanation": "Les règles communes garantissent la vie collective.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs038",
+    "question": "Un citoyen accepte que d’autres aient des opinions différentes des siennes. Quel principe respecte-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le pluralisme des opinions", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "La démocratie repose sur la diversité des opinions.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs039",
+    "question": "Un citoyen participe à la vie associative sans exclure personne. Quelle valeur applique-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La fraternité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "L’autorité", "isCorrect": false }
+    ],
+    "explanation": "La fraternité favorise l’inclusion.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs040",
+    "question": "Un citoyen respecte les lois, les libertés et l’égalité de tous. Quel comportement adopte-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Un comportement conforme aux valeurs de la République", "isCorrect": true },
+      { "label": "Une neutralité politique", "isCorrect": false },
+      { "label": "Une obligation administrative", "isCorrect": false },
+      { "label": "Une soumission forcée", "isCorrect": false }
+    ],
+    "explanation": "Respecter les valeurs républicaines permet le vivre-ensemble.",
+    "difficulty": "medium"
+  }
+]

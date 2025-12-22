@@ -1,0 +1,570 @@
+[
+  {
+    "id": "dds001",
+    "question": "Vous êtes témoin d’un accident de la route et une personne est blessée. Vous décidez de partir sans aider. Quel devoir n’est pas respecté ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le devoir de porter assistance à une personne en danger", "isCorrect": true },
+      { "label": "Le devoir de réserve", "isCorrect": false },
+      { "label": "Le droit de circuler", "isCorrect": false },
+      { "label": "La liberté d’expression", "isCorrect": false }
+    ],
+    "explanation": "En France, ne pas porter secours à une personne en danger est une infraction.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds002",
+    "question": "Vous n’êtes pas d’accord avec une loi, mais vous continuez à la respecter. Quel principe appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect de la loi dans un État de droit", "isCorrect": true },
+      { "label": "La soumission aveugle", "isCorrect": false },
+      { "label": "La neutralité politique", "isCorrect": false },
+      { "label": "La liberté d’opinion uniquement", "isCorrect": false }
+    ],
+    "explanation": "Dans un État de droit, la loi s’impose à tous.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds003",
+    "question": "Vous refusez de payer vos impôts car vous jugez les services publics inefficaces. Est-ce conforme aux devoirs du citoyen ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, le paiement des impôts est obligatoire", "isCorrect": true },
+      { "label": "Oui, c’est un droit individuel", "isCorrect": false },
+      { "label": "Oui, si on proteste", "isCorrect": false },
+      { "label": "Oui, pour les citoyens naturalisés", "isCorrect": false }
+    ],
+    "explanation": "Les impôts financent les services publics et sont obligatoires.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds004",
+    "question": "Vous participez à une manifestation autorisée et pacifique. Quel droit exercez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de manifester", "isCorrect": true },
+      { "label": "Le droit de grève", "isCorrect": false },
+      { "label": "Le devoir de réserve", "isCorrect": false },
+      { "label": "Le droit de désobéir", "isCorrect": false }
+    ],
+    "explanation": "La liberté de manifester est un droit fondamental.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds005",
+    "question": "Vous tenez des propos haineux contre un groupe de personnes sur internet. Quel droit dépasse ses limites ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté d’expression", "isCorrect": true },
+      { "label": "La liberté religieuse", "isCorrect": false },
+      { "label": "Le droit de vote", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "La liberté d’expression est limitée par la loi.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "dds006",
+    "question": "Vous êtes convoqué comme juré d’assises et vous refusez sans motif valable. Quel devoir n’est pas respecté ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le devoir civique de participer à la justice", "isCorrect": true },
+      { "label": "Le droit à la vie privée", "isCorrect": false },
+      { "label": "La liberté professionnelle", "isCorrect": false },
+      { "label": "Le droit de grève", "isCorrect": false }
+    ],
+    "explanation": "Être juré est un devoir civique.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds007",
+    "question": "Vous critiquez librement une décision politique sans insulter ni menacer. Quel droit exercez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté d’expression", "isCorrect": true },
+      { "label": "Le droit de désobéir", "isCorrect": false },
+      { "label": "Le devoir de réserve", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "La critique des décisions politiques est autorisée.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds008",
+    "question": "Vous refusez de respecter le règlement intérieur d’un lieu public. Quel devoir est remis en cause ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des règles communes", "isCorrect": true },
+      { "label": "Le droit de propriété", "isCorrect": false },
+      { "label": "La liberté religieuse", "isCorrect": false },
+      { "label": "Le droit d’asile", "isCorrect": false }
+    ],
+    "explanation": "Les règles communes garantissent le vivre-ensemble.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds009",
+    "question": "Vous votez lors d’une élection. De quel droit s’agit-il ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de vote", "isCorrect": true },
+      { "label": "Le droit de grève", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "Le droit de vote est un droit civique fondamental.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds010",
+    "question": "Vous ne respectez pas une décision de justice définitive. Quel principe est remis en cause ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect de l’autorité judiciaire", "isCorrect": true },
+      { "label": "La liberté individuelle", "isCorrect": false },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La fraternité", "isCorrect": false }
+    ],
+    "explanation": "Les décisions de justice doivent être respectées.",
+    "difficulty": "hard"
+  },
+
+  {
+    "id": "dds011",
+    "question": "Vous participez à une grève légale pour défendre vos conditions de travail. Quel droit exercez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de grève", "isCorrect": true },
+      { "label": "La liberté religieuse", "isCorrect": false },
+      { "label": "Le droit de vote", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false }
+    ],
+    "explanation": "Le droit de grève permet de défendre des intérêts professionnels.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds012",
+    "question": "Vous refusez toute discrimination dans votre comportement quotidien. Quel devoir respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le devoir de respecter l’égalité", "isCorrect": true },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le devoir militaire", "isCorrect": false },
+      { "label": "Le devoir de réserve", "isCorrect": false }
+    ],
+    "explanation": "Le respect de l’égalité est une obligation civique.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "dds013",
+    "question": "Vous empêchez quelqu’un d’exercer son droit de vote. Quel droit violez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de vote", "isCorrect": true },
+      { "label": "La liberté religieuse", "isCorrect": false },
+      { "label": "Le droit de grève", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "Empêcher de voter est une infraction grave.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds014",
+    "question": "Vous respectez les lois même lorsqu’elles vous contraignent. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le devoir de respecter la loi", "isCorrect": true },
+      { "label": "Le devoir de réserve", "isCorrect": false },
+      { "label": "Le devoir de neutralité", "isCorrect": false },
+      { "label": "Le droit de désobéir", "isCorrect": false }
+    ],
+    "explanation": "Le respect de la loi est un devoir fondamental.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds015",
+    "question": "Vous aidez une personne en difficulté sans y être obligé. Quel principe respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La fraternité", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false }
+    ],
+    "explanation": "La fraternité encourage l’entraide.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "dds016",
+    "question": "Vous respectez les règles de circulation même sans contrôle. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des règles communes", "isCorrect": true },
+      { "label": "La liberté individuelle", "isCorrect": false },
+      { "label": "Le droit de propriété", "isCorrect": false },
+      { "label": "La liberté d’opinion", "isCorrect": false }
+    ],
+    "explanation": "Les règles garantissent la sécurité collective.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds017",
+    "question": "Vous refusez de témoigner devant la justice sans raison valable. Quel devoir est concerné ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le devoir de coopérer avec la justice", "isCorrect": true },
+      { "label": "Le droit au silence politique", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "La justice repose sur la participation des citoyens.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds018",
+    "question": "Vous adhérez à un syndicat pour défendre vos intérêts professionnels. Quel droit exercez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit syndical", "isCorrect": true },
+      { "label": "Le droit de grève", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le devoir de réserve", "isCorrect": false }
+    ],
+    "explanation": "Le droit syndical est garanti par la République.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds019",
+    "question": "Vous respectez les droits d’autrui même quand ils sont différents des vôtres. Quel principe appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des libertés d’autrui", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La soumission", "isCorrect": false },
+      { "label": "L’individualisme", "isCorrect": false }
+    ],
+    "explanation": "Les libertés s’exercent dans le respect d’autrui.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds020",
+    "question": "Vous refusez toute violence dans un débat politique. Quel devoir respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect du débat démocratique", "isCorrect": true },
+      { "label": "La neutralité religieuse", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le droit de grève", "isCorrect": false }
+    ],
+    "explanation": "La démocratie repose sur le dialogue pacifique.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "dds021",
+    "question": "Vous respectez la vie privée d’autrui. Quel droit protégez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit au respect de la vie privée", "isCorrect": true },
+      { "label": "Le droit de vote", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "La vie privée est protégée par la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds022",
+    "question": "Vous refusez de participer à un acte illégal même sous pression. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect de la loi", "isCorrect": true },
+      { "label": "La solidarité obligatoire", "isCorrect": false },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "Le droit de grève", "isCorrect": false }
+    ],
+    "explanation": "La loi s’impose à tous.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds023",
+    "question": "Vous respectez la liberté religieuse d’autrui sans partager ses croyances. Quel droit respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté de conscience", "isCorrect": true },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le droit de vote", "isCorrect": false },
+      { "label": "La neutralité politique", "isCorrect": false }
+    ],
+    "explanation": "La liberté de conscience est un droit fondamental.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds024",
+    "question": "Vous respectez les biens publics comme s’ils étaient les vôtres. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des biens publics", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "Le droit de propriété", "isCorrect": false },
+      { "label": "La liberté religieuse", "isCorrect": false }
+    ],
+    "explanation": "Les biens publics appartiennent à tous.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds025",
+    "question": "Vous participez à la vie associative locale. Quel droit exercez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté d’association", "isCorrect": true },
+      { "label": "Le droit de grève", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "Le devoir de réserve", "isCorrect": false }
+    ],
+    "explanation": "La liberté d’association est garantie.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "dds026",
+    "question": "Vous acceptez les contrôles de police dans le respect de la loi. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect de l’autorité publique", "isCorrect": true },
+      { "label": "La soumission", "isCorrect": false },
+      { "label": "La neutralité religieuse", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false }
+    ],
+    "explanation": "L’autorité publique agit dans le cadre de la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds027",
+    "question": "Vous refusez toute forme de corruption. Quel devoir respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect de la loi et de l’éthique", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La liberté individuelle", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "La corruption est interdite par la loi.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds028",
+    "question": "Vous exprimez vos opinions sans empêcher les autres de s’exprimer. Quel droit respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté d’expression de tous", "isCorrect": true },
+      { "label": "Le droit de vote", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "La neutralité", "isCorrect": false }
+    ],
+    "explanation": "La liberté d’expression est partagée.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds029",
+    "question": "Vous respectez les droits des travailleurs dans votre entreprise. Quel principe appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des droits sociaux", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false },
+      { "label": "La liberté religieuse", "isCorrect": false }
+    ],
+    "explanation": "Les droits sociaux font partie des droits fondamentaux.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds030",
+    "question": "Vous respectez les décisions prises démocratiquement même si vous avez voté contre. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect du résultat démocratique", "isCorrect": true },
+      { "label": "La neutralité politique", "isCorrect": false },
+      { "label": "Le droit de désobéir", "isCorrect": false },
+      { "label": "La fraternité", "isCorrect": false }
+    ],
+    "explanation": "La démocratie repose sur l’acceptation du vote.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "dds031",
+    "question": "Vous refusez de tricher lors d’un examen ou concours. Quel devoir respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect de l’égalité et de l’honnêteté", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La liberté individuelle", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "L’égalité implique l’honnêteté.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds032",
+    "question": "Vous respectez l’environnement et les règles écologiques. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le devoir de préserver l’environnement", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "Le droit de propriété", "isCorrect": false },
+      { "label": "La liberté religieuse", "isCorrect": false }
+    ],
+    "explanation": "La protection de l’environnement est un devoir citoyen.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds033",
+    "question": "Vous acceptez que vos droits soient limités pour protéger la sécurité collective. Quel principe respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "L’équilibre entre libertés et sécurité", "isCorrect": true },
+      { "label": "La soumission", "isCorrect": false },
+      { "label": "La neutralité religieuse", "isCorrect": false },
+      { "label": "La fraternité uniquement", "isCorrect": false }
+    ],
+    "explanation": "Les libertés peuvent être encadrées par la loi.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds034",
+    "question": "Vous respectez les droits des autres usagers dans un lieu public. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect du vivre-ensemble", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false }
+    ],
+    "explanation": "Le vivre-ensemble repose sur le respect mutuel.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds035",
+    "question": "Vous exercez un métier réglementé et respectez ses règles. Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des règles professionnelles", "isCorrect": true },
+      { "label": "La liberté totale", "isCorrect": false },
+      { "label": "La neutralité religieuse", "isCorrect": false },
+      { "label": "Le droit de grève", "isCorrect": false }
+    ],
+    "explanation": "Certaines professions impliquent des obligations spécifiques.",
+    "difficulty": "medium"
+  },
+
+  {
+    "id": "dds036",
+    "question": "Vous respectez la liberté de la presse même lorsque les articles vous dérangent. Quel droit respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté de la presse", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "Le droit de vote", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false }
+    ],
+    "explanation": "La liberté de la presse est essentielle à la démocratie.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds037",
+    "question": "Vous respectez les droits des minorités même si vous appartenez à la majorité. Quel principe appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "L’égalité des droits", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La domination majoritaire", "isCorrect": false },
+      { "label": "La liberté religieuse", "isCorrect": false }
+    ],
+    "explanation": "L’égalité protège tous les citoyens.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds038",
+    "question": "Vous acceptez de remplir vos obligations administratives (recensement, documents). Quel devoir appliquez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des obligations civiques", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La liberté religieuse", "isCorrect": false },
+      { "label": "Le droit de grève", "isCorrect": false }
+    ],
+    "explanation": "Les démarches administratives font partie des devoirs.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds039",
+    "question": "Vous acceptez de débattre sans insulter ni menacer. Quel devoir respectez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect du débat démocratique", "isCorrect": true },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "Le devoir fiscal", "isCorrect": false }
+    ],
+    "explanation": "Le débat pacifique est au cœur de la démocratie.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds040",
+    "question": "Vous respectez les droits et les devoirs de tous dans votre vie quotidienne. Quel comportement adoptez-vous ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un comportement citoyen conforme aux valeurs républicaines", "isCorrect": true },
+      { "label": "Une soumission administrative", "isCorrect": false },
+      { "label": "Une neutralité politique", "isCorrect": false },
+      { "label": "Un simple choix personnel", "isCorrect": false }
+    ],
+    "explanation": "Être citoyen implique droits et devoirs.",
+    "difficulty": "medium"
+  }
+]
