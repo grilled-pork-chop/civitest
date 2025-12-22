@@ -10,6 +10,7 @@ import {
   XCircle,
   List,
   AlertCircle,
+  Layers,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -145,6 +146,10 @@ export function ReviewPage() {
   const correctCount = currentQuiz.answers.filter((a) => a.isCorrect).length;
   const incorrectCount = currentQuiz.answers.filter((a) => !a.isCorrect).length;
 
+  const knowledgeCount = currentQuiz.questions.filter((q) => q.type === 'knowledge').length;
+  const situationalCount = currentQuiz.questions.filter((q) => q.type === 'situational').length;
+
+
   const topicStats = currentQuiz.questions.reduce(
     (acc, question, index) => {
       const answer = currentQuiz.answers[index];
@@ -230,7 +235,8 @@ export function ReviewPage() {
                     active={typeFilter === 'all'}
                     onClick={() => setTypeFilter('all')}
                   >
-                    Tous types
+                    <Layers className="h-4 w-4 mr-1" />
+                    Tous ({currentQuiz.questions.length})
                   </FilterButton>
                   <FilterButton
                     active={typeFilter === 'knowledge'}
@@ -241,7 +247,7 @@ export function ReviewPage() {
                       className="w-2 h-2 rounded-full mr-1.5"
                       style={{ backgroundColor: getQuestionTypeColor('knowledge') }}
                     />
-                    Connaissance
+                    Connaissance ({knowledgeCount})
                   </FilterButton>
                   <FilterButton
                     active={typeFilter === 'situational'}
@@ -252,7 +258,7 @@ export function ReviewPage() {
                       className="w-2 h-2 rounded-full mr-1.5"
                       style={{ backgroundColor: getQuestionTypeColor('situational') }}
                     />
-                    Situation
+                    Situation ({situationalCount})
                   </FilterButton>
                 </div>
               </div>
