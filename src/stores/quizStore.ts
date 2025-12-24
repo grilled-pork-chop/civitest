@@ -19,6 +19,7 @@ import {
   addQuizResult,
   addUsedQuestionSet,
 } from '@/utils/localStorage';
+import { logger } from '@/services/logger';
 
 export interface AppState {
   currentQuiz: QuizSession | null;
@@ -47,7 +48,10 @@ export const quizActions = {
 
     const shuffledQuestions = selectedQuestions.map(shuffleChoices);
 
-    addUsedQuestionSet(selectedQuestions.map((q) => q.id));
+    const { saveResult } = addUsedQuestionSet(selectedQuestions.map((q) => q.id));
+    if (!saveResult.success) {
+      logger.warn('Failed to save used question set', { error: saveResult.error });
+    }
 
     const newQuiz: QuizSession = {
       id: generateQuizId(),
@@ -267,7 +271,16 @@ export const quizActions = {
       answers: quiz.answers,
     };
 
-    const updatedHistory = addQuizResult(result);
+    const { history: updatedHistory, saveResult } = addQuizResult(result);
+
+    if (saveResult.quotaExceeded && saveResult.trimmed) {
+      logger.warn('Storage quota exceeded. Older quiz results were removed to save new data.', {
+        trimmed: saveResult.trimmed,
+        quotaExceeded: saveResult.quotaExceeded,
+      });
+    } else if (!saveResult.success) {
+      logger.error('Failed to save quiz result', { error: saveResult.error });
+    }
 
     appStore.setState((state) => ({
       ...state,

@@ -1,3 +1,8 @@
+/**
+ * Quiz results summary component
+ * Displays comprehensive quiz results with stats and topic breakdown
+ */
+
 import React from 'react';
 import {
   Trophy,
@@ -12,11 +17,32 @@ import { formatTimeVerbose, getTopicName, getTopicColor } from '@/utils/question
 import { QUIZ_CONFIG } from '@/types';
 import type { QuizResult, TopicPerformance } from '@/types';
 
+/**
+ * Props for ResultsSummary component
+ */
 interface ResultsSummaryProps {
+  /** Quiz result data to display */
   result: QuizResult;
+  /** Whether to show detailed stats and topic breakdown */
   showDetailed?: boolean;
 }
 
+/**
+ * Comprehensive quiz results display
+ * Shows pass/fail banner, overall stats, topic performance, and improvement tips
+ * Includes visual feedback with color-coded pass/fail states
+ *
+ * @param props - Component props
+ * @returns Results summary with detailed statistics
+ *
+ * @example
+ * ```tsx
+ * <ResultsSummary
+ *   result={quizResult}
+ *   showDetailed={true}
+ * />
+ * ```
+ */
 export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryProps) {
   const { score, totalQuestions, percentage, passed, timeTaken, topicPerformance } =
     result;
@@ -145,15 +171,27 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
   );
 }
 
+/**
+ * Props for StatCard sub-component
+ */
 interface StatCardProps {
+  /** Icon to display */
   icon: React.ReactNode;
+  /** Stat label */
   label: string;
+  /** Stat value */
   value: string;
+  /** Text color CSS class */
   color: string;
+  /** Background color CSS class */
   bgColor: string;
 }
 
-function StatCard({ icon, label, value, color, bgColor }: StatCardProps) {
+/**
+ * Individual stat card for displaying a single metric
+ * Memoized to prevent unnecessary re-renders in grid
+ */
+const StatCard = React.memo(function StatCard({ icon, label, value, color, bgColor }: StatCardProps) {
   return (
     <div className={cn('rounded-xl p-4', bgColor)}>
       <div className={cn('flex items-center gap-2 mb-2', color)}>
@@ -163,13 +201,21 @@ function StatCard({ icon, label, value, color, bgColor }: StatCardProps) {
       <div className={cn('text-2xl font-bold', color)}>{value}</div>
     </div>
   );
-}
+});
 
+/**
+ * Props for TopicProgressBar sub-component
+ */
 interface TopicProgressBarProps {
+  /** Topic performance data */
   performance: TopicPerformance;
 }
 
-function TopicProgressBar({ performance }: TopicProgressBarProps) {
+/**
+ * Progress bar showing performance for a single topic
+ * Memoized to prevent unnecessary re-renders in list
+ */
+const TopicProgressBar = React.memo(function TopicProgressBar({ performance }: TopicProgressBarProps) {
   const { topicId, correct, total, percentage } = performance;
   const color = getTopicColor(topicId);
   const isPassing = percentage >= 80;
@@ -198,4 +244,4 @@ function TopicProgressBar({ performance }: TopicProgressBarProps) {
       </div>
     </div>
   );
-}
+});

@@ -1,4 +1,12 @@
+/**
+ * LocalStorage utilities for quiz history management
+ * Provides type-safe access to browser localStorage with validation
+ */
+
 import type { QuizHistory, QuizResult } from '@/types';
+import { validateQuizHistory } from '@/lib/schemas';
+import { logger } from '@/services/logger';
+import { STORAGE_LIMITS } from '@/constants/app';
 
 const STORAGE_KEYS = {
   QUIZ_HISTORY: 'civitest_quiz_history',
@@ -15,19 +23,23 @@ const DEFAULT_QUIZ_HISTORY: QuizHistory = {
 };
 
 /**
- * Safely parse JSON with fallback
+ * Safely parse and validate JSON with fallback
  */
-function safeJSONParse<T>(value: string | null, fallback: T): T {
+function safeJSONParse(value: string | null, fallback: QuizHistory): QuizHistory {
   if (!value) return fallback;
   try {
-    return JSON.parse(value) as T;
-  } catch {
+    const parsed = JSON.parse(value);
+    return validateQuizHistory(parsed);
+  } catch (error) {
+    logger.warn('Failed to parse or validate quiz history from localStorage', {}, error as Error);
     return fallback;
   }
 }
 
 /**
- * Check if localStorage is available
+ * Check if localStorage is available in the current environment
+ *
+ * @returns True if localStorage can be used
  */
 function isLocalStorageAvailable(): boolean {
   try {
@@ -52,55 +64,90 @@ export function getQuizHistory(): QuizHistory {
   return safeJSONParse(stored, DEFAULT_QUIZ_HISTORY);
 }
 
+export interface SaveResult {
+  success: boolean;
+  quotaExceeded?: boolean;
+  trimmed?: boolean;
+  error?: string;
+}
+
 /**
- * Save quiz history to localStorage
+ * Save quiz history to localStorage with quota handling
  */
-export function saveQuizHistory(history: QuizHistory): void {
-  if (!isLocalStorageAvailable()) return;
+export function saveQuizHistory(history: QuizHistory): SaveResult {
+  if (!isLocalStorageAvailable()) {
+    return { success: false, error: 'localStorage not available' };
+  }
 
   try {
     localStorage.setItem(STORAGE_KEYS.QUIZ_HISTORY, JSON.stringify(history));
+    return { success: true };
   } catch (error) {
-    console.error('Failed to save quiz history:', error);
+    logger.error('Failed to save quiz history', {
+      resultCount: history.results.length,
+      questionSetCount: history.usedQuestionSets.length
+    }, error as Error);
+
     if (error instanceof DOMException && error.name === 'QuotaExceededError') {
-      const trimmedHistory: QuizHistory = {
-        ...history,
-        results: history.results.slice(-20),
-        usedQuestionSets: history.usedQuestionSets.slice(-5),
-      };
-      localStorage.setItem(
-        STORAGE_KEYS.QUIZ_HISTORY,
-        JSON.stringify(trimmedHistory)
-      );
+      try {
+        // Attempt to save with trimmed history using configured limits
+        const trimmedHistory: QuizHistory = {
+          ...history,
+          results: history.results.slice(-STORAGE_LIMITS.MAX_QUIZ_RESULTS),
+          usedQuestionSets: history.usedQuestionSets.slice(-STORAGE_LIMITS.MAX_QUESTION_SETS),
+        };
+        localStorage.setItem(
+          STORAGE_KEYS.QUIZ_HISTORY,
+          JSON.stringify(trimmedHistory)
+        );
+        logger.warn('Storage quota exceeded, trimmed history', {
+          originalResults: history.results.length,
+          trimmedResults: trimmedHistory.results.length
+        });
+        return {
+          success: true,
+          quotaExceeded: true,
+          trimmed: true
+        };
+      } catch (retryError) {
+        logger.error('Unable to save even after trimming', {}, retryError as Error);
+        return {
+          success: false,
+          quotaExceeded: true,
+          error: 'Unable to save even after trimming history'
+        };
+      }
     }
+
+    return { success: false, error: 'Unknown error saving data' };
   }
 }
 
 /**
  * Add a quiz result to history
  */
-export function addQuizResult(result: QuizResult): QuizHistory {
+export function addQuizResult(result: QuizResult): { history: QuizHistory; saveResult: SaveResult } {
   const history = getQuizHistory();
   const updatedHistory: QuizHistory = {
     ...history,
     results: [...history.results, result],
     lastQuizDate: result.date,
   };
-  saveQuizHistory(updatedHistory);
-  return updatedHistory;
+  const saveResult = saveQuizHistory(updatedHistory);
+  return { history: updatedHistory, saveResult };
 }
 
 /**
  * Add used question set to history
  */
-export function addUsedQuestionSet(questionIds: string[]): QuizHistory {
+export function addUsedQuestionSet(questionIds: string[]): { history: QuizHistory; saveResult: SaveResult } {
   const history = getQuizHistory();
   const updatedHistory: QuizHistory = {
     ...history,
     usedQuestionSets: [...history.usedQuestionSets, questionIds].slice(-10),
   };
-  saveQuizHistory(updatedHistory);
-  return updatedHistory;
+  const saveResult = saveQuizHistory(updatedHistory);
+  return { history: updatedHistory, saveResult };
 }
 
 /**
@@ -178,18 +225,35 @@ export function exportQuizHistory(): string {
 }
 
 /**
- * Import quiz history from JSON
+ * Import quiz history from JSON with validation
+ *
+ * @param jsonString - JSON string containing quiz history data
+ * @returns Result object with success status and optional error message
+ *
+ * @example
+ * ```typescript
+ * const result = importQuizHistory(jsonData);
+ * if (result.success) {
+ *   toast.success('Import successful');
+ * } else {
+ *   toast.error(result.error);
+ * }
+ * ```
  */
-export function importQuizHistory(jsonString: string): boolean {
+export function importQuizHistory(jsonString: string): { success: boolean; error?: string } {
   try {
-    const imported = JSON.parse(jsonString) as QuizHistory;
-    if (!imported.results || !Array.isArray(imported.results)) {
-      throw new Error('Invalid quiz history format');
-    }
-    saveQuizHistory(imported);
-    return true;
+    const parsed = JSON.parse(jsonString);
+    const validated = validateQuizHistory(parsed);
+    saveQuizHistory(validated);
+    logger.info('Quiz history imported successfully', {
+      resultCount: validated.results.length
+    });
+    return { success: true };
   } catch (error) {
-    console.error('Failed to import quiz history:', error);
-    return false;
+    logger.error('Failed to import quiz history', {}, error as Error);
+    if (error instanceof SyntaxError) {
+      return { success: false, error: 'Invalid JSON format' };
+    }
+    return { success: false, error: 'Invalid quiz history data structure' };
   }
 }

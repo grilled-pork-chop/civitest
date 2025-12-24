@@ -1,37 +1,12 @@
-import React, { useState } from 'react';
+/**
+ * Statistics page
+ * Displays quiz history, performance analytics, and statistics
+ */
+
+import React, { useState, Suspense, lazy } from 'react';
 import { useNavigate } from '@tanstack/react-router';
-import {
-  BarChart3,
-  TrendingUp,
-  Award,
-  Clock,
-  Target,
-  Trash2,
-  Download,
-  Upload,
-  CheckCircle,
-  XCircle,
-  Play,
-  Eye,
-} from 'lucide-react';
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  Cell,
-  PieChart,
-  Pie,
-  Legend,
-} from 'recharts';
+import { Trash2, Download, Upload, Play, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Dialog,
   DialogContent,
@@ -40,29 +15,38 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import {
-  getQuizStatistics,
-  getQuizResults,
-  clearQuizHistory,
-  exportQuizHistory,
-  importQuizHistory,
-} from '@/utils/localStorage';
-import { formatDate, formatTimeVerbose, getTopicName, getTopicColor, getQuestionTypeColor, getQuestionTypeName } from '@/utils/questions';
+import { clearQuizHistory } from '@/utils/localStorage';
+import { exportQuizHistoryFile, importQuizHistoryFile } from '@/services/quizExport';
 import { quizActions } from '@/stores/quizStore';
-import { useQuestions } from '@/lib/queries';
-import { cn } from '@/lib/utils';
-import { TOPICS, QUIZ_CONFIG } from '@/types';
-import type { QuestionType, QuizResult } from '@/types';
+import { queryClient, useQuestions } from '@/lib/queries';
+import { useQuizStats } from '@/hooks/useQuizStats';
+import { StatsSummaryCards } from '@/components/stats/StatsSummaryCards';
+import { TrendChart } from '@/components/stats/TrendChart';
+import { toast, SUCCESS_MESSAGES } from '@/services/toast';
+import { Skeleton } from '@/components/ui/skeleton';
 
+const TopicPerformanceChart = lazy(() =>
+  import('@/components/stats/TopicPerformanceChart').then(m => ({ default: m.TopicPerformanceChart }))
+);
+const QuizResultsList = lazy(() =>
+  import('@/components/stats/QuizResultsList').then(m => ({ default: m.QuizResultsList }))
+);
+
+/**
+ * Statistics page component
+ * Displays comprehensive quiz performance analytics
+ *
+ * @returns Statistics page UI
+ */
 export function StatsPage() {
   const navigate = useNavigate();
   const { data: questions } = useQuestions();
   const [showClearDialog, setShowClearDialog] = useState(false);
-  const [selectedResult, setSelectedResult] = useState<QuizResult | null>(null);
+  const stats = useQuizStats();
 
-  const stats = getQuizStatistics();
-  const results = getQuizResults();
-
+  /**
+   * Start a new quiz
+   */
   const handleNewQuiz = () => {
     if (questions) {
       quizActions.startQuiz(questions);
@@ -70,494 +54,138 @@ export function StatsPage() {
     }
   };
 
+  /**
+   * Clear all quiz history
+   */
   const handleClearHistory = () => {
     clearQuizHistory();
+    queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
     quizActions.refreshHistory();
     setShowClearDialog(false);
-    window.location.reload();
+    toast.success(SUCCESS_MESSAGES.QUIZ_HISTORY_CLEARED);
   };
 
-  const handleExport = () => {
-    const data = exportQuizHistory();
-    const blob = new Blob([data], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `civitest-history-${new Date().toISOString().split('T')[0]}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
+  /**
+   * Handle file import
+   */
+  const handleImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const content = e.target?.result as string;
-      if (importQuizHistory(content)) {
-        window.location.reload();
-      } else {
-        alert('Erreur lors de l\'importation des données.');
-      }
-    };
-    reader.readAsText(file);
+    await importQuizHistoryFile(file, () => {
+      queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
+      quizActions.refreshHistory();
+      event.target.value = '';
+    });
   };
 
-  const handleReviewQuiz = (quizId: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    navigate({ to: '/review/$quizId', params: { quizId } });
-  };
-
-  const trendData = results.slice(0, 20).reverse().map((r, i) => ({
-    name: `Quiz ${i + 1}`,
-    score: r.percentage,
-    passing: QUIZ_CONFIG.passingScore * 100,
-  }));
-
-  const topicPerformanceData = TOPICS.map((topic) => {
-    const topicResults = results.flatMap((r) =>
-      r.topicPerformance.filter((tp) => tp.topicId === topic.id)
-    );
-    const avgScore =
-      topicResults.length > 0
-        ? Math.round(
-          topicResults.reduce((sum, tp) => sum + tp.percentage, 0) /
-          topicResults.length
-        )
-        : 0;
-    return {
-      name: topic.nameShort,
-      score: avgScore,
-      color: topic.color,
-    };
-  });
-
-  const typePerformanceData = (['knowledge', 'situational'] as QuestionType[]).map((type) => {
-    const typeResults = results
-      .filter((r) => r.questions && r.answers)
-      .flatMap((r) => {
-        const typeQuestions = r.questions!
-          .map((q, i) => ({ question: q, answer: r.answers![i] }))
-          .filter(({ question }) => question.type === type);
-
-        if (typeQuestions.length === 0) return [];
-
-        const correct = typeQuestions.filter(({ answer }) => answer.isCorrect).length;
-        return [{ correct, total: typeQuestions.length }];
-      });
-
-    const avgScore = typeResults.length > 0
-      ? Math.round(
-        typeResults.reduce((sum, r) => sum + (r.correct / r.total) * 100, 0) / typeResults.length
-      )
-      : 0;
-
-    return {
-      name: getQuestionTypeName(type),
-      score: avgScore,
-      color: getQuestionTypeColor(type),
-    };
-  });
-
-  const passFailData = [
-    { name: 'Réussis', value: results.filter((r) => r.passed).length, color: '#22C55E' },
-    { name: 'Échoués', value: results.filter((r) => !r.passed).length, color: '#EF4444' },
-  ].filter((d) => d.value > 0);
-
-  if (results.length === 0) {
+  if (!stats.hasResults) {
     return (
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-md mx-auto text-center">
-          <BarChart3 className="h-16 w-16 text-muted-foreground/50 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold mb-2">Pas encore de statistiques</h1>
-          <p className="text-muted-foreground mb-6">
-            Complétez votre premier quiz pour voir vos statistiques et suivre
-            votre progression.
-          </p>
-          <Button size="lg" onClick={handleNewQuiz}>
-            <Play className="mr-2 h-5 w-5" />
-            Commencer un quiz
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="h-full bg-linear-to-b from-slate-50 to-white">
-      {/* Header */}
-      <div className="bg-white border-b">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <h1 className="text-2xl font-bold flex items-center gap-2">
-                <BarChart3 className="h-7 w-7 text-primary" />
-                Statistiques
-              </h1>
-              <p className="text-muted-foreground">
-                Suivez votre progression et analysez vos performances
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" onClick={handleExport}>
-                <Download className="mr-2 h-4 w-4" />
-                Exporter
-              </Button>
-              <label className="cursor-pointer">
-                <Button variant="outline" size="sm" asChild>
-                  <span>
-                    <Upload className="mr-2 h-4 w-4" />
-                    Importer
-                  </span>
-                </Button>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+          <div className="rounded-full bg-muted w-24 h-24 flex items-center justify-center mx-auto">
+            <BarChart3 className="h-12 w-12 text-muted-foreground" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-2">Aucune statistique disponible</h2>
+            <p className="text-muted-foreground mb-6">
+              Commencez un examen pour voir vos statistiques et suivre votre progression.
+            </p>
+          </div>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <Button size="lg" onClick={handleNewQuiz}>
+              <Play className="mr-2 h-5 w-5" />
+              Commencer un examen
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <label htmlFor="import-file" className="cursor-pointer">
+                <Upload className="mr-2 h-5 w-5" />
+                Importer l'historique
                 <input
+                  id="import-file"
                   type="file"
                   accept=".json"
                   className="hidden"
                   onChange={handleImport}
                 />
               </label>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowClearDialog(true)}
-              >
-                <Trash2 className="mr-2 h-4 w-4" />
-                Effacer
-              </Button>
-            </div>
+            </Button>
           </div>
         </div>
       </div>
+    );
+  }
 
-      {/* Content */}
-      <div className="container mx-auto px-4 py-5">
-        {/* Stats overview */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <StatCard
-            icon={<Target className="h-5 w-5" />}
-            label="Quiz complétés"
-            value={stats.totalQuizzes.toString()}
-            color="blue"
-          />
-          <StatCard
-            icon={<Award className="h-5 w-5" />}
-            label="Taux de réussite"
-            value={`${stats.passRate}%`}
-            color={stats.passRate >= 80 ? 'green' : 'yellow'}
-          />
-          <StatCard
-            icon={<TrendingUp className="h-5 w-5" />}
-            label="Score moyen"
-            value={`${stats.averageScore}%`}
-            color={stats.averageScore >= 80 ? 'green' : 'yellow'}
-          />
-          <StatCard
-            icon={<Clock className="h-5 w-5" />}
-            label="Temps moyen"
-            value={formatTimeVerbose(stats.averageTimePerQuiz)}
-            color="purple"
-          />
+  return (
+    <div className="container mx-auto px-4 py-8 space-y-8">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold">Statistiques</h1>
+          <p className="text-muted-foreground">
+            Analysez vos performances et suivez votre progression
+          </p>
         </div>
-
-        {/* Charts */}
-        <Tabs defaultValue="progress" className="space-y-6">
-          <TabsList>
-            <TabsTrigger value="progress">Progression</TabsTrigger>
-            <TabsTrigger value="topics">Par thème</TabsTrigger>
-            <TabsTrigger value="history">Historique</TabsTrigger>
-          </TabsList>
-
-          {/* Progress tab */}
-          <TabsContent value="progress">
-            <div className="grid lg:grid-cols-2 gap-6">
-              {/* Score trend */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Évolution des scores</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="h-[300px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <LineChart data={trendData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />
-                        <XAxis
-                          dataKey="name"
-                          tick={{ fontSize: 12 }}
-                          stroke="#94A3B8"
-                        />
-                        <YAxis
-                          domain={[0, 100]}
-                          tick={{ fontSize: 12 }}
-                          stroke="#94A3B8"
-                        />
-                        <Tooltip
-                          contentStyle={{
-                            backgroundColor: 'white',
-                            border: '1px solid #E2E8F0',
-                            borderRadius: '8px',
-                          }}
-                        />
-                        <Line
-                          type="monotone"
-                          dataKey="passing"
-                          stroke="#94A3B8"
-                          strokeDasharray="5 5"
-                          dot={false}
-                          name="Seuil (80%)"
-                        />
-                        <Line
-                          type="monotone"
-                          dataKey="score"
-                          stroke="#002654"
-                          strokeWidth={2}
-                          dot={{ fill: '#002654', strokeWidth: 2 }}
-                          name="Score"
-                        />
-                      </LineChart>
-                    </ResponsiveContainer>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Pass/Fail distribution */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Répartition réussite/échec</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="h-75">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <PieChart>
-                        <Pie
-                          data={passFailData}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={60}
-                          outerRadius={100}
-                          paddingAngle={5}
-                          dataKey="value"
-                          label={({ name, value }) => `${name}: ${value}`}
-                        >
-                          {passFailData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
-                          ))}
-                        </Pie>
-                        <Tooltip />
-                        <Legend />
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Topics tab */}
-          <TabsContent value="topics">
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Performance par thème</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="h-100">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={topicPerformanceData} layout="vertical">
-                        <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />
-                        <XAxis
-                          type="number"
-                          domain={[0, 100]}
-                          tick={{ fontSize: 12 }}
-                          stroke="#94A3B8"
-                        />
-                        <YAxis
-                          type="category"
-                          dataKey="name"
-                          tick={{ fontSize: 12 }}
-                          stroke="#94A3B8"
-                          width={120}
-                        />
-                        <Tooltip
-                          contentStyle={{
-                            backgroundColor: 'white',
-                            border: '1px solid #E2E8F0',
-                            borderRadius: '8px',
-                          }}
-                          formatter={(value) => [
-                            `${value ?? 0}%`,
-                            'Score moyen',
-                          ]}
-                        />
-                        <Bar dataKey="score" radius={[0, 4, 4, 0]}>
-                          {topicPerformanceData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-
-                  {/* Topic breakdown */}
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-                    {topicPerformanceData.map((topic) => (
-                      <div
-                        key={topic.name}
-                        className="p-4 rounded-lg border bg-card"
-                      >
-                        <div className="flex items-center gap-2 mb-2">
-                          <div
-                            className="w-3 h-3 rounded-full"
-                            style={{ backgroundColor: topic.color }}
-                          />
-                          <span className="font-medium text-sm">{topic.name}</span>
-                        </div>
-                        <div className="flex items-end justify-between">
-                          <span
-                            className={cn('text-2xl font-bold', {
-                              'text-green-600': topic.score >= 80,
-                              'text-yellow-600':
-                                topic.score >= 60 && topic.score < 80,
-                              'text-red-600': topic.score < 60,
-                            })}
-                          >
-                            {topic.score}%
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            {topic.score >= 80 ? 'Excellent' : topic.score >= 60 ? 'À améliorer' : 'Réviser'}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Performance par type de question</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {typePerformanceData.map((type) => (
-                      <div key={type.name} className="p-4 rounded-lg border bg-card">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div
-                            className="w-3 h-3 rounded-full"
-                            style={{ backgroundColor: type.color }}
-                          />
-                          <span className="font-medium text-sm">{type.name}</span>
-                        </div>
-                        <div className="flex items-end justify-between">
-                          <span
-                            className={cn('text-2xl font-bold', {
-                              'text-green-600': type.score >= 80,
-                              'text-yellow-600': type.score >= 60 && type.score < 80,
-                              'text-red-600': type.score < 60,
-                            })}
-                          >
-                            {type.score}%
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            {type.score >= 80 ? 'Excellent' : type.score >= 60 ? 'À améliorer' : 'Réviser'}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* History tab */}
-          <TabsContent value="history">
-            <Card>
-              <CardHeader>
-                <CardTitle>Historique des quiz</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {results.map((result) => {
-                    const hasReviewData = !!(result.questions && result.answers);
-
-                    return (
-                      <div
-                        key={result.id}
-                        className="flex items-center justify-between p-4 rounded-lg border hover:bg-secondary/50 transition-colors cursor-pointer"
-                        onClick={() => setSelectedResult(result)}
-                      >
-                        <div className="flex items-center gap-4">
-                          <div
-                            className={cn(
-                              'w-10 h-10 rounded-full flex items-center justify-center',
-                              result.passed
-                                ? 'bg-green-100 text-green-600'
-                                : 'bg-red-100 text-red-600'
-                            )}
-                          >
-                            {result.passed ? (
-                              <CheckCircle className="h-5 w-5" />
-                            ) : (
-                              <XCircle className="h-5 w-5" />
-                            )}
-                          </div>
-                          <div>
-                            <p className="font-medium">
-                              {result.score}/{result.totalQuestions} (
-                              {result.percentage}%)
-                            </p>
-                            <p className="text-sm text-muted-foreground">
-                              {formatDate(result.date)}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 sm:gap-4">
-                          <div className="text-right hidden sm:block">
-                            <p className="text-sm text-muted-foreground">
-                              Temps: {formatTimeVerbose(result.timeTaken)}
-                            </p>
-                          </div>
-                          <div
-                            className={cn(
-                              'px-3 py-1 rounded-full text-sm font-medium hidden sm:block',
-                              result.passed
-                                ? 'bg-green-100 text-green-700'
-                                : 'bg-red-100 text-red-700'
-                            )}
-                          >
-                            {result.passed ? 'Réussi' : 'Échoué'}
-                          </div>
-                          {hasReviewData && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={(e) => handleReviewQuiz(result.id, e)}
-                              className="shrink-0"
-                            >
-                              <Eye className="h-4 w-4 sm:mr-2" />
-                              <span className="hidden sm:inline">Revoir</span>
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+        <div className="flex gap-2 flex-wrap">
+          <Button variant="outline" onClick={exportQuizHistoryFile}>
+            <Download className="mr-2 h-4 w-4" />
+            Exporter
+          </Button>
+          <Button variant="outline" asChild>
+            <label htmlFor="import-file" className="cursor-pointer">
+              <Upload className="mr-2 h-4 w-4" />
+              Importer
+              <input
+                id="import-file"
+                type="file"
+                accept=".json"
+                className="hidden"
+                onChange={handleImport}
+              />
+            </label>
+          </Button>
+          <Button
+            variant="destructive"
+            onClick={() => setShowClearDialog(true)}
+          >
+            <Trash2 className="mr-2 h-4 w-4" />
+            Effacer
+          </Button>
+        </div>
       </div>
 
-      {/* Clear history dialog */}
+      {/* Summary Cards */}
+      <StatsSummaryCards
+        totalQuizzes={stats.summary.totalQuizzes}
+        averageScore={stats.summary.averageScore}
+        passRate={stats.summary.passRate}
+        averageTimePerQuiz={stats.summary.averageTimePerQuiz}
+      />
+
+      {/* Charts */}
+      <div className="grid gap-6 md:grid-cols-2">
+        {stats.summary.recentTrend.length > 0 && (
+          <TrendChart data={stats.summary.recentTrend} />
+        )}
+
+        <Suspense fallback={<Skeleton className="h-100 w-full" />}>
+          <TopicPerformanceChart topicStats={stats.topicStats} />
+        </Suspense>
+      </div>
+
+      {/* Results List */}
+      <Suspense fallback={<Skeleton className="h-150 w-full" />}>
+        <QuizResultsList results={stats.allResults} onNavigate={navigate} />
+      </Suspense>
+
+      {/* Clear Confirmation Dialog */}
       <Dialog open={showClearDialog} onOpenChange={setShowClearDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Effacer l'historique ?</DialogTitle>
+            <DialogTitle>Confirmer la suppression</DialogTitle>
             <DialogDescription>
-              Cette action est irréversible. Toutes vos statistiques et
-              résultats de quiz seront supprimés.
+              Êtes-vous sûr de vouloir effacer tout l'historique ? Cette action est
+              irréversible.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
@@ -565,136 +193,11 @@ export function StatsPage() {
               Annuler
             </Button>
             <Button variant="destructive" onClick={handleClearHistory}>
-              Effacer tout
+              Effacer
             </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
-
-      {/* Result detail dialog */}
-      <Dialog
-        open={!!selectedResult}
-        onOpenChange={() => setSelectedResult(null)}
-      >
-        <DialogContent className="max-w-lg">
-          <DialogHeader>
-            <DialogTitle>Détails du quiz</DialogTitle>
-          </DialogHeader>
-          {selectedResult && (
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Date</span>
-                <span className="font-medium">
-                  {formatDate(selectedResult.date)}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Score</span>
-                <span className="font-medium">
-                  {selectedResult.score}/{selectedResult.totalQuestions} (
-                  {selectedResult.percentage}%)
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Temps</span>
-                <span className="font-medium">
-                  {formatTimeVerbose(selectedResult.timeTaken)}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Résultat</span>
-                <span
-                  className={cn(
-                    'px-3 py-1 rounded-full text-sm font-medium',
-                    selectedResult.passed
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-red-100 text-red-700'
-                  )}
-                >
-                  {selectedResult.passed ? 'Réussi' : 'Échoué'}
-                </span>
-              </div>
-
-              <div className="pt-4 border-t">
-                <h4 className="font-medium mb-3">Performance par thème</h4>
-                <div className="space-y-2">
-                  {selectedResult.topicPerformance.map((tp) => (
-                    <div key={tp.topicId} className="flex items-center gap-3">
-                      <div
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: getTopicColor(tp.topicId) }}
-                      />
-                      <span className="flex-1 text-sm">
-                        {getTopicName(tp.topicId, true)}
-                      </span>
-                      <span
-                        className={cn('text-sm font-medium', {
-                          'text-green-600': tp.percentage >= 80,
-                          'text-red-600': tp.percentage < 80,
-                        })}
-                      >
-                        {tp.correct}/{tp.total} ({tp.percentage}%)
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-          <DialogFooter className="flex-col sm:flex-row gap-2">
-            {selectedResult?.questions && selectedResult?.answers && (
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setSelectedResult(null);
-                  navigate({ to: '/review/$quizId', params: { quizId: selectedResult.id } });
-                }}
-              >
-                <Eye className="mr-2 h-4 w-4" />
-                Revoir les questions
-              </Button>
-            )}
-            <Button onClick={() => setSelectedResult(null)}>Fermer</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
-  );
-}
-
-interface StatCardProps {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  color: 'blue' | 'green' | 'yellow' | 'purple' | 'red';
-}
-
-function StatCard({ icon, label, value, color }: StatCardProps) {
-  return (
-    <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
-      <CardContent className="p-3 sm:p-5">
-        <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-4">
-          {/* Slightly larger padding and rounded-lg for a modern look */}
-          <div className={cn('p-2 rounded-lg flex items-center justify-center', {
-            'bg-blue-50 text-blue-600': color === 'blue',
-            'bg-green-50 text-green-600': color === 'green',
-            'bg-yellow-50 text-yellow-600': color === 'yellow',
-            'bg-purple-50 text-purple-600': color === 'purple',
-            'bg-red-50 text-red-600': color === 'red',
-          })}>
-            {icon}
-          </div>
-
-          <div className="space-y-0.5">
-            <p className="text-xl sm:text-3xl font-bold tracking-tight leading-none">
-              {value}
-            </p>
-            <p className="text-[10px] sm:text-xs text-muted-foreground uppercase font-semibold tracking-wide">
-              {label}
-            </p>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
   );
 }

@@ -1,7 +1,12 @@
+/**
+ * Quiz page component
+ * Interactive quiz-taking interface with timer, navigation, and submission
+ */
+
 import { useCallback, useState, useEffect } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { useStore } from '@tanstack/react-store';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type PanInfo } from 'framer-motion';
 import {
   ChevronLeft,
   ChevronRight,
@@ -23,6 +28,7 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -40,6 +46,29 @@ import {
 import { QUIZ_CONFIG } from '@/types';
 import type { QuizResult } from '@/types';
 
+/**
+ * Interactive quiz-taking page
+ * Manages quiz state, timer, keyboard navigation, and mobile gestures
+ * Shows questions one at a time with progress tracking and time limits
+ * Displays results summary after quiz completion
+ * Prevents accidental navigation with confirmation dialogs
+ *
+ * Features:
+ * - Countdown timer with automatic submission
+ * - Keyboard shortcuts for navigation
+ * - Swipe gestures on mobile
+ * - Progress grid for question navigation
+ * - Confirmation dialogs for submit and exit
+ *
+ * @returns Quiz page with interactive question interface
+ *
+ * @example
+ * ```tsx
+ * <RouterProvider router={router}>
+ *   <QuizPage />
+ * </RouterProvider>
+ * ```
+ */
 export function QuizPage() {
   const navigate = useNavigate();
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
@@ -84,8 +113,7 @@ export function QuizPage() {
     onSubmit: () => setShowSubmitDialog(true),
   });
 
-  // Swipe logic for mobile native feel
-  const handleDragEnd = (_: any, info: any) => {
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50;
     if (info.offset.x < -swipeThreshold) {
       if (currentQuiz && currentQuiz.currentQuestionIndex < currentQuiz.questions.length - 1) {
@@ -154,6 +182,9 @@ export function QuizPage() {
                 <SheetContent side="right" className="w-[85vw] p-0 flex flex-col">
                   <SheetHeader className="p-6 border-b text-left">
                     <SheetTitle>Progression</SheetTitle>
+                    <SheetDescription>
+                      Navigation entre les questions du quiz
+                    </SheetDescription>
                   </SheetHeader>
                   <div className="flex-1 overflow-y-auto p-6">
                     <QuizProgress

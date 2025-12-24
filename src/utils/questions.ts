@@ -124,10 +124,10 @@ export function selectQuestions(
 }
 
 /**
- * Generate a unique quiz ID
+ * Generate a unique quiz ID using cryptographically secure random values
  */
 export function generateQuizId(): string {
-  return `quiz_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `quiz_${Date.now()}_${crypto.randomUUID()}`;
 }
 
 /**

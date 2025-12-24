@@ -1,3 +1,8 @@
+/**
+ * Home page component
+ * Landing page with quiz start, user statistics, and exam information
+ */
+
 import React from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { useStore } from '@tanstack/react-store';
@@ -18,18 +23,35 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useQuestions } from '@/lib/queries';
 import { appStore, quizActions } from '@/stores/quizStore';
 import { getQuizStatistics, getQuizResults } from '@/utils/localStorage';
-import { formatDateShort, getQuestionTypeColor } from '@/utils/questions';
+import { getQuestionTypeColor } from '@/utils/questions';
 import { TOPICS } from '@/types';
 import { cn } from '@/lib/utils';
 
 import { Footer } from '@/components/layout/Footer';
+import { ResultCard } from '@/components/stats/QuizResultsList';
+import { HomePageSkeleton } from '@/components/loading/PageSkeleton';
 
+/**
+ * Application home page
+ * Displays hero section with quiz start button, user performance stats,
+ * recent quiz results, exam information, and preparation tips
+ * Handles both first-time users and returning users with progress
+ *
+ * @returns Home page with quiz start and user dashboard
+ *
+ * @example
+ * ```tsx
+ * <RouterProvider router={router}>
+ *   <HomePage />
+ * </RouterProvider>
+ * ```
+ */
 export function HomePage() {
   const navigate = useNavigate();
-  const { data: questions, isLoading, error } = useQuestions();
+  const { data: questions, isLoading, error, refetch } = useQuestions();
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const stats = getQuizStatistics();
-  const recentResults = getQuizResults().slice(0, 5);
+  const recentResults = getQuizResults().slice(0, 3);
 
   const handleStartQuiz = () => {
     if (!questions || questions.length === 0) return;
@@ -42,14 +64,7 @@ export function HomePage() {
   };
 
   if (isLoading) {
-    return (
-      <div className="min-h-[60vh] flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" />
-          <p className="text-muted-foreground">Chargement des questions...</p>
-        </div>
-      </div>
-    );
+    return <HomePageSkeleton></HomePageSkeleton>
   }
 
   if (error) {
@@ -59,10 +74,10 @@ export function HomePage() {
           <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Erreur de chargement</h2>
           <p className="text-muted-foreground mb-4">
-            Impossible de charger les questions. Veuillez rafraîchir la page.
+            Impossible de charger les questions. Veuillez réessayer.
           </p>
-          <Button onClick={() => window.location.reload()}>
-            Rafraîchir
+          <Button onClick={() => refetch()}>
+            Réessayer
           </Button>
         </div>
       </div>
@@ -202,7 +217,7 @@ export function HomePage() {
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-2xl font-semibold flex items-center gap-2">
                       <Calendar className="h-6 w-6 text-primary" />
-                      Résultats récents
+                      Vos 3 derniers résultats
                     </h2>
                     <Button variant="ghost" onClick={() => navigate({ to: '/stats' })}>
                       Voir tout
@@ -211,50 +226,13 @@ export function HomePage() {
                   </div>
                   <div className="space-y-3">
                     {recentResults.map((result) => (
-                      <Card
+                      <ResultCard
                         key={result.id}
-                        className="overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
-                        onClick={() => navigate({ to: '/stats' })}
-                      >
-                        <CardContent className="p-3 sm:p-5">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-4">
-                              <div
-                                className={cn(
-                                  'w-12 h-12 rounded-full flex items-center justify-center',
-                                  result.passed
-                                    ? 'bg-green-100 text-green-600'
-                                    : 'bg-red-100 text-red-600'
-                                )}
-                              >
-                                {result.passed ? (
-                                  <CheckCircle2 className="h-6 w-6" />
-                                ) : (
-                                  <AlertCircle className="h-6 w-6" />
-                                )}
-                              </div>
-                              <div>
-                                <p className="font-semibold">
-                                  {result.score}/{result.totalQuestions} ({result.percentage}%)
-                                </p>
-                                <p className="text-sm text-muted-foreground">
-                                  {formatDateShort(result.date)}
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className={cn(
-                                'px-3 py-1 rounded-full text-sm font-medium',
-                                result.passed
-                                  ? 'bg-green-100 text-green-700'
-                                  : 'bg-red-100 text-red-700'
-                              )}
-                            >
-                              {result.passed ? 'Réussi' : 'Échoué'}
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
+                        result={result}
+                        onReview={() =>
+                          navigate({ to: '/review/$quizId', params: { quizId: result.id } })
+                        }
+                      />
                     ))}
                   </div>
                 </section>
@@ -363,13 +341,23 @@ export function HomePage() {
   );
 }
 
+/**
+ * Props for StatCard sub-component
+ */
 interface StatCardProps {
+  /** Icon to display */
   icon: React.ReactNode;
+  /** Stat label */
   label: string;
+  /** Stat value */
   value: string;
+  /** Color theme for the card */
   color: 'blue' | 'green' | 'yellow' | 'purple' | 'red';
 }
 
+/**
+ * Stat card for displaying user performance metrics
+ */
 function StatCard({ icon, label, value, color }: StatCardProps) {
   return (
     <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
@@ -399,11 +387,19 @@ function StatCard({ icon, label, value, color }: StatCardProps) {
     </Card>
   );
 }
+/**
+ * Props for InfoItem sub-component
+ */
 interface InfoItemProps {
+  /** Icon to display */
   icon: React.ReactNode;
+  /** Information text */
   text: string;
 }
 
+/**
+ * Information item with icon and text
+ */
 function InfoItem({ icon, text }: InfoItemProps) {
   return (
     <div className="flex items-center gap-2 text-sm">

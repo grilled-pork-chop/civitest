@@ -1,20 +1,57 @@
+/**
+ * Question card component
+ * Displays a single quiz question with multiple choice options
+ */
+
+import React from 'react';
 import { Check, X, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getTopicName, getTopicColor, getQuestionTypeName, getQuestionTypeColor } from "@/utils/questions";
 import type { Question, ShuffledQuestion } from "@/types";
 
+/**
+ * Props for QuestionCard component
+ */
 interface QuestionCardProps {
+  /** Question data (original or shuffled) */
   question: Question | ShuffledQuestion;
+  /** Current question number (1-indexed) */
   questionNumber: number;
+  /** Total number of questions in quiz */
   totalQuestions: number;
+  /** Index of selected choice (null if not answered) */
   selectedChoiceIndex: number | null;
+  /** Callback when a choice is selected */
   onSelectChoice: (index: number) => void;
+  /** Whether in review mode (shows correct/incorrect) */
   isReviewMode?: boolean;
+  /** Whether to show explanation (review mode only) */
   showExplanation?: boolean;
+  /** Whether interaction is disabled */
   disabled?: boolean;
 }
 
-export function QuestionCard({
+/**
+ * Interactive question card with multiple choice options
+ * Displays question text, choices, topic/type badges, and optional explanation
+ * Supports both quiz mode and review mode with visual feedback
+ *
+ * @param props - Component props
+ * @returns Question card with interactive choices
+ *
+ * @example
+ * ```tsx
+ * <QuestionCard
+ *   question={question}
+ *   questionNumber={5}
+ *   totalQuestions={20}
+ *   selectedChoiceIndex={1}
+ *   onSelectChoice={(index) => handleSelect(index)}
+ *   isReviewMode={false}
+ * />
+ * ```
+ */
+export const QuestionCard = React.memo(function QuestionCard({
   question,
   questionNumber,
   totalQuestions,
@@ -184,4 +221,4 @@ export function QuestionCard({
       )}
     </div>
   );
-}
+});

@@ -1,13 +1,42 @@
+/**
+ * Quiz timer component
+ * Displays remaining time with visual warnings as time runs low
+ */
+
 import { Clock, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { formatTime } from '@/utils/questions';
 
+/**
+ * Props for Timer component
+ */
 interface TimerProps {
+  /** Time remaining in seconds */
   timeRemaining: number;
+  /** Total time allocated in seconds */
   totalTime: number;
+  /** Additional CSS classes */
   className?: string;
 }
 
+/**
+ * Countdown timer with warning states
+ * Shows time remaining with progress bar and color-coded warnings
+ * - Normal: blue clock icon
+ * - Warning (≤5min): yellow styling
+ * - Critical (≤1min): red styling with pulse animation
+ *
+ * @param props - Component props
+ * @returns Timer display with progress bar
+ *
+ * @example
+ * ```tsx
+ * <Timer
+ *   timeRemaining={180}
+ *   totalTime={1200}
+ * />
+ * ```
+ */
 export function Timer({ timeRemaining, totalTime, className }: TimerProps) {
   const percentage = (timeRemaining / totalTime) * 100;
   const isWarning = timeRemaining <= 300;

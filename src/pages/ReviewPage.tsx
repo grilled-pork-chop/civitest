@@ -1,4 +1,9 @@
-import { useState, useEffect } from 'react';
+/**
+ * Review page component
+ * Allows reviewing quiz answers with filtering and navigation
+ */
+
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from '@tanstack/react-router';
 import { useStore } from '@tanstack/react-store';
 import {
@@ -21,15 +26,45 @@ import { appStore, quizActions } from '@/stores/quizStore';
 import { useQuestions } from '@/lib/queries';
 import { useKeyboardNavigation } from '@/hooks';
 import { getTopicName, getTopicColor, getQuestionTypeColor } from '@/utils/questions';
+import { hasQuizId, isTopicId } from '@/utils/typeGuards';
 import { cn } from '@/lib/utils';
 import type { QuestionType, TopicId } from '@/types';
 
+/**
+ * Filter options for reviewing questions
+ */
 type FilterType = 'all' | 'correct' | 'incorrect';
 
+/**
+ * Review page for quiz answers
+ * Allows users to review their quiz answers with comprehensive filtering options
+ * Shows correct/incorrect status, explanations, and topic/type performance stats
+ * Supports filtering by correctness, topic, and question type
+ * Can review current quiz or load historical quiz by ID
+ *
+ * Features:
+ * - Filter by correct/incorrect answers
+ * - Filter by topic (5 civic themes)
+ * - Filter by question type (knowledge/situational)
+ * - Keyboard navigation support
+ * - Performance statistics per topic and type
+ * - Question-by-question navigation
+ *
+ * @returns Review page with quiz answers and filters
+ *
+ * @example
+ * ```tsx
+ * // Review current quiz
+ * <ReviewPage />
+ *
+ * // Review historical quiz
+ * <Route path="/review/:quizId" component={ReviewPage} />
+ * ```
+ */
 export function ReviewPage() {
   const navigate = useNavigate();
   const params = useParams({ strict: false });
-  const quizId = (params as { quizId?: string }).quizId;
+  const quizId = hasQuizId(params) ? params.quizId : undefined;
 
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const { data: questions } = useQuestions();
@@ -55,14 +90,10 @@ export function ReviewPage() {
     }
   }, [currentQuiz, navigate, quizId]);
 
-  useEffect(() => {
-    if (filteredIndices.length > 0) {
-      setCurrentIndex(filteredIndices[0]);
-    }
-  }, [filter, topicFilter, typeFilter]);
+  const filteredIndices = useMemo(() => {
+    if (!currentQuiz) return [];
 
-  const filteredIndices = currentQuiz
-    ? currentQuiz.answers
+    return currentQuiz.answers
       .map((answer, index) => ({ answer, index }))
       .filter(({ answer, index }) => {
         const question = currentQuiz.questions[index];
@@ -75,8 +106,14 @@ export function ReviewPage() {
 
         return true;
       })
-      .map(({ index }) => index)
-    : [];
+      .map(({ index }) => index);
+  }, [currentQuiz, filter, topicFilter, typeFilter]);
+
+  useEffect(() => {
+    if (filteredIndices.length > 0) {
+      setCurrentIndex(filteredIndices[0]);
+    }
+  }, [filteredIndices]);
 
   const currentFilteredPosition = filteredIndices.indexOf(currentIndex);
   const currentQuestion = currentQuiz?.questions[currentIndex];
@@ -102,6 +139,49 @@ export function ReviewPage() {
     onNext: goToNext,
     onPrev: goToPrev,
   });
+
+  // Calculate stats with useMemo BEFORE any early returns (Rules of Hooks)
+  const correctCount = useMemo(
+    () => currentQuiz?.answers.filter((a) => a.isCorrect).length ?? 0,
+    [currentQuiz?.answers]
+  );
+
+  const incorrectCount = useMemo(
+    () => currentQuiz?.answers.filter((a) => !a.isCorrect).length ?? 0,
+    [currentQuiz?.answers]
+  );
+
+  const knowledgeCount = useMemo(
+    () => currentQuiz?.questions.filter((q) => q.type === 'knowledge').length ?? 0,
+    [currentQuiz?.questions]
+  );
+
+  const situationalCount = useMemo(
+    () => currentQuiz?.questions.filter((q) => q.type === 'situational').length ?? 0,
+    [currentQuiz?.questions]
+  );
+
+  const topicStats = useMemo(
+    () => {
+      if (!currentQuiz) return {} as Record<TopicId, { correct: number; total: number }>;
+
+      return currentQuiz.questions.reduce(
+        (acc, question, index) => {
+          const answer = currentQuiz.answers[index];
+          if (!acc[question.topic]) {
+            acc[question.topic] = { correct: 0, total: 0 };
+          }
+          acc[question.topic].total++;
+          if (answer.isCorrect) {
+            acc[question.topic].correct++;
+          }
+          return acc;
+        },
+        {} as Record<TopicId, { correct: number; total: number }>
+      );
+    },
+    [currentQuiz]
+  );
 
   const handleNewQuiz = () => {
     if (questions) {
@@ -142,28 +222,6 @@ export function ReviewPage() {
       </div>
     );
   }
-
-  const correctCount = currentQuiz.answers.filter((a) => a.isCorrect).length;
-  const incorrectCount = currentQuiz.answers.filter((a) => !a.isCorrect).length;
-
-  const knowledgeCount = currentQuiz.questions.filter((q) => q.type === 'knowledge').length;
-  const situationalCount = currentQuiz.questions.filter((q) => q.type === 'situational').length;
-
-
-  const topicStats = currentQuiz.questions.reduce(
-    (acc, question, index) => {
-      const answer = currentQuiz.answers[index];
-      if (!acc[question.topic]) {
-        acc[question.topic] = { correct: 0, total: 0 };
-      }
-      acc[question.topic].total++;
-      if (answer.isCorrect) {
-        acc[question.topic].correct++;
-      }
-      return acc;
-    },
-    {} as Record<TopicId, { correct: number; total: number }>
-  );
 
   return (
     <div className="min-h-screen bg-linear-to-b from-slate-50 to-white">
@@ -267,7 +325,7 @@ export function ReviewPage() {
             <div className="mb-6">
               <Tabs
                 value={topicFilter}
-                onValueChange={(v) => setTopicFilter(v as TopicId | 'all')}
+                onValueChange={(v) => setTopicFilter(v === 'all' || isTopicId(v) ? v : 'all')}
               >
                 <TabsList className="flex-wrap h-auto gap-1 p-1">
                   <TabsTrigger value="all" className="text-xs">

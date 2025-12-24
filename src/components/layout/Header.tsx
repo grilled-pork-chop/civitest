@@ -1,9 +1,35 @@
+/**
+ * Application header component
+ * Navigation bar with logo, links, and mobile menu
+ */
+
 import { Link } from '@tanstack/react-router';
 import { Home, BarChart3, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from '@/components/layout/NavLink';
 import { MobileNavLink } from '@/components/layout/MobileNavLink';
 
+/**
+ * Main application header
+ * Sticky navigation bar with logo, desktop navigation, and mobile hamburger menu
+ * Includes French flag-inspired logo and responsive design
+ *
+ * Features:
+ * - Sticky header with backdrop blur
+ * - Desktop navigation with active link highlighting
+ * - Mobile hamburger menu
+ * - Branded logo with French tricolor
+ *
+ * @returns Application header with navigation
+ *
+ * @example
+ * ```tsx
+ * <RootLayout>
+ *   <Header />
+ *   <main>...</main>
+ * </RootLayout>
+ * ```
+ */
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

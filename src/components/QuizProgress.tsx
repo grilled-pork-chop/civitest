@@ -1,14 +1,45 @@
+/**
+ * Quiz progress tracker component
+ * Displays progress bar and question navigation grid
+ */
+
 import { cn } from '@/lib/utils';
 import type { QuizAnswer } from '@/types';
 
+/**
+ * Props for QuizProgress component
+ */
 interface QuizProgressProps {
+  /** Array of answers for all questions */
   answers: QuizAnswer[];
+  /** Index of current question */
   currentIndex: number;
+  /** Callback when navigating to a different question */
   onNavigate: (index: number) => void;
+  /** Whether navigation is disabled */
   disabled?: boolean;
+  /** Whether in review mode (shows correct/incorrect colors) */
   isReviewMode?: boolean;
 }
 
+/**
+ * Progress indicator with question navigation grid
+ * Shows completion percentage, progress bar, and clickable question numbers
+ * Color-codes questions based on answered status or correctness in review mode
+ *
+ * @param props - Component props
+ * @returns Progress tracker with navigation grid
+ *
+ * @example
+ * ```tsx
+ * <QuizProgress
+ *   answers={quizAnswers}
+ *   currentIndex={4}
+ *   onNavigate={(index) => setCurrentIndex(index)}
+ *   isReviewMode={false}
+ * />
+ * ```
+ */
 export function QuizProgress({
   answers,
   currentIndex,

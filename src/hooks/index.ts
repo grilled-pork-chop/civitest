@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { useStore } from '@tanstack/react-store';
 import { appStore, quizActions } from '@/stores/quizStore';
+import { logger } from '@/services/logger';
 
 /**
  * Timer hook for quiz countdown
@@ -144,7 +145,7 @@ export function useLocalStorageSync<T>(
         setStoredValue(valueToStore);
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       } catch (error) {
-        console.error(`Error saving to localStorage key "${key}":`, error);
+        logger.error('Error saving to localStorage', { key }, error as Error);
       }
     },
     [key, storedValue]
