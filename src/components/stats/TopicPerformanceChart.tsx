@@ -46,11 +46,7 @@ export const TopicPerformanceChart = React.memo(function TopicPerformanceChart({
     name: topic.nameShort,
     percentage: topicStats[topic.id]?.percentage || 0,
     color: topic.color,
-  })).filter((item) => item.percentage > 0);
-
-  if (chartData.length === 0) {
-    return null;
-  }
+  }));
 
   return (
     <Card>
