@@ -119,19 +119,24 @@ export function StatsPage() {
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold">Statistiques</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Statistiques</h1>
           <p className="text-muted-foreground">
             Analysez vos performances et suivez votre progression
           </p>
         </div>
-        <div className="flex gap-2 flex-wrap">
-          <Button variant="outline" onClick={exportQuizHistoryFile}>
+        <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 w-full md:w-auto">
+          <Button
+            variant="outline"
+            onClick={exportQuizHistoryFile}
+            className="flex-1 sm:flex-none"
+          >
             <Download className="mr-2 h-4 w-4" />
             Exporter
           </Button>
-          <Button variant="outline" asChild>
+
+          <Button variant="outline" asChild className="flex-1 sm:flex-none">
             <label htmlFor="import-file" className="cursor-pointer">
               <Upload className="mr-2 h-4 w-4" />
               Importer
@@ -144,12 +149,14 @@ export function StatsPage() {
               />
             </label>
           </Button>
+
           <Button
             variant="destructive"
             onClick={() => setShowClearDialog(true)}
+            className="col-span-2 sm:flex-none" // Full width on mobile, auto on desktop
           >
             <Trash2 className="mr-2 h-4 w-4" />
-            Effacer
+            Effacer l'historique
           </Button>
         </div>
       </div>
