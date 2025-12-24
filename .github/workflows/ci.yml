@@ -40,7 +40,8 @@ jobs:
       run: pnpm build
       env:
         VITE_BASE: /${{ github.event.repository.name }}/
-
+        # Adding a build timestamp can help break cache
+        VITE_BUILD_TIME: ${{ github.event.head_commit.timestamp }}
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
