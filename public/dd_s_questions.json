@@ -762,5 +762,426 @@
     ],
     "explanation": "L'instruction obligatoire impose de suivre l'ensemble du programme scolaire.",
     "difficulty": "medium"
+  },
+
+  {
+    "id": "dds055",
+    "question": "Un citoyen est convoqué comme assesseur dans un bureau de vote. Peut-il refuser ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "L'absence non justifiée peut être sanctionnée", "isCorrect": true },
+      { "label": "Oui, c'est du bénévolat", "isCorrect": false },
+      { "label": "Non, mais il n'y a aucune sanction possible", "isCorrect": false },
+      { "label": "Oui, si un autre volontaire le remplace", "isCorrect": false }
+    ],
+    "explanation": "Être assesseur est une fonction civique dont le refus injustifié peut être sanctionné.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds056",
+    "question": "Un Français vivant à l'étranger depuis 20 ans doit-il faire la Journée Défense et Citoyenneté ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, c'est obligatoire pour tous les Français", "isCorrect": true },
+      { "label": "Non, il est dispensé car il vit à l'étranger", "isCorrect": false },
+      { "label": "Oui, mais uniquement s'il revient en France", "isCorrect": false },
+      { "label": "Non, après 10 ans à l'étranger c'est facultatif", "isCorrect": false }
+    ],
+    "explanation": "La JDC est obligatoire pour tous les citoyens français, quel que soit leur lieu de résidence.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds057",
+    "question": "Un citoyen refuse de se soumettre à un test d'alcoolémie lors d'un contrôle routier. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Des sanctions plus lourdes que celles prévues pour l'alcoolémie elle-même", "isCorrect": true },
+      { "label": "Rien, c'est son droit de refuser", "isCorrect": false },
+      { "label": "Une simple amende forfaitaire", "isCorrect": false },
+      { "label": "Un avertissement verbal uniquement", "isCorrect": false }
+    ],
+    "explanation": "Le refus de se soumettre au dépistage est un délit plus sévèrement puni que l'alcoolémie positive.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds058",
+    "question": "Un témoin d'un crime refuse de témoigner par peur de représailles. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, mais des dispositifs de protection des témoins existent", "isCorrect": true },
+      { "label": "Oui, la peur est un motif légitime", "isCorrect": false },
+      { "label": "Non, et il sera poursuivi pour complicité", "isCorrect": false },
+      { "label": "Oui, si le crime ne le concerne pas directement", "isCorrect": false }
+    ],
+    "explanation": "Le témoignage est un devoir, mais la loi prévoit des protections pour les témoins menacés.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds059",
+    "question": "Un citoyen trouve une erreur en sa faveur sur sa feuille d'impôts. Doit-il la signaler ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, la déclaration sincère est une obligation", "isCorrect": true },
+      { "label": "Non, c'est l'erreur de l'administration", "isCorrect": false },
+      { "label": "Oui, mais seulement si l'erreur dépasse 500 euros", "isCorrect": false },
+      { "label": "Non, seules les erreurs en sa défaveur se signalent", "isCorrect": false }
+    ],
+    "explanation": "La sincérité fiscale impose de signaler toute erreur, même favorable au contribuable.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds060",
+    "question": "Un accusé refuse de répondre aux questions du juge. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, le droit au silence est garanti", "isCorrect": true },
+      { "label": "Non, il doit répondre à toutes les questions", "isCorrect": false },
+      { "label": "Oui, mais cela sera retenu contre lui", "isCorrect": false },
+      { "label": "Non, sauf s'il a un avocat", "isCorrect": false }
+    ],
+    "explanation": "Le droit au silence est un droit fondamental qui ne peut être utilisé contre l'accusé.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds061",
+    "question": "Un citoyen est placé en garde à vue. Peut-il refuser de donner ses empreintes ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, c'est une obligation légale en garde à vue", "isCorrect": true },
+      { "label": "Oui, c'est une atteinte à la vie privée", "isCorrect": false },
+      { "label": "Oui, s'il n'est pas encore inculpé", "isCorrect": false },
+      { "label": "Non, mais uniquement pour les crimes", "isCorrect": false }
+    ],
+    "explanation": "Le relevé d'empreintes est obligatoire en garde à vue, le refus est une infraction.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds062",
+    "question": "Une victime d'agression refuse de porter plainte. La police peut-elle poursuivre ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, pour certaines infractions le ministère public peut se saisir d'office", "isCorrect": true },
+      { "label": "Non, sans plainte il n'y a pas de poursuite", "isCorrect": false },
+      { "label": "Oui, mais seulement pour les crimes", "isCorrect": false },
+      { "label": "Non, la victime a le dernier mot", "isCorrect": false }
+    ],
+    "explanation": "Le ministère public peut engager des poursuites d'office pour les infractions graves.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds063",
+    "question": "Un citoyen est acquitté mais sa photo a circulé dans les médias. A-t-il un recours ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, pour atteinte à la présomption d'innocence", "isCorrect": true },
+      { "label": "Non, les médias sont libres d'informer", "isCorrect": false },
+      { "label": "Oui, mais seulement si les photos sont récentes", "isCorrect": false },
+      { "label": "Non, l'acquittement suffit à réparer le préjudice", "isCorrect": false }
+    ],
+    "explanation": "La présomption d'innocence est protégée et sa violation ouvre droit à réparation.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds064",
+    "question": "Un juge est ami avec une des parties au procès. Que doit-il faire ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Se déporter et ne pas juger l'affaire", "isCorrect": true },
+      { "label": "Juger en toute impartialité malgré tout", "isCorrect": false },
+      { "label": "Demander l'avis des autres parties", "isCorrect": false },
+      { "label": "Signaler le lien mais continuer à juger", "isCorrect": false }
+    ],
+    "explanation": "L'impartialité du juge impose qu'il se déporte en cas de lien personnel avec une partie.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds065",
+    "question": "Un salarié refuse de travailler car il estime sa sécurité en danger. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, c'est le droit de retrait si le danger est réel et imminent", "isCorrect": true },
+      { "label": "Non, il doit travailler et signaler ensuite", "isCorrect": false },
+      { "label": "Oui, pour n'importe quelle inquiétude", "isCorrect": false },
+      { "label": "Non, sauf autorisation de l'employeur", "isCorrect": false }
+    ],
+    "explanation": "Le droit de retrait permet au salarié de se protéger d'un danger grave et imminent.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds066",
+    "question": "Un employeur peut-il interdire les discussions politiques au travail ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, pour préserver la neutralité et le bon fonctionnement", "isCorrect": true },
+      { "label": "Non, la liberté d'expression est absolue", "isCorrect": false },
+      { "label": "Oui, mais uniquement dans la fonction publique", "isCorrect": false },
+      { "label": "Non, sauf pendant les heures de travail effectif", "isCorrect": false }
+    ],
+    "explanation": "L'employeur peut limiter les discussions politiques pour maintenir un climat de travail serein.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds067",
+    "question": "Un salarié refuse une mutation prévue dans son contrat. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un licenciement pour faute si la clause de mobilité est valide", "isCorrect": true },
+      { "label": "Rien, la mobilité ne peut être imposée", "isCorrect": false },
+      { "label": "Une retenue sur salaire uniquement", "isCorrect": false },
+      { "label": "Un avertissement sans autre conséquence", "isCorrect": false }
+    ],
+    "explanation": "Une clause de mobilité valide dans le contrat s'impose au salarié.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds068",
+    "question": "Un employeur peut-il consulter les emails personnels d'un salarié sur l'ordinateur professionnel ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, si les messages sont identifiés comme personnels", "isCorrect": true },
+      { "label": "Oui, l'ordinateur appartient à l'entreprise", "isCorrect": false },
+      { "label": "Oui, pendant les heures de travail", "isCorrect": false },
+      { "label": "Non, mais il peut les supprimer", "isCorrect": false }
+    ],
+    "explanation": "Les emails identifiés comme personnels sont protégés par le secret des correspondances.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds069",
+    "question": "Un stagiaire travaille 10 heures par jour sans pause. Est-ce légal ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, le Code du travail s'applique aussi aux stagiaires", "isCorrect": true },
+      { "label": "Oui, les stagiaires ne sont pas des salariés", "isCorrect": false },
+      { "label": "Oui, si la convention de stage le prévoit", "isCorrect": false },
+      { "label": "Non, mais seulement pour les mineurs", "isCorrect": false }
+    ],
+    "explanation": "Les stagiaires bénéficient des protections du Code du travail sur la durée et les pauses.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds070",
+    "question": "Un mineur de 16 ans veut quitter le domicile familial. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non sans l'accord des parents ou une décision de justice", "isCorrect": true },
+      { "label": "Oui, à partir de 16 ans c'est autorisé", "isCorrect": false },
+      { "label": "Oui, s'il a un travail", "isCorrect": false },
+      { "label": "Non, jamais avant 18 ans", "isCorrect": false }
+    ],
+    "explanation": "L'autorité parentale s'exerce jusqu'à 18 ans, sauf émancipation ou décision judiciaire.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds071",
+    "question": "Des parents refusent une transfusion sanguine pour leur enfant pour raisons religieuses. Que se passe-t-il ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le médecin peut passer outre si la vie de l'enfant est en danger", "isCorrect": true },
+      { "label": "Les parents ont le dernier mot", "isCorrect": false },
+      { "label": "Le médecin doit respecter le refus", "isCorrect": false },
+      { "label": "Il faut attendre une décision de justice", "isCorrect": false }
+    ],
+    "explanation": "L'intérêt supérieur de l'enfant permet au médecin d'agir en urgence vitale.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds072",
+    "question": "Un enfant adopté veut connaître ses origines biologiques. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, sous certaines conditions depuis la loi de 2022", "isCorrect": true },
+      { "label": "Non, l'adoption efface les origines", "isCorrect": false },
+      { "label": "Oui, sans aucune restriction", "isCorrect": false },
+      { "label": "Non, sauf accord des parents biologiques", "isCorrect": false }
+    ],
+    "explanation": "La loi facilite désormais l'accès aux origines pour les personnes adoptées.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds073",
+    "question": "Un parent empêche l'autre parent de voir son enfant malgré un jugement. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Des poursuites pour non-représentation d'enfant", "isCorrect": true },
+      { "label": "Rien, c'est un conflit familial privé", "isCorrect": false },
+      { "label": "Une simple médiation obligatoire", "isCorrect": false },
+      { "label": "Une amende civile uniquement", "isCorrect": false }
+    ],
+    "explanation": "La non-représentation d'enfant est un délit pénal passible d'emprisonnement.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds074",
+    "question": "Un mineur de 15 ans peut-il travailler pendant les vacances scolaires ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, avec des conditions strictes et l'autorisation parentale", "isCorrect": true },
+      { "label": "Non, le travail est interdit avant 16 ans", "isCorrect": false },
+      { "label": "Oui, sans aucune restriction", "isCorrect": false },
+      { "label": "Non, sauf pour les métiers du spectacle", "isCorrect": false }
+    ],
+    "explanation": "Le travail des mineurs de 14-16 ans est possible pendant les vacances sous conditions strictes.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds075",
+    "question": "Un usager insulte un agent public qui refuse sa demande. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Des poursuites pour outrage à personne dépositaire de l'autorité publique", "isCorrect": true },
+      { "label": "Rien, c'est la liberté d'expression", "isCorrect": false },
+      { "label": "Un simple refus de service", "isCorrect": false },
+      { "label": "Une amende administrative", "isCorrect": false }
+    ],
+    "explanation": "L'outrage à agent public est un délit pénal puni d'amende et d'emprisonnement.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds076",
+    "question": "Une administration ne répond pas à une demande dans les délais. Que peut faire le citoyen ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Considérer que le silence vaut acceptation ou rejet selon les cas", "isCorrect": true },
+      { "label": "Rien, il faut attendre la réponse", "isCorrect": false },
+      { "label": "Porter plainte immédiatement", "isCorrect": false },
+      { "label": "Renouveler sa demande automatiquement", "isCorrect": false }
+    ],
+    "explanation": "Le silence de l'administration a une valeur juridique qui varie selon les procédures.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds077",
+    "question": "Un citoyen conteste un PV de stationnement qu'il juge injuste. Quelle est la procédure ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Contester d'abord auprès de l'officier du ministère public", "isCorrect": true },
+      { "label": "Payer puis demander un remboursement", "isCorrect": false },
+      { "label": "Saisir directement le tribunal", "isCorrect": false },
+      { "label": "Écrire au maire de la commune", "isCorrect": false }
+    ],
+    "explanation": "La contestation d'un PV suit une procédure spécifique avec recours préalable obligatoire.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds078",
+    "question": "Un fonctionnaire reçoit un ordre manifestement illégal. Doit-il obéir ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, il a le devoir de désobéir aux ordres manifestement illégaux", "isCorrect": true },
+      { "label": "Oui, l'obéissance hiérarchique prime", "isCorrect": false },
+      { "label": "Oui, mais il peut signaler ensuite", "isCorrect": false },
+      { "label": "Non, sauf ordre écrit de son supérieur", "isCorrect": false }
+    ],
+    "explanation": "Le fonctionnaire doit refuser d'exécuter un ordre manifestement illégal.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds079",
+    "question": "Un citoyen demande l'accès à un document administratif le concernant. L'administration peut-elle refuser ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "En principe non, sauf exceptions prévues par la loi", "isCorrect": true },
+      { "label": "Oui, les documents administratifs sont confidentiels", "isCorrect": false },
+      { "label": "Non, jamais aucune exception", "isCorrect": false },
+      { "label": "Oui, si le document est ancien", "isCorrect": false }
+    ],
+    "explanation": "Le droit d'accès aux documents administratifs est garanti avec des exceptions limitées.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds080",
+    "question": "Un citoyen trouve une arme dans la rue. Que doit-il faire ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Prévenir immédiatement la police sans toucher l'arme", "isCorrect": true },
+      { "label": "Rapporter l'arme au commissariat", "isCorrect": false },
+      { "label": "La mettre en sécurité chez lui", "isCorrect": false },
+      { "label": "La laisser sur place sans rien faire", "isCorrect": false }
+    ],
+    "explanation": "Manipuler une arme trouvée peut compromettre une enquête et constituer une infraction.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds081",
+    "question": "Un voisin menace de se suicider. Quels sont vos devoirs ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Alerter les secours, le devoir d'assistance s'applique", "isCorrect": true },
+      { "label": "Respecter sa vie privée et ne rien faire", "isCorrect": false },
+      { "label": "Essayer de le raisonner soi-même", "isCorrect": false },
+      { "label": "Prévenir sa famille uniquement", "isCorrect": false }
+    ],
+    "explanation": "Le devoir d'assistance à personne en danger impose d'alerter les secours.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds082",
+    "question": "Un citoyen est témoin d'un vol mais le voleur est un ami. Doit-il témoigner ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, l'amitié ne dispense pas du devoir de témoigner", "isCorrect": true },
+      { "label": "Non, on ne témoigne pas contre un ami", "isCorrect": false },
+      { "label": "Oui, mais il peut mentir pour le protéger", "isCorrect": false },
+      { "label": "Non, sauf si le vol est grave", "isCorrect": false }
+    ],
+    "explanation": "Le devoir de témoigner s'impose à tous, les liens personnels ne sont pas une excuse.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds083",
+    "question": "Un patient refuse un traitement vital en pleine conscience. Le médecin peut-il le forcer ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, le consentement du patient est obligatoire sauf urgence vitale", "isCorrect": true },
+      { "label": "Oui, le médecin doit sauver la vie", "isCorrect": false },
+      { "label": "Non, jamais en aucune circonstance", "isCorrect": false },
+      { "label": "Oui, avec l'accord de la famille", "isCorrect": false }
+    ],
+    "explanation": "Le patient conscient a le droit de refuser un traitement, même vital.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds084",
+    "question": "Un citoyen découvre que son voisin fraude les aides sociales. A-t-il l'obligation de dénoncer ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, il n'y a pas d'obligation légale mais il peut signaler", "isCorrect": true },
+      { "label": "Oui, c'est une obligation civique", "isCorrect": false },
+      { "label": "Non, et le signalement est interdit", "isCorrect": false },
+      { "label": "Oui, sous peine d'être complice", "isCorrect": false }
+    ],
+    "explanation": "Il n'existe pas d'obligation générale de dénonciation, mais le signalement est possible.",
+    "difficulty": "hard"
   }
 ]

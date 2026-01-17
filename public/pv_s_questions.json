@@ -944,5 +944,426 @@
     ],
     "explanation": "Le Code civil prévoit une obligation alimentaire réciproque entre parents et enfants.",
     "difficulty": "hard"
+  },
+
+  {
+    "id": "pvs068",
+    "question": "Une élève porte un bandana pour raisons médicales, mais l'établissement soupçonne un motif religieux. Que doit faire l'école ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Vérifier le motif médical avant toute décision", "isCorrect": true },
+      { "label": "Interdire immédiatement le bandana par précaution", "isCorrect": false },
+      { "label": "Autoriser le bandana car le doute profite à l'élève", "isCorrect": false },
+      { "label": "Demander à l'élève de choisir un autre couvre-chef", "isCorrect": false }
+    ],
+    "explanation": "L'école doit établir les faits avant de prendre une décision, le motif médical justifie une exception.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs069",
+    "question": "Un hôpital public propose une aumônerie multiconfessionnelle. Est-ce contraire à la laïcité ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, la laïcité garantit le libre exercice des cultes dans les établissements publics", "isCorrect": true },
+      { "label": "Oui, l'hôpital public doit être neutre", "isCorrect": false },
+      { "label": "Non, mais uniquement pour les patients en fin de vie", "isCorrect": false },
+      { "label": "Oui, sauf si c'est financé par les religions elles-mêmes", "isCorrect": false }
+    ],
+    "explanation": "La laïcité permet l'accompagnement spirituel des personnes dans les établissements publics.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs070",
+    "question": "Une mairie finance la rénovation d'une église classée monument historique. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, car il s'agit de patrimoine culturel, pas de financement du culte", "isCorrect": true },
+      { "label": "Non, l'État ne finance pas les édifices religieux", "isCorrect": false },
+      { "label": "Oui, mais uniquement pour les églises construites avant 1905", "isCorrect": false },
+      { "label": "Non, sauf accord du conseil municipal à l'unanimité", "isCorrect": false }
+    ],
+    "explanation": "Les édifices religieux classés monuments historiques peuvent être financés au titre du patrimoine.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs071",
+    "question": "Un agent de la CAF porte une croix discrète sous sa chemise. Est-ce autorisé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, tant que le signe n'est pas visible et ostentatoire", "isCorrect": true },
+      { "label": "Non, tout signe religieux est interdit pour les agents publics", "isCorrect": false },
+      { "label": "Oui, car la croix est un symbole culturel", "isCorrect": false },
+      { "label": "Non, même caché c'est contraire à la neutralité", "isCorrect": false }
+    ],
+    "explanation": "La neutralité concerne les signes visibles, ce qui est porté sous les vêtements relève de l'intimité.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs072",
+    "question": "Une crèche de Noël est installée dans le hall d'une mairie. Est-ce toujours interdit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Cela dépend du contexte culturel et festif, selon la jurisprudence", "isCorrect": true },
+      { "label": "Oui, c'est toujours interdit dans un bâtiment public", "isCorrect": false },
+      { "label": "Non, c'est toujours autorisé car c'est une tradition", "isCorrect": false },
+      { "label": "Oui, sauf dans les régions à forte tradition catholique", "isCorrect": false }
+    ],
+    "explanation": "Le Conseil d'État distingue selon que la crèche a un caractère culturel, festif ou religieux.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs073",
+    "question": "Un médecin hospitalier refuse de pratiquer une IVG pour raisons de conscience. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, la clause de conscience existe, mais l'hôpital doit assurer le service", "isCorrect": true },
+      { "label": "Non, un médecin public ne peut refuser un acte légal", "isCorrect": false },
+      { "label": "Oui, sans aucune obligation pour l'hôpital", "isCorrect": false },
+      { "label": "Non, sauf s'il trouve un remplaçant lui-même", "isCorrect": false }
+    ],
+    "explanation": "La clause de conscience est prévue par la loi, mais le service public doit garantir l'accès à l'IVG.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs074",
+    "question": "Une entreprise impose un code vestimentaire interdisant les bermudas pour les hommes mais autorisant les jupes pour les femmes. Est-ce discriminatoire ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Cela peut être contesté au nom de l'égalité de traitement", "isCorrect": true },
+      { "label": "Non, l'employeur fixe librement le code vestimentaire", "isCorrect": false },
+      { "label": "Non, car les vêtements sont différents selon les sexes", "isCorrect": false },
+      { "label": "Oui, mais uniquement dans la fonction publique", "isCorrect": false }
+    ],
+    "explanation": "Une différence de traitement vestimentaire entre hommes et femmes peut constituer une discrimination.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs075",
+    "question": "Un propriétaire refuse de louer à une personne car elle perçoit des aides sociales. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, c'est une discrimination fondée sur la situation économique", "isCorrect": true },
+      { "label": "Oui, le propriétaire choisit librement son locataire", "isCorrect": false },
+      { "label": "Oui, si le loyer dépasse un certain montant", "isCorrect": false },
+      { "label": "Non, mais uniquement pour les logements sociaux", "isCorrect": false }
+    ],
+    "explanation": "La discrimination fondée sur la précarité sociale est interdite par la loi.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs076",
+    "question": "Une discothèque pratique une sélection à l'entrée basée sur la tenue vestimentaire. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, si les critères sont objectifs et non discriminatoires", "isCorrect": true },
+      { "label": "Non, tout le monde doit pouvoir entrer", "isCorrect": false },
+      { "label": "Oui, sans aucune limite car c'est un établissement privé", "isCorrect": false },
+      { "label": "Non, sauf autorisation préfectorale", "isCorrect": false }
+    ],
+    "explanation": "Un dress code est légal s'il s'applique à tous sans discrimination fondée sur des critères interdits.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs077",
+    "question": "Un concours de la fonction publique impose une limite d'âge. Est-ce discriminatoire ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Cela peut être justifié si c'est proportionné aux exigences du poste", "isCorrect": true },
+      { "label": "Oui, toute limite d'âge est discriminatoire", "isCorrect": false },
+      { "label": "Non, l'administration fixe librement ses critères", "isCorrect": false },
+      { "label": "Oui, sauf pour les postes de sécurité", "isCorrect": false }
+    ],
+    "explanation": "Les limites d'âge doivent être justifiées par des exigences professionnelles essentielles.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs078",
+    "question": "Une association sportive réserve certaines compétitions aux femmes. Est-ce contraire à l'égalité ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, les catégories par sexe sont autorisées dans le sport", "isCorrect": true },
+      { "label": "Oui, c'est une discrimination fondée sur le sexe", "isCorrect": false },
+      { "label": "Non, mais uniquement pour les sports de contact", "isCorrect": false },
+      { "label": "Oui, sauf au niveau professionnel", "isCorrect": false }
+    ],
+    "explanation": "La séparation par sexe dans le sport est admise pour garantir l'équité des compétitions.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs079",
+    "question": "Un employeur demande une photo sur le CV. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Ce n'est pas interdit mais déconseillé car risque de discrimination", "isCorrect": true },
+      { "label": "Non, c'est strictement interdit par la loi", "isCorrect": false },
+      { "label": "Oui, c'est une pratique normale et légale", "isCorrect": false },
+      { "label": "Non, sauf pour les métiers de l'image", "isCorrect": false }
+    ],
+    "explanation": "La photo n'est pas interdite mais peut favoriser des discriminations à l'embauche.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs080",
+    "question": "Un humoriste fait des blagues sur une communauté religieuse. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Rien si ce n'est pas une incitation à la haine, l'humour est protégé", "isCorrect": true },
+      { "label": "Des poursuites pour atteinte aux croyances", "isCorrect": false },
+      { "label": "Rien, l'humour n'a aucune limite légale", "isCorrect": false },
+      { "label": "Une amende pour manque de respect", "isCorrect": false }
+    ],
+    "explanation": "L'humour et la satire sont protégés tant qu'ils ne constituent pas une incitation à la haine.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs081",
+    "question": "Un salarié critique son entreprise sur ses réseaux sociaux personnels. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Un licenciement si les propos sont excessifs ou portent atteinte à l'entreprise", "isCorrect": true },
+      { "label": "Rien, ses réseaux personnels sont privés", "isCorrect": false },
+      { "label": "Une sanction uniquement si c'est pendant les heures de travail", "isCorrect": false },
+      { "label": "Rien, la liberté d'expression est absolue", "isCorrect": false }
+    ],
+    "explanation": "La liberté d'expression du salarié est limitée par le devoir de loyauté envers l'employeur.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs082",
+    "question": "Un professeur exprime ses opinions politiques en classe. Est-ce autorisé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, le devoir de neutralité s'applique aux enseignants du public", "isCorrect": true },
+      { "label": "Oui, au nom de la liberté d'expression", "isCorrect": false },
+      { "label": "Oui, si c'est en lien avec le cours", "isCorrect": false },
+      { "label": "Non, sauf en période électorale pour informer", "isCorrect": false }
+    ],
+    "explanation": "Les enseignants du public ont un devoir de neutralité politique devant leurs élèves.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs083",
+    "question": "Un citoyen filme des policiers lors d'un contrôle. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, tant qu'il ne gêne pas l'intervention", "isCorrect": true },
+      { "label": "Non, filmer la police est interdit", "isCorrect": false },
+      { "label": "Oui, mais il ne peut pas diffuser les images", "isCorrect": false },
+      { "label": "Non, sauf autorisation des policiers", "isCorrect": false }
+    ],
+    "explanation": "Le droit de filmer les forces de l'ordre existe mais ne doit pas entraver leur action.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs084",
+    "question": "Un artiste crée une œuvre provocante mettant en scène des symboles nationaux. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Rien si c'est une œuvre artistique sans incitation à la haine", "isCorrect": true },
+      { "label": "Des poursuites pour outrage aux symboles nationaux", "isCorrect": false },
+      { "label": "Une interdiction d'exposition", "isCorrect": false },
+      { "label": "Une amende pour irrespect de la République", "isCorrect": false }
+    ],
+    "explanation": "La création artistique est protégée par la liberté d'expression, même provocante.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs085",
+    "question": "Un employeur installe des caméras dans les bureaux sans prévenir les salariés. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, les salariés doivent être informés de tout dispositif de surveillance", "isCorrect": true },
+      { "label": "Oui, l'employeur surveille ses locaux comme il veut", "isCorrect": false },
+      { "label": "Oui, si c'est pour des raisons de sécurité", "isCorrect": false },
+      { "label": "Non, sauf dans les zones de passage", "isCorrect": false }
+    ],
+    "explanation": "Le RGPD et le Code du travail imposent l'information préalable des salariés.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs086",
+    "question": "Un parent publie des photos de son enfant mineur sur les réseaux sociaux. L'enfant peut-il s'y opposer ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, le droit à l'image de l'enfant doit être respecté", "isCorrect": true },
+      { "label": "Non, les parents décident pour leurs enfants mineurs", "isCorrect": false },
+      { "label": "Oui, mais seulement à partir de 13 ans", "isCorrect": false },
+      { "label": "Non, sauf si les photos sont dégradantes", "isCorrect": false }
+    ],
+    "explanation": "L'enfant a un droit à l'image qui peut primer sur l'autorité parentale.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs087",
+    "question": "Une application collecte des données de géolocalisation sans consentement explicite. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, le RGPD impose un consentement éclairé", "isCorrect": true },
+      { "label": "Oui, si c'est mentionné dans les conditions d'utilisation", "isCorrect": false },
+      { "label": "Oui, pour améliorer le service", "isCorrect": false },
+      { "label": "Non, mais seulement pour les applications européennes", "isCorrect": false }
+    ],
+    "explanation": "Le RGPD exige un consentement libre, spécifique et éclairé pour les données personnelles.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs088",
+    "question": "Un propriétaire peint sa maison en rose fluo dans un village classé. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, les règles d'urbanisme et de patrimoine s'imposent", "isCorrect": true },
+      { "label": "Oui, il fait ce qu'il veut chez lui", "isCorrect": false },
+      { "label": "Oui, si les voisins sont d'accord", "isCorrect": false },
+      { "label": "Non, mais il peut contester sans limite de temps", "isCorrect": false }
+    ],
+    "explanation": "Les zones classées imposent des contraintes esthétiques pour préserver le patrimoine.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs089",
+    "question": "Un locataire sous-loue son appartement sans l'accord du propriétaire. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, sauf si le bail l'autorise expressément", "isCorrect": true },
+      { "label": "Oui, le locataire dispose librement du logement", "isCorrect": false },
+      { "label": "Oui, si c'est pour une courte durée", "isCorrect": false },
+      { "label": "Non, mais le propriétaire ne peut rien faire", "isCorrect": false }
+    ],
+    "explanation": "La sous-location nécessite l'accord écrit du propriétaire sauf exception légale.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs090",
+    "question": "Un voisin construit une extension qui crée une vue plongeante sur ma propriété. Ai-je un recours ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, les règles de distance et de vue directe peuvent s'appliquer", "isCorrect": true },
+      { "label": "Non, s'il a un permis de construire", "isCorrect": false },
+      { "label": "Oui, mais uniquement pour les nouvelles constructions", "isCorrect": false },
+      { "label": "Non, la vue n'est pas protégée par la loi", "isCorrect": false }
+    ],
+    "explanation": "Le Code civil prévoit des distances minimales pour les vues directes sur les propriétés voisines.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs091",
+    "question": "Un lanceur d'alerte révèle des pratiques illégales de son entreprise. Est-il protégé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, la loi protège les lanceurs d'alerte de bonne foi", "isCorrect": true },
+      { "label": "Non, c'est une violation du secret professionnel", "isCorrect": false },
+      { "label": "Oui, mais seulement dans le secteur public", "isCorrect": false },
+      { "label": "Non, il doit d'abord alerter en interne", "isCorrect": false }
+    ],
+    "explanation": "La loi Sapin II et ses évolutions protègent les lanceurs d'alerte contre les représailles.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs092",
+    "question": "Un citoyen refuse de retirer son masque sanitaire pour un contrôle d'identité. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, l'identification nécessite de voir le visage", "isCorrect": true },
+      { "label": "Oui, pour des raisons de santé publique", "isCorrect": false },
+      { "label": "Oui, si le masque est obligatoire", "isCorrect": false },
+      { "label": "Non, mais uniquement dans les lieux fermés", "isCorrect": false }
+    ],
+    "explanation": "Le contrôle d'identité nécessite de pouvoir comparer le visage avec la photo d'identité.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs093",
+    "question": "Une personne enregistre une conversation téléphonique à l'insu de son interlocuteur. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non en principe, sauf dans certains cas pour prouver des faits", "isCorrect": true },
+      { "label": "Oui, si c'est sa propre conversation", "isCorrect": false },
+      { "label": "Non, c'est toujours un délit pénal", "isCorrect": false },
+      { "label": "Oui, si l'enregistrement reste privé", "isCorrect": false }
+    ],
+    "explanation": "L'enregistrement à l'insu est en principe illicite mais peut être admis comme preuve dans certains cas.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs094",
+    "question": "Un site internet publie le casier judiciaire d'une personne après sa réhabilitation. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, le droit à l'oubli s'applique après réhabilitation", "isCorrect": true },
+      { "label": "Oui, l'information est d'intérêt public", "isCorrect": false },
+      { "label": "Oui, si les faits sont avérés", "isCorrect": false },
+      { "label": "Non, mais seulement pour les personnalités publiques", "isCorrect": false }
+    ],
+    "explanation": "La réhabilitation efface les condamnations, leur publication porte atteinte à la vie privée.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs095",
+    "question": "Un citoyen installe une caméra qui filme la voie publique. Est-ce autorisé ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, seules les autorités peuvent filmer la voie publique", "isCorrect": true },
+      { "label": "Oui, pour protéger sa propriété", "isCorrect": false },
+      { "label": "Oui, s'il déclare la caméra à la CNIL", "isCorrect": false },
+      { "label": "Non, sauf dans les zones à forte criminalité", "isCorrect": false }
+    ],
+    "explanation": "Les particuliers ne peuvent filmer que leur propriété privée, pas la voie publique.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs096",
+    "question": "Une entreprise refuse d'embaucher un candidat car il a été condamné il y a 15 ans. Est-ce légal ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Cela peut être discriminatoire selon la nature du poste et de la condamnation", "isCorrect": true },
+      { "label": "Oui, l'employeur a le droit de se renseigner", "isCorrect": false },
+      { "label": "Non, les condamnations anciennes ne comptent plus", "isCorrect": false },
+      { "label": "Oui, pour tous les postes de confiance", "isCorrect": false }
+    ],
+    "explanation": "Le refus doit être justifié par un lien direct entre la condamnation et les fonctions du poste.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs097",
+    "question": "Un citoyen utilise un drone au-dessus d'une propriété privée. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non sans autorisation, cela porte atteinte à la vie privée", "isCorrect": true },
+      { "label": "Oui, l'espace aérien est libre", "isCorrect": false },
+      { "label": "Oui, si le drone ne descend pas en dessous de 50 mètres", "isCorrect": false },
+      { "label": "Non, mais seulement si le drone a une caméra", "isCorrect": false }
+    ],
+    "explanation": "Le survol d'une propriété privée par un drone peut constituer une atteinte à la vie privée.",
+    "difficulty": "hard"
   }
 ]
