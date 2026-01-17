@@ -566,5 +566,383 @@
     ],
     "explanation": "Respecter les valeurs républicaines permet le vivre-ensemble.",
     "difficulty": "medium"
+  },
+  {
+    "id": "pvs041",
+    "question": "Si Monsieur X coupe un arbre protégé, que risque-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Une amende et des poursuites pénales", "isCorrect": true },
+      { "label": "Rien, car c'est sur son terrain privé", "isCorrect": false },
+      { "label": "Un simple avertissement verbal", "isCorrect": false },
+      { "label": "Une obligation de replanter uniquement", "isCorrect": false }
+    ],
+    "explanation": "Les arbres protégés le sont par la loi, leur destruction est sanctionnée pénalement.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs042",
+    "question": "Si j'ai un terrain, est-ce que je peux construire une maison sans demander de permis ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, un permis de construire est obligatoire", "isCorrect": true },
+      { "label": "Oui, si le terrain m'appartient", "isCorrect": false },
+      { "label": "Oui, pour une petite construction", "isCorrect": false },
+      { "label": "Oui, si les voisins sont d'accord", "isCorrect": false }
+    ],
+    "explanation": "Le permis de construire est obligatoire pour garantir le respect des règles d'urbanisme.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs043",
+    "question": "Si Y est refusé d'adhérer à une association car il est homosexuel, l'association a-t-elle le droit car ceci est écrit dans le règlement intérieur ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, c'est une discrimination interdite par la loi", "isCorrect": true },
+      { "label": "Oui, si c'est dans le règlement intérieur", "isCorrect": false },
+      { "label": "Oui, les associations sont libres de leurs membres", "isCorrect": false },
+      { "label": "Oui, si l'assemblée générale l'a voté", "isCorrect": false }
+    ],
+    "explanation": "La discrimination fondée sur l'orientation sexuelle est interdite, même dans un règlement intérieur.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs044",
+    "question": "Une maman veut donner tout son héritage à sa fille et priver son fils, a-t-elle le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, la loi garantit une part minimale à chaque enfant", "isCorrect": true },
+      { "label": "Oui, elle est libre de disposer de ses biens", "isCorrect": false },
+      { "label": "Oui, si elle rédige un testament", "isCorrect": false },
+      { "label": "Oui, si le fils est majeur", "isCorrect": false }
+    ],
+    "explanation": "La réserve héréditaire protège les enfants qui ne peuvent être totalement déshérités.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs045",
+    "question": "Est-ce que le cinéma peut refuser une personne en situation de handicap ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, c'est une discrimination interdite par la loi", "isCorrect": true },
+      { "label": "Oui, si l'établissement n'est pas adapté", "isCorrect": false },
+      { "label": "Oui, pour des raisons de sécurité", "isCorrect": false },
+      { "label": "Oui, si les autres spectateurs s'y opposent", "isCorrect": false }
+    ],
+    "explanation": "Refuser l'accès à une personne handicapée constitue une discrimination punie par la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs046",
+    "question": "Est-ce que les femmes ont le droit de porter le voile dans l'espace public ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, sauf le voile intégral qui dissimule le visage", "isCorrect": true },
+      { "label": "Non, tous les signes religieux sont interdits", "isCorrect": false },
+      { "label": "Oui, sans aucune restriction", "isCorrect": false },
+      { "label": "Non, uniquement dans les lieux de culte", "isCorrect": false }
+    ],
+    "explanation": "Seul le voile intégral est interdit dans l'espace public. Le voile simple est autorisé.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs047",
+    "question": "Si un couple est marié, lors des votes doivent-ils utiliser le même isoloir ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, chaque électeur vote seul et en secret", "isCorrect": true },
+      { "label": "Oui, pour faciliter l'organisation", "isCorrect": false },
+      { "label": "Oui, s'ils le souhaitent", "isCorrect": false },
+      { "label": "Oui, car ils forment un foyer", "isCorrect": false }
+    ],
+    "explanation": "Le secret du vote est individuel, chaque électeur doit passer seul dans l'isoloir.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs048",
+    "question": "Le voisin de Madame X transforme son appartement en studio d'enregistrement qui fait beaucoup de bruit. Que doit faire Madame X ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Tenter une conciliation puis saisir la justice si nécessaire", "isCorrect": true },
+      { "label": "Appeler immédiatement la police", "isCorrect": false },
+      { "label": "Faire du bruit en retour pour se venger", "isCorrect": false },
+      { "label": "Déménager car elle n'a aucun recours", "isCorrect": false }
+    ],
+    "explanation": "Les troubles du voisinage peuvent être résolus par la médiation ou la justice civile.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs049",
+    "question": "Madame X distribue des citations religieuses dans la rue. Que risque-t-elle ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Rien, si elle ne trouble pas l'ordre public", "isCorrect": true },
+      { "label": "Une amende pour prosélytisme", "isCorrect": false },
+      { "label": "Une arrestation immédiate", "isCorrect": false },
+      { "label": "Une interdiction de circuler", "isCorrect": false }
+    ],
+    "explanation": "La liberté religieuse permet de partager ses convictions tant que l'ordre public est respecté.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs050",
+    "question": "Le blasphème est-il puni par la loi en France ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, le blasphème n'est pas un délit en France", "isCorrect": true },
+      { "label": "Oui, c'est une atteinte aux croyances", "isCorrect": false },
+      { "label": "Oui, si une plainte est déposée", "isCorrect": false },
+      { "label": "Oui, pour les religions reconnues par l'État", "isCorrect": false }
+    ],
+    "explanation": "En France, le blasphème n'est pas puni. La liberté d'expression permet la critique des religions.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs051",
+    "question": "Un agent public peut-il demander à une femme de retirer son voile pour un contrôle d'identité ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, si nécessaire pour vérifier l'identité", "isCorrect": true },
+      { "label": "Non, c'est une atteinte à la liberté religieuse", "isCorrect": false },
+      { "label": "Non, sauf en cas de menace terroriste", "isCorrect": false },
+      { "label": "Oui, uniquement si c'est une femme agent", "isCorrect": false }
+    ],
+    "explanation": "Le contrôle d'identité nécessite de pouvoir comparer le visage avec la photo d'identité.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs052",
+    "question": "Lors d'un mariage civil, les convives peuvent-ils porter des signes religieux ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, les invités ne sont pas soumis à la neutralité", "isCorrect": true },
+      { "label": "Non, la mairie est un lieu laïc", "isCorrect": false },
+      { "label": "Non, par respect pour l'officier d'état civil", "isCorrect": false },
+      { "label": "Oui, uniquement pour les mariés", "isCorrect": false }
+    ],
+    "explanation": "La neutralité s'impose aux agents publics, pas aux usagers du service public.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs053",
+    "question": "Un journaliste critique ouvertement une décision du gouvernement. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Rien, la liberté de la presse protège la critique politique", "isCorrect": true },
+      { "label": "Des poursuites pour diffamation", "isCorrect": false },
+      { "label": "Une interdiction de publier", "isCorrect": false },
+      { "label": "Un retrait de sa carte de presse", "isCorrect": false }
+    ],
+    "explanation": "La liberté de la presse permet de critiquer les décisions politiques.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs054",
+    "question": "Monsieur X force sa femme à se convertir à sa religion. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, c'est une atteinte à la liberté de conscience", "isCorrect": true },
+      { "label": "Oui, dans le cadre du mariage", "isCorrect": false },
+      { "label": "Oui, si c'est pour l'unité familiale", "isCorrect": false },
+      { "label": "Oui, s'il ne la violente pas physiquement", "isCorrect": false }
+    ],
+    "explanation": "La liberté de conscience est inviolable, nul ne peut être forcé à adopter une religion.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs055",
+    "question": "Un journal satirique fait des caricatures sur les religions. Que risque-t-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Rien, si les caricatures ne sont pas des incitations à la haine", "isCorrect": true },
+      { "label": "Des poursuites pour blasphème", "isCorrect": false },
+      { "label": "Une fermeture administrative", "isCorrect": false },
+      { "label": "Une amende pour irrespect", "isCorrect": false }
+    ],
+    "explanation": "La satire et la caricature sont protégées par la liberté d'expression.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs056",
+    "question": "Est-ce qu'une femme peut exiger d'être traitée par un médecin de sexe féminin à l'hôpital public ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, le service public ne peut garantir ce choix", "isCorrect": true },
+      { "label": "Oui, c'est un droit absolu du patient", "isCorrect": false },
+      { "label": "Oui, pour des raisons religieuses", "isCorrect": false },
+      { "label": "Oui, si elle paie un supplément", "isCorrect": false }
+    ],
+    "explanation": "L'hôpital public doit soigner tous les patients sans discrimination, le choix du médecin n'est pas garanti.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs057",
+    "question": "Mon enfant fait trop de bêtises. Est-ce que je peux lui donner une fessée pour lui rappeler à l'ordre ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, les violences éducatives sont interdites par la loi", "isCorrect": true },
+      { "label": "Oui, si c'est une correction légère", "isCorrect": false },
+      { "label": "Oui, dans le cadre de l'autorité parentale", "isCorrect": false },
+      { "label": "Oui, si c'est exceptionnel", "isCorrect": false }
+    ],
+    "explanation": "La loi interdit les violences éducatives ordinaires, y compris les fessées.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs058",
+    "question": "Quelqu'un squatte ma maison en mon absence. Est-ce que je peux le forcer à quitter ma propriété ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, il faut passer par une procédure judiciaire", "isCorrect": true },
+      { "label": "Oui, car c'est ma propriété privée", "isCorrect": false },
+      { "label": "Oui, en appelant directement la police", "isCorrect": false },
+      { "label": "Oui, si le squatteur est là depuis moins de 48h", "isCorrect": false }
+    ],
+    "explanation": "L'expulsion d'un squatteur nécessite une décision de justice, sauf flagrant délit.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs059",
+    "question": "Monsieur X décide de tondre sa pelouse le dimanche avec sa tondeuse. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Cela dépend des arrêtés municipaux sur les horaires", "isCorrect": true },
+      { "label": "Oui, il fait ce qu'il veut chez lui", "isCorrect": false },
+      { "label": "Non, c'est interdit le dimanche partout en France", "isCorrect": false },
+      { "label": "Oui, uniquement le matin", "isCorrect": false }
+    ],
+    "explanation": "Les horaires de bricolage et jardinage sont réglementés par des arrêtés locaux.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs060",
+    "question": "Une mairie décide de réserver l'accès à un service public à certains habitants seulement. Quel principe républicain est remis en cause ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Le principe d'égalité devant le service public", "isCorrect": true },
+      { "label": "Le principe de laïcité", "isCorrect": false },
+      { "label": "Le principe de fraternité", "isCorrect": false },
+      { "label": "Le principe d'indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "Le service public doit être accessible à tous de manière égale.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs061",
+    "question": "Un citoyen publie un message diffamatoire sur les réseaux sociaux. Quels risques juridiques encourt-il ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Des poursuites pénales pour diffamation", "isCorrect": true },
+      { "label": "Aucun, c'est la liberté d'expression", "isCorrect": false },
+      { "label": "Une simple suppression du message", "isCorrect": false },
+      { "label": "Un avertissement de la plateforme uniquement", "isCorrect": false }
+    ],
+    "explanation": "La diffamation est un délit puni par la loi, même sur internet.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs062",
+    "question": "Dans un établissement scolaire, un élève est exclu de certaines activités à cause de son handicap. Quelle valeur républicaine n'est pas respectée ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "L'égalité", "isCorrect": true },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "L'indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "Exclure un élève en raison de son handicap est une atteinte au principe d'égalité.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs063",
+    "question": "Lors d'une crise sociale, l'État met en place des aides pour les plus vulnérables. Quelle valeur républicaine est illustrée par cette action ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "La solidarité et la fraternité", "isCorrect": true },
+      { "label": "La laïcité", "isCorrect": false },
+      { "label": "La neutralité", "isCorrect": false },
+      { "label": "L'indivisibilité", "isCorrect": false }
+    ],
+    "explanation": "La fraternité implique la solidarité envers les plus vulnérables.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pvs064",
+    "question": "Un établissement scolaire adapte ses règles pour tenir compte de pratiques religieuses. Est-ce conforme aux principes républicains ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Non, l'école publique doit rester neutre et ne pas s'adapter aux religions", "isCorrect": true },
+      { "label": "Oui, c'est la liberté de conscience", "isCorrect": false },
+      { "label": "Oui, si les parents le demandent", "isCorrect": false },
+      { "label": "Oui, pour favoriser l'intégration", "isCorrect": false }
+    ],
+    "explanation": "L'école publique applique la laïcité et ne modifie pas ses règles pour des motifs religieux.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs065",
+    "question": "Une manifestation est interdite par les autorités pour des raisons de sécurité, sans incidents antérieurs avérés. Est-ce légitime ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Cela peut être contesté car la liberté de manifester est un droit fondamental", "isCorrect": true },
+      { "label": "Oui, les autorités ont toujours raison", "isCorrect": false },
+      { "label": "Oui, la sécurité prime sur toutes les libertés", "isCorrect": false },
+      { "label": "Non, aucune manifestation ne peut être interdite", "isCorrect": false }
+    ],
+    "explanation": "L'interdiction doit être proportionnée et justifiée, sinon elle peut être contestée.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs066",
+    "question": "J'ai 2 enfants et je suis divorcé(e). Suis-je obligé(e) de payer la pension alimentaire même si les enfants ont coupé les ponts avec moi ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, l'obligation alimentaire envers les enfants reste due", "isCorrect": true },
+      { "label": "Non, si les enfants refusent le contact", "isCorrect": false },
+      { "label": "Non, après leur majorité", "isCorrect": false },
+      { "label": "Cela dépend de la volonté du parent", "isCorrect": false }
+    ],
+    "explanation": "L'obligation alimentaire est indépendante des relations affectives avec les enfants.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pvs067",
+    "question": "Les enfants doivent-ils aider financièrement leurs parents âgés si ceux-ci ne peuvent plus subvenir à leurs besoins ?",
+    "type": "situational",
+    "topic": "principes_valeurs",
+    "choices": [
+      { "label": "Oui, c'est l'obligation alimentaire envers les ascendants", "isCorrect": true },
+      { "label": "Non, ce n'est qu'un devoir moral", "isCorrect": false },
+      { "label": "Non, c'est le rôle de l'État uniquement", "isCorrect": false },
+      { "label": "Oui, mais seulement si les parents le demandent en justice", "isCorrect": false }
+    ],
+    "explanation": "Le Code civil prévoit une obligation alimentaire réciproque entre parents et enfants.",
+    "difficulty": "hard"
   }
 ]

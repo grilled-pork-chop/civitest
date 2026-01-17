@@ -566,5 +566,201 @@
     ],
     "explanation": "Être citoyen implique droits et devoirs.",
     "difficulty": "medium"
+  },
+  {
+    "id": "dds041",
+    "question": "La France est en guerre. Est-ce que je suis obligé de défendre le pays ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "En cas de mobilisation générale, les citoyens peuvent être appelés à défendre le pays", "isCorrect": true },
+      { "label": "Non, le service militaire est aboli", "isCorrect": false },
+      { "label": "Non, seuls les militaires professionnels combattent", "isCorrect": false },
+      { "label": "Oui, mais uniquement les hommes", "isCorrect": false }
+    ],
+    "explanation": "La défense de la nation peut impliquer la mobilisation des citoyens en cas de guerre.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds042",
+    "question": "Est-ce que le maire peut refuser de marier un couple homosexuel ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, c'est une obligation légale depuis 2013", "isCorrect": true },
+      { "label": "Oui, pour des raisons de conscience", "isCorrect": false },
+      { "label": "Oui, si la commune est contre", "isCorrect": false },
+      { "label": "Oui, s'il délègue à un adjoint", "isCorrect": false }
+    ],
+    "explanation": "Le mariage pour tous est un droit, le maire ne peut refuser de célébrer un mariage légal.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds043",
+    "question": "Tu es appelé à voter mais tu ne t'intéresses pas à la politique. Est-ce que tu dois voter ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le vote n'est pas obligatoire mais c'est un devoir civique", "isCorrect": true },
+      { "label": "Oui, le vote est obligatoire en France", "isCorrect": false },
+      { "label": "Non, et il n'y a aucune conséquence", "isCorrect": false },
+      { "label": "Oui, sous peine d'amende", "isCorrect": false }
+    ],
+    "explanation": "Le vote est un droit et un devoir civique, mais pas une obligation légale en France.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds044",
+    "question": "Un professeur sanctionne un élève pour son comportement. Quels droits l'élève conserve-t-il malgré la sanction ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit à la défense et le droit de contester la sanction", "isCorrect": true },
+      { "label": "Aucun, la sanction est définitive", "isCorrect": false },
+      { "label": "Le droit de ne plus venir en cours", "isCorrect": false },
+      { "label": "Le droit de changer d'établissement automatiquement", "isCorrect": false }
+    ],
+    "explanation": "Même sanctionné, l'élève conserve ses droits fondamentaux dont celui de contester.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds045",
+    "question": "Un citoyen refuse de payer ses impôts en affirmant que c'est son droit. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, le paiement des impôts est une obligation légale", "isCorrect": true },
+      { "label": "Oui, si ses revenus sont faibles", "isCorrect": false },
+      { "label": "Oui, c'est une liberté individuelle", "isCorrect": false },
+      { "label": "Oui, s'il conteste l'utilisation de l'argent public", "isCorrect": false }
+    ],
+    "explanation": "Le paiement des impôts est un devoir citoyen inscrit dans la loi.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds046",
+    "question": "Un élève refuse de faire son travail scolaire en disant qu'il est libre. A-t-il le droit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, l'instruction est obligatoire et implique des devoirs", "isCorrect": true },
+      { "label": "Oui, la liberté est un droit fondamental", "isCorrect": false },
+      { "label": "Oui, s'il assume les conséquences", "isCorrect": false },
+      { "label": "Oui, après 16 ans", "isCorrect": false }
+    ],
+    "explanation": "L'instruction obligatoire implique le respect des règles scolaires et du travail demandé.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds047",
+    "question": "Tu es témoin de harcèlement au travail. Quels sont tes devoirs en tant que témoin ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Signaler les faits et témoigner si nécessaire", "isCorrect": true },
+      { "label": "Ne rien faire pour ne pas avoir de problèmes", "isCorrect": false },
+      { "label": "Régler le problème soi-même avec le harceleur", "isCorrect": false },
+      { "label": "Attendre que la victime porte plainte", "isCorrect": false }
+    ],
+    "explanation": "Le témoin a un devoir moral et peut être protégé légalement s'il signale les faits.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds048",
+    "question": "Tu trouves un objet perdu dans la rue. Est-ce que tu peux le garder ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, il faut le déposer à la mairie ou au commissariat", "isCorrect": true },
+      { "label": "Oui, celui qui trouve garde", "isCorrect": false },
+      { "label": "Oui, si personne ne le réclame dans l'heure", "isCorrect": false },
+      { "label": "Oui, si l'objet a peu de valeur", "isCorrect": false }
+    ],
+    "explanation": "Garder un objet trouvé sans le déclarer peut constituer un abus de confiance.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds049",
+    "question": "Un journaliste publie des informations privées sur une personne connue. Quels droits sont en conflit ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté de la presse et le droit au respect de la vie privée", "isCorrect": true },
+      { "label": "La liberté d'expression et le droit de vote", "isCorrect": false },
+      { "label": "Le droit à l'information et le droit de grève", "isCorrect": false },
+      { "label": "La liberté de conscience et le droit syndical", "isCorrect": false }
+    ],
+    "explanation": "La presse doit respecter la vie privée, même pour les personnalités publiques.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds050",
+    "question": "Vous refusez de respecter une loi car vous n'êtes pas d'accord avec elle. Est-ce autorisé en France ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, la loi s'applique à tous, la contestation passe par des voies légales", "isCorrect": true },
+      { "label": "Oui, c'est la liberté d'opinion", "isCorrect": false },
+      { "label": "Oui, si la majorité est d'accord", "isCorrect": false },
+      { "label": "Oui, pour des raisons de conscience", "isCorrect": false }
+    ],
+    "explanation": "Dans un État de droit, nul ne peut choisir les lois qu'il respecte.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds051",
+    "question": "Une personne tient des propos racistes dans un lieu public. Que risque-t-elle ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Des poursuites pénales pour injure ou incitation à la haine raciale", "isCorrect": true },
+      { "label": "Rien, c'est la liberté d'expression", "isCorrect": false },
+      { "label": "Un simple rappel à l'ordre", "isCorrect": false },
+      { "label": "Une amende uniquement si quelqu'un porte plainte", "isCorrect": false }
+    ],
+    "explanation": "Les propos racistes sont punis par la loi, même sans plainte dans certains cas.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dds052",
+    "question": "Vous êtes appelé à participer à la Journée Défense et Citoyenneté. Quel est le sens de cet engagement ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Sensibiliser les jeunes à leurs devoirs envers la nation", "isCorrect": true },
+      { "label": "Recruter de force pour l'armée", "isCorrect": false },
+      { "label": "Remplacer le service militaire obligatoire", "isCorrect": false },
+      { "label": "Obtenir le droit de vote", "isCorrect": false }
+    ],
+    "explanation": "La JDC informe sur les droits et devoirs du citoyen et la défense nationale.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds053",
+    "question": "Un citoyen détruit un bien public lors d'une manifestation. Quels devoirs n'ont pas été respectés ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect des biens publics et de la loi", "isCorrect": true },
+      { "label": "Le droit de manifester uniquement", "isCorrect": false },
+      { "label": "La liberté d'expression", "isCorrect": false },
+      { "label": "Le devoir de réserve", "isCorrect": false }
+    ],
+    "explanation": "Manifester est un droit, mais la destruction de biens publics est un délit.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dds054",
+    "question": "Mon enfant n'aime pas les mathématiques. Est-ce qu'il peut ne pas suivre ces cours à l'école ?",
+    "type": "situational",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Non, les programmes scolaires sont obligatoires pour tous", "isCorrect": true },
+      { "label": "Oui, si les parents l'autorisent", "isCorrect": false },
+      { "label": "Oui, au nom de la liberté éducative", "isCorrect": false },
+      { "label": "Oui, s'il compense par une autre matière", "isCorrect": false }
+    ],
+    "explanation": "L'instruction obligatoire impose de suivre l'ensemble du programme scolaire.",
+    "difficulty": "medium"
   }
 ]
