@@ -8,6 +8,7 @@ import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 import {
   Play,
   Clock,
@@ -81,10 +82,15 @@ export default function HomeScreen() {
       showsVerticalScrollIndicator={false}
     >
       {/* Hero */}
-      <View style={{ paddingTop: insets.top + 16, backgroundColor: colors.republicanBlue }}>
+      <LinearGradient
+        colors={['#012a5e', '#002654', '#001d44']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={{ paddingTop: insets.top + 16 }}
+      >
         <View className="px-5 pb-6">
           <View className="flex-row items-center justify-between mb-6">
-            <Text className="text-white text-xl font-bold">CiviTest</Text>
+            <Text className="text-white text-xl font-display">CiviTest</Text>
             <Button
               title="Statistiques"
               variant="ghost"
@@ -95,7 +101,7 @@ export default function HomeScreen() {
             />
           </View>
 
-          <Text className="text-white text-3xl font-bold mb-3">
+          <Text className="text-white text-4xl font-display mb-3 leading-tight">
             Préparez votre Examen Civique
           </Text>
           <Text className="text-white/80 text-base mb-6 leading-relaxed">
@@ -151,7 +157,7 @@ export default function HomeScreen() {
           </View>
         </View>
         <Tricolor height={5} />
-      </View>
+      </LinearGradient>
 
       {/* Body */}
       <View className="px-4 py-6 gap-8">
@@ -197,7 +203,7 @@ export default function HomeScreen() {
         {summary.totalQuizzes === 0 ? (
           <View className="items-center py-8">
             <BookOpen size={56} color={colors.mutedForeground} />
-            <Text className="text-xl font-semibold mt-4 mb-2 text-foreground">Bienvenue sur CiviTest !</Text>
+            <Text className="text-2xl font-display mt-4 mb-2 text-foreground">Bienvenue sur CiviTest !</Text>
             <Text className="text-muted-foreground mb-6 text-center px-4">
               Commencez votre premier quiz pour voir vos statistiques et suivre votre progression.
             </Text>
@@ -290,7 +296,7 @@ function SectionTitle({ icon, title, noMargin }: { icon: React.ReactNode; title:
   return (
     <View className={cn('flex-row items-center gap-2', !noMargin && 'mb-4')}>
       {icon}
-      <Text className="text-xl font-semibold text-foreground">{title}</Text>
+      <Text className="text-xl font-display text-foreground">{title}</Text>
     </View>
   );
 }

@@ -6,6 +6,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { MotiView } from 'moti';
+import { useReducedMotion } from 'react-native-reanimated';
 import { Clock, AlertTriangle } from 'lucide-react-native';
 import { formatTime } from '@/utils/questions';
 import { ProgressBar } from '@/components/ui/ProgressBar';
@@ -24,9 +25,11 @@ interface TimerProps {
  * - Critical (≤1min): red styling with pulsing border
  */
 export function Timer({ timeRemaining, totalTime }: TimerProps) {
+  const reduceMotion = useReducedMotion();
   const percentage = (timeRemaining / totalTime) * 100;
   const isWarning = timeRemaining <= 300;
   const isCritical = timeRemaining <= 60;
+  const pulse = isCritical && !reduceMotion;
 
   const barColor = isCritical
     ? colors.red500
@@ -37,9 +40,9 @@ export function Timer({ timeRemaining, totalTime }: TimerProps) {
   return (
     <MotiView
       from={{ opacity: 1 }}
-      animate={{ opacity: isCritical ? 0.6 : 1 }}
+      animate={{ opacity: pulse ? 0.6 : 1 }}
       transition={
-        isCritical
+        pulse
           ? { type: 'timing', duration: 700, loop: true, repeatReverse: true }
           : { type: 'timing', duration: 200 }
       }

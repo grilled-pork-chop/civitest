@@ -61,7 +61,7 @@ export default function StatsScreen() {
         <View className="w-24 h-24 rounded-full bg-muted items-center justify-center mb-6">
           <BarChart3 size={48} color={colors.mutedForeground} />
         </View>
-        <Text className="text-2xl font-bold mb-2 text-foreground text-center">
+        <Text className="text-2xl font-display mb-2 text-foreground text-center">
           Aucune statistique disponible
         </Text>
         <Text className="text-muted-foreground mb-6 text-center">

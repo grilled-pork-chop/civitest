@@ -107,7 +107,8 @@ export function Button({
           <Text
             numberOfLines={1}
             maxFontSizeMultiplier={1.4}
-            className={cn('font-semibold', textVariants[variant], sizeText[size], textClassName)}
+            style={{ fontFamily: 'Inter_600SemiBold' }}
+            className={cn(textVariants[variant], sizeText[size], textClassName)}
           >
             {title}
           </Text>

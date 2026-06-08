@@ -49,6 +49,19 @@ export const colors = {
   amber900: '#78350f',
 } as const;
 
+/**
+ * Font families (loaded in _layout). Inter is the global body default; the
+ * Playfair Display serif is the editorial/republican display face for headings.
+ */
+export const fonts = {
+  display: 'PlayfairDisplay_700Bold',
+  displaySemi: 'PlayfairDisplay_600SemiBold',
+  body: 'Inter_400Regular',
+  medium: 'Inter_500Medium',
+  semibold: 'Inter_600SemiBold',
+  bold: 'Inter_700Bold',
+} as const;
+
 /** 4-point spacing scale */
 export const spacing = {
   xs: 4,

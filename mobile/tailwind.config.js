@@ -4,6 +4,11 @@ module.exports = {
   presets: [require('nativewind/preset')],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter_400Regular'],
+        display: ['PlayfairDisplay_700Bold'],
+        'display-semibold': ['PlayfairDisplay_600SemiBold'],
+      },
       colors: {
         // French Republic
         'republican-blue': '#002654',

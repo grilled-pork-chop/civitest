@@ -6,6 +6,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { View, Text, ScrollView, ActivityIndicator, Pressable } from 'react-native';
 import { MotiView } from 'moti';
+import { useReducedMotion } from 'react-native-reanimated';
 import { router } from 'expo-router';
 import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -37,6 +38,7 @@ type FilterType = 'all' | 'correct' | 'incorrect';
 
 export function ReviewScreen({ quizId }: { quizId?: string }) {
   const insets = useSafeAreaInsets();
+  const reduceMotion = useReducedMotion();
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const { data: questions } = useQuestions();
 
@@ -135,7 +137,7 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
         style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
       >
         <AlertCircle size={56} color={colors.mutedForeground} />
-        <Text className="text-xl font-bold mt-4 mb-2 text-foreground text-center">
+        <Text className="text-2xl font-display mt-4 mb-2 text-foreground text-center">
           Quiz non disponible
         </Text>
         <Text className="text-muted-foreground mb-6 text-center">
@@ -166,7 +168,7 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
       <View style={{ paddingTop: insets.top + 8 }} className="px-4 pb-3 bg-card border-b border-border">
         <View className="flex-row items-center justify-between">
           <View className="flex-1">
-            <Text className="text-xl font-bold text-foreground">Révision</Text>
+            <Text className="text-2xl font-display text-foreground">Révision</Text>
             <Text className="text-muted-foreground text-xs">
               {correctCount}/{totalQ} bonnes réponses ({Math.round((correctCount / totalQ) * 100)}%)
             </Text>
@@ -226,9 +228,9 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
           <>
             <MotiView
               key={currentIndex}
-              from={{ opacity: 0, translateY: 8 }}
+              from={{ opacity: reduceMotion ? 1 : 0, translateY: reduceMotion ? 0 : 8 }}
               animate={{ opacity: 1, translateY: 0 }}
-              transition={{ type: 'timing', duration: 200 }}
+              transition={{ type: 'timing', duration: reduceMotion ? 0 : 200 }}
             >
               <QuestionCard
                 question={currentQuestion}

@@ -36,7 +36,7 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
         ) : (
           <XCircle size={56} color="#ffffff" />
         )}
-        <Text className="text-2xl font-bold text-white mt-3 mb-1 text-center">
+        <Text className="text-3xl font-display text-white mt-3 mb-1 text-center">
           {passed ? 'Félicitations !' : 'Continuez vos efforts'}
         </Text>
         <Text className="text-white/90 text-base mb-5 text-center">
@@ -94,7 +94,7 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
 
           {/* Topic performance */}
           <View className="bg-card border border-border rounded-2xl p-5">
-            <Text className="text-lg font-semibold text-foreground mb-4">
+            <Text className="text-lg font-display text-foreground mb-4">
               Performance par thème
             </Text>
             <View className="gap-4">
@@ -107,7 +107,7 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
           {/* Tips when failed */}
           {!passed ? (
             <View className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
-              <Text className="text-lg font-semibold text-amber-900 mb-3">
+              <Text className="text-lg font-display text-amber-900 mb-3">
                 Conseils pour progresser
               </Text>
               {[

@@ -40,7 +40,7 @@ export function CardTitle({
   return (
     <Text
       maxFontSizeMultiplier={1.4}
-      className={cn('text-base font-semibold text-foreground', className)}
+      className={cn('font-display text-lg text-foreground', className)}
     >
       {children}
     </Text>

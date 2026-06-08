@@ -1,6 +1,6 @@
 import * as Crypto from 'expo-crypto';
 import type { Question, TopicId, ShuffledQuestion, QuestionType } from '@/types';
-import { QUESTION_TYPES, SITUATIONAL_TOPIC_CONFIG, TOPICS } from '@/types';
+import { QUESTION_TYPES, SITUATIONAL_TOPIC_CONFIG, TOPICS, TOPIC_MAP } from '@/types';
 
 /**
  * Fisher-Yates shuffle algorithm
@@ -163,18 +163,17 @@ export function calculatePercentage(value: number, total: number): number {
 }
 
 /**
- * Get topic color by ID
+ * Get topic color by ID (O(1) map lookup)
  */
 export function getTopicColor(topicId: TopicId): string {
-  const topic = TOPICS.find((t) => t.id === topicId);
-  return topic?.color || '#6B7280';
+  return TOPIC_MAP[topicId]?.color || '#6B7280';
 }
 
 /**
- * Get topic name by ID
+ * Get topic name by ID (O(1) map lookup)
  */
 export function getTopicName(topicId: TopicId, short = false): string {
-  const topic = TOPICS.find((t) => t.id === topicId);
+  const topic = TOPIC_MAP[topicId];
   return short ? topic?.nameShort || topicId : topic?.name || topicId;
 }
 

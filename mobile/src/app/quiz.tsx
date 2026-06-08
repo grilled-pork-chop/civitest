@@ -10,7 +10,7 @@ import { router } from 'expo-router';
 import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { runOnJS } from 'react-native-reanimated';
+import { runOnJS, useReducedMotion } from 'react-native-reanimated';
 import { MotiView } from 'moti';
 import { BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
 import * as Haptics from 'expo-haptics';
@@ -39,6 +39,7 @@ export default function QuizScreen() {
   const [showExitDialog, setShowExitDialog] = useState(false);
   const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
   const sheetRef = useRef<BottomSheetModal>(null);
+  const reduceMotion = useReducedMotion();
 
   // If there's no quiz (e.g. deep link), go home.
   useEffect(() => {
@@ -216,9 +217,9 @@ export default function QuizScreen() {
         >
           <MotiView
             key={activeIndex}
-            from={{ opacity: 0, translateX: direction * 28 }}
+            from={{ opacity: reduceMotion ? 1 : 0, translateX: reduceMotion ? 0 : direction * 28 }}
             animate={{ opacity: 1, translateX: 0 }}
-            transition={{ type: 'timing', duration: 220 }}
+            transition={{ type: 'timing', duration: reduceMotion ? 0 : 220 }}
           >
             <QuestionCard
               question={currentQuestion}
