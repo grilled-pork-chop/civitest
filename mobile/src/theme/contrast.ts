@@ -59,22 +59,18 @@ function mix(hex: string, target: number, amount: number): string {
   );
 }
 
-const BLACK = '#0f172a';
 const WHITE = '#ffffff';
 
 /**
  * Returns an AA-compliant `{ bg, fg }` pairing for a given background color.
- * Picks the higher-contrast foreground, then darkens (white fg) or lightens
- * (black fg) the background in small steps until the ratio clears 4.5:1.
+ * Brand badges read best with white text, so we keep the foreground white and
+ * darken the background in small steps until the ratio clears 4.5:1 (rather
+ * than flipping to black text on mid-tone colors like the green topic).
  */
 export function getBadgeColors(bg: string): { bg: string; fg: string } {
-  const useWhite = contrastRatio(bg, WHITE) >= contrastRatio(bg, BLACK);
-  const fg = useWhite ? WHITE : BLACK;
-  // Move bg away from the fg (toward black for white text, toward white for black text).
-  const target = useWhite ? 0 : 255;
   let adjusted = bg;
-  for (let i = 0; i < 12 && contrastRatio(adjusted, fg) < AA_NORMAL; i++) {
-    adjusted = mix(adjusted, target, 0.08);
+  for (let i = 0; i < 16 && contrastRatio(adjusted, WHITE) < AA_NORMAL; i++) {
+    adjusted = mix(adjusted, 0, 0.08); // darken toward black
   }
-  return { bg: adjusted, fg };
+  return { bg: adjusted, fg: WHITE };
 }

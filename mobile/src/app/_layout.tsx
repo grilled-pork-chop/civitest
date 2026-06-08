@@ -69,6 +69,16 @@ function AppNavigator() {
             headerShadowVisible: false,
           }}
         />
+        <Stack.Screen
+          name="guide"
+          options={{
+            title: 'Le guide',
+            headerStyle: { backgroundColor: '#002654' },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: { fontFamily: 'PlayfairDisplay_700Bold' },
+            headerShadowVisible: false,
+          }}
+        />
         <Stack.Screen name="review" options={{ headerShown: false }} />
         <Stack.Screen name="review/[quizId]" options={{ headerShown: false }} />
       </Stack>

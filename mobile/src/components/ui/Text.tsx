@@ -45,6 +45,30 @@ const bodySizeClass: Record<BodySize, string> = {
   title: 'text-base',
 };
 
+const NAMED_TEXT_COLORS = new Set([
+  'white', 'black', 'transparent', 'current', 'foreground', 'background',
+  'primary', 'secondary', 'muted', 'accent', 'card', 'border', 'ring', 'input',
+  'destructive', 'success', 'warning',
+  'primary-foreground', 'secondary-foreground', 'muted-foreground',
+  'card-foreground', 'destructive-foreground', 'success-foreground', 'warning-foreground',
+]);
+
+/**
+ * Does `className` already set a text color? If so, the component's default
+ * `colorClass` must NOT be emitted — otherwise the two compete and NativeWind
+ * may keep `text-foreground` (which turns near-white in dark mode and becomes
+ * unreadable on light-tinted surfaces).
+ */
+function classNameHasTextColor(className?: string): boolean {
+  if (!className) return false;
+  return className.split(/\s+/).some((token) => {
+    const t = token.replace(/^dark:/, '');
+    if (!t.startsWith('text-')) return false;
+    const rest = t.slice(5).split('/')[0]; // drop any /opacity
+    return NAMED_TEXT_COLORS.has(rest) || /^[a-z]+-\d{2,3}$/.test(rest);
+  });
+}
+
 export interface AppTextProps extends RNTextProps {
   size?: BodySize;
   weight?: Weight;
@@ -61,11 +85,15 @@ export function AppText({
   maxFontSizeMultiplier = 1.6,
   ...rest
 }: AppTextProps) {
+  // Explicit `color` prop wins; otherwise defer to a color in `className`; else
+  // fall back to the theme foreground.
+  const colorToken =
+    color !== 'default' ? colorClass[color] : classNameHasTextColor(className) ? undefined : colorClass.default;
   return (
     <RNText
       maxFontSizeMultiplier={maxFontSizeMultiplier}
       style={[{ fontFamily: interFamily[weight] }, style]}
-      className={cn(bodySizeClass[size], colorClass[color], className)}
+      className={cn(bodySizeClass[size], colorToken, className)}
       {...rest}
     />
   );
@@ -93,11 +121,13 @@ export function Heading({
   maxFontSizeMultiplier = 1.4,
   ...rest
 }: HeadingProps) {
+  const colorToken =
+    color !== 'default' ? colorClass[color] : classNameHasTextColor(className) ? undefined : colorClass.default;
   return (
     <RNText
       maxFontSizeMultiplier={maxFontSizeMultiplier}
       style={[{ fontFamily: 'PlayfairDisplay_700Bold' }, style]}
-      className={cn(headingSizeClass[size], colorClass[color], className)}
+      className={cn(headingSizeClass[size], colorToken, className)}
       {...rest}
     />
   );
