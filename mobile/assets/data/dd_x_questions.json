@@ -1,0 +1,366 @@
+[
+  {
+    "id": "ddx001",
+    "question": "À quelle liberté la PMA fait-elle référence ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "La liberté de disposer de son corps dans le cadre de la loi", "isCorrect": true },
+      { "label": "La liberté religieuse", "isCorrect": false },
+      { "label": "La liberté d’expression", "isCorrect": false },
+      { "label": "La liberté économique", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "ddx002",
+    "question": "Concernant le droit de se marier, quelle proposition est correcte ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Il est garanti à toute personne majeure, sans discrimination", "isCorrect": true },
+      { "label": "Il dépend de l’accord de la famille", "isCorrect": false },
+      { "label": "Il est réservé aux citoyens français", "isCorrect": false },
+      { "label": "Il dépend de la religion", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx003",
+    "question": "La peine de mort est :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Abolie en France", "isCorrect": true },
+      { "label": "Suspendue temporairement", "isCorrect": false },
+      { "label": "Appliquée dans certains cas", "isCorrect": false },
+      { "label": "Décidée par référendum", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx004",
+    "question": "Que contient la Constitution ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Les principes fondamentaux et l’organisation des pouvoirs", "isCorrect": true },
+      { "label": "Les lois ordinaires", "isCorrect": false },
+      { "label": "Les règlements municipaux", "isCorrect": false },
+      { "label": "Les décisions de justice", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx005",
+    "question": "Que prévoit la Charte de l'environnement ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit de vivre dans un environnement équilibré et respectueux de la santé", "isCorrect": true },
+      { "label": "La protection exclusive des espèces animales", "isCorrect": false },
+      { "label": "Des sanctions pénales automatiques", "isCorrect": false },
+      { "label": "Une obligation religieuse", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "ddx006",
+    "question": "Que signifie la dignité humaine ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le respect de toute personne en tant qu’être humain", "isCorrect": true },
+      { "label": "Le respect lié au statut social", "isCorrect": false },
+      { "label": "Le respect conditionné au comportement", "isCorrect": false },
+      { "label": "Le respect réservé aux citoyens", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx007",
+    "question": "Que signifie le droit de manifester ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Exprimer collectivement une opinion dans le respect de la loi", "isCorrect": true },
+      { "label": "Occuper l’espace public sans limite", "isCorrect": false },
+      { "label": "Imposer ses opinions par la force", "isCorrect": false },
+      { "label": "Bloquer les institutions", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx008",
+    "question": "Que signifie la PMA ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Procréation médicalement assistée", "isCorrect": true },
+      { "label": "Protection maternelle automatique", "isCorrect": false },
+      { "label": "Programme médical avancé", "isCorrect": false },
+      { "label": "Procédure médicale autorisée", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx009",
+    "question": "Jeter un mégot par terre est :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Une infraction sanctionnée par une amende", "isCorrect": true },
+      { "label": "Un simple geste incivique sans sanction", "isCorrect": false },
+      { "label": "Autorisé hors agglomération", "isCorrect": false },
+      { "label": "Toléré s’il est éteint", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx010",
+    "question": "Parmi ces actions, laquelle est respectueuse de l’environnement ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Réduire sa consommation et recycler ses déchets", "isCorrect": true },
+      { "label": "Jeter les déchets dans la nature", "isCorrect": false },
+      { "label": "Brûler ses déchets", "isCorrect": false },
+      { "label": "Les enterrer soi-même", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx011",
+    "question": "Pourquoi doit-on trier ses déchets ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Pour permettre leur recyclage et limiter la pollution", "isCorrect": true },
+      { "label": "Pour éviter les contrôles", "isCorrect": false },
+      { "label": "Pour réduire les taxes", "isCorrect": false },
+      { "label": "Pour gagner de l’espace", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx012",
+    "question": "Que doit faire une victime de violences ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Alerter les autorités compétentes", "isCorrect": true },
+      { "label": "Régler la situation seule", "isCorrect": false },
+      { "label": "Se taire pour éviter des conflits", "isCorrect": false },
+      { "label": "Quitter le territoire", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx013",
+    "question": "Quel est le rôle de la police ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Assurer la sécurité et maintenir l’ordre public", "isCorrect": true },
+      { "label": "Rendre la justice", "isCorrect": false },
+      { "label": "Voter les lois", "isCorrect": false },
+      { "label": "Condamner les infractions", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx014",
+    "question": "Quel est un exemple d’assistance à personne en danger ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Appeler les secours pour une personne blessée", "isCorrect": true },
+      { "label": "Filmer la scène", "isCorrect": false },
+      { "label": "Ignorer la situation", "isCorrect": false },
+      { "label": "Quitter les lieux", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx015",
+    "question": "Quelle proposition représente un exemple de crime ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un meurtre", "isCorrect": true },
+      { "label": "Un excès de vitesse", "isCorrect": false },
+      { "label": "Un stationnement gênant", "isCorrect": false },
+      { "label": "Une injure", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx016",
+    "question": "Quelle proposition représente un exemple de délit ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un vol", "isCorrect": true },
+      { "label": "Un homicide volontaire", "isCorrect": false },
+      { "label": "Un crime contre l’humanité", "isCorrect": false },
+      { "label": "Une contravention mineure", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx017",
+    "question": "Qu'est-ce qu'une infraction ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un acte interdit par la loi et sanctionné", "isCorrect": true },
+      { "label": "Un comportement immoral", "isCorrect": false },
+      { "label": "Un simple désaccord", "isCorrect": false },
+      { "label": "Une faute administrative uniquement", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx018",
+    "question": "Déposer une machine à laver cassée sur le trottoir est :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Un dépôt sauvage interdit", "isCorrect": true },
+      { "label": "Autorisé temporairement", "isCorrect": false },
+      { "label": "Toléré le week-end", "isCorrect": false },
+      { "label": "Un acte civique", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx019",
+    "question": "En quoi consiste la traite des êtres humains ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Exploiter des personnes par la contrainte ou la violence", "isCorrect": true },
+      { "label": "Employer des étrangers sans contrat", "isCorrect": false },
+      { "label": "Faire travailler des mineurs légalement", "isCorrect": false },
+      { "label": "Aider à l’immigration", "isCorrect": false }
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "ddx020",
+    "question": "Quel droit permet à une personne de se défendre devant la justice ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Le droit à un procès équitable", "isCorrect": true },
+      { "label": "Le droit à la sécurité sociale", "isCorrect": false },
+      { "label": "Le droit de manifester", "isCorrect": false },
+      { "label": "Le droit syndical", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx021",
+    "question": "Est-il toujours possible de divorcer ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Oui, le divorce est un droit encadré par la loi", "isCorrect": true },
+      { "label": "Non, seulement avec l’accord de la famille", "isCorrect": false },
+      { "label": "Seulement en cas de faute grave", "isCorrect": false },
+      { "label": "Uniquement après une durée minimale de mariage", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx022",
+    "question": "Jeter une bouteille dans la rue est :",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Une infraction passible d’une amende", "isCorrect": true },
+      { "label": "Un geste toléré en zone urbaine", "isCorrect": false },
+      { "label": "Un simple manque de civisme sans sanction", "isCorrect": false },
+      { "label": "Autorisé si recyclable", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx023",
+    "question": "Que doit faire une personne en cas d’accident ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Sécuriser les lieux et prévenir les secours", "isCorrect": true },
+      { "label": "Quitter les lieux rapidement", "isCorrect": false },
+      { "label": "Filmer la scène", "isCorrect": false },
+      { "label": "Attendre sans intervenir", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx024",
+    "question": "Que permet la citoyenneté française ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "L’exercice des droits civiques et politiques", "isCorrect": true },
+      { "label": "L’exonération des lois", "isCorrect": false },
+      { "label": "La priorité à l’emploi", "isCorrect": false },
+      { "label": "L’immunité pénale", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx025",
+    "question": "Que risque une personne qui ne respecte pas la loi ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Des sanctions prévues par la loi", "isCorrect": true },
+      { "label": "Un simple avertissement moral", "isCorrect": false },
+      { "label": "Aucune conséquence", "isCorrect": false },
+      { "label": "Une sanction automatique sans jugement", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "ddx026",
+    "question": "Quel est le rôle de la gendarmerie ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Assurer la sécurité publique notamment en zone rurale", "isCorrect": true },
+      { "label": "Rendre les décisions de justice", "isCorrect": false },
+      { "label": "Voter les lois", "isCorrect": false },
+      { "label": "Administrer les communes", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx027",
+    "question": "Qui veille au maintien de l’ordre public ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "Les forces de sécurité intérieure", "isCorrect": true },
+      { "label": "Les députés", "isCorrect": false },
+      { "label": "Les magistrats du siège", "isCorrect": false },
+      { "label": "Les citoyens individuellement", "isCorrect": false }
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "ddx028",
+    "question": "Comment peut-on réduire ses déchets ?",
+    "type": "knowledge",
+    "topic": "droits_devoirs",
+    "choices": [
+      { "label": "En limitant les emballages et en réutilisant", "isCorrect": true },
+      { "label": "En les brûlant", "isCorrect": false },
+      { "label": "En les jetant dans la nature", "isCorrect": false },
+      { "label": "En les enterrant", "isCorrect": false }
+    ],
+    "difficulty": "easy"
+  }
+]
