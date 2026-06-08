@@ -25,7 +25,7 @@ export const colors = {
   success: '#16a34a',
   warning: '#f59e0b',
 
-  // Status palette (matches web green/red/yellow usage)
+  // Status palette (matches web green/red/yellow usage) — fixed across themes
   green50: '#f0fdf4',
   green500: '#22c55e',
   green600: '#16a34a',
@@ -48,6 +48,30 @@ export const colors = {
   amber800: '#92400e',
   amber900: '#78350f',
 } as const;
+
+export type ThemeColors = { [K in keyof typeof colors]: string };
+
+/** Dark theme: overrides the semantic tokens; keeps the brand + status palette. */
+export const darkColors: ThemeColors = {
+  ...colors,
+  background: '#0b1220',
+  foreground: '#e8edf5',
+  card: '#121a2b',
+  cardForeground: '#e8edf5',
+  primary: '#3b6fb5',
+  primaryForeground: '#ffffff',
+  secondary: '#1e293b',
+  secondaryForeground: '#e8edf5',
+  muted: '#1e293b',
+  mutedForeground: '#94a3b8',
+  border: '#26324a',
+  destructive: '#ef4444',
+  destructiveForeground: '#ffffff',
+  success: '#22c55e',
+  warning: '#f59e0b',
+};
+
+export const lightColors: ThemeColors = colors;
 
 /**
  * Font families (loaded in _layout). Inter is the global body default; the

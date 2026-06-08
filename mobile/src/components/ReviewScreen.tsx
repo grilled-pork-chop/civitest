@@ -31,7 +31,7 @@ import { useQuestions } from '@/lib/queries';
 import { getTopicName, getTopicColor, getQuestionTypeColor } from '@/utils/questions';
 import { isTopicId } from '@/utils/typeGuards';
 import type { QuestionType, TopicId } from '@/types';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 type FilterType = 'all' | 'correct' | 'incorrect';
@@ -39,6 +39,7 @@ type FilterType = 'all' | 'correct' | 'incorrect';
 export function ReviewScreen({ quizId }: { quizId?: string }) {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
+  const c = useThemeColors();
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const { data: questions } = useQuestions();
 
@@ -136,7 +137,7 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
         className="flex-1 bg-background items-center justify-center px-6"
         style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
       >
-        <AlertCircle size={56} color={colors.mutedForeground} />
+        <AlertCircle size={56} color={c.mutedForeground} />
         <Text className="text-2xl font-display mt-4 mb-2 text-foreground text-center">
           Quiz non disponible
         </Text>
@@ -154,7 +155,7 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
   if (!currentQuiz || !currentQuiz.isCompleted || !currentQuestion || !currentAnswer) {
     return (
       <View className="flex-1 items-center justify-center bg-background">
-        <ActivityIndicator size="large" color={colors.primary} />
+        <ActivityIndicator size="large" color={c.primary} />
         <Text className="text-muted-foreground mt-4">Chargement…</Text>
       </View>
     );
@@ -179,13 +180,13 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
               variant="outline"
               size="sm"
               onPress={() => router.replace('/')}
-              icon={<Home size={16} color={colors.foreground} />}
+              icon={<Home size={16} color={c.foreground} />}
             />
             <Button
               title="Rejouer"
               size="sm"
               onPress={handleNewQuiz}
-              icon={<RotateCcw size={16} color={colors.primaryForeground} />}
+              icon={<RotateCcw size={16} color={c.primaryForeground} />}
             />
           </View>
         </View>
@@ -197,14 +198,14 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
       >
         {/* Correctness filters */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
-          <Chip active={filter === 'all'} onPress={() => setFilter('all')} icon={<List size={14} color={filter === 'all' ? '#fff' : colors.foreground} />} label={`Toutes (${totalQ})`} />
-          <Chip active={filter === 'correct'} onPress={() => setFilter('correct')} icon={<CheckCircle size={14} color={filter === 'correct' ? '#fff' : colors.green600} />} label={`Correctes (${correctCount})`} />
-          <Chip active={filter === 'incorrect'} onPress={() => setFilter('incorrect')} icon={<XCircle size={14} color={filter === 'incorrect' ? '#fff' : colors.red600} />} label={`Incorrectes (${incorrectCount})`} />
+          <Chip active={filter === 'all'} onPress={() => setFilter('all')} icon={<List size={14} color={filter === 'all' ? '#fff' : c.foreground} />} label={`Toutes (${totalQ})`} />
+          <Chip active={filter === 'correct'} onPress={() => setFilter('correct')} icon={<CheckCircle size={14} color={filter === 'correct' ? '#fff' : c.green600} />} label={`Correctes (${correctCount})`} />
+          <Chip active={filter === 'incorrect'} onPress={() => setFilter('incorrect')} icon={<XCircle size={14} color={filter === 'incorrect' ? '#fff' : c.red600} />} label={`Incorrectes (${incorrectCount})`} />
         </ScrollView>
 
         {/* Type filters */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
-          <Chip active={typeFilter === 'all'} onPress={() => setTypeFilter('all')} icon={<Layers size={14} color={typeFilter === 'all' ? '#fff' : colors.foreground} />} label={`Tous (${totalQ})`} />
+          <Chip active={typeFilter === 'all'} onPress={() => setTypeFilter('all')} icon={<Layers size={14} color={typeFilter === 'all' ? '#fff' : c.foreground} />} label={`Tous (${totalQ})`} />
           <Chip active={typeFilter === 'knowledge'} onPress={() => setTypeFilter('knowledge')} dot={getQuestionTypeColor('knowledge')} label={`Connaissance (${knowledgeCount})`} />
           <Chip active={typeFilter === 'situational'} onPress={() => setTypeFilter('situational')} dot={getQuestionTypeColor('situational')} label={`Situation (${situationalCount})`} />
         </ScrollView>
@@ -243,12 +244,12 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
               />
             </MotiView>
             <View className="flex-row items-center justify-between">
-              <Button title="Précédent" variant="outline" onPress={goToPrev} disabled={currentFilteredPosition <= 0} icon={<ChevronLeft size={18} color={colors.foreground} />} />
+              <Button title="Précédent" variant="outline" onPress={goToPrev} disabled={currentFilteredPosition <= 0} icon={<ChevronLeft size={18} color={c.foreground} />} />
               <Text className="text-sm text-muted-foreground">
                 {currentFilteredPosition + 1} / {filteredIndices.length}
                 {filter !== 'all' ? ' (filtrées)' : ''}
               </Text>
-              <Button title="Suivant" onPress={goToNext} disabled={currentFilteredPosition >= filteredIndices.length - 1} icon={<ChevronRight size={18} color={colors.primaryForeground} />} />
+              <Button title="Suivant" onPress={goToNext} disabled={currentFilteredPosition >= filteredIndices.length - 1} icon={<ChevronRight size={18} color={c.primaryForeground} />} />
             </View>
           </>
         ) : (
@@ -303,7 +304,7 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
                       {percentage}%
                     </Text>
                   </View>
-                  <ProgressBar percentage={percentage} color={isPassing ? colors.green500 : colors.red500} height={6} />
+                  <ProgressBar percentage={percentage} color={isPassing ? c.green500 : c.red500} height={6} />
                 </View>
               );
             })}

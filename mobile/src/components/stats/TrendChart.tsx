@@ -6,7 +6,7 @@ import React from 'react';
 import { View, Text, useWindowDimensions } from 'react-native';
 import { LineChart } from 'react-native-gifted-charts';
 import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 
 interface TrendChartProps {
   /** Percentage scores for recent quizzes (oldest → newest). */
@@ -15,6 +15,7 @@ interface TrendChartProps {
 
 export const TrendChart = React.memo(function TrendChart({ data }: TrendChartProps) {
   const { width } = useWindowDimensions();
+  const c = useThemeColors();
   // Card sits inside screen padding (16) + card padding (16) on each side.
   const chartWidth = Math.max(220, width - 32 - 32 - 24);
 
@@ -38,19 +39,19 @@ export const TrendChart = React.memo(function TrendChart({ data }: TrendChartPro
             maxValue={100}
             noOfSections={4}
             initialSpacing={12}
-            color={colors.primary}
+            color={c.primary}
             thickness={2}
-            dataPointsColor={colors.primary}
-            startFillColor={colors.primary}
+            dataPointsColor={c.primary}
+            startFillColor={c.primary}
             startOpacity={0.15}
             endOpacity={0.0}
             areaChart
             curved
-            yAxisTextStyle={{ color: colors.mutedForeground, fontSize: 10 }}
-            xAxisLabelTextStyle={{ color: colors.mutedForeground, fontSize: 10 }}
-            rulesColor={colors.border}
-            yAxisColor={colors.border}
-            xAxisColor={colors.border}
+            yAxisTextStyle={{ color: c.mutedForeground, fontSize: 10 }}
+            xAxisLabelTextStyle={{ color: c.mutedForeground, fontSize: 10 }}
+            rulesColor={c.border}
+            yAxisColor={c.border}
+            xAxisColor={c.border}
             showReferenceLine1
             referenceLine1Position={80}
             referenceLine1Config={{
@@ -59,7 +60,7 @@ export const TrendChart = React.memo(function TrendChart({ data }: TrendChartPro
               dashGap: 4,
               thickness: 1,
               labelText: '80% requis',
-              labelTextStyle: { color: colors.green600, fontSize: 9 },
+              labelTextStyle: { color: c.green600, fontSize: 9 },
             }}
           />
         </View>

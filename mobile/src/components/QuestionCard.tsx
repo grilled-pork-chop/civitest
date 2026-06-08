@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { View, Text, Pressable } from 'react-native';
-import * as Haptics from 'expo-haptics';
+import { haptics } from '@/services/haptics';
 import { Check, X, Info } from 'lucide-react-native';
 import type { Question, ShuffledQuestion } from '@/types';
 import {
@@ -16,7 +16,7 @@ import {
   getQuestionTypeColor,
 } from '@/utils/questions';
 import { Badge } from '@/components/ui/Badge';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 interface QuestionCardProps {
@@ -54,6 +54,7 @@ export const QuestionCard = React.memo(function QuestionCard({
   showExplanation = false,
   disabled = false,
 }: QuestionCardProps) {
+  const c = useThemeColors();
   const choices =
     'shuffledChoices' in question
       ? (question as ShuffledQuestion).shuffledChoices
@@ -70,7 +71,7 @@ export const QuestionCard = React.memo(function QuestionCard({
 
   const handlePress = (index: number) => {
     if (disabled || isReviewMode) return;
-    Haptics.selectionAsync().catch(() => {});
+    haptics.selection();
     onSelectChoice(index);
   };
 
@@ -173,7 +174,7 @@ export const QuestionCard = React.memo(function QuestionCard({
       {/* Explanation (review mode only) */}
       {showExplanation && question.explanation ? (
         <View className="mt-5 p-4 bg-blue-50 border border-blue-200 rounded-xl flex-row gap-3">
-          <Info size={20} color={colors.blue600} />
+          <Info size={20} color={c.blue600} />
           <View className="flex-1">
             <Text className="font-semibold text-blue-900 mb-1">Explication</Text>
             <Text className="text-blue-800 text-sm leading-relaxed">{question.explanation}</Text>

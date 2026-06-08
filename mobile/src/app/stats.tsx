@@ -20,10 +20,11 @@ import { quizActions } from '@/stores/quizStore';
 import { queryClient, useQuestions } from '@/lib/queries';
 import { useQuizStats } from '@/hooks/useQuizStats';
 import { toast, SUCCESS_MESSAGES } from '@/services/toast';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 
 export default function StatsScreen() {
   const insets = useSafeAreaInsets();
+  const c = useThemeColors();
   const { data: questions } = useQuestions();
   const [showClearDialog, setShowClearDialog] = useState(false);
   const stats = useQuizStats();
@@ -59,7 +60,7 @@ export default function StatsScreen() {
       >
         <StatusBar style="light" />
         <View className="w-24 h-24 rounded-full bg-muted items-center justify-center mb-6">
-          <BarChart3 size={48} color={colors.mutedForeground} />
+          <BarChart3 size={48} color={c.mutedForeground} />
         </View>
         <Text className="text-2xl font-display mb-2 text-foreground text-center">
           Aucune statistique disponible
@@ -73,7 +74,7 @@ export default function StatsScreen() {
             size="lg"
             fullWidth
             onPress={handleNewQuiz}
-            icon={<Play size={20} color={colors.primaryForeground} />}
+            icon={<Play size={20} color={c.primaryForeground} />}
           />
           <Button
             title="Importer l'historique"
@@ -81,7 +82,7 @@ export default function StatsScreen() {
             variant="outline"
             fullWidth
             onPress={handleImport}
-            icon={<Upload size={20} color={colors.foreground} />}
+            icon={<Upload size={20} color={c.foreground} />}
           />
         </View>
       </View>
@@ -101,14 +102,14 @@ export default function StatsScreen() {
           title="Exporter"
           variant="outline"
           onPress={exportQuizHistoryFile}
-          icon={<Download size={16} color={colors.foreground} />}
+          icon={<Download size={16} color={c.foreground} />}
           className="flex-1"
         />
         <Button
           title="Importer"
           variant="outline"
           onPress={handleImport}
-          icon={<Upload size={16} color={colors.foreground} />}
+          icon={<Upload size={16} color={c.foreground} />}
           className="flex-1"
         />
         <Button
@@ -116,7 +117,7 @@ export default function StatsScreen() {
           variant="destructive"
           fullWidth
           onPress={() => setShowClearDialog(true)}
-          icon={<Trash2 size={16} color={colors.destructiveForeground} />}
+          icon={<Trash2 size={16} color={c.destructiveForeground} />}
         />
       </View>
 

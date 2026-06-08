@@ -21,6 +21,7 @@ import {
   Calendar,
   ChevronRight,
   BarChart3,
+  Settings as SettingsIcon,
 } from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -31,11 +32,12 @@ import { useQuizStats } from '@/hooks/useQuizStats';
 import { appStore, quizActions } from '@/stores/quizStore';
 import { getQuestionTypeColor } from '@/utils/questions';
 import { TOPICS } from '@/types';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 export default function HomeScreen() {
   const insets = useSafeAreaInsets();
+  const c = useThemeColors();
   const { data: questions, isLoading, error, refetch } = useQuestions();
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const { summary, allResults } = useQuizStats();
@@ -50,7 +52,7 @@ export default function HomeScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 items-center justify-center bg-background">
-        <ActivityIndicator size="large" color={colors.primary} />
+        <ActivityIndicator size="large" color={c.primary} />
         <Text className="text-muted-foreground mt-4">Chargement des questions…</Text>
       </View>
     );
@@ -59,7 +61,7 @@ export default function HomeScreen() {
   if (error) {
     return (
       <View className="flex-1 items-center justify-center bg-background px-6">
-        <AlertCircle size={48} color={colors.destructive} />
+        <AlertCircle size={48} color={c.destructive} />
         <Text className="text-xl font-semibold mt-4 mb-2 text-foreground">Erreur de chargement</Text>
         <Text className="text-muted-foreground mb-4 text-center">
           Impossible de charger les questions. Veuillez réessayer.
@@ -91,14 +93,25 @@ export default function HomeScreen() {
         <View className="px-5 pb-6">
           <View className="flex-row items-center justify-between mb-6">
             <Text className="text-white text-xl font-display">CiviTest</Text>
-            <Button
-              title="Statistiques"
-              variant="ghost"
-              size="sm"
-              onPress={() => router.push('/stats')}
-              icon={<BarChart3 size={18} color="#ffffff" />}
-              textClassName="text-white"
-            />
+            <View className="flex-row items-center">
+              <Button
+                title="Statistiques"
+                variant="ghost"
+                size="sm"
+                onPress={() => router.push('/stats')}
+                icon={<BarChart3 size={18} color="#ffffff" />}
+                textClassName="text-white"
+              />
+              <Button
+                title="Réglages"
+                variant="ghost"
+                size="sm"
+                onPress={() => router.push('/settings')}
+                icon={<SettingsIcon size={20} color="#ffffff" />}
+                textClassName="hidden"
+                accessibilityLabel="Réglages"
+              />
+            </View>
           </View>
 
           <Text className="text-white text-4xl font-display mb-3 leading-tight">
@@ -118,7 +131,7 @@ export default function HomeScreen() {
                   fullWidth
                   variant="secondary"
                   onPress={() => router.push('/quiz')}
-                  icon={<Play size={20} color={colors.primary} />}
+                  icon={<Play size={20} color={c.primary} />}
                 />
                 <Button
                   title="Nouveau quiz"
@@ -138,7 +151,7 @@ export default function HomeScreen() {
                 variant="secondary"
                 onPress={handleStartQuiz}
                 disabled={!questions || questions.length === 0}
-                icon={<Play size={20} color={colors.primary} />}
+                icon={<Play size={20} color={c.primary} />}
               />
             )}
           </View>
@@ -164,11 +177,11 @@ export default function HomeScreen() {
         {/* Performance */}
         {summary.totalQuizzes > 0 ? (
           <View>
-            <SectionTitle icon={<TrendingUp size={22} color={colors.primary} />} title="Vos performances" />
+            <SectionTitle icon={<TrendingUp size={22} color={c.primary} />} title="Vos performances" />
             <View className="flex-row flex-wrap gap-3">
-              <StatTile label="Quiz complétés" value={`${summary.totalQuizzes}`} icon={<CheckCircle2 size={18} color={colors.blue600} />} bg="bg-blue-50" />
-              <StatTile label="Taux de réussite" value={`${summary.passRate}%`} icon={<Award size={18} color={summary.passRate >= 80 ? colors.green600 : colors.yellow600} />} bg={summary.passRate >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
-              <StatTile label="Score moyen" value={`${summary.averageScore}%`} icon={<Target size={18} color={summary.averageScore >= 80 ? colors.green600 : colors.yellow600} />} bg={summary.averageScore >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
+              <StatTile label="Quiz complétés" value={`${summary.totalQuizzes}`} icon={<CheckCircle2 size={18} color={c.blue600} />} bg="bg-blue-50" />
+              <StatTile label="Taux de réussite" value={`${summary.passRate}%`} icon={<Award size={18} color={summary.passRate >= 80 ? c.green600 : c.yellow600} />} bg={summary.passRate >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
+              <StatTile label="Score moyen" value={`${summary.averageScore}%`} icon={<Target size={18} color={summary.averageScore >= 80 ? c.green600 : c.yellow600} />} bg={summary.averageScore >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
               <StatTile label="Meilleur score" value={`${summary.bestScore}%`} icon={<TrendingUp size={18} color="#9333ea" />} bg="bg-purple-50" />
             </View>
           </View>
@@ -178,13 +191,13 @@ export default function HomeScreen() {
         {recentResults.length > 0 ? (
           <View>
             <View className="flex-row items-center justify-between mb-4">
-              <SectionTitle icon={<Calendar size={22} color={colors.primary} />} title="Vos 3 derniers résultats" noMargin />
+              <SectionTitle icon={<Calendar size={22} color={c.primary} />} title="Vos 3 derniers résultats" noMargin />
               <Button
                 title="Voir tout"
                 variant="ghost"
                 size="sm"
                 onPress={() => router.push('/stats')}
-                icon={<ChevronRight size={16} color={colors.foreground} />}
+                icon={<ChevronRight size={16} color={c.foreground} />}
               />
             </View>
             <View className="gap-3">
@@ -202,12 +215,12 @@ export default function HomeScreen() {
         {/* First-time welcome */}
         {summary.totalQuizzes === 0 ? (
           <View className="items-center py-8">
-            <BookOpen size={56} color={colors.mutedForeground} />
+            <BookOpen size={56} color={c.mutedForeground} />
             <Text className="text-2xl font-display mt-4 mb-2 text-foreground">Bienvenue sur CiviTest !</Text>
             <Text className="text-muted-foreground mb-6 text-center px-4">
               Commencez votre premier quiz pour voir vos statistiques et suivre votre progression.
             </Text>
-            <Button title="Commencer maintenant" size="lg" onPress={handleStartQuiz} icon={<Play size={20} color={colors.primaryForeground} />} />
+            <Button title="Commencer maintenant" size="lg" onPress={handleStartQuiz} icon={<Play size={20} color={c.primaryForeground} />} />
           </View>
         ) : null}
 
@@ -222,10 +235,10 @@ export default function HomeScreen() {
             institutions de la République.
           </Text>
           <View className="gap-2">
-            <InfoItem icon={<BookOpen size={16} color={colors.mutedForeground} />} text="40 questions à choix multiples" />
-            <InfoItem icon={<Clock size={16} color={colors.mutedForeground} />} text="45 minutes maximum" />
-            <InfoItem icon={<Target size={16} color={colors.mutedForeground} />} text="32/40 minimum pour réussir (80%)" />
-            <InfoItem icon={<Award size={16} color={colors.mutedForeground} />} text="1 seule bonne réponse par question" />
+            <InfoItem icon={<BookOpen size={16} color={c.mutedForeground} />} text="40 questions à choix multiples" />
+            <InfoItem icon={<Clock size={16} color={c.mutedForeground} />} text="45 minutes maximum" />
+            <InfoItem icon={<Target size={16} color={c.mutedForeground} />} text="32/40 minimum pour réussir (80%)" />
+            <InfoItem icon={<Award size={16} color={c.mutedForeground} />} text="1 seule bonne réponse par question" />
           </View>
         </Card>
 

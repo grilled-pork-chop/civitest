@@ -1,6 +1,7 @@
 import React from 'react';
-import { Modal, Pressable, View, Text } from 'react-native';
+import { Modal, Pressable, View } from 'react-native';
 import { Button, type ButtonVariant } from './Button';
+import { AppText, Heading } from './Text';
 import { cn } from '@/lib/utils';
 
 interface ConfirmDialogProps {
@@ -10,6 +11,9 @@ interface ConfirmDialogProps {
   confirmLabel?: string;
   cancelLabel?: string;
   confirmVariant?: ButtonVariant;
+  /** Optional tertiary action shown above cancel (e.g. "jump to unanswered"). */
+  extraLabel?: string;
+  onExtra?: () => void;
   icon?: React.ReactNode;
   onConfirm: () => void;
   onCancel: () => void;
@@ -26,6 +30,8 @@ export function ConfirmDialog({
   confirmLabel = 'Confirmer',
   cancelLabel = 'Annuler',
   confirmVariant = 'default',
+  extraLabel,
+  onExtra,
   icon,
   onConfirm,
   onCancel,
@@ -40,25 +46,30 @@ export function ConfirmDialog({
     >
       <Pressable
         onPress={onCancel}
+        accessibilityViewIsModal
         className="flex-1 items-center justify-center bg-black/50 px-6"
       >
         <Pressable
+          accessibilityRole="alert"
           onPress={(e) => e.stopPropagation()}
           className="w-full max-w-md rounded-2xl bg-card p-6"
         >
           <View className={cn('mb-2', icon ? 'flex-row items-center gap-2' : undefined)}>
             {icon}
-            <Text className="text-lg font-bold text-foreground">{title}</Text>
+            <Heading size="h3">{title}</Heading>
           </View>
           {description ? (
-            <Text className="mb-5 text-sm text-muted-foreground leading-relaxed">
+            <AppText color="muted" className="mb-5 leading-relaxed">
               {description}
-            </Text>
+            </AppText>
           ) : (
             <View className="mb-5" />
           )}
           <View className="gap-2">
             <Button title={confirmLabel} variant={confirmVariant} fullWidth onPress={onConfirm} />
+            {extraLabel && onExtra ? (
+              <Button title={extraLabel} variant="outline" fullWidth onPress={onExtra} />
+            ) : null}
             <Button title={cancelLabel} variant="ghost" fullWidth onPress={onCancel} />
           </View>
         </Pressable>

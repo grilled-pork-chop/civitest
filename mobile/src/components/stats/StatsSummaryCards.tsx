@@ -6,7 +6,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { TrendingUp, Award, Clock, Target } from 'lucide-react-native';
 import { Card } from '@/components/ui/Card';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 
 interface StatsSummaryCardsProps {
   totalQuizzes: number;
@@ -27,6 +27,7 @@ export const StatsSummaryCards = React.memo(function StatsSummaryCards({
   passRate,
   averageTimePerQuiz,
 }: StatsSummaryCardsProps) {
+  const c = useThemeColors();
   const stats = [
     { title: 'Examens passés', value: `${totalQuizzes}`, Icon: TrendingUp, description: "Total d'examens" },
     { title: 'Score moyen', value: `${averageScore}%`, Icon: Award, description: 'Performance moyenne' },
@@ -40,7 +41,7 @@ export const StatsSummaryCards = React.memo(function StatsSummaryCards({
         <Card key={title} className="flex-1" style={{ minWidth: '45%' }}>
           <View className="flex-row items-center justify-between mb-1">
             <Text className="text-sm font-medium text-muted-foreground">{title}</Text>
-            <Icon size={16} color={colors.mutedForeground} />
+            <Icon size={16} color={c.mutedForeground} />
           </View>
           <Text className="text-2xl font-bold text-foreground">{value}</Text>
           <Text className="text-xs text-muted-foreground">{description}</Text>

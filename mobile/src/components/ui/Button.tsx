@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pressable, Text, View, ActivityIndicator, type PressableProps } from 'react-native';
-import * as Haptics from 'expo-haptics';
+import { haptics } from '@/services/haptics';
 import { cn } from '@/lib/utils';
 
 export type ButtonVariant = 'default' | 'outline' | 'destructive' | 'ghost' | 'secondary';
@@ -73,9 +73,7 @@ export function Button({
 
   const handlePress = () => {
     if (isDisabled) return;
-    if (haptic) {
-      Haptics.selectionAsync().catch(() => {});
-    }
+    if (haptic) haptics.selection();
     onPress?.();
   };
 

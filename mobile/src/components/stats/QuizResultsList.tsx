@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/Badge';
 import type { QuizResult } from '@/types';
 import { formatDate, formatTimeVerbose } from '@/utils/questions';
 import { hasReviewData } from '@/utils/typeGuards';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 /**
@@ -25,6 +25,7 @@ export const ResultCard = React.memo(function ResultCard({
   onReview: () => void;
 }) {
   const canReview = hasReviewData(result);
+  const c = useThemeColors();
 
   return (
     <Card>
@@ -51,7 +52,7 @@ export const ResultCard = React.memo(function ResultCard({
               variant="ghost"
               size="sm"
               onPress={onReview}
-              icon={<Eye size={16} color={colors.foreground} />}
+              icon={<Eye size={16} color={c.foreground} />}
             />
           ) : null}
         </View>
@@ -62,11 +63,11 @@ export const ResultCard = React.memo(function ResultCard({
 
         <View className="flex-row items-center gap-4">
           <View className="flex-row items-center gap-1">
-            <Calendar size={12} color={colors.mutedForeground} />
+            <Calendar size={12} color={c.mutedForeground} />
             <Text className="text-xs text-muted-foreground">{formatDate(result.date)}</Text>
           </View>
           <View className="flex-row items-center gap-1">
-            <Clock size={12} color={colors.mutedForeground} />
+            <Clock size={12} color={c.mutedForeground} />
             <Text className="text-xs text-muted-foreground">
               {formatTimeVerbose(result.timeTaken)}
             </Text>

@@ -22,11 +22,12 @@ import {
   Inter_700Bold,
 } from '@expo-google-fonts/inter';
 import { queryClient } from '@/lib/queries';
+import { ThemeController, useResolvedScheme, useThemeColors } from '@/theme/useTheme';
 
 SplashScreen.preventAutoHideAsync();
 
-// React Native text does not inherit fonts, so set Inter as the global default
-// once. Headings opt into the Playfair display serif explicitly.
+// Fallback body font for any not-yet-migrated raw <Text>. Migrated components use
+// the explicit families in src/components/ui/Text.tsx.
 let defaultsApplied = false;
 function applyDefaultFont() {
   if (defaultsApplied) return;
@@ -34,13 +35,45 @@ function applyDefaultFont() {
   const components: any[] = [RNText, RNTextInput];
   for (const Comp of components) {
     Comp.defaultProps = Comp.defaultProps || {};
-    Comp.defaultProps.style = [
-      { fontFamily: 'Inter_400Regular' },
-      Comp.defaultProps.style,
-    ];
-    Comp.defaultProps.allowFontScaling = true;
+    Comp.defaultProps.style = [{ fontFamily: 'Inter_400Regular' }, Comp.defaultProps.style];
     Comp.defaultProps.maxFontSizeMultiplier = 1.6;
   }
+}
+
+function AppNavigator() {
+  const c = useThemeColors();
+  const scheme = useResolvedScheme();
+  return (
+    <>
+      <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
+      <Stack screenOptions={{ contentStyle: { backgroundColor: c.background } }}>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="quiz" options={{ headerShown: false, gestureEnabled: false }} />
+        <Stack.Screen
+          name="stats"
+          options={{
+            title: 'Statistiques',
+            headerStyle: { backgroundColor: '#002654' },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: { fontFamily: 'PlayfairDisplay_700Bold' },
+            headerShadowVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="settings"
+          options={{
+            title: 'Réglages',
+            headerStyle: { backgroundColor: '#002654' },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: { fontFamily: 'PlayfairDisplay_700Bold' },
+            headerShadowVisible: false,
+          }}
+        />
+        <Stack.Screen name="review" options={{ headerShown: false }} />
+        <Stack.Screen name="review/[quizId]" options={{ headerShown: false }} />
+      </Stack>
+    </>
+  );
 }
 
 export default function RootLayout() {
@@ -66,26 +99,8 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <QueryClientProvider client={queryClient}>
           <BottomSheetModalProvider>
-            <StatusBar style="dark" />
-            <Stack screenOptions={{ contentStyle: { backgroundColor: '#ffffff' } }}>
-              <Stack.Screen name="index" options={{ headerShown: false }} />
-              <Stack.Screen
-                name="quiz"
-                options={{ headerShown: false, gestureEnabled: false }}
-              />
-              <Stack.Screen
-                name="stats"
-                options={{
-                  title: 'Statistiques',
-                  headerStyle: { backgroundColor: '#002654' },
-                  headerTintColor: '#ffffff',
-                  headerTitleStyle: { fontFamily: 'PlayfairDisplay_700Bold' },
-                  headerShadowVisible: false,
-                }}
-              />
-              <Stack.Screen name="review" options={{ headerShown: false }} />
-              <Stack.Screen name="review/[quizId]" options={{ headerShown: false }} />
-            </Stack>
+            <ThemeController />
+            <AppNavigator />
             <Toast topOffset={60} />
           </BottomSheetModalProvider>
         </QueryClientProvider>

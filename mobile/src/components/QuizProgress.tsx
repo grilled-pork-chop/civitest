@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { View, Text, Pressable } from 'react-native';
 import type { QuizAnswer } from '@/types';
 import { ProgressBar } from '@/components/ui/ProgressBar';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 interface QuizProgressProps {
@@ -29,6 +29,7 @@ export function QuizProgress({
   isReviewMode = false,
 }: QuizProgressProps) {
   const [gridWidth, setGridWidth] = useState(0);
+  const c = useThemeColors();
   const answeredCount = answers.filter((a) => a.selectedChoiceIndex !== null).length;
   const percentage = answers.length ? (answeredCount / answers.length) * 100 : 0;
 
@@ -63,19 +64,19 @@ export function QuizProgress({
             const isAnswered = answer.selectedChoiceIndex !== null;
             const isCurrent = index === currentIndex;
 
-            let bgColor: string = colors.secondary;
-            let textColor: string = colors.secondaryForeground;
+            let bgColor: string = c.secondary;
+            let textColor: string = c.secondaryForeground;
             if (isReviewMode) {
               if (answer.isCorrect) {
-                bgColor = colors.green500;
+                bgColor = c.green500;
                 textColor = '#ffffff';
               } else if (isAnswered) {
-                bgColor = colors.red500;
+                bgColor = c.red500;
                 textColor = '#ffffff';
               }
             } else if (isAnswered) {
-              bgColor = colors.primary;
-              textColor = colors.primaryForeground;
+              bgColor = c.primary;
+              textColor = c.primaryForeground;
             }
 
             return (
@@ -94,7 +95,7 @@ export function QuizProgress({
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderWidth: isCurrent ? 2 : 0,
-                  borderColor: colors.primary,
+                  borderColor: c.primary,
                   opacity: disabled ? 0.5 : 1,
                 }}
               >
@@ -108,14 +109,14 @@ export function QuizProgress({
 
       {/* Legend */}
       <View className="flex-row flex-wrap justify-center gap-4 mt-1">
-        <LegendItem color={colors.secondary} label="Non répondue" />
+        <LegendItem color={c.secondary} label="Non répondue" />
         {isReviewMode ? (
           <>
-            <LegendItem color={colors.green500} label="Correcte" />
-            <LegendItem color={colors.red500} label="Incorrecte" />
+            <LegendItem color={c.green500} label="Correcte" />
+            <LegendItem color={c.red500} label="Incorrecte" />
           </>
         ) : (
-          <LegendItem color={colors.primary} label="Répondue" />
+          <LegendItem color={c.primary} label="Répondue" />
         )}
       </View>
     </View>

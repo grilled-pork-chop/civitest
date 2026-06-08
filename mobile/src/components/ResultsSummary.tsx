@@ -11,7 +11,7 @@ import { QUIZ_CONFIG } from '@/types';
 import type { QuizResult, TopicPerformance } from '@/types';
 import { formatTimeVerbose, getTopicName, getTopicColor } from '@/utils/questions';
 import { ProgressBar } from '@/components/ui/ProgressBar';
-import { colors } from '@/theme/tokens';
+import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 interface ResultsSummaryProps {
@@ -20,6 +20,7 @@ interface ResultsSummaryProps {
 }
 
 export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryProps) {
+  const c = useThemeColors();
   const { score, totalQuestions, percentage, passed, timeTaken, topicPerformance } = result;
 
   return (
@@ -63,14 +64,14 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
           {/* Stats grid */}
           <View className="flex-row flex-wrap gap-3">
             <StatCard
-              icon={<Target size={20} color={colors.blue600} />}
+              icon={<Target size={20} color={c.blue600} />}
               label="Score"
               value={`${score}/${totalQuestions}`}
               bg="bg-blue-50"
               textClass="text-blue-600"
             />
             <StatCard
-              icon={<TrendingUp size={20} color={passed ? colors.green600 : colors.red600} />}
+              icon={<TrendingUp size={20} color={passed ? c.green600 : c.red600} />}
               label="Pourcentage"
               value={`${percentage}%`}
               bg={passed ? 'bg-green-50' : 'bg-red-50'}
@@ -84,7 +85,7 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
               textClass="text-purple-600"
             />
             <StatCard
-              icon={<Award size={20} color={passed ? colors.green600 : colors.red600} />}
+              icon={<Award size={20} color={passed ? c.green600 : c.red600} />}
               label="Résultat"
               value={passed ? 'Réussi' : 'Échoué'}
               bg={passed ? 'bg-green-50' : 'bg-red-50'}

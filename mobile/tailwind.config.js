@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+const withAlpha = (v) => `rgb(var(${v}) / <alpha-value>)`;
+
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   presets: [require('nativewind/preset')],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -10,32 +13,31 @@ module.exports = {
         'display-semibold': ['PlayfairDisplay_600SemiBold'],
       },
       colors: {
-        // French Republic
+        // French Republic (fixed across themes)
         'republican-blue': '#002654',
         'republican-white': '#ffffff',
         'republican-red': '#ce1126',
-        // Semantic tokens (light theme, derived from web global.css)
-        background: '#ffffff',
-        foreground: '#0f172a',
-        card: '#ffffff',
-        'card-foreground': '#0f172a',
-        primary: '#002654',
-        'primary-foreground': '#f8fafc',
-        secondary: '#f1f5f9',
-        'secondary-foreground': '#1e293b',
-        muted: '#f1f5f9',
-        'muted-foreground': '#64748b',
-        accent: '#f1f5f9',
-        'accent-foreground': '#1e293b',
-        destructive: '#ef4444',
-        'destructive-foreground': '#f8fafc',
-        success: '#16a34a',
-        'success-foreground': '#f8fafc',
-        warning: '#f59e0b',
-        'warning-foreground': '#0f172a',
-        border: '#e2e8f0',
-        input: '#e2e8f0',
-        ring: '#002654',
+        // Semantic tokens — CSS variables that switch in dark mode.
+        background: withAlpha('--color-background'),
+        foreground: withAlpha('--color-foreground'),
+        card: withAlpha('--color-card'),
+        'card-foreground': withAlpha('--color-card-foreground'),
+        primary: withAlpha('--color-primary'),
+        'primary-foreground': withAlpha('--color-primary-foreground'),
+        secondary: withAlpha('--color-secondary'),
+        'secondary-foreground': withAlpha('--color-secondary-foreground'),
+        muted: withAlpha('--color-muted'),
+        'muted-foreground': withAlpha('--color-muted-foreground'),
+        accent: withAlpha('--color-secondary'),
+        destructive: withAlpha('--color-destructive'),
+        'destructive-foreground': withAlpha('--color-destructive-foreground'),
+        success: withAlpha('--color-success'),
+        'success-foreground': withAlpha('--color-success-foreground'),
+        warning: withAlpha('--color-warning'),
+        'warning-foreground': withAlpha('--color-warning-foreground'),
+        border: withAlpha('--color-border'),
+        input: withAlpha('--color-border'),
+        ring: withAlpha('--color-primary'),
       },
     },
   },

@@ -1,11 +1,11 @@
 /**
- * Quiz screen — interactive timed exam with swipe navigation, progress sheet,
- * and confirmation dialogs. Domain logic (timer, scoring) is preserved from
- * the store/hook layer.
+ * Quiz screen — interactive timed exam with swipe navigation, pause/resume,
+ * a progress sheet, and confirmation dialogs. Domain logic (timer, scoring) is
+ * preserved from the store/hook layer.
  */
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { View, Text, ScrollView, ActivityIndicator, BackHandler } from 'react-native';
+import { View, ScrollView, ActivityIndicator, BackHandler } from 'react-native';
 import { router } from 'expo-router';
 import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,23 +13,36 @@ import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { runOnJS, useReducedMotion } from 'react-native-reanimated';
 import { MotiView } from 'moti';
 import { BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
-import * as Haptics from 'expo-haptics';
-import { ChevronLeft, ChevronRight, Send, LayoutGrid, AlertTriangle } from 'lucide-react-native';
+import {
+  ChevronLeft,
+  ChevronRight,
+  Send,
+  LayoutGrid,
+  AlertTriangle,
+  Pause,
+  Play,
+  CheckCircle2,
+  Circle,
+} from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { ProgressBar } from '@/components/ui/ProgressBar';
+import { AppText, Heading } from '@/components/ui/Text';
 import { Timer } from '@/components/Timer';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QuizProgress } from '@/components/QuizProgress';
 import { ResultsSummary } from '@/components/ResultsSummary';
 import { appStore, quizActions, quizSelectors } from '@/stores/quizStore';
 import { useQuizTimer } from '@/hooks/useQuizTimer';
+import { haptics } from '@/services/haptics';
+import { useThemeColors } from '@/theme/useTheme';
+import { formatTime } from '@/utils/questions';
 import { QUIZ_CONFIG } from '@/types';
 import type { QuizResult } from '@/types';
-import { colors } from '@/theme/tokens';
 
 export default function QuizScreen() {
   const insets = useSafeAreaInsets();
+  const c = useThemeColors();
   const currentQuiz = useStore(appStore, (state) => state.currentQuiz);
   const currentQuestion = useStore(appStore, quizSelectors.getCurrentQuestion);
   const currentAnswer = useStore(appStore, quizSelectors.getCurrentAnswer);
@@ -39,6 +52,7 @@ export default function QuizScreen() {
   const [showExitDialog, setShowExitDialog] = useState(false);
   const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
   const sheetRef = useRef<BottomSheetModal>(null);
+  const scrollRef = useRef<ScrollView>(null);
   const reduceMotion = useReducedMotion();
 
   // If there's no quiz (e.g. deep link), go home.
@@ -46,19 +60,15 @@ export default function QuizScreen() {
     if (!currentQuiz) router.replace('/');
   }, [currentQuiz]);
 
-  const handleTimeUp = useCallback(() => {
+  const finishQuiz = useCallback(() => {
     const result = quizActions.endQuiz();
     if (result) {
       setQuizResult(result);
-      Haptics.notificationAsync(
-        result.passed
-          ? Haptics.NotificationFeedbackType.Success
-          : Haptics.NotificationFeedbackType.Error
-      ).catch(() => {});
+      haptics.notify(result.passed ? 'success' : 'error');
     }
   }, []);
 
-  const timeRemaining = useQuizTimer(handleTimeUp);
+  const timeRemaining = useQuizTimer(finishQuiz);
 
   const handleSelectChoice = useCallback(
     (choiceIndex: number) => {
@@ -69,17 +79,9 @@ export default function QuizScreen() {
   );
 
   const handleSubmit = useCallback(() => {
-    const result = quizActions.endQuiz();
-    if (result) {
-      setQuizResult(result);
-      Haptics.notificationAsync(
-        result.passed
-          ? Haptics.NotificationFeedbackType.Success
-          : Haptics.NotificationFeedbackType.Error
-      ).catch(() => {});
-    }
+    finishQuiz();
     setShowSubmitDialog(false);
-  }, []);
+  }, [finishQuiz]);
 
   const handleExit = useCallback(() => {
     quizActions.clearQuiz();
@@ -107,15 +109,25 @@ export default function QuizScreen() {
   const direction = activeIndex >= prevIndexRef.current ? 1 : -1;
   useEffect(() => {
     prevIndexRef.current = activeIndex;
-  }, [activeIndex]);
+    // Auto-scroll back to the top of each new question.
+    scrollRef.current?.scrollTo({ y: 0, animated: !reduceMotion });
+  }, [activeIndex, reduceMotion]);
 
   const goNext = useCallback(() => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+    haptics.impact('light');
     quizActions.nextQuestion();
   }, []);
   const goPrev = useCallback(() => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+    haptics.impact('light');
     quizActions.prevQuestion();
+  }, []);
+
+  const jumpToFirstUnanswered = useCallback(() => {
+    const idx = appStore.state.currentQuiz?.answers.findIndex(
+      (a) => a.selectedChoiceIndex === null
+    );
+    if (idx != null && idx >= 0) quizActions.goToQuestion(idx);
+    setShowSubmitDialog(false);
   }, []);
 
   // Swipe gesture: left → next, right → prev.
@@ -132,8 +144,10 @@ export default function QuizScreen() {
   if (!currentQuiz || !currentQuestion) {
     return (
       <View className="flex-1 items-center justify-center bg-background">
-        <ActivityIndicator size="large" color={colors.primary} />
-        <Text className="text-muted-foreground mt-4">Chargement…</Text>
+        <ActivityIndicator size="large" color={c.primary} />
+        <AppText color="muted" className="mt-4">
+          Chargement…
+        </AppText>
       </View>
     );
   }
@@ -165,6 +179,8 @@ export default function QuizScreen() {
 
   const totalQuestions = currentQuiz.questions.length;
   const answeredCount = totalQuestions - unansweredCount;
+  const currentAnswered = (currentAnswer?.selectedChoiceIndex ?? null) !== null;
+  const isPaused = currentQuiz.isPaused;
 
   return (
     <View className="flex-1 bg-background">
@@ -177,31 +193,55 @@ export default function QuizScreen() {
           <Timer timeRemaining={timeRemaining} totalTime={QUIZ_CONFIG.timeLimit} />
           <View className="flex-row items-center gap-2">
             <Button
-              title="Grille"
+              title="Pause"
               variant="outline"
               size="sm"
-              onPress={() => sheetRef.current?.present()}
-              icon={<LayoutGrid size={18} color={colors.foreground} />}
+              onPress={() => quizActions.pauseQuiz()}
+              icon={<Pause size={18} color={c.foreground} />}
             />
             <Button
               title="Terminer"
               size="sm"
               onPress={() => setShowSubmitDialog(true)}
-              icon={<Send size={16} color={colors.primaryForeground} />}
+              icon={<Send size={16} color={c.primaryForeground} />}
             />
           </View>
         </View>
 
-        {/* Position + progress */}
+        {/* Position + per-question status */}
         <View className="mt-3">
           <View className="flex-row items-center justify-between mb-1.5">
-            <Text className="text-sm font-semibold text-foreground">
+            <AppText weight="semibold" size="title">
               Question {activeIndex + 1}
-              <Text className="text-muted-foreground font-normal"> / {totalQuestions}</Text>
-            </Text>
-            <Text className="text-xs text-muted-foreground">
-              {answeredCount} répondue{answeredCount !== 1 ? 's' : ''}
-            </Text>
+              <AppText color="muted"> / {totalQuestions}</AppText>
+            </AppText>
+            <View className="flex-row items-center gap-2">
+              <View
+                className={`flex-row items-center gap-1 rounded-full px-2 py-0.5 ${
+                  currentAnswered ? 'bg-green-50' : 'bg-secondary'
+                }`}
+              >
+                {currentAnswered ? (
+                  <CheckCircle2 size={13} color={c.green600} />
+                ) : (
+                  <Circle size={13} color={c.mutedForeground} />
+                )}
+                <AppText
+                  size="caption"
+                  weight="medium"
+                  className={currentAnswered ? 'text-green-700' : 'text-muted-foreground'}
+                >
+                  {currentAnswered ? 'Répondue' : 'Non répondue'}
+                </AppText>
+              </View>
+              <Button
+                title="Grille"
+                variant="ghost"
+                size="sm"
+                onPress={() => sheetRef.current?.present()}
+                icon={<LayoutGrid size={16} color={c.foreground} />}
+              />
+            </View>
           </View>
           <ProgressBar percentage={((activeIndex + 1) / totalQuestions) * 100} height={4} />
         </View>
@@ -210,6 +250,7 @@ export default function QuizScreen() {
       {/* Question (swipeable) */}
       <GestureDetector gesture={swipe}>
         <ScrollView
+          ref={scrollRef}
           className="flex-1"
           contentContainerStyle={{ padding: 16, paddingBottom: 24 }}
           showsVerticalScrollIndicator={false}
@@ -231,9 +272,9 @@ export default function QuizScreen() {
             />
           </MotiView>
           {activeIndex === 0 ? (
-            <Text className="text-center text-xs text-muted-foreground mt-4">
+            <AppText size="caption" color="muted" className="text-center mt-4">
               Glissez à gauche ou à droite pour naviguer
-            </Text>
+            </AppText>
           ) : null}
         </ScrollView>
       </GestureDetector>
@@ -248,30 +289,73 @@ export default function QuizScreen() {
           variant="outline"
           onPress={goPrev}
           disabled={activeIndex === 0}
-          icon={<ChevronLeft size={20} color={colors.foreground} />}
+          icon={<ChevronLeft size={20} color={c.foreground} />}
           className="flex-1"
         />
         <Button
           title={isLast ? 'Terminer' : 'Suivant'}
           onPress={isLast ? () => setShowSubmitDialog(true) : goNext}
-          icon={isLast ? <Send size={18} color={colors.primaryForeground} /> : undefined}
-          iconRight={isLast ? undefined : <ChevronRight size={20} color={colors.primaryForeground} />}
+          icon={isLast ? <Send size={18} color={c.primaryForeground} /> : undefined}
+          iconRight={isLast ? undefined : <ChevronRight size={20} color={c.primaryForeground} />}
           className="flex-[2]"
         />
       </View>
+
+      {/* Paused overlay */}
+      {isPaused ? (
+        <View
+          className="absolute inset-0 items-center justify-center bg-primary/95 px-8"
+          style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
+        >
+          <Pause size={56} color="#ffffff" />
+          <Heading size="h1" color="white" className="mt-4 mb-1 text-center">
+            Examen en pause
+          </Heading>
+          <AppText className="text-white/80 text-center mb-1">
+            Le minuteur est arrêté.
+          </AppText>
+          <AppText weight="bold" className="text-white text-2xl mb-8">
+            {formatTime(timeRemaining)}
+          </AppText>
+          <View className="w-full max-w-xs gap-3">
+            <Button
+              title="Reprendre"
+              size="lg"
+              variant="secondary"
+              fullWidth
+              onPress={() => quizActions.resumeQuiz()}
+              icon={<Play size={20} color={c.primary} />}
+            />
+            <Button
+              title="Quitter l'examen"
+              size="lg"
+              variant="ghost"
+              fullWidth
+              textClassName="text-white"
+              className="border border-white/40"
+              onPress={() => {
+                quizActions.resumeQuiz();
+                setShowExitDialog(true);
+              }}
+            />
+          </View>
+        </View>
+      ) : null}
 
       {/* Progress bottom sheet */}
       <BottomSheetModal
         ref={sheetRef}
         snapPoints={['60%']}
-        backgroundStyle={{ backgroundColor: colors.card }}
-        handleIndicatorStyle={{ backgroundColor: colors.border }}
+        backgroundStyle={{ backgroundColor: c.card }}
+        handleIndicatorStyle={{ backgroundColor: c.border }}
       >
         <BottomSheetView style={{ paddingHorizontal: 20, paddingBottom: insets.bottom + 20 }}>
-          <Text className="text-lg font-bold text-foreground mb-1">Progression</Text>
-          <Text className="text-sm text-muted-foreground mb-4">
+          <Heading size="h3" className="mb-1">
+            Progression
+          </Heading>
+          <AppText color="muted" className="mb-4">
             Touchez un numéro pour y accéder
-          </Text>
+          </AppText>
           <QuizProgress
             answers={currentQuiz.answers}
             currentIndex={currentQuiz.currentQuestionIndex}
@@ -293,6 +377,8 @@ export default function QuizScreen() {
             : 'Toutes les questions sont répondues.'
         }
         confirmLabel="Confirmer"
+        extraLabel={unansweredCount > 0 ? 'Aller à la 1ʳᵉ sans réponse' : undefined}
+        onExtra={unansweredCount > 0 ? jumpToFirstUnanswered : undefined}
         onConfirm={handleSubmit}
         onCancel={() => setShowSubmitDialog(false)}
       />
@@ -302,7 +388,7 @@ export default function QuizScreen() {
         description="Votre progression sera perdue."
         confirmLabel="Quitter"
         confirmVariant="destructive"
-        icon={<AlertTriangle size={20} color={colors.warning} />}
+        icon={<AlertTriangle size={20} color={c.warning} />}
         onConfirm={handleExit}
         onCancel={() => setShowExitDialog(false)}
       />
