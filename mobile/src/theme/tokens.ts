@@ -21,6 +21,7 @@ export const colors = {
   mutedForeground: '#64748b',
   border: '#e2e8f0',
   destructive: '#ef4444',
+  destructiveForeground: '#f8fafc',
   success: '#16a34a',
   warning: '#f59e0b',
 

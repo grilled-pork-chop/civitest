@@ -25,7 +25,13 @@ export default function RootLayout() {
               />
               <Stack.Screen
                 name="stats"
-                options={{ title: 'Statistiques', headerBackTitle: 'Retour' }}
+                options={{
+                  title: 'Statistiques',
+                  headerStyle: { backgroundColor: '#002654' },
+                  headerTintColor: '#ffffff',
+                  headerTitleStyle: { fontWeight: '700' },
+                  headerShadowVisible: false,
+                }}
               />
               <Stack.Screen name="review" options={{ headerShown: false }} />
               <Stack.Screen name="review/[quizId]" options={{ headerShown: false }} />

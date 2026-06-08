@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Trash2, Download, Upload, Play, BarChart3 } from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
@@ -56,6 +57,7 @@ export default function StatsScreen() {
         className="flex-1 bg-background items-center justify-center px-6"
         style={{ paddingBottom: insets.bottom }}
       >
+        <StatusBar style="light" />
         <View className="w-24 h-24 rounded-full bg-muted items-center justify-center mb-6">
           <BarChart3 size={48} color={colors.mutedForeground} />
         </View>
@@ -92,6 +94,7 @@ export default function StatsScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 32, gap: 24 }}
       showsVerticalScrollIndicator={false}
     >
+      <StatusBar style="light" />
       {/* Actions */}
       <View className="flex-row flex-wrap gap-2">
         <Button
@@ -113,7 +116,7 @@ export default function StatsScreen() {
           variant="destructive"
           fullWidth
           onPress={() => setShowClearDialog(true)}
-          icon={<Trash2 size={16} color={colors.destructive === '#ef4444' ? '#f8fafc' : '#fff'} />}
+          icon={<Trash2 size={16} color={colors.destructiveForeground} />}
         />
       </View>
 

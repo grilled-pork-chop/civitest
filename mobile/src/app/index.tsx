@@ -5,6 +5,7 @@
 import React from 'react';
 import { View, Text, ScrollView, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
@@ -72,6 +73,8 @@ export default function HomeScreen() {
   const situationalCount = questions?.filter((q) => q.type === 'situational').length || 0;
 
   return (
+    <>
+    <StatusBar style="light" />
     <ScrollView
       className="flex-1 bg-background"
       contentContainerStyle={{ paddingBottom: insets.bottom + 32 }}
@@ -111,7 +114,15 @@ export default function HomeScreen() {
                   onPress={() => router.push('/quiz')}
                   icon={<Play size={20} color={colors.primary} />}
                 />
-                <Button title="Nouveau quiz" size="lg" fullWidth variant="outline" onPress={handleStartQuiz} />
+                <Button
+                  title="Nouveau quiz"
+                  size="lg"
+                  fullWidth
+                  variant="ghost"
+                  onPress={handleStartQuiz}
+                  className="border border-white/40"
+                  textClassName="text-white"
+                />
               </>
             ) : (
               <Button
@@ -253,6 +264,7 @@ export default function HomeScreen() {
         </Text>
       </View>
     </ScrollView>
+    </>
   );
 }
 
