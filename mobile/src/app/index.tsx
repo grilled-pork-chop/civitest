@@ -26,6 +26,8 @@ import {
 import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Reveal } from '@/components/ui/Reveal';
+import { StatTile } from '@/components/ui/StatTile';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { Tricolor } from '@/components/ui/Tricolor';
 import { ResultCard } from '@/components/stats/QuizResultsList';
 import { useQuestions } from '@/lib/queries';
@@ -62,12 +64,13 @@ export default function HomeScreen() {
   if (error) {
     return (
       <View className="flex-1 items-center justify-center bg-background px-6">
-        <AlertCircle size={48} color={c.destructive} />
-        <Text className="text-xl font-semibold mt-4 mb-2 text-foreground">Erreur de chargement</Text>
-        <Text className="text-muted-foreground mb-4 text-center">
-          Impossible de charger les questions. Veuillez réessayer.
-        </Text>
-        <Button title="Réessayer" onPress={() => refetch()} />
+        <EmptyState
+          icon={<AlertCircle size={48} color={c.destructive} />}
+          title="Erreur de chargement"
+          description="Impossible de charger les questions. Veuillez réessayer."
+        >
+          <Button title="Réessayer" fullWidth onPress={() => refetch()} />
+        </EmptyState>
       </View>
     );
   }
@@ -180,10 +183,10 @@ export default function HomeScreen() {
           <View>
             <SectionTitle icon={<TrendingUp size={22} color={c.primary} />} title="Vos performances" />
             <View className="flex-row flex-wrap gap-3">
-              <StatTile label="Quiz complétés" value={`${summary.totalQuizzes}`} icon={<CheckCircle2 size={18} color={c.blue600} />} bg="bg-blue-50" />
-              <StatTile label="Taux de réussite" value={`${summary.passRate}%`} icon={<Award size={18} color={summary.passRate >= 80 ? c.green600 : c.yellow600} />} bg={summary.passRate >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
-              <StatTile label="Score moyen" value={`${summary.averageScore}%`} icon={<Target size={18} color={summary.averageScore >= 80 ? c.green600 : c.yellow600} />} bg={summary.averageScore >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
-              <StatTile label="Meilleur score" value={`${summary.bestScore}%`} icon={<TrendingUp size={18} color="#9333ea" />} bg="bg-purple-50" />
+              <StatTile uppercase label="Quiz complétés" value={`${summary.totalQuizzes}`} icon={<CheckCircle2 size={18} color={c.blue600} />} bg="bg-blue-50" />
+              <StatTile uppercase label="Taux de réussite" value={`${summary.passRate}%`} icon={<Award size={18} color={summary.passRate >= 80 ? c.green600 : c.yellow600} />} bg={summary.passRate >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
+              <StatTile uppercase label="Score moyen" value={`${summary.averageScore}%`} icon={<Target size={18} color={summary.averageScore >= 80 ? c.green600 : c.yellow600} />} bg={summary.averageScore >= 80 ? 'bg-green-50' : 'bg-yellow-50'} />
+              <StatTile uppercase label="Meilleur score" value={`${summary.bestScore}%`} icon={<TrendingUp size={18} color="#9333ea" />} bg="bg-purple-50" />
             </View>
           </View>
         ) : null}
@@ -215,13 +218,20 @@ export default function HomeScreen() {
 
         {/* First-time welcome */}
         {summary.totalQuizzes === 0 ? (
-          <View className="items-center py-8">
-            <BookOpen size={56} color={c.mutedForeground} />
-            <Text className="text-2xl font-display mt-4 mb-2 text-foreground">Bienvenue sur CiviTest !</Text>
-            <Text className="text-muted-foreground mb-6 text-center px-4">
-              Commencez votre premier quiz pour voir vos statistiques et suivre votre progression.
-            </Text>
-            <Button title="Commencer maintenant" size="lg" onPress={handleStartQuiz} icon={<Play size={20} color={c.primaryForeground} />} />
+          <View className="py-8 px-2">
+            <EmptyState
+              icon={<BookOpen size={56} color={c.mutedForeground} />}
+              title="Bienvenue sur CiviTest !"
+              description="Commencez votre premier quiz pour voir vos statistiques et suivre votre progression."
+            >
+              <Button
+                title="Commencer maintenant"
+                size="lg"
+                fullWidth
+                onPress={handleStartQuiz}
+                icon={<Play size={20} color={c.primaryForeground} />}
+              />
+            </EmptyState>
           </View>
         ) : null}
 
@@ -317,16 +327,6 @@ function SectionTitle({ icon, title, noMargin }: { icon: React.ReactNode; title:
     <View className={cn('flex-row items-center gap-2', !noMargin && 'mb-4')}>
       {icon}
       <Text className="text-xl font-display text-foreground">{title}</Text>
-    </View>
-  );
-}
-
-function StatTile({ label, value, icon, bg }: { label: string; value: string; icon: React.ReactNode; bg: string }) {
-  return (
-    <View className={cn('rounded-2xl p-4 flex-1', bg)} style={{ minWidth: '45%' }}>
-      <View className="mb-2">{icon}</View>
-      <Text className="text-2xl font-bold text-foreground">{value}</Text>
-      <Text className="text-xs text-muted-foreground uppercase font-semibold mt-0.5">{label}</Text>
     </View>
   );
 }

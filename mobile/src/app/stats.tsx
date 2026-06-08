@@ -10,6 +10,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Trash2, Download, Upload, Play, BarChart3 } from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { StatsSummaryCards } from '@/components/stats/StatsSummaryCards';
 import { TrendChart } from '@/components/stats/TrendChart';
 import { TopicPerformanceChart } from '@/components/stats/TopicPerformanceChart';
@@ -68,16 +69,15 @@ export default function StatsScreen() {
         style={{ paddingBottom: insets.bottom }}
       >
         <StatusBar style="light" />
-        <View className="w-24 h-24 rounded-full bg-muted items-center justify-center mb-6">
-          <BarChart3 size={48} color={c.mutedForeground} />
-        </View>
-        <Text className="text-2xl font-display mb-2 text-foreground text-center">
-          Aucune statistique disponible
-        </Text>
-        <Text className="text-muted-foreground mb-6 text-center">
-          Commencez un examen pour voir vos statistiques et suivre votre progression.
-        </Text>
-        <View className="gap-3 w-full">
+        <EmptyState
+          icon={
+            <View className="w-24 h-24 rounded-full bg-muted items-center justify-center">
+              <BarChart3 size={48} color={c.mutedForeground} />
+            </View>
+          }
+          title="Aucune statistique disponible"
+          description="Commencez un examen pour voir vos statistiques et suivre votre progression."
+        >
           <Button
             title="Commencer un examen"
             size="lg"
@@ -93,7 +93,7 @@ export default function StatsScreen() {
             onPress={handleImport}
             icon={<Upload size={20} color={c.foreground} />}
           />
-        </View>
+        </EmptyState>
       </View>
     );
   }

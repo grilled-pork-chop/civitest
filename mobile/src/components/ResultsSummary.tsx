@@ -4,15 +4,16 @@
  */
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Trophy, XCircle, Clock, Target, TrendingUp, Award } from 'lucide-react-native';
 import { QUIZ_CONFIG } from '@/types';
-import type { QuizResult, TopicPerformance } from '@/types';
-import { formatTimeVerbose, getTopicName, getTopicColor } from '@/utils/questions';
-import { ProgressBar } from '@/components/ui/ProgressBar';
+import type { QuizResult } from '@/types';
+import { formatTimeVerbose } from '@/utils/questions';
+import { AppText, Heading } from '@/components/ui/Text';
+import { StatTile } from '@/components/ui/StatTile';
+import { TopicProgressBar } from '@/components/TopicProgressBar';
 import { useThemeColors } from '@/theme/useTheme';
-import { cn } from '@/lib/utils';
 
 interface ResultsSummaryProps {
   result: QuizResult;
@@ -32,75 +33,89 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
         end={{ x: 1, y: 1 }}
         style={{ borderRadius: 24, padding: 28, alignItems: 'center' }}
       >
-        {passed ? (
-          <Trophy size={56} color="#ffffff" />
-        ) : (
-          <XCircle size={56} color="#ffffff" />
-        )}
-        <Text className="text-3xl font-display text-white mt-3 mb-1 text-center">
+        {passed ? <Trophy size={56} color="#ffffff" /> : <XCircle size={56} color="#ffffff" />}
+        <Heading size="display" color="white" className="mt-3 mb-1 text-center">
           {passed ? 'Félicitations !' : 'Continuez vos efforts'}
-        </Text>
-        <Text className="text-white/90 text-base mb-5 text-center">
+        </Heading>
+        <AppText size="title" className="text-white/90 mb-5 text-center">
           {passed
             ? "Vous avez réussi l'examen civique !"
             : "Vous n'avez pas atteint le score minimum requis."}
-        </Text>
+        </AppText>
 
         <View className="bg-white/20 rounded-2xl px-8 py-4 items-center">
-          <Text className="text-5xl font-bold text-white">{percentage}%</Text>
-          <Text className="text-white/80 text-sm mt-1">
+          <AppText weight="bold" className="text-5xl text-white">
+            {percentage}%
+          </AppText>
+          <AppText size="body" className="text-white/80 mt-1">
             {score} / {totalQuestions} bonnes réponses
-          </Text>
+          </AppText>
         </View>
 
-        <Text className="text-white/70 text-xs mt-4 text-center">
+        <AppText size="caption" className="text-white/70 mt-4 text-center">
           Score minimum requis : {QUIZ_CONFIG.passingScore * 100}% (
           {QUIZ_CONFIG.passingQuestions} bonnes réponses)
-        </Text>
+        </AppText>
       </LinearGradient>
 
       {showDetailed ? (
         <>
           {/* Stats grid */}
           <View className="flex-row flex-wrap gap-3">
-            <StatCard
+            <StatTile
               icon={<Target size={20} color={c.blue600} />}
               label="Score"
               value={`${score}/${totalQuestions}`}
               bg="bg-blue-50"
-              textClass="text-blue-600"
+              valueClass="text-blue-600"
+              labelClass="text-blue-600"
+              labelPosition="beside"
             />
-            <StatCard
+            <StatTile
               icon={<TrendingUp size={20} color={passed ? c.green600 : c.red600} />}
               label="Pourcentage"
               value={`${percentage}%`}
               bg={passed ? 'bg-green-50' : 'bg-red-50'}
-              textClass={passed ? 'text-green-600' : 'text-red-600'}
+              valueClass={passed ? 'text-green-600' : 'text-red-600'}
+              labelClass={passed ? 'text-green-600' : 'text-red-600'}
+              labelPosition="beside"
             />
-            <StatCard
+            <StatTile
               icon={<Clock size={20} color="#9333ea" />}
               label="Temps"
               value={formatTimeVerbose(timeTaken)}
               bg="bg-purple-50"
-              textClass="text-purple-600"
+              valueClass="text-purple-600"
+              labelClass="text-purple-600"
+              labelPosition="beside"
             />
-            <StatCard
+            <StatTile
               icon={<Award size={20} color={passed ? c.green600 : c.red600} />}
               label="Résultat"
               value={passed ? 'Réussi' : 'Échoué'}
               bg={passed ? 'bg-green-50' : 'bg-red-50'}
-              textClass={passed ? 'text-green-600' : 'text-red-600'}
+              valueClass={passed ? 'text-green-600' : 'text-red-600'}
+              labelClass={passed ? 'text-green-600' : 'text-red-600'}
+              labelPosition="beside"
             />
           </View>
 
           {/* Topic performance */}
           <View className="bg-card border border-border rounded-2xl p-5">
-            <Text className="text-lg font-display text-foreground mb-4">
+            <Heading size="h3" className="mb-4">
               Performance par thème
-            </Text>
+            </Heading>
             <View className="gap-4">
               {topicPerformance.map((tp) => (
-                <TopicProgressBar key={tp.topicId} performance={tp} />
+                <TopicProgressBar
+                  key={tp.topicId}
+                  topicId={tp.topicId}
+                  correct={tp.correct}
+                  total={tp.total}
+                  percentage={tp.percentage}
+                  colorMode="topic"
+                  showCounts
+                />
               ))}
             </View>
           </View>
@@ -108,17 +123,17 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
           {/* Tips when failed */}
           {!passed ? (
             <View className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
-              <Text className="text-lg font-display text-amber-900 mb-3">
+              <Heading size="h3" className="text-amber-900 mb-3">
                 Conseils pour progresser
-              </Text>
+              </Heading>
               {[
                 'Concentrez-vous sur les thèmes où vous avez obtenu moins de 80%',
                 'Relisez les explications des questions que vous avez manquées',
                 'Pratiquez régulièrement pour améliorer votre score',
               ].map((tip) => (
                 <View key={tip} className="flex-row gap-2 mb-2">
-                  <Text className="text-amber-500">•</Text>
-                  <Text className="flex-1 text-amber-800 text-sm">{tip}</Text>
+                  <AppText className="text-amber-500">•</AppText>
+                  <AppText className="flex-1 text-amber-800">{tip}</AppText>
                 </View>
               ))}
             </View>
@@ -128,49 +143,3 @@ export function ResultsSummary({ result, showDetailed = true }: ResultsSummaryPr
     </View>
   );
 }
-
-function StatCard({
-  icon,
-  label,
-  value,
-  bg,
-  textClass,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  bg: string;
-  textClass: string;
-}) {
-  return (
-    <View className={cn('rounded-2xl p-4 flex-1', bg)} style={{ minWidth: '45%' }}>
-      <View className="flex-row items-center gap-2 mb-2">
-        {icon}
-        <Text className={cn('text-sm font-medium', textClass)}>{label}</Text>
-      </View>
-      <Text className={cn('text-2xl font-bold', textClass)}>{value}</Text>
-    </View>
-  );
-}
-
-const TopicProgressBar = React.memo(function TopicProgressBar({
-  performance,
-}: {
-  performance: TopicPerformance;
-}) {
-  const { topicId, correct, total, percentage } = performance;
-  const color = getTopicColor(topicId);
-  const isPassing = percentage >= 80;
-
-  return (
-    <View>
-      <View className="flex-row justify-between items-center mb-1.5">
-        <Text className="text-sm font-medium text-foreground">{getTopicName(topicId, true)}</Text>
-        <Text className={cn('text-sm font-semibold', isPassing ? 'text-green-600' : 'text-red-600')}>
-          {correct}/{total} ({percentage}%)
-        </Text>
-      </View>
-      <ProgressBar percentage={percentage} color={color} height={12} />
-    </View>
-  );
-});

@@ -23,7 +23,8 @@ import {
 } from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
-import { ProgressBar } from '@/components/ui/ProgressBar';
+import { EmptyState } from '@/components/ui/EmptyState';
+import { TopicProgressBar } from '@/components/TopicProgressBar';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QuizProgress } from '@/components/QuizProgress';
 import { appStore, quizActions } from '@/stores/quizStore';
@@ -137,17 +138,14 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
         className="flex-1 bg-background items-center justify-center px-6"
         style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
       >
-        <AlertCircle size={56} color={c.mutedForeground} />
-        <Text className="text-2xl font-display mt-4 mb-2 text-foreground text-center">
-          Quiz non disponible
-        </Text>
-        <Text className="text-muted-foreground mb-6 text-center">
-          Ce quiz n'est plus disponible pour révision.
-        </Text>
-        <View className="gap-3 w-full">
+        <EmptyState
+          icon={<AlertCircle size={56} color={c.mutedForeground} />}
+          title="Quiz non disponible"
+          description="Ce quiz n'est plus disponible pour révision."
+        >
           <Button title="Voir les statistiques" variant="outline" fullWidth onPress={() => router.replace('/stats')} />
           <Button title="Retour à l'accueil" fullWidth onPress={() => router.replace('/')} />
-        </View>
+        </EmptyState>
       </View>
     );
   }
@@ -308,24 +306,18 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
             <CardTitle>Résumé par thème</CardTitle>
           </CardHeader>
           <View className="gap-3">
-            {Object.entries(topicStats).map(([topicId, st]) => {
-              const percentage = Math.round((st.correct / st.total) * 100);
-              const isPassing = percentage >= 80;
-              return (
-                <View key={topicId}>
-                  <View className="flex-row items-center justify-between mb-1">
-                    <View className="flex-row items-center gap-1.5">
-                      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: getTopicColor(topicId as TopicId) }} />
-                      <Text className="text-sm text-foreground">{getTopicName(topicId as TopicId, true)}</Text>
-                    </View>
-                    <Text className={cn('font-medium text-sm', isPassing ? 'text-green-600' : 'text-red-600')}>
-                      {percentage}%
-                    </Text>
-                  </View>
-                  <ProgressBar percentage={percentage} color={isPassing ? c.green500 : c.red500} height={6} />
-                </View>
-              );
-            })}
+            {Object.entries(topicStats).map(([topicId, st]) => (
+              <TopicProgressBar
+                key={topicId}
+                topicId={topicId as TopicId}
+                correct={st.correct}
+                total={st.total}
+                percentage={Math.round((st.correct / st.total) * 100)}
+                colorMode="passfail"
+                showDot
+                height={6}
+              />
+            ))}
           </View>
         </Card>
       </ScrollView>

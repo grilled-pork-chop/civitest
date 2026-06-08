@@ -6,6 +6,8 @@
 
 import React from 'react';
 import { View, Text, Pressable } from 'react-native';
+import { MotiView } from 'moti';
+import { useReducedMotion } from 'react-native-reanimated';
 import { haptics } from '@/services/haptics';
 import { Check, X, Info } from 'lucide-react-native';
 import type { Question, ShuffledQuestion } from '@/types';
@@ -55,6 +57,7 @@ export const QuestionCard = React.memo(function QuestionCard({
   disabled = false,
 }: QuestionCardProps) {
   const c = useThemeColors();
+  const reduce = useReducedMotion();
   const choices =
     'shuffledChoices' in question
       ? (question as ShuffledQuestion).shuffledChoices
@@ -132,7 +135,11 @@ export const QuestionCard = React.memo(function QuestionCard({
               )}
               style={{ minHeight: 52 }}
             >
-              <View
+              <MotiView
+                key={`${index}-${state}`}
+                from={{ scale: reduce || state === 'default' ? 1 : 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', damping: 12, stiffness: 220 }}
                 className={cn(
                   'w-8 h-8 rounded-full items-center justify-center',
                   state === 'default' && 'bg-secondary',
@@ -155,7 +162,7 @@ export const QuestionCard = React.memo(function QuestionCard({
                     {letter}
                   </Text>
                 )}
-              </View>
+              </MotiView>
               <Text
                 className={cn(
                   'flex-1 pt-1 text-base leading-relaxed',
