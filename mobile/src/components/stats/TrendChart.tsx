@@ -51,6 +51,16 @@ export const TrendChart = React.memo(function TrendChart({ data }: TrendChartPro
             rulesColor={colors.border}
             yAxisColor={colors.border}
             xAxisColor={colors.border}
+            showReferenceLine1
+            referenceLine1Position={80}
+            referenceLine1Config={{
+              color: 'rgba(22,163,74,0.5)',
+              dashWidth: 5,
+              dashGap: 4,
+              thickness: 1,
+              labelText: '80% requis',
+              labelTextStyle: { color: colors.green600, fontSize: 9 },
+            }}
           />
         </View>
       ) : (

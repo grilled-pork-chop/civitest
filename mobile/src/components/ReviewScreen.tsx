@@ -5,6 +5,7 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { View, Text, ScrollView, ActivityIndicator, Pressable } from 'react-native';
+import { MotiView } from 'moti';
 import { router } from 'expo-router';
 import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -223,15 +224,22 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
         {/* Current question */}
         {filteredIndices.length > 0 ? (
           <>
-            <QuestionCard
-              question={currentQuestion}
-              questionNumber={currentIndex + 1}
-              totalQuestions={totalQ}
-              selectedChoiceIndex={currentAnswer.selectedChoiceIndex}
-              onSelectChoice={() => {}}
-              isReviewMode
-              showExplanation
-            />
+            <MotiView
+              key={currentIndex}
+              from={{ opacity: 0, translateY: 8 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ type: 'timing', duration: 200 }}
+            >
+              <QuestionCard
+                question={currentQuestion}
+                questionNumber={currentIndex + 1}
+                totalQuestions={totalQ}
+                selectedChoiceIndex={currentAnswer.selectedChoiceIndex}
+                onSelectChoice={() => {}}
+                isReviewMode
+                showExplanation
+              />
+            </MotiView>
             <View className="flex-row items-center justify-between">
               <Button title="Précédent" variant="outline" onPress={goToPrev} disabled={currentFilteredPosition <= 0} icon={<ChevronLeft size={18} color={colors.foreground} />} />
               <Text className="text-sm text-muted-foreground">

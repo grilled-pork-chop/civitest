@@ -11,11 +11,13 @@ import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { runOnJS } from 'react-native-reanimated';
+import { MotiView } from 'moti';
 import { BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
 import * as Haptics from 'expo-haptics';
 import { ChevronLeft, ChevronRight, Send, LayoutGrid, AlertTriangle } from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
+import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Timer } from '@/components/Timer';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QuizProgress } from '@/components/QuizProgress';
@@ -98,14 +100,31 @@ export default function QuizScreen() {
   const isLast =
     !!currentQuiz && currentQuiz.currentQuestionIndex === currentQuiz.questions.length - 1;
 
+  // Track navigation direction so question transitions slide the right way.
+  const activeIndex = currentQuiz?.currentQuestionIndex ?? 0;
+  const prevIndexRef = useRef(activeIndex);
+  const direction = activeIndex >= prevIndexRef.current ? 1 : -1;
+  useEffect(() => {
+    prevIndexRef.current = activeIndex;
+  }, [activeIndex]);
+
+  const goNext = useCallback(() => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+    quizActions.nextQuestion();
+  }, []);
+  const goPrev = useCallback(() => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+    quizActions.prevQuestion();
+  }, []);
+
   // Swipe gesture: left → next, right → prev.
   const swipe = Gesture.Pan()
     .activeOffsetX([-20, 20])
     .onEnd((e) => {
       if (e.translationX < -50) {
-        runOnJS(quizActions.nextQuestion)();
+        runOnJS(goNext)();
       } else if (e.translationX > 50) {
-        runOnJS(quizActions.prevQuestion)();
+        runOnJS(goPrev)();
       }
     });
 
@@ -143,6 +162,9 @@ export default function QuizScreen() {
     );
   }
 
+  const totalQuestions = currentQuiz.questions.length;
+  const answeredCount = totalQuestions - unansweredCount;
+
   return (
     <View className="flex-1 bg-background">
       {/* Header */}
@@ -168,6 +190,20 @@ export default function QuizScreen() {
             />
           </View>
         </View>
+
+        {/* Position + progress */}
+        <View className="mt-3">
+          <View className="flex-row items-center justify-between mb-1.5">
+            <Text className="text-sm font-semibold text-foreground">
+              Question {activeIndex + 1}
+              <Text className="text-muted-foreground font-normal"> / {totalQuestions}</Text>
+            </Text>
+            <Text className="text-xs text-muted-foreground">
+              {answeredCount} répondue{answeredCount !== 1 ? 's' : ''}
+            </Text>
+          </View>
+          <ProgressBar percentage={((activeIndex + 1) / totalQuestions) * 100} height={4} />
+        </View>
       </View>
 
       {/* Question (swipeable) */}
@@ -176,18 +212,28 @@ export default function QuizScreen() {
           className="flex-1"
           contentContainerStyle={{ padding: 16, paddingBottom: 24 }}
           showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
         >
-          <QuestionCard
-            question={currentQuestion}
-            questionNumber={currentQuiz.currentQuestionIndex + 1}
-            totalQuestions={currentQuiz.questions.length}
-            selectedChoiceIndex={currentAnswer?.selectedChoiceIndex ?? null}
-            onSelectChoice={handleSelectChoice}
-            disabled={currentQuiz.isCompleted}
-          />
-          <Text className="text-center text-xs text-muted-foreground mt-4">
-            Glissez à gauche ou à droite pour naviguer
-          </Text>
+          <MotiView
+            key={activeIndex}
+            from={{ opacity: 0, translateX: direction * 28 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ type: 'timing', duration: 220 }}
+          >
+            <QuestionCard
+              question={currentQuestion}
+              questionNumber={activeIndex + 1}
+              totalQuestions={totalQuestions}
+              selectedChoiceIndex={currentAnswer?.selectedChoiceIndex ?? null}
+              onSelectChoice={handleSelectChoice}
+              disabled={currentQuiz.isCompleted}
+            />
+          </MotiView>
+          {activeIndex === 0 ? (
+            <Text className="text-center text-xs text-muted-foreground mt-4">
+              Glissez à gauche ou à droite pour naviguer
+            </Text>
+          ) : null}
         </ScrollView>
       </GestureDetector>
 
@@ -199,15 +245,16 @@ export default function QuizScreen() {
         <Button
           title="Précédent"
           variant="outline"
-          onPress={quizActions.prevQuestion}
-          disabled={currentQuiz.currentQuestionIndex === 0}
+          onPress={goPrev}
+          disabled={activeIndex === 0}
           icon={<ChevronLeft size={20} color={colors.foreground} />}
           className="flex-1"
         />
         <Button
           title={isLast ? 'Terminer' : 'Suivant'}
-          onPress={isLast ? () => setShowSubmitDialog(true) : quizActions.nextQuestion}
+          onPress={isLast ? () => setShowSubmitDialog(true) : goNext}
           icon={isLast ? <Send size={18} color={colors.primaryForeground} /> : undefined}
+          iconRight={isLast ? undefined : <ChevronRight size={20} color={colors.primaryForeground} />}
           className="flex-[2]"
         />
       </View>

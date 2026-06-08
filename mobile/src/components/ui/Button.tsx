@@ -13,6 +13,8 @@ interface ButtonProps extends Omit<PressableProps, 'children' | 'style'> {
   size?: ButtonSize;
   /** Leading icon element (e.g. a lucide icon). */
   icon?: React.ReactNode;
+  /** Trailing icon element, rendered after the label. */
+  iconRight?: React.ReactNode;
   fullWidth?: boolean;
   loading?: boolean;
   haptic?: boolean;
@@ -58,6 +60,7 @@ export function Button({
   variant = 'default',
   size = 'md',
   icon,
+  iconRight,
   fullWidth,
   loading,
   haptic = true,
@@ -108,6 +111,7 @@ export function Button({
           >
             {title}
           </Text>
+          {iconRight ? <View>{iconRight}</View> : null}
         </>
       )}
     </Pressable>

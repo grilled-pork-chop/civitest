@@ -6,7 +6,6 @@
 
 import React from 'react';
 import { View, Text, Pressable } from 'react-native';
-import { MotiView } from 'moti';
 import * as Haptics from 'expo-haptics';
 import { Check, X, Info } from 'lucide-react-native';
 import type { Question, ShuffledQuestion } from '@/types';
@@ -76,10 +75,7 @@ export const QuestionCard = React.memo(function QuestionCard({
   };
 
   return (
-    <MotiView
-      from={{ opacity: 0, translateY: 8 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ type: 'timing', duration: 250 }}
+    <View
       className="bg-card border border-border rounded-2xl p-4"
       accessibilityLabel={`Question ${questionNumber} sur ${totalQuestions}`}
     >
@@ -184,6 +180,6 @@ export const QuestionCard = React.memo(function QuestionCard({
           </View>
         </View>
       ) : null}
-    </MotiView>
+    </View>
   );
 });
