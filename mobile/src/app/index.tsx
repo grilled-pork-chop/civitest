@@ -25,6 +25,7 @@ import {
 } from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Reveal } from '@/components/ui/Reveal';
 import { Tricolor } from '@/components/ui/Tricolor';
 import { ResultCard } from '@/components/stats/QuizResultsList';
 import { useQuestions } from '@/lib/queries';
@@ -225,6 +226,7 @@ export default function HomeScreen() {
         ) : null}
 
         {/* Exam info */}
+        <Reveal delay={60}>
         <Card>
           <CardHeader>
             <CardTitle>À propos de l'examen</CardTitle>
@@ -241,8 +243,10 @@ export default function HomeScreen() {
             <InfoItem icon={<Award size={16} color={c.mutedForeground} />} text="1 seule bonne réponse par question" />
           </View>
         </Card>
+        </Reveal>
 
         {/* Topics */}
+        <Reveal delay={120}>
         <Card>
           <CardHeader>
             <CardTitle>Les 5 thèmes</CardTitle>
@@ -259,8 +263,10 @@ export default function HomeScreen() {
             ))}
           </View>
         </Card>
+        </Reveal>
 
         {/* Tips */}
+        <Reveal delay={180}>
         <Card className="bg-blue-50 border-blue-200">
           <CardHeader>
             <CardTitle className="text-blue-900">Conseils</CardTitle>
@@ -277,6 +283,7 @@ export default function HomeScreen() {
             </View>
           ))}
         </Card>
+        </Reveal>
 
         <Text className="text-center text-xs text-muted-foreground mt-2">
           CiviTest · Application hors-ligne · Données stockées sur votre appareil

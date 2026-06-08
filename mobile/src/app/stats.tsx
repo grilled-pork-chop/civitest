@@ -2,8 +2,8 @@
  * Stats screen — summary cards, charts, and quiz history with export/import/clear.
  */
 
-import React, { useState } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { View, Text, ScrollView, RefreshControl } from 'react-native';
 import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -29,10 +29,19 @@ export default function StatsScreen() {
   const [showClearDialog, setShowClearDialog] = useState(false);
   const stats = useQuizStats();
 
+  const [refreshing, setRefreshing] = useState(false);
+
   const refresh = () => {
     queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
     quizActions.refreshHistory();
   };
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    refresh();
+    setTimeout(() => setRefreshing(false), 400);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleNewQuiz = () => {
     if (questions) {
@@ -94,6 +103,9 @@ export default function StatsScreen() {
       className="flex-1 bg-background"
       contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 32, gap: 24 }}
       showsVerticalScrollIndicator={false}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={c.primary} colors={[c.primary]} />
+      }
     >
       <StatusBar style="light" />
       {/* Actions */}

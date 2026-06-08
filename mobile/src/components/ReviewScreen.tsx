@@ -197,21 +197,39 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
         showsVerticalScrollIndicator={false}
       >
         {/* Correctness filters */}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ gap: 8 }}
+          accessibilityRole="tablist"
+          accessibilityLabel="Filtrer par exactitude"
+        >
           <Chip active={filter === 'all'} onPress={() => setFilter('all')} icon={<List size={14} color={filter === 'all' ? '#fff' : c.foreground} />} label={`Toutes (${totalQ})`} />
           <Chip active={filter === 'correct'} onPress={() => setFilter('correct')} icon={<CheckCircle size={14} color={filter === 'correct' ? '#fff' : c.green600} />} label={`Correctes (${correctCount})`} />
           <Chip active={filter === 'incorrect'} onPress={() => setFilter('incorrect')} icon={<XCircle size={14} color={filter === 'incorrect' ? '#fff' : c.red600} />} label={`Incorrectes (${incorrectCount})`} />
         </ScrollView>
 
         {/* Type filters */}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ gap: 8 }}
+          accessibilityRole="tablist"
+          accessibilityLabel="Filtrer par type de question"
+        >
           <Chip active={typeFilter === 'all'} onPress={() => setTypeFilter('all')} icon={<Layers size={14} color={typeFilter === 'all' ? '#fff' : c.foreground} />} label={`Tous (${totalQ})`} />
           <Chip active={typeFilter === 'knowledge'} onPress={() => setTypeFilter('knowledge')} dot={getQuestionTypeColor('knowledge')} label={`Connaissance (${knowledgeCount})`} />
           <Chip active={typeFilter === 'situational'} onPress={() => setTypeFilter('situational')} dot={getQuestionTypeColor('situational')} label={`Situation (${situationalCount})`} />
         </ScrollView>
 
         {/* Topic filters */}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ gap: 8 }}
+          accessibilityRole="tablist"
+          accessibilityLabel="Filtrer par thème"
+        >
           <Chip active={topicFilter === 'all'} onPress={() => setTopicFilter('all')} label="Tous les thèmes" />
           {Object.entries(topicStats).map(([topicId, st]) => (
             <Chip
@@ -334,10 +352,10 @@ function Chip({
       accessibilityRole="button"
       accessibilityState={{ selected: active }}
       className={cn(
-        'flex-row items-center gap-1.5 px-3 rounded-full border',
+        'flex-row items-center gap-1.5 px-4 rounded-full border',
         active ? 'bg-primary border-primary' : 'bg-background border-border'
       )}
-      style={{ height: 36 }}
+      style={{ height: 44 }}
     >
       {icon}
       {dot ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: dot }} /> : null}
