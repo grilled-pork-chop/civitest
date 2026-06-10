@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 /**
  * Runtime validation schemas using Zod
- * These schemas validate data from external sources (JSON files, localStorage, user imports)
+ * These schemas validate data from external sources (bundled JSON, storage, user imports)
  */
 
 export const QuestionTypeSchema = z.enum(['knowledge', 'situational']);
@@ -73,14 +73,14 @@ export const QuizHistorySchema = z.object({
 });
 
 /**
- * Validates an array of questions from JSON files
+ * Validates an array of questions from bundled JSON files
  */
 export function validateQuestions(data: unknown): z.infer<typeof QuestionSchema>[] {
   return z.array(QuestionSchema).parse(data);
 }
 
 /**
- * Validates quiz history data from localStorage or import
+ * Validates quiz history data from storage or import
  */
 export function validateQuizHistory(data: unknown): z.infer<typeof QuizHistorySchema> {
   return QuizHistorySchema.parse(data);

@@ -1,82 +1,80 @@
 /**
- * Topic performance chart component
- * Displays performance breakdown by topic in a bar chart
+ * Topic performance — per-topic success rate as labeled horizontal bars.
+ *
+ * On a phone this reads far better than a cramped vertical bar chart with
+ * rotated labels: each row shows the topic name, the correct/total count, the
+ * percentage, and a colored bar. A subtle marker shows the 80% passing line.
  */
 
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { View, Text } from 'react-native';
+import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
+import { ProgressBar } from '@/components/ui/ProgressBar';
 import { TOPICS } from '@/types';
 import type { TopicId } from '@/types';
-import { CHART_CONFIG } from '@/constants/app';
+import { useThemeColors } from '@/theme/useTheme';
 
-/**
- * Topic statistics structure
- */
 interface TopicStats {
   correct: number;
   total: number;
   percentage: number;
 }
 
-/**
- * Props for TopicPerformanceChart component
- */
 interface TopicPerformanceChartProps {
-  /** Statistics data grouped by topic */
   topicStats: Record<TopicId, TopicStats>;
 }
 
-/**
- * Bar chart showing performance by topic
- * Memoized to prevent unnecessary re-renders
- *
- * @param props - Component props
- * @returns Topic performance chart card
- *
- * @example
- * ```tsx
- * <TopicPerformanceChart topicStats={stats} />
- * ```
- */
 export const TopicPerformanceChart = React.memo(function TopicPerformanceChart({
   topicStats,
 }: TopicPerformanceChartProps) {
-  const chartData = TOPICS.map((topic) => ({
-    name: topic.nameShort,
-    percentage: topicStats[topic.id]?.percentage || 0,
-    color: topic.color,
-  }));
-
+  const c = useThemeColors();
   return (
     <Card>
       <CardHeader>
         <CardTitle>Performance par thème</CardTitle>
       </CardHeader>
-      <CardContent>
-        <ResponsiveContainer width="100%" height={CHART_CONFIG.DEFAULT_HEIGHT}>
-          <BarChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis
-              dataKey="name"
-              tick={{ fontSize: 12 }}
-              angle={-45}
-              textAnchor="end"
-              height={80}
-            />
-            <YAxis domain={[0, 100]} />
-            <Tooltip
-              formatter={(value) => [`${value}%`, 'Score']}
-              labelStyle={{ color: '#000' }}
-            />
-            <Bar dataKey="percentage" radius={[8, 8, 0, 0]}>
-              {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-      </CardContent>
+      <View className="gap-4">
+        {TOPICS.map((topic) => {
+          const st = topicStats[topic.id];
+          const percentage = st?.percentage ?? 0;
+          const total = st?.total ?? 0;
+          const correct = st?.correct ?? 0;
+          const isPassing = percentage >= 80;
+
+          return (
+            <View key={topic.id}>
+              <View className="flex-row items-center justify-between mb-1.5">
+                <View className="flex-row items-center gap-2 flex-1 pr-2">
+                  <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: topic.color }} />
+                  <Text className="text-sm font-medium text-foreground" numberOfLines={1}>
+                    {topic.nameShort}
+                  </Text>
+                </View>
+                <Text className="text-xs text-muted-foreground mr-2">
+                  {total > 0 ? `${correct}/${total}` : '—'}
+                </Text>
+                <Text
+                  className="text-sm font-semibold w-11 text-right"
+                  style={{ color: total === 0 ? c.mutedForeground : isPassing ? c.success : c.destructive }}
+                >
+                  {percentage}%
+                </Text>
+              </View>
+              {/* Bar with an 80% passing marker */}
+              <View>
+                <ProgressBar percentage={percentage} color={topic.color} height={10} />
+                <View
+                  pointerEvents="none"
+                  style={{ position: 'absolute', left: '80%', top: -2, bottom: -2, width: 2, backgroundColor: c.foreground, opacity: 0.3 }}
+                />
+              </View>
+            </View>
+          );
+        })}
+      </View>
+      <Text className="text-[11px] text-muted-foreground mt-4">
+        La ligne marque le seuil de réussite (80%).
+      </Text>
     </Card>
   );
 });

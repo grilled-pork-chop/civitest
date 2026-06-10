@@ -1,45 +1,25 @@
 /**
  * Quiz progress tracker component
- * Displays progress bar and question navigation grid
+ * Displays progress bar and a tappable question navigation grid.
  */
 
-import { cn } from '@/lib/utils';
+import React, { useState } from 'react';
+import { View, Text, Pressable } from 'react-native';
 import type { QuizAnswer } from '@/types';
+import { ProgressBar } from '@/components/ui/ProgressBar';
+import { useThemeColors } from '@/theme/useTheme';
 
-/**
- * Props for QuizProgress component
- */
 interface QuizProgressProps {
-  /** Array of answers for all questions */
   answers: QuizAnswer[];
-  /** Index of current question */
   currentIndex: number;
-  /** Callback when navigating to a different question */
   onNavigate: (index: number) => void;
-  /** Whether navigation is disabled */
   disabled?: boolean;
-  /** Whether in review mode (shows correct/incorrect colors) */
   isReviewMode?: boolean;
 }
 
-/**
- * Progress indicator with question navigation grid
- * Shows completion percentage, progress bar, and clickable question numbers
- * Color-codes questions based on answered status or correctness in review mode
- *
- * @param props - Component props
- * @returns Progress tracker with navigation grid
- *
- * @example
- * ```tsx
- * <QuizProgress
- *   answers={quizAnswers}
- *   currentIndex={4}
- *   onNavigate={(index) => setCurrentIndex(index)}
- *   isReviewMode={false}
- * />
- * ```
- */
+const COLUMNS = 8;
+const GAP = 6;
+
 export function QuizProgress({
   answers,
   currentIndex,
@@ -47,102 +27,106 @@ export function QuizProgress({
   disabled = false,
   isReviewMode = false,
 }: QuizProgressProps) {
-  const answeredCount = answers.filter(
-    (a) => a.selectedChoiceIndex !== null
-  ).length;
+  const [gridWidth, setGridWidth] = useState(0);
+  const c = useThemeColors();
+  const answeredCount = answers.filter((a) => a.selectedChoiceIndex !== null).length;
+  const percentage = answers.length ? (answeredCount / answers.length) * 100 : 0;
+
+  const cellSize =
+    gridWidth > 0 ? Math.floor((gridWidth - GAP * (COLUMNS - 1)) / COLUMNS) : 0;
 
   return (
-    <div className="space-y-3">
+    <View className="gap-3">
       {/* Summary */}
-      <div className="flex justify-between items-center text-sm">
-        <span className="text-muted-foreground">
-          {answeredCount} / {answers.length} répondu{answeredCount !== 1 ? 'es' : 'e'}
-        </span>
-        <span className="font-medium">
-          {Math.round((answeredCount / answers.length) * 100)}%
-        </span>
-      </div>
+      <View className="flex-row justify-between items-center">
+        <Text className="text-sm text-muted-foreground">
+          {answeredCount} / {answers.length} répondue{answeredCount !== 1 ? 's' : ''}
+        </Text>
+        <Text className="text-sm font-medium text-foreground">
+          {Math.round(percentage)}%
+        </Text>
+      </View>
 
       {/* Progress bar */}
-      <div className="h-2 bg-secondary rounded-full overflow-hidden">
-        <div
-          className="h-full bg-primary transition-all duration-300 ease-out rounded-full"
-          style={{ width: `${(answeredCount / answers.length) * 100}%` }}
-        />
-      </div>
+      <ProgressBar percentage={percentage} height={8} />
 
       {/* Question grid */}
-      <div
-        className="grid grid-cols-8 sm:grid-cols-10 gap-1 sm:gap-1.5 mt-4"
-        role="navigation"
-        aria-label="Navigation des questions"
+      <View
+        onLayout={(e) => setGridWidth(e.nativeEvent.layout.width)}
+        className="flex-row flex-wrap"
+        style={{ gap: GAP, marginTop: 4 }}
+        accessibilityRole="tablist"
+        accessibilityLabel="Navigation des questions"
       >
-        {answers.map((answer, index) => {
-          const isAnswered = answer.selectedChoiceIndex !== null;
-          const isCurrent = index === currentIndex;
+        {cellSize > 0 &&
+          answers.map((answer, index) => {
+            const isAnswered = answer.selectedChoiceIndex !== null;
+            const isCurrent = index === currentIndex;
 
-          let bgColor = 'bg-secondary';
-          if (isReviewMode) {
-            if (answer.isCorrect) {
-              bgColor = 'bg-green-500';
+            let bgColor: string = c.secondary;
+            let textColor: string = c.secondaryForeground;
+            if (isReviewMode) {
+              if (answer.isCorrect) {
+                bgColor = c.green500;
+                textColor = '#ffffff';
+              } else if (isAnswered) {
+                bgColor = c.red500;
+                textColor = '#ffffff';
+              }
             } else if (isAnswered) {
-              bgColor = 'bg-red-500';
+              bgColor = c.primary;
+              textColor = c.primaryForeground;
             }
-          } else if (isAnswered) {
-            bgColor = 'bg-primary';
-          }
 
-          return (
-            <button
-              key={index}
-              onClick={() => !disabled && onNavigate(index)}
-              disabled={disabled}
-              className={cn(
-                'w-full aspect-square rounded text-xs font-medium transition-all',
-                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1',
-                bgColor,
-                {
-                  'text-primary-foreground': isAnswered && !isReviewMode,
-                  'text-white': isReviewMode && isAnswered,
-                  'text-secondary-foreground': !isAnswered,
-                  'ring-2 ring-primary ring-offset-2': isCurrent,
-                  'hover:opacity-80': !disabled,
-                  'cursor-not-allowed opacity-50': disabled,
-                }
-              )}
-              aria-label={`Question ${index + 1}${isAnswered ? ' (répondue)' : ''}`}
-              aria-current={isCurrent ? 'true' : undefined}
-            >
-              {index + 1}
-            </button>
-          );
-        })}
-      </div>
+            return (
+              <Pressable
+                key={index}
+                onPress={() => !disabled && onNavigate(index)}
+                disabled={disabled}
+                accessibilityRole="tab"
+                accessibilityState={{ selected: isCurrent }}
+                accessibilityLabel={`Question ${index + 1}${isAnswered ? ', répondue' : ''}`}
+                style={{
+                  width: cellSize,
+                  height: cellSize,
+                  backgroundColor: bgColor,
+                  borderRadius: 8,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderWidth: isCurrent ? 2 : 0,
+                  borderColor: c.primary,
+                  opacity: disabled ? 0.5 : 1,
+                }}
+              >
+                <Text style={{ color: textColor, fontSize: 12, fontWeight: '600' }}>
+                  {index + 1}
+                </Text>
+              </Pressable>
+            );
+          })}
+      </View>
 
       {/* Legend */}
-      <div className="hidden sm:flex justify-center gap-4 mt-3 text-xs text-muted-foreground">
-        <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 rounded bg-secondary" />
-          <span>Non répondue</span>
-        </div>
+      <View className="flex-row flex-wrap justify-center gap-4 mt-1">
+        <LegendItem color={c.secondary} label="Non répondue" />
         {isReviewMode ? (
           <>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded bg-green-500" />
-              <span>Correcte</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded bg-red-500" />
-              <span>Incorrecte</span>
-            </div>
+            <LegendItem color={c.green500} label="Correcte" />
+            <LegendItem color={c.red500} label="Incorrecte" />
           </>
         ) : (
-          <div className="flex items-center gap-1.5">
-            <div className="w-3 h-3 rounded bg-primary" />
-            <span>Répondue</span>
-          </div>
+          <LegendItem color={c.primary} label="Répondue" />
         )}
-      </div>
-    </div>
+      </View>
+    </View>
+  );
+}
+
+function LegendItem({ color, label }: { color: string; label: string }) {
+  return (
+    <View className="flex-row items-center gap-1.5">
+      <View style={{ width: 12, height: 12, borderRadius: 4, backgroundColor: color }} />
+      <Text className="text-xs text-muted-foreground">{label}</Text>
+    </View>
   );
 }

@@ -1,103 +1,72 @@
 /**
  * Quiz timer component
- * Displays remaining time with visual warnings as time runs low
+ * Displays remaining time with visual warnings as time runs low.
  */
 
-import { Clock, AlertTriangle } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React from 'react';
+import { View, Text } from 'react-native';
+import { MotiView } from 'moti';
+import { useReducedMotion } from 'react-native-reanimated';
+import { Clock, AlertTriangle } from 'lucide-react-native';
 import { formatTime } from '@/utils/questions';
+import { useThemeColors } from '@/theme/useTheme';
+import { cn } from '@/lib/utils';
 
-/**
- * Props for Timer component
- */
 interface TimerProps {
-  /** Time remaining in seconds */
   timeRemaining: number;
-  /** Total time allocated in seconds */
-  totalTime: number;
-  /** Additional CSS classes */
-  className?: string;
 }
 
 /**
- * Countdown timer with warning states
- * Shows time remaining with progress bar and color-coded warnings
- * - Normal: blue clock icon
- * - Warning (≤5min): yellow styling
- * - Critical (≤1min): red styling with pulse animation
- *
- * @param props - Component props
- * @returns Timer display with progress bar
- *
- * @example
- * ```tsx
- * <Timer
- *   timeRemaining={180}
- *   totalTime={1200}
- * />
- * ```
+ * Countdown timer with warning states.
+ * - Normal: navy clock icon
+ * - Warning (≤5min): amber styling
+ * - Critical (≤1min): red styling with pulsing border
  */
-export function Timer({ timeRemaining, totalTime, className }: TimerProps) {
-  const percentage = (timeRemaining / totalTime) * 100;
+export function Timer({ timeRemaining }: TimerProps) {
+  const reduceMotion = useReducedMotion();
+  const c = useThemeColors();
   const isWarning = timeRemaining <= 300;
   const isCritical = timeRemaining <= 60;
+  const pulse = isCritical && !reduceMotion;
 
   return (
-    <div
+    <MotiView
+      from={{ opacity: 1 }}
+      animate={{ opacity: pulse ? 0.6 : 1 }}
+      transition={
+        pulse
+          ? { type: 'timing', duration: 700, loop: true, repeatReverse: true }
+          : { type: 'timing', duration: 200 }
+      }
+      accessibilityRole="timer"
+      accessibilityLabel={`Temps restant: ${formatTime(timeRemaining)}`}
       className={cn(
-        'flex items-center gap-3 px-4 py-2 rounded-lg border transition-all duration-300',
-        {
-          'bg-card border-border': !isWarning,
-          'bg-yellow-50 border-yellow-200': isWarning && !isCritical,
-          'bg-red-50 border-red-200 animate-timer-pulse': isCritical,
-        },
-        className
+        'flex-row items-center gap-3 px-3 py-2 rounded-xl border',
+        !isWarning && 'bg-card border-border',
+        isWarning && !isCritical && 'bg-yellow-50 border-yellow-200',
+        isCritical && 'bg-red-50 border-red-200'
       )}
-      role="timer"
-      aria-live="polite"
-      aria-label={`Temps restant: ${formatTime(timeRemaining)}`}
     >
       {isCritical ? (
-        <AlertTriangle
-          className="h-5 w-5 text-red-600 animate-pulse"
-          aria-hidden="true"
-        />
+        <AlertTriangle size={20} color={c.red600} />
       ) : (
-        <Clock
-          className={cn('h-5 w-5', {
-            'text-muted-foreground': !isWarning,
-            'text-yellow-600': isWarning && !isCritical,
-          })}
-          aria-hidden="true"
-        />
+        <Clock size={20} color={isWarning ? c.yellow600 : c.mutedForeground} />
       )}
 
-      <div className="flex flex-col">
-        <span
-          className={cn('text-base sm:text-lg font-mono font-semibold tabular-nums', {
-            'text-foreground': !isWarning,
-            'text-yellow-700': isWarning && !isCritical,
-            'text-red-700': isCritical,
-          })}
+      <View>
+        <Text
+          maxFontSizeMultiplier={1.3}
+          className={cn(
+            'text-lg font-bold',
+            !isWarning && 'text-foreground',
+            isWarning && !isCritical && 'text-yellow-700',
+            isCritical && 'text-red-700'
+          )}
+          style={{ fontVariant: ['tabular-nums'] }}
         >
           {formatTime(timeRemaining)}
-        </span>
-        <span className="hidden sm:block text-xs text-muted-foreground">restant</span>
-      </div>
-
-      <div className="hidden sm:block w-24 h-2 bg-secondary rounded-full overflow-hidden">
-        <div
-          className={cn(
-            'h-full transition-all duration-1000 ease-linear rounded-full',
-            {
-              'bg-primary': !isWarning,
-              'bg-yellow-500': isWarning && !isCritical,
-              'bg-red-500': isCritical,
-            }
-          )}
-          style={{ width: `${percentage}%` }}
-        />
-      </div>
-    </div>
+        </Text>
+      </View>
+    </MotiView>
   );
 }

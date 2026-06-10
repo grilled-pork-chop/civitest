@@ -1,30 +1,21 @@
 /**
- * Quiz results list component
- * Displays all quiz results in a scrollable list
+ * Quiz results list + individual result card.
  */
 
 import React from 'react';
-import { Eye, Calendar, Clock } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { View, Text } from 'react-native';
+import { Eye, Calendar, Clock } from 'lucide-react-native';
+import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
+import { Badge } from '@/components/ui/Badge';
 import type { QuizResult } from '@/types';
 import { formatDate, formatTimeVerbose } from '@/utils/questions';
+import { hasReviewData } from '@/utils/typeGuards';
+import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 /**
- * Props for QuizResultsList component
- */
-interface QuizResultsListProps {
-  /** Array of quiz results to display */
-  results: QuizResult[];
-  /** Navigation function */
-  onNavigate: (path: { to: string; params?: Record<string, string> }) => void;
-}
-
-/**
- * Individual result card component
- * Memoized to prevent re-rendering unchanged items
+ * Individual result card.
  */
 export const ResultCard = React.memo(function ResultCard({
   result,
@@ -33,101 +24,92 @@ export const ResultCard = React.memo(function ResultCard({
   result: QuizResult;
   onReview: () => void;
 }) {
-  const canReview = result.questions && result.answers;
+  const canReview = hasReviewData(result);
+  const c = useThemeColors();
 
   return (
     <Card>
-      <CardContent>
-        <div className="flex flex-col gap-3">
-          {/* Top: score + status */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span
-                className={cn(
-                  'text-4xl font-bold tracking-tight',
-                  result.passed ? 'text-green-600' : 'text-red-600'
-                )}
-              >
-                {result.percentage}%
-              </span>
+      <View className="gap-3">
+        <View className="flex-row items-center justify-between">
+          <View className="flex-row items-center gap-3">
+            <Text
+              className={cn(
+                'text-4xl font-bold',
+                result.passed ? 'text-green-600' : 'text-red-600'
+              )}
+            >
+              {result.percentage}%
+            </Text>
+            <Badge
+              label={result.passed ? 'Réussi' : 'Échoué'}
+              variant={result.passed ? 'success' : 'destructive'}
+            />
+          </View>
 
-              <Badge
-                variant={result.passed ? 'default' : 'destructive'}
-                className="h-6"
-              >
-                {result.passed ? 'Réussi' : 'Échoué'}
-              </Badge>
-            </div>
+          {canReview ? (
+            <Button
+              title="Revoir"
+              variant="ghost"
+              size="sm"
+              onPress={onReview}
+              icon={<Eye size={16} color={c.foreground} />}
+            />
+          ) : null}
+        </View>
 
-            {canReview && (
-              <Button variant="ghost" size="sm" onClick={onReview}>
-                <Eye className="h-4 w-4 mr-1" />
-                Revoir
-              </Button>
-            )}
-          </div>
+        <Text className="text-sm text-muted-foreground">
+          {result.score}/{result.totalQuestions} questions
+        </Text>
 
-          {/* Middle: details */}
-          <div className="text-sm text-muted-foreground">
-            {result.score}/{result.totalQuestions} questions
-          </div>
-
-          {/* Bottom: meta */}
-          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <Calendar className="h-3 w-3" />
-              {formatDate(result.date)}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="h-3 w-3" />
+        <View className="flex-row items-center gap-4">
+          <View className="flex-row items-center gap-1">
+            <Calendar size={12} color={c.mutedForeground} />
+            <Text className="text-xs text-muted-foreground">{formatDate(result.date)}</Text>
+          </View>
+          <View className="flex-row items-center gap-1">
+            <Clock size={12} color={c.mutedForeground} />
+            <Text className="text-xs text-muted-foreground">
               {formatTimeVerbose(result.timeTaken)}
-            </span>
-          </div>
-        </div>
-      </CardContent>
+            </Text>
+          </View>
+        </View>
+      </View>
     </Card>
   );
 });
 
-
-
-
 /**
- * List of quiz results
- * Memoized to prevent unnecessary re-renders of the entire list
- *
- * @param props - Component props
- * @returns Quiz results list card
- *
- * @example
- * ```tsx
- * <QuizResultsList results={results} onNavigate={navigate} />
- * ```
+ * List of quiz results. Rendered inside a parent ScrollView, so it maps rather
+ * than nesting a virtualized list.
  */
 export const QuizResultsList = React.memo(function QuizResultsList({
   results,
-  onNavigate,
-}: QuizResultsListProps) {
-  if (results.length === 0) {
-    return null;
-  }
+  totalCount,
+  onReview,
+}: {
+  results: QuizResult[];
+  totalCount: number;
+  onReview: (quizId: string) => void;
+}) {
+  if (results.length === 0) return null;
+
+  const truncated = totalCount > results.length;
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Historique des examens ({results.length})</CardTitle>
+        <CardTitle>Historique des examens ({totalCount})</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3 max-h-[600px] overflow-y-auto">
+      <View className="gap-3">
         {results.map((result) => (
-          <ResultCard
-            key={result.id}
-            result={result}
-            onReview={() =>
-              onNavigate({ to: '/review/$quizId', params: { quizId: result.id } })
-            }
-          />
+          <ResultCard key={result.id} result={result} onReview={() => onReview(result.id)} />
         ))}
-      </CardContent>
+      </View>
+      {truncated ? (
+        <Text className="text-xs text-muted-foreground text-center mt-2">
+          Les {results.length} examens les plus récents sont affichés.
+        </Text>
+      ) : null}
     </Card>
   );
 });

@@ -1,6 +1,9 @@
 import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 
+/**
+ * Combine class names. NativeWind resolves conflicting Tailwind classes itself,
+ * so the web-oriented `tailwind-merge` is intentionally omitted.
+ */
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+  return clsx(inputs);
 }

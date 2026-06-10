@@ -1,129 +1,63 @@
 /**
  * Toast notification service
- * Provides user-friendly notifications using Sonner
+ * Wraps react-native-toast-message behind the app's existing toast API
+ * so call sites stay unchanged.
  */
 
-import { toast as sonnerToast } from 'sonner';
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from '@/constants/app';
+import Toast from 'react-native-toast-message';
+import { ERROR_MESSAGES } from '@/constants/app';
 
-/**
- * Toast notification service
- * Wraps Sonner toast library with application-specific defaults
- */
+interface ToastOptions {
+  description?: string;
+  duration?: number;
+}
+
 export const toast = {
-  /**
-   * Show success notification
-   *
-   * @param message - Success message to display
-   * @param options - Additional options for the toast
-   *
-   * @example
-   * ```typescript
-   * toast.success('Quiz history cleared successfully');
-   * toast.success(SUCCESS_MESSAGES.QUIZ_HISTORY_CLEARED);
-   * ```
-   */
-  success: (message: string, options?: { description?: string; duration?: number }) => {
-    sonnerToast.success(message, {
-      duration: options?.duration || 3000,
-      description: options?.description,
+  success: (message: string, options?: ToastOptions) => {
+    Toast.show({
+      type: 'success',
+      text1: message,
+      text2: options?.description,
+      visibilityTime: options?.duration ?? 3000,
     });
   },
 
-  /**
-   * Show error notification
-   *
-   * @param message - Error message to display
-   * @param options - Additional options for the toast
-   *
-   * @example
-   * ```typescript
-   * toast.error('Failed to load questions');
-   * toast.error(ERROR_MESSAGES.QUESTIONS_LOAD_FAILED, { description: 'Network error' });
-   * ```
-   */
-  error: (message: string, options?: { description?: string; duration?: number }) => {
-    sonnerToast.error(message, {
-      duration: options?.duration || 5000,
-      description: options?.description,
+  error: (message: string, options?: ToastOptions) => {
+    Toast.show({
+      type: 'error',
+      text1: message,
+      text2: options?.description,
+      visibilityTime: options?.duration ?? 5000,
     });
   },
 
-  /**
-   * Show warning notification
-   *
-   * @param message - Warning message to display
-   * @param options - Additional options for the toast
-   *
-   * @example
-   * ```typescript
-   * toast.warning('Storage quota exceeded');
-   * toast.warning(ERROR_MESSAGES.STORAGE_QUOTA_EXCEEDED);
-   * ```
-   */
-  warning: (message: string, options?: { description?: string; duration?: number }) => {
-    sonnerToast.warning(message, {
-      duration: options?.duration || 4000,
-      description: options?.description,
+  warning: (message: string, options?: ToastOptions) => {
+    Toast.show({
+      type: 'info',
+      text1: message,
+      text2: options?.description,
+      visibilityTime: options?.duration ?? 4000,
     });
   },
 
-  /**
-   * Show info notification
-   *
-   * @param message - Info message to display
-   * @param options - Additional options for the toast
-   *
-   * @example
-   * ```typescript
-   * toast.info('Questions loaded', { description: '120 questions available' });
-   * ```
-   */
-  info: (message: string, options?: { description?: string; duration?: number }) => {
-    sonnerToast.info(message, {
-      duration: options?.duration || 3000,
-      description: options?.description,
+  info: (message: string, options?: ToastOptions) => {
+    Toast.show({
+      type: 'info',
+      text1: message,
+      text2: options?.description,
+      visibilityTime: options?.duration ?? 3000,
     });
   },
 
-  /**
-   * Show loading notification
-   *
-   * @param message - Loading message to display
-   *
-   * @returns Toast ID that can be used to dismiss or update the toast
-   *
-   * @example
-   * ```typescript
-   * const toastId = toast.loading('Importing quiz history...');
-   * // Later:
-   * toast.dismiss(toastId);
-   * toast.success('Import complete!');
-   * ```
-   */
   loading: (message: string): string | number => {
-    return sonnerToast.loading(message);
+    Toast.show({
+      type: 'info',
+      text1: message,
+      autoHide: false,
+    });
+    return Date.now();
   },
 
-  /**
-   * Show promise-based notification
-   * Automatically shows loading, success, or error based on promise state
-   *
-   * @param promise - Promise to track
-   * @param messages - Messages for different states
-   *
-   * @example
-   * ```typescript
-   * toast.promise(
-   *   importQuizHistory(data),
-   *   {
-   *     loading: 'Importing quiz history...',
-   *     success: 'Import complete!',
-   *     error: 'Import failed'
-   *   }
-   * );
-   * ```
-   */
   promise: <T>(
     promise: Promise<T>,
     messages: {
@@ -132,26 +66,22 @@ export const toast = {
       error: string | ((error: Error) => string);
     }
   ): void => {
-    sonnerToast.promise(promise, messages);
+    Toast.show({ type: 'info', text1: messages.loading, autoHide: false });
+    promise
+      .then((data) => {
+        const text =
+          typeof messages.success === 'function' ? messages.success(data) : messages.success;
+        Toast.show({ type: 'success', text1: text });
+      })
+      .catch((err: Error) => {
+        const text = typeof messages.error === 'function' ? messages.error(err) : messages.error;
+        Toast.show({ type: 'error', text1: text });
+      });
   },
 
-  /**
-   * Dismiss a specific toast or all toasts
-   *
-   * @param toastId - Optional toast ID to dismiss. If not provided, dismisses all toasts
-   *
-   * @example
-   * ```typescript
-   * toast.dismiss(toastId);
-   * toast.dismiss(); // Dismiss all
-   * ```
-   */
-  dismiss: (toastId?: string | number) => {
-    sonnerToast.dismiss(toastId);
+  dismiss: (_toastId?: string | number) => {
+    Toast.hide();
   },
 };
 
-/**
- * Re-export common error messages for convenience
- */
-export { ERROR_MESSAGES, SUCCESS_MESSAGES };
+export { ERROR_MESSAGES };

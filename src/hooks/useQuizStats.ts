@@ -4,69 +4,51 @@
  */
 
 import { useMemo } from 'react';
-import { getQuizStatistics, getQuizResults } from '@/utils/localStorage';
-import type { QuizResult, TopicId, QuestionType } from '@/types';
+import { useQuery } from '@tanstack/react-query';
+import { getQuizStatistics, getQuizResults } from '@/utils/storage';
+import type { QuizResult, TopicId } from '@/types';
 import { TOPICS } from '@/types';
 import { DISPLAY_LIMITS } from '@/constants/app';
-import { useQuery } from '@tanstack/react-query';
 
-/**
- * Topic statistics aggregation
- */
 interface TopicStats {
   correct: number;
   total: number;
   percentage: number;
 }
 
-/**
- * Question type statistics
- */
-interface TypeStats {
-  correct: number;
-  total: number;
-  percentage: number;
-}
-
-/**
- * Return type for useQuizStats hook
- */
 interface QuizStats {
-  /** Overall statistics summary */
   summary: ReturnType<typeof getQuizStatistics>;
-  /** Recent quiz results */
   recentResults: QuizResult[];
-  /** All quiz results sorted by date */
   allResults: QuizResult[];
-  /** Statistics grouped by topic */
+  displayResults: QuizResult[];
   topicStats: Record<TopicId, TopicStats>;
-  /** Statistics grouped by question type */
-  typeStats: Record<QuestionType, TypeStats>;
-  /** Has any quiz results */
   hasResults: boolean;
 }
 
 /**
- * Custom hook to get and compute quiz statistics
- * Memoizes expensive calculations to prevent unnecessary recomputation
- *
- * @returns Computed quiz statistics
- *
- * @example
- * ```typescript
- * const { summary, recentResults, topicStats } = useQuizStats();
- * ```
+ * Custom hook to get and compute quiz statistics.
+ * Reads from local storage (synchronous) through React Query for cache invalidation.
  */
 export function useQuizStats(): QuizStats {
   const { data: allResults = [] } = useQuery({
     queryKey: ['quizHistory'],
     queryFn: getQuizResults,
+    staleTime: 0,
   });
 
-  const summary = getQuizStatistics();
+  const { data: summary = getQuizStatistics() } = useQuery({
+    queryKey: ['quizStatistics'],
+    queryFn: getQuizStatistics,
+    staleTime: 0,
+  });
 
   const recentResults = useMemo(
     () => allResults.slice(0, DISPLAY_LIMITS.RECENT_QUIZZES_COUNT),
+    [allResults]
+  );
+
+  const displayResults = useMemo(
+    () => allResults.slice(0, DISPLAY_LIMITS.HISTORY_LIST_LIMIT),
     [allResults]
   );
 
@@ -90,35 +72,8 @@ export function useQuizStats(): QuizStats {
 
     Object.keys(stats).forEach((topicId) => {
       const stat = stats[topicId as TopicId];
-      stat.percentage = stat.total > 0 ? Math.round((stat.correct / stat.total) * 100) : 0;
-    });
-
-    return stats;
-  }, [allResults]);
-
-  const typeStats = useMemo(() => {
-    const stats: Record<QuestionType, TypeStats> = {
-      knowledge: { correct: 0, total: 0, percentage: 0 },
-      situational: { correct: 0, total: 0, percentage: 0 },
-    };
-
-    allResults.forEach((result) => {
-      if (!result.questions || !result.answers) return;
-
-      result.questions.forEach((question, index) => {
-        const answer = result.answers![index];
-        const type = question.type;
-
-        stats[type].total++;
-        if (answer.isCorrect) {
-          stats[type].correct++;
-        }
-      });
-    });
-
-    (['knowledge', 'situational'] as QuestionType[]).forEach((type) => {
-      const stat = stats[type];
-      stat.percentage = stat.total > 0 ? Math.round((stat.correct / stat.total) * 100) : 0;
+      stat.percentage =
+        stat.total > 0 ? Math.round((stat.correct / stat.total) * 100) : 0;
     });
 
     return stats;
@@ -128,8 +83,8 @@ export function useQuizStats(): QuizStats {
     summary,
     recentResults,
     allResults,
+    displayResults,
     topicStats,
-    typeStats,
     hasResults,
   };
 }

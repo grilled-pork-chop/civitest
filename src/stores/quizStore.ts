@@ -18,8 +18,9 @@ import {
   getQuizHistory,
   addQuizResult,
   addUsedQuestionSet,
-} from '@/utils/localStorage';
+} from '@/utils/storage';
 import { logger } from '@/services/logger';
+import { queryClient } from '@/lib/queries';
 
 export interface AppState {
   currentQuiz: QuizSession | null;
@@ -274,10 +275,13 @@ export const quizActions = {
     const { history: updatedHistory, saveResult } = addQuizResult(result);
 
     if (saveResult.quotaExceeded && saveResult.trimmed) {
-      logger.warn('Storage quota exceeded. Older quiz results were removed to save new data.', {
-        trimmed: saveResult.trimmed,
-        quotaExceeded: saveResult.quotaExceeded,
-      });
+      logger.warn(
+        'Storage limit reached. Older quiz results were removed to save new data.',
+        {
+          trimmed: saveResult.trimmed,
+          quotaExceeded: saveResult.quotaExceeded,
+        }
+      );
     } else if (!saveResult.success) {
       logger.error('Failed to save quiz result', { error: saveResult.error });
     }
@@ -291,6 +295,12 @@ export const quizActions = {
       },
       quizHistory: updatedHistory,
     }));
+
+    // The result now lives in storage; invalidate the React Query cache that
+    // `useQuizStats` reads from so Home/Stats reflect it immediately instead of
+    // only after another screen happens to refetch.
+    void queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
+    void queryClient.invalidateQueries({ queryKey: ['quizStatistics'] });
 
     return result;
   },
@@ -306,7 +316,7 @@ export const quizActions = {
   },
 
   /**
-   * Refresh quiz history from localStorage
+   * Refresh quiz history from storage
    */
   refreshHistory: () => {
     appStore.setState((state) => ({
@@ -331,7 +341,7 @@ export const quizActions = {
   loadQuizForReview: (quizId: string): boolean => {
     const history = getQuizHistory();
     const result = history.results.find((r) => r.id === quizId);
-    
+
     if (!result || !result.questions || !result.answers) {
       return false;
     }
