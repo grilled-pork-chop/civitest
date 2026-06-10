@@ -46,11 +46,3 @@ export function CardTitle({
     </Text>
   );
 }
-
-export function CardContent({ className, children, ...rest }: CardProps) {
-  return (
-    <View className={cn(className)} {...rest}>
-      {children}
-    </View>
-  );
-}

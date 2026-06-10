@@ -20,7 +20,6 @@ import {
   Settings as SettingsIcon,
 } from 'lucide-react-native';
 import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Tricolor } from '@/components/ui/Tricolor';
 import { ReadinessRing } from '@/components/home/ReadinessRing';

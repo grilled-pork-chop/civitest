@@ -8,7 +8,6 @@ import { View, Text, Pressable } from 'react-native';
 import type { QuizAnswer } from '@/types';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { useThemeColors } from '@/theme/useTheme';
-import { cn } from '@/lib/utils';
 
 interface QuizProgressProps {
   answers: QuizAnswer[];

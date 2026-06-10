@@ -36,13 +36,13 @@ function channelLuminance(c: number): number {
 }
 
 /** Relative luminance (0–1) per WCAG. */
-export function relativeLuminance(hex: string): number {
+function relativeLuminance(hex: string): number {
   const [r, g, b] = hexToRgb(hex);
   return 0.2126 * channelLuminance(r) + 0.7152 * channelLuminance(g) + 0.0722 * channelLuminance(b);
 }
 
 /** Contrast ratio (1–21) between two hex colors. */
-export function contrastRatio(a: string, b: string): number {
+function contrastRatio(a: string, b: string): number {
   const la = relativeLuminance(a);
   const lb = relativeLuminance(b);
   const lighter = Math.max(la, lb);

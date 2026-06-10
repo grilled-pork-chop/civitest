@@ -32,7 +32,6 @@ export default function StatsScreen() {
     setRefreshing(true);
     refresh();
     setTimeout(() => setRefreshing(false), 400);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleNewQuiz = () => {

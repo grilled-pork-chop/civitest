@@ -103,7 +103,7 @@ export default function DonationSheet({ onClose }: { onClose: () => void }) {
       return loop;
     });
     return () => loops.forEach((l) => l.stop());
-  }, [done]);
+  }, [done, confettiAnims]);
 
   async function handlePay() {
     if (!chosen || purchasing) return;
@@ -136,11 +136,7 @@ export default function DonationSheet({ onClose }: { onClose: () => void }) {
                 <View style={s.doneWrap}>
                   <Text style={s.flagEmoji}>🇫🇷</Text>
                 </View>
-                <View
-                  style={s.confettiContainer}
-                  // eslint-disable-next-line react-native/no-inline-styles
-                  pointerEvents="none"
-                >
+                <View style={s.confettiContainer} pointerEvents="none">
                   {CONFETTI_PIECES.map((piece, i) => (
                     <Animated.View
                       key={i}

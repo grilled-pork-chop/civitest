@@ -4,26 +4,6 @@
  */
 
 /**
- * Timer warning thresholds (in seconds)
- */
-export const TIMER_THRESHOLDS = {
-  /** Show warning state when time remaining is less than 5 minutes */
-  WARNING: 300,
-  /** Show critical state when time remaining is less than 1 minute */
-  CRITICAL: 60,
-} as const;
-
-/**
- * UI interaction constants
- */
-export const UI_CONSTANTS = {
-  /** Minimum swipe distance in pixels to trigger navigation */
-  SWIPE_THRESHOLD: 50,
-  /** Debounce delay for search/filter inputs in milliseconds */
-  SEARCH_DEBOUNCE_MS: 300,
-} as const;
-
-/**
  * Storage quota management constants
  */
 export const STORAGE_LIMITS = {
@@ -47,18 +27,6 @@ export const DISPLAY_LIMITS = {
   TREND_CHART_LIMIT: 10,
   /** Max results rendered in the history list (non-virtualized ScrollView) */
   HISTORY_LIST_LIMIT: 50,
-} as const;
-
-/**
- * Chart and visualization constants
- */
-export const CHART_CONFIG = {
-  /** Default chart height in pixels */
-  DEFAULT_HEIGHT: 300,
-  /** Performance chart height in pixels */
-  PERFORMANCE_CHART_HEIGHT: 75,
-  /** Score distribution chart height in pixels */
-  SCORE_CHART_HEIGHT: 100,
 } as const;
 
 /**

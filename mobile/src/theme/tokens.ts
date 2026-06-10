@@ -106,9 +106,6 @@ export const fontSize = {
   display: 32,
 } as const;
 
-/** Minimum accessible touch target (points) */
-export const HIT_TARGET = 44;
-
 /** French tricolor band, used sparingly for republican accent */
 export const TRICOLOR = [
   colors.republicanBlue,

@@ -141,9 +141,9 @@ export default function SettingsScreen() {
           <CardTitle>À propos</CardTitle>
         </CardHeader>
         <AppText size="body" color="muted" className="leading-relaxed mb-3">
-          CiviTest est une application d'entraînement gratuite et 100 %
+          CiviTest est une application d’entraînement gratuite et 100 %
           hors-ligne. Vos résultats restent sur votre appareil. Aucune donnée
-          n'est collectée ni partagée.
+          n’est collectée ni partagée.
         </AppText>
         <AppText size="caption" color="muted">
           Version {version}
@@ -151,8 +151,8 @@ export default function SettingsScreen() {
         <View className="mt-4 pt-4 border-t border-border">
           <AppText size="caption" color="muted" className="leading-relaxed">
             Application indépendante, non officielle et non agréée par le
-            gouvernement français. CiviTest n'est affilié à aucune autorité
-            publique. Les questions sont fournies à titre d'entraînement
+            gouvernement français. CiviTest n’est affilié à aucune autorité
+            publique. Les questions sont fournies à titre d’entraînement
             uniquement et ne constituent pas un document officiel.
           </AppText>
         </View>

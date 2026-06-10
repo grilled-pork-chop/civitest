@@ -206,15 +206,3 @@ export function formatDate(dateString: string): string {
     minute: '2-digit',
   });
 }
-
-/**
- * Format date short
- */
-export function formatDateShort(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('fr-FR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
-}

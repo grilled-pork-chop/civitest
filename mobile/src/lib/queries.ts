@@ -88,19 +88,3 @@ export function useQuestions() {
 
   return query;
 }
-
-export function useQuestionCountByTopic(): Record<string, number> {
-  const { data: questions } = useQuestions();
-
-  if (!questions) {
-    return {};
-  }
-
-  return questions.reduce(
-    (acc: Record<string, number>, q: Question) => {
-      acc[q.topic] = (acc[q.topic] || 0) + 1;
-      return acc;
-    },
-    {} as Record<string, number>
-  );
-}

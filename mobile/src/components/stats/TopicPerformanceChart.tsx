@@ -12,7 +12,6 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { TOPICS } from '@/types';
 import type { TopicId } from '@/types';
-import { cn } from '@/lib/utils';
 import { useThemeColors } from '@/theme/useTheme';
 
 interface TopicStats {

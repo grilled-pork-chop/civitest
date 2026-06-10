@@ -6,17 +6,11 @@
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getQuizStatistics, getQuizResults } from '@/utils/storage';
-import type { QuizResult, TopicId, QuestionType } from '@/types';
+import type { QuizResult, TopicId } from '@/types';
 import { TOPICS } from '@/types';
 import { DISPLAY_LIMITS } from '@/constants/app';
 
 interface TopicStats {
-  correct: number;
-  total: number;
-  percentage: number;
-}
-
-interface TypeStats {
   correct: number;
   total: number;
   percentage: number;
@@ -28,7 +22,6 @@ interface QuizStats {
   allResults: QuizResult[];
   displayResults: QuizResult[];
   topicStats: Record<TopicId, TopicStats>;
-  typeStats: Record<QuestionType, TypeStats>;
   hasResults: boolean;
 }
 
@@ -86,42 +79,12 @@ export function useQuizStats(): QuizStats {
     return stats;
   }, [allResults]);
 
-  const typeStats = useMemo(() => {
-    const stats: Record<QuestionType, TypeStats> = {
-      knowledge: { correct: 0, total: 0, percentage: 0 },
-      situational: { correct: 0, total: 0, percentage: 0 },
-    };
-
-    allResults.forEach((result) => {
-      if (!result.questions || !result.answers) return;
-
-      result.questions.forEach((question, index) => {
-        const answer = result.answers![index];
-        const type = question.type;
-
-        stats[type].total++;
-        if (answer.isCorrect) {
-          stats[type].correct++;
-        }
-      });
-    });
-
-    (['knowledge', 'situational'] as QuestionType[]).forEach((type) => {
-      const stat = stats[type];
-      stat.percentage =
-        stat.total > 0 ? Math.round((stat.correct / stat.total) * 100) : 0;
-    });
-
-    return stats;
-  }, [allResults]);
-
   return {
     summary,
     recentResults,
     allResults,
     displayResults,
     topicStats,
-    typeStats,
     hasResults,
   };
 }
