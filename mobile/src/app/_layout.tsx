@@ -43,12 +43,13 @@ function applyDefaultFont() {
 function AppNavigator() {
   const c = useThemeColors();
   const scheme = useResolvedScheme();
+  const dynamicStyle = scheme === 'dark' ? 'light' : 'dark';
   return (
     <>
-      <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
+      <StatusBar style={dynamicStyle} />
       <Stack screenOptions={{ contentStyle: { backgroundColor: c.background } }}>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="quiz" options={{ headerShown: false, gestureEnabled: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false, statusBarStyle: 'light' }} />
+        <Stack.Screen name="quiz" options={{ headerShown: false, gestureEnabled: false, statusBarStyle: dynamicStyle }} />
         <Stack.Screen
           name="stats"
           options={{
@@ -57,6 +58,7 @@ function AppNavigator() {
             headerTintColor: '#ffffff',
             headerTitleStyle: { fontFamily: 'PlayfairDisplay_700Bold' },
             headerShadowVisible: false,
+            statusBarStyle: 'light',
           }}
         />
         <Stack.Screen
@@ -67,6 +69,7 @@ function AppNavigator() {
             headerTintColor: '#ffffff',
             headerTitleStyle: { fontFamily: 'PlayfairDisplay_700Bold' },
             headerShadowVisible: false,
+            statusBarStyle: 'light',
           }}
         />
         <Stack.Screen
@@ -77,10 +80,11 @@ function AppNavigator() {
             headerTintColor: '#ffffff',
             headerTitleStyle: { fontFamily: 'PlayfairDisplay_700Bold' },
             headerShadowVisible: false,
+            statusBarStyle: 'light',
           }}
         />
-        <Stack.Screen name="review" options={{ headerShown: false }} />
-        <Stack.Screen name="review/[quizId]" options={{ headerShown: false }} />
+        <Stack.Screen name="review" options={{ headerShown: false, statusBarStyle: dynamicStyle }} />
+        <Stack.Screen name="review/[quizId]" options={{ headerShown: false, statusBarStyle: dynamicStyle }} />
       </Stack>
     </>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, type TextStyle } from 'react-native';
 import { AppText } from './Text';
 import { cn } from '@/lib/utils';
 
@@ -16,6 +16,7 @@ export function StatTile({
   labelClass = 'text-muted-foreground',
   labelPosition = 'below',
   uppercase = false,
+  valueStyle,
 }: {
   icon: React.ReactNode;
   label: string;
@@ -25,6 +26,7 @@ export function StatTile({
   labelClass?: string;
   labelPosition?: 'below' | 'beside';
   uppercase?: boolean;
+  valueStyle?: TextStyle;
 }) {
   return (
     <View className={cn('rounded-2xl p-4 flex-1', bg)} style={{ minWidth: '45%' }}>
@@ -38,7 +40,7 @@ export function StatTile({
       ) : (
         <View className="mb-2">{icon}</View>
       )}
-      <AppText weight="bold" className={cn('text-2xl', valueClass)}>
+      <AppText weight="bold" className={cn('text-2xl', valueClass)} style={valueStyle}>
         {value}
       </AppText>
       {labelPosition === 'below' ? (

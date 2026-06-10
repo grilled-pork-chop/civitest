@@ -7,8 +7,13 @@
     "icon": "./assets/images/icon.png",
     "scheme": "civitest",
     "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#002654"
+    },
     "android": {
-      "package": "com.civitest.app",
+      "package": "com.grilledporkchop.civitest",
       "adaptiveIcon": {
         "backgroundColor": "#002654",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -19,27 +24,19 @@
       "predictiveBackGestureEnabled": false
     },
     "plugins": [
+      "react-native-iap",
       "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#002654",
-          "android": {
-            "image": "./assets/images/splash-icon.png"
-          }
-        }
-      ]
+      "expo-splash-screen"
     ],
-    "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
-    },
     "extra": {
       "router": {},
       "eas": {
         "projectId": "dd4cd881-fac1-4d92-a85a-82eb27518781"
       }
     },
-    "owner": "grilledporkchop"
+    "owner": "grilledporkchop",
+    "ios": {
+      "bundleIdentifier": "com.grilledporkchop.civitest"
+    }
   }
 }

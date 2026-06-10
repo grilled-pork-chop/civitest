@@ -150,17 +150,6 @@ export function getUsedQuestionSets(): string[][] {
 }
 
 /**
- * Clear all quiz history
- */
-export function clearQuizHistory(): void {
-  try {
-    Storage.removeItemSync(STORAGE_KEYS.QUIZ_HISTORY);
-  } catch (error) {
-    logger.warn('Failed to clear quiz history', {}, error as Error);
-  }
-}
-
-/**
  * Get quiz results sorted by date (newest first)
  */
 export function getQuizResults(): QuizResult[] {
@@ -208,34 +197,3 @@ export function getQuizStatistics() {
   };
 }
 
-/**
- * Export quiz history as JSON
- */
-export function exportQuizHistory(): string {
-  const history = getQuizHistory();
-  return JSON.stringify(history, null, 2);
-}
-
-/**
- * Import quiz history from JSON with validation
- */
-export function importQuizHistory(jsonString: string): {
-  success: boolean;
-  error?: string;
-} {
-  try {
-    const parsed = JSON.parse(jsonString);
-    const validated = validateQuizHistory(parsed);
-    saveQuizHistory(validated);
-    logger.info('Quiz history imported successfully', {
-      resultCount: validated.results.length,
-    });
-    return { success: true };
-  } catch (error) {
-    logger.error('Failed to import quiz history', {}, error as Error);
-    if (error instanceof SyntaxError) {
-      return { success: false, error: 'Invalid JSON format' };
-    }
-    return { success: false, error: 'Invalid quiz history data structure' };
-  }
-}

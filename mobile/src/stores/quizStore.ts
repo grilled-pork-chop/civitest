@@ -20,6 +20,7 @@ import {
   addUsedQuestionSet,
 } from '@/utils/storage';
 import { logger } from '@/services/logger';
+import { queryClient } from '@/lib/queries';
 
 export interface AppState {
   currentQuiz: QuizSession | null;
@@ -294,6 +295,12 @@ export const quizActions = {
       },
       quizHistory: updatedHistory,
     }));
+
+    // The result now lives in storage; invalidate the React Query cache that
+    // `useQuizStats` reads from so Home/Stats reflect it immediately instead of
+    // only after another screen happens to refetch.
+    void queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
+    void queryClient.invalidateQueries({ queryKey: ['quizStatistics'] });
 
     return result;
   },

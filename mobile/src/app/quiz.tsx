@@ -12,7 +12,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { runOnJS, useReducedMotion } from 'react-native-reanimated';
 import { MotiView } from 'moti';
-import { BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
+import {
+  BottomSheetModal,
+  BottomSheetView,
+  BottomSheetBackdrop,
+  type BottomSheetBackdropProps,
+} from '@gorhom/bottom-sheet';
 import {
   ChevronLeft,
   ChevronRight,
@@ -37,7 +42,6 @@ import { useQuizTimer } from '@/hooks/useQuizTimer';
 import { haptics } from '@/services/haptics';
 import { useThemeColors } from '@/theme/useTheme';
 import { formatTime } from '@/utils/questions';
-import { QUIZ_CONFIG } from '@/types';
 import type { QuizResult } from '@/types';
 
 export default function QuizScreen() {
@@ -82,6 +86,19 @@ export default function QuizScreen() {
     finishQuiz();
     setShowSubmitDialog(false);
   }, [finishQuiz]);
+
+  // Tap-outside / dim backdrop so the progress sheet can be dismissed by tapping away.
+  const renderBackdrop = useCallback(
+    (props: BottomSheetBackdropProps) => (
+      <BottomSheetBackdrop
+        {...props}
+        appearsOnIndex={0}
+        disappearsOnIndex={-1}
+        pressBehavior="close"
+      />
+    ),
+    []
+  );
 
   const handleExit = useCallback(() => {
     quizActions.clearQuiz();
@@ -178,7 +195,6 @@ export default function QuizScreen() {
   }
 
   const totalQuestions = currentQuiz.questions.length;
-  const answeredCount = totalQuestions - unansweredCount;
   const currentAnswered = (currentAnswer?.selectedChoiceIndex ?? null) !== null;
   const isPaused = currentQuiz.isPaused;
 
@@ -190,8 +206,8 @@ export default function QuizScreen() {
         className="px-4 pb-3 bg-card border-b border-border"
       >
         <View className="flex-row items-center justify-between gap-3">
-          <Timer timeRemaining={timeRemaining} totalTime={QUIZ_CONFIG.timeLimit} />
-          <View className="flex-row items-center gap-2">
+          <Timer timeRemaining={timeRemaining} />
+          <View className="flex-row items-center gap-2 shrink-0">
             <Button
               title="Pause"
               variant="outline"
@@ -346,6 +362,8 @@ export default function QuizScreen() {
       <BottomSheetModal
         ref={sheetRef}
         snapPoints={['60%']}
+        enablePanDownToClose
+        backdropComponent={renderBackdrop}
         backgroundStyle={{ backgroundColor: c.card }}
         handleIndicatorStyle={{ backgroundColor: c.border }}
       >

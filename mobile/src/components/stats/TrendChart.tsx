@@ -16,8 +16,12 @@ interface TrendChartProps {
 export const TrendChart = React.memo(function TrendChart({ data }: TrendChartProps) {
   const { width } = useWindowDimensions();
   const c = useThemeColors();
-  // Card sits inside screen padding (16) + card padding (16) on each side.
-  const chartWidth = Math.max(220, width - 32 - 32 - 24);
+  // gifted-charts renders the y-axis labels *outside* the `width` prop, so the
+  // total footprint is `yAxisLabelWidth + width`. Budget the axis explicitly and
+  // subtract it from the card's inner width (screen padding 16 + card padding 16
+  // per side) so axis + plot area never exceed the card.
+  const yAxisLabelWidth = 32;
+  const chartWidth = Math.max(180, width - 32 - 32 - yAxisLabelWidth);
 
   const chartData = data.map((score, index) => ({
     value: score,
@@ -31,14 +35,18 @@ export const TrendChart = React.memo(function TrendChart({ data }: TrendChartPro
         <CardTitle>Évolution des performances</CardTitle>
       </CardHeader>
       {chartData.length > 0 ? (
-        <View className="pt-2">
+        <View className="pt-2 overflow-hidden">
           <LineChart
             data={chartData}
             width={chartWidth}
             height={200}
             maxValue={100}
             noOfSections={4}
+            yAxisLabelWidth={yAxisLabelWidth}
             initialSpacing={12}
+            endSpacing={16}
+            scrollToEnd
+            scrollAnimation={false}
             color={c.primary}
             thickness={2}
             dataPointsColor={c.primary}

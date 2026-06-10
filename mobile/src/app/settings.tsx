@@ -1,25 +1,15 @@
-/**
- * Settings / About — appearance, haptics, data management, and app info.
- */
-
 import React, { useState } from 'react';
-import { View, ScrollView, Switch, Pressable, Linking } from 'react-native';
+import { View, ScrollView, Switch, Pressable } from 'react-native';
 import { useStore } from '@tanstack/react-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Constants from 'expo-constants';
-import { Download, Upload, Trash2, Monitor, Sun, Moon, ExternalLink } from 'lucide-react-native';
+import { Monitor, Sun, Moon, Heart, ChevronRight } from 'lucide-react-native';
 import { Card, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
-import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { AppText } from '@/components/ui/Text';
 import { settingsStore, settingsActions, type ThemePreference } from '@/stores/settingsStore';
-import { clearQuizHistory } from '@/utils/storage';
-import { exportQuizHistoryFile, importQuizHistoryFile } from '@/services/quizExport';
-import { quizActions } from '@/stores/quizStore';
-import { queryClient } from '@/lib/queries';
-import { toast, SUCCESS_MESSAGES } from '@/services/toast';
 import { haptics } from '@/services/haptics';
 import { useThemeColors } from '@/theme/useTheme';
+import DonationSheet from '@/components/DonationSheet';
 
 const THEME_OPTIONS: { value: ThemePreference; label: string; Icon: typeof Sun }[] = [
   { value: 'system', label: 'Système', Icon: Monitor },
@@ -32,15 +22,10 @@ export default function SettingsScreen() {
   const c = useThemeColors();
   const theme = useStore(settingsStore, (s) => s.themePreference);
   const hapticsEnabled = useStore(settingsStore, (s) => s.hapticsEnabled);
-  const [showClear, setShowClear] = useState(false);
-
-  const refresh = () => {
-    queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
-    quizActions.refreshHistory();
-  };
-
   const version =
     Constants.expoConfig?.version ?? Constants.nativeAppVersion ?? '1.0.0';
+  const [showDonation, setShowDonation] = useState(false);
+  const [supportPressed, setSupportPressed] = useState(false);
 
   return (
     <ScrollView
@@ -48,6 +33,42 @@ export default function SettingsScreen() {
       contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 32, gap: 16 }}
       showsVerticalScrollIndicator={false}
     >
+
+      {/* Support — featured banner so it stands out from the plain setting cards. */}
+      <View className="rounded-2xl shadow-sm shadow-black/10">
+        <View className="rounded-2xl overflow-hidden">
+          <Pressable
+            onPress={() => {
+              haptics.selection();
+              setShowDonation(true);
+            }}
+            onPressIn={() => setSupportPressed(true)}
+            onPressOut={() => setSupportPressed(false)}
+            accessibilityRole="button"
+            accessibilityLabel="Soutenir CiviTest"
+            // Plain RN Pressable (no NativeWind className) so the style object is kept.
+            style={{ backgroundColor: supportPressed ? '#b30f21' : '#ce1126' }}
+          >
+            <View className="flex-row items-center gap-3.5 p-4">
+              <View
+                className="w-11 h-11 rounded-full items-center justify-center"
+                style={{ backgroundColor: 'rgba(255,255,255,0.18)' }}
+              >
+                <Heart size={20} color="#ffffff" fill="#ffffff" />
+              </View>
+              <View className="flex-1">
+                <AppText weight="semibold" size="title" className="text-white">
+                  Soutenir CiviTest
+                </AppText>
+                <AppText size="caption" className="text-white/80">
+                  Offrir un café au développeur
+                </AppText>
+              </View>
+              <ChevronRight size={20} color="rgba(255,255,255,0.8)" />
+            </View>
+          </Pressable>
+        </View>
+      </View>
       {/* Appearance */}
       <Card>
         <CardHeader>
@@ -114,80 +135,30 @@ export default function SettingsScreen() {
         </AppText>
       </Card>
 
-      {/* Data */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Données</CardTitle>
-        </CardHeader>
-        <AppText size="caption" color="muted" className="mb-3">
-          Votre historique est stocké uniquement sur cet appareil.
-        </AppText>
-        <View className="gap-2">
-          <Button
-            title="Exporter l'historique"
-            variant="outline"
-            fullWidth
-            onPress={exportQuizHistoryFile}
-            icon={<Download size={18} color={c.foreground} />}
-          />
-          <Button
-            title="Importer l'historique"
-            variant="outline"
-            fullWidth
-            onPress={() => importQuizHistoryFile(refresh)}
-            icon={<Upload size={18} color={c.foreground} />}
-          />
-          <Button
-            title="Effacer l'historique"
-            variant="destructive"
-            fullWidth
-            onPress={() => setShowClear(true)}
-            icon={<Trash2 size={18} color={c.destructiveForeground} />}
-          />
-        </View>
-      </Card>
-
       {/* About */}
       <Card>
         <CardHeader>
           <CardTitle>À propos</CardTitle>
         </CardHeader>
         <AppText size="body" color="muted" className="leading-relaxed mb-3">
-          CiviTest vous entraîne à l'examen civique français dans les conditions
-          réelles : 40 questions, 45 minutes, 80 % requis. Application 100 %
-          hors-ligne.
+          CiviTest est une application d'entraînement gratuite et 100 %
+          hors-ligne. Vos résultats restent sur votre appareil. Aucune donnée
+          n'est collectée ni partagée.
         </AppText>
-        <Pressable
-          accessibilityRole="link"
-          className="flex-row items-center gap-2 py-1"
-          onPress={() =>
-            Linking.openURL('https://www.service-public.fr').catch(() => {})
-          }
-        >
-          <ExternalLink size={16} color={c.primary} />
-          <AppText weight="medium" className="text-primary">
-            service-public.fr
-          </AppText>
-        </Pressable>
-        <AppText size="caption" color="muted" className="mt-3">
+        <AppText size="caption" color="muted">
           Version {version}
         </AppText>
+        <View className="mt-4 pt-4 border-t border-border">
+          <AppText size="caption" color="muted" className="leading-relaxed">
+            Application indépendante, non officielle et non agréée par le
+            gouvernement français. CiviTest n'est affilié à aucune autorité
+            publique. Les questions sont fournies à titre d'entraînement
+            uniquement et ne constituent pas un document officiel.
+          </AppText>
+        </View>
       </Card>
 
-      <ConfirmDialog
-        visible={showClear}
-        title="Confirmer la suppression"
-        description="Êtes-vous sûr de vouloir effacer tout l'historique ? Cette action est irréversible."
-        confirmLabel="Effacer"
-        confirmVariant="destructive"
-        onConfirm={() => {
-          clearQuizHistory();
-          refresh();
-          setShowClear(false);
-          toast.success(SUCCESS_MESSAGES.QUIZ_HISTORY_CLEARED);
-        }}
-        onCancel={() => setShowClear(false)}
-      />
+      {showDonation && <DonationSheet onClose={() => setShowDonation(false)} />}
     </ScrollView>
   );
 }

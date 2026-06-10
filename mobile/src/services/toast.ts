@@ -5,7 +5,7 @@
  */
 
 import Toast from 'react-native-toast-message';
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from '@/constants/app';
+import { ERROR_MESSAGES } from '@/constants/app';
 
 interface ToastOptions {
   description?: string;
@@ -84,7 +84,4 @@ export const toast = {
   },
 };
 
-/**
- * Re-export common messages for convenience
- */
-export { ERROR_MESSAGES, SUCCESS_MESSAGES };
+export { ERROR_MESSAGES };

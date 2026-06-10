@@ -26,6 +26,7 @@ interface QuizStats {
   summary: ReturnType<typeof getQuizStatistics>;
   recentResults: QuizResult[];
   allResults: QuizResult[];
+  displayResults: QuizResult[];
   topicStats: Record<TopicId, TopicStats>;
   typeStats: Record<QuestionType, TypeStats>;
   hasResults: boolean;
@@ -42,10 +43,19 @@ export function useQuizStats(): QuizStats {
     staleTime: 0,
   });
 
-  const summary = getQuizStatistics();
+  const { data: summary = getQuizStatistics() } = useQuery({
+    queryKey: ['quizStatistics'],
+    queryFn: getQuizStatistics,
+    staleTime: 0,
+  });
 
   const recentResults = useMemo(
     () => allResults.slice(0, DISPLAY_LIMITS.RECENT_QUIZZES_COUNT),
+    [allResults]
+  );
+
+  const displayResults = useMemo(
+    () => allResults.slice(0, DISPLAY_LIMITS.HISTORY_LIST_LIMIT),
     [allResults]
   );
 
@@ -109,6 +119,7 @@ export function useQuizStats(): QuizStats {
     summary,
     recentResults,
     allResults,
+    displayResults,
     topicStats,
     typeStats,
     hasResults,

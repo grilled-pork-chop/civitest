@@ -8,8 +8,8 @@
  * Shared by /review and /review/[quizId].
  */
 
-import React, { useEffect, useMemo, useState } from 'react';
-import { View, ScrollView, ActivityIndicator, Pressable, Modal } from 'react-native';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { View, ScrollView, ActivityIndicator, Pressable, Modal, Animated } from 'react-native';
 import type { EdgeInsets } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 import { router } from 'expo-router';
@@ -391,7 +391,11 @@ export function ReviewScreen({ quizId }: { quizId?: string }) {
   );
 }
 
-/** Bottom sheet built on RN's core Modal — no portal / navigation-context coupling. */
+/**
+ * Bottom sheet built on RN's core Modal — no portal / navigation-context coupling.
+ * The backdrop fades while the panel slides up (matching the gorhom sheet on the
+ * quiz screen), rather than Modal's built-in `slide` which drags the backdrop up too.
+ */
 function Sheet({
   visible,
   onClose,
@@ -405,16 +409,66 @@ function Sheet({
   insets: EdgeInsets;
   children: React.ReactNode;
 }) {
+  // Keep the Modal mounted through the exit animation.
+  const [mounted, setMounted] = useState(visible);
+  const progress = useRef(new Animated.Value(0)).current;
+  const sheetHeight = useRef(0);
+  // translateY is driven imperatively so it can use the measured panel height.
+  const translateY = useRef(new Animated.Value(600)).current;
+
+  useEffect(() => {
+    if (visible) {
+      setMounted(true);
+      return;
+    }
+    // Animate out, then unmount.
+    Animated.parallel([
+      Animated.timing(progress, { toValue: 0, duration: 220, useNativeDriver: true }),
+      Animated.timing(translateY, {
+        toValue: sheetHeight.current || 600,
+        duration: 220,
+        useNativeDriver: true,
+      }),
+    ]).start(({ finished }) => {
+      if (finished) setMounted(false);
+    });
+  }, [visible, progress, translateY]);
+
+  // Once mounted (and measured), animate in.
+  useEffect(() => {
+    if (!mounted) return;
+    Animated.parallel([
+      Animated.timing(progress, { toValue: 1, duration: 250, useNativeDriver: true }),
+      Animated.spring(translateY, {
+        toValue: 0,
+        damping: 22,
+        stiffness: 240,
+        mass: 0.9,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, [mounted, progress, translateY]);
+
+  if (!mounted) return null;
+
   return (
-    <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose} statusBarTranslucent>
+    <Modal visible transparent animationType="none" onRequestClose={onClose} statusBarTranslucent>
       <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel="Fermer"
-          onPress={onClose}
-          style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)' }}
-        />
-        <View
+        <Animated.View
+          style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: progress }}
+        >
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Fermer"
+            onPress={onClose}
+            style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.5)' }}
+          />
+        </Animated.View>
+        <Animated.View
+          onLayout={(e) => {
+            const h = e.nativeEvent.layout.height;
+            if (h > 0) sheetHeight.current = h;
+          }}
           style={{
             backgroundColor: c.card,
             borderTopLeftRadius: 20,
@@ -423,6 +477,7 @@ function Sheet({
             paddingTop: 8,
             paddingBottom: insets.bottom + 20,
             maxHeight: '85%',
+            transform: [{ translateY }],
           }}
         >
           <View
@@ -431,7 +486,7 @@ function Sheet({
           <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 16, paddingBottom: 4 }}>
             {children}
           </ScrollView>
-        </View>
+        </Animated.View>
       </View>
     </Modal>
   );

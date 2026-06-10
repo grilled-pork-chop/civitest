@@ -84,23 +84,32 @@ export const ResultCard = React.memo(function ResultCard({
  */
 export const QuizResultsList = React.memo(function QuizResultsList({
   results,
+  totalCount,
   onReview,
 }: {
   results: QuizResult[];
+  totalCount: number;
   onReview: (quizId: string) => void;
 }) {
   if (results.length === 0) return null;
 
+  const truncated = totalCount > results.length;
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Historique des examens ({results.length})</CardTitle>
+        <CardTitle>Historique des examens ({totalCount})</CardTitle>
       </CardHeader>
       <View className="gap-3">
         {results.map((result) => (
           <ResultCard key={result.id} result={result} onReview={() => onReview(result.id)} />
         ))}
       </View>
+      {truncated ? (
+        <Text className="text-xs text-muted-foreground text-center mt-2">
+          Les {results.length} examens les plus récents sont affichés.
+        </Text>
+      ) : null}
     </Card>
   );
 });

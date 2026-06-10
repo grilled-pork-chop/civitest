@@ -9,13 +9,11 @@ import { MotiView } from 'moti';
 import { useReducedMotion } from 'react-native-reanimated';
 import { Clock, AlertTriangle } from 'lucide-react-native';
 import { formatTime } from '@/utils/questions';
-import { ProgressBar } from '@/components/ui/ProgressBar';
 import { useThemeColors } from '@/theme/useTheme';
 import { cn } from '@/lib/utils';
 
 interface TimerProps {
   timeRemaining: number;
-  totalTime: number;
 }
 
 /**
@@ -24,19 +22,12 @@ interface TimerProps {
  * - Warning (≤5min): amber styling
  * - Critical (≤1min): red styling with pulsing border
  */
-export function Timer({ timeRemaining, totalTime }: TimerProps) {
+export function Timer({ timeRemaining }: TimerProps) {
   const reduceMotion = useReducedMotion();
   const c = useThemeColors();
-  const percentage = (timeRemaining / totalTime) * 100;
   const isWarning = timeRemaining <= 300;
   const isCritical = timeRemaining <= 60;
   const pulse = isCritical && !reduceMotion;
-
-  const barColor = isCritical
-    ? c.red500
-    : isWarning
-      ? c.amber500
-      : c.primary;
 
   return (
     <MotiView
@@ -75,10 +66,6 @@ export function Timer({ timeRemaining, totalTime }: TimerProps) {
         >
           {formatTime(timeRemaining)}
         </Text>
-      </View>
-
-      <View className="w-16">
-        <ProgressBar percentage={percentage} color={barColor} height={6} />
       </View>
     </MotiView>
   );

@@ -6,7 +6,6 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, ActivityIndicator, Pressable } from 'react-native';
 import { router } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import {
@@ -73,13 +72,9 @@ export default function HomeScreen() {
   }
 
   const hasResults = summary.totalQuizzes > 0;
-  const isReady = summary.averageScore >= PASS_THRESHOLD;
-  const pointsToGo = Math.max(0, PASS_THRESHOLD - summary.averageScore);
 
   return (
-    <>
-      <StatusBar style="light" />
-      <ScrollView
+    <ScrollView
         className="flex-1 bg-background"
         contentContainerStyle={{ paddingBottom: insets.bottom + 32 }}
         showsVerticalScrollIndicator={false}
@@ -122,27 +117,24 @@ export default function HomeScreen() {
                   accessibilityLabel={`Score moyen ${summary.averageScore} %, objectif ${PASS_THRESHOLD} %`}
                 >
                   <ReadinessRing value={summary.averageScore}>
-                    <Text className="text-white text-5xl font-display">
+                    <Text className="text-white text-5xl font-display leading-none">
                       {summary.averageScore}
-                      <Text className="text-2xl">%</Text>
+                      <Text className="text-2xl text-white/80 font-display">%</Text>
                     </Text>
-                    <Text className="text-white/60 text-xs -mt-1 uppercase tracking-wide">
+                    <Text className="text-white/55 text-[11px] mt-2.5 uppercase tracking-[3px]">
                       moyenne
                     </Text>
                   </ReadinessRing>
                 </View>
 
-                <Text className="text-white text-lg font-display mt-4 text-center">
-                  {isReady
-                    ? 'Vous êtes prêt pour l’examen'
-                    : `Encore ${pointsToGo} points pour atteindre ${PASS_THRESHOLD} %`}
-                </Text>
-                <Text className="text-white/60 text-sm mt-1">
-                  {summary.totalQuizzes} examen{summary.totalQuizzes > 1 ? 's' : ''} · {summary.passRate}% de réussite
-                </Text>
-
                 <View className="w-full mt-6">
                   <StartButton onPress={handleStartQuiz} disabled={!canStart} />
+                </View>
+
+                <View className="flex-row flex-wrap gap-x-5 gap-y-2 mt-6">
+                  <Fact icon={<BookOpen size={16} color="#ffffff" />} text={`${questions?.length || 0} questions`} />
+                  <Fact icon={<Clock size={16} color="#ffffff" />} text="45 minutes" />
+                  <Fact icon={<Target size={16} color="#ffffff" />} text="80% requis" />
                 </View>
               </View>
             ) : (
@@ -200,16 +192,19 @@ export default function HomeScreen() {
               </View>
             ) : null
           ) : (
-            /* First-time user — entry point to the guide */
-            <GuideLink onPress={() => router.push('/guide')} color={c.primary} chevron={c.mutedForeground} />
+            /* First-time user — placeholder until first result */
+            <EmptyState
+              icon={
+                <View className="w-24 h-24 rounded-full bg-muted items-center justify-center">
+                  <Calendar size={48} color={c.mutedForeground} />
+                </View>
+              }
+              title="Vos résultats ici"
+              description="Complétez votre premier examen pour voir vos scores et suivre votre progression."
+            />
           )}
-
-          <Text className="text-center text-xs text-muted-foreground mt-2">
-            CiviTest · Application hors-ligne · Données stockées sur votre appareil
-          </Text>
         </View>
-      </ScrollView>
-    </>
+    </ScrollView>
   );
 }
 
@@ -311,29 +306,3 @@ function SectionTitle({ icon, title, noMargin }: { icon: React.ReactNode; title:
   );
 }
 
-function GuideLink({
-  onPress,
-  color,
-  chevron,
-}: {
-  onPress: () => void;
-  color: string;
-  chevron: string;
-}) {
-  return (
-    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel="Ouvrir le guide de l’examen">
-      <Card className="active:opacity-90">
-        <View className="flex-row items-center gap-3">
-          <BookOpen size={22} color={color} />
-          <View className="flex-1">
-            <Text className="text-lg font-display text-foreground">Le guide de l’examen</Text>
-            <Text className="text-sm text-muted-foreground">
-              Thèmes, conseils et déroulé de l’épreuve
-            </Text>
-          </View>
-          <ChevronRight size={20} color={chevron} />
-        </View>
-      </Card>
-    </Pressable>
-  );
-}

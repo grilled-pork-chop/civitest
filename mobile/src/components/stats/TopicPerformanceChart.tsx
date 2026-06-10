@@ -13,6 +13,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { TOPICS } from '@/types';
 import type { TopicId } from '@/types';
 import { cn } from '@/lib/utils';
+import { useThemeColors } from '@/theme/useTheme';
 
 interface TopicStats {
   correct: number;
@@ -27,6 +28,7 @@ interface TopicPerformanceChartProps {
 export const TopicPerformanceChart = React.memo(function TopicPerformanceChart({
   topicStats,
 }: TopicPerformanceChartProps) {
+  const c = useThemeColors();
   return (
     <Card>
       <CardHeader>
@@ -53,10 +55,8 @@ export const TopicPerformanceChart = React.memo(function TopicPerformanceChart({
                   {total > 0 ? `${correct}/${total}` : '—'}
                 </Text>
                 <Text
-                  className={cn(
-                    'text-sm font-semibold w-11 text-right',
-                    total === 0 ? 'text-muted-foreground' : isPassing ? 'text-green-600' : 'text-red-600'
-                  )}
+                  className="text-sm font-semibold w-11 text-right"
+                  style={{ color: total === 0 ? c.mutedForeground : isPassing ? c.success : c.destructive }}
                 >
                   {percentage}%
                 </Text>
@@ -66,7 +66,7 @@ export const TopicPerformanceChart = React.memo(function TopicPerformanceChart({
                 <ProgressBar percentage={percentage} color={topic.color} height={10} />
                 <View
                   pointerEvents="none"
-                  style={{ position: 'absolute', left: '80%', top: -2, bottom: -2, width: 2, backgroundColor: 'rgba(15,23,42,0.25)' }}
+                  style={{ position: 'absolute', left: '80%', top: -2, bottom: -2, width: 2, backgroundColor: c.foreground, opacity: 0.3 }}
                 />
               </View>
             </View>

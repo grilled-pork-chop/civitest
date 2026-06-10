@@ -44,7 +44,7 @@ export const TrendChart = React.memo(function TrendChart({ data }: TrendChartPro
   }));
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <CardHeader>
         <CardTitle>Évolution des performances</CardTitle>
       </CardHeader>
